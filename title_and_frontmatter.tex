@@ -1,0 +1,92 @@
+% Declarations for Front Matter
+
+% MS Thesis = 0, Phd Dissertation = 1
+\isdissertation{1}
+
+% electronic submission? Paper only = 0, Electronic = 1
+\iselectronic{1}
+
+\title{What is concurrent bandwidth feedback, does it do anything, and should I care?}
+\author{John A. Karasinski}
+
+% Choices are September, December, March, June
+\degreemonth{June}
+\degreeyear{2020}
+%More examples DOCTOR OF PHILOSOPHY
+\degree{Doctor of Philosophy}
+
+\chair{Stephen K. Robinson}
+\othermembers{Ron A. Hess,Zhaodan Kong} %comma separated list of committee not including chair
+\numberofmembers{3} % size of committee
+
+\prevdegrees{M.S.,~University of California,~Davis, 2016\\
+B.S.,~University of California,~Santa Cruz,~2012}
+
+%Your Graduate Group
+\field{Mechanical and Aerospace Engineering}
+\campus{Davis}
+
+
+% add the abstract here
+\input{abstract}
+
+%Not required for electronic submission, you will need to print your other abstract page 2x and hand them in.
+% Here is the first, external, abstract.
+%\begin{abstract}
+%	\myabstract
+%	\abstractsignature
+%\end{abstract}
+
+\begin{frontmatter}
+\maketitle
+
+% A copyright page is optional. If you have one, it must immediately
+% follow the title page. For more information about the copyright page
+% see the UCD's Office of Graduate Studies web site.
+% \copyrightpage
+
+% dedication (optional), remove comment markers to use
+%\begin{dedication}
+%\null\vfil
+%{\large
+%\begin{center}
+%xxxx
+%\end{center}}
+%\vfil\null
+%\end{dedication}
+
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Here is the second, internal, abstract.
+% Update: Melissa Danforth 2006
+% Inline abstract is now part of front matter according to coordinator
+    \newpage
+    \begin{inlineabstract}
+		%Only enable small if you're trying to make it fit.
+		%\begin{small}
+		\myabstract
+		%\end{small}
+    \end{inlineabstract}
+
+%Acknowledgments (optional)
+\begin{acknowledgments}
+    Thank you to Professor Robinson, who provided the inspiration for this project and has guided me throughout the whole process.
+    Thank you to my committee members, Professor Hess and Professor Kong, who provided support in shaping the research.
+    Thank you to my fellow HRVIP lab members, who elevated this work with their high standards.
+    Thank you to Richard Joyce, who was always willing to discuss research over coffee.
+    Thank you to the Link Foundation, who selected me for the Advanced Training and Simulation Fellowship and provided financial support.
+    Thank you to the San Jose State University Research Foundation, who provided financial support.
+    Thank you to the subjects who volunteered their time and made this research possible.
+\end{acknowledgments}
+
+%Preface (optional)
+% \chapter*{Preface}
+% \addcontentsline{toc}{chapter}{Preface}
+% \input{preface}
+
+
+\end{frontmatter}
