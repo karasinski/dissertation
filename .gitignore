@@ -46,3 +46,4 @@ vendor/
 *.xdy
 *.tdo
 *.fls
+__latexindent_temp.tex
