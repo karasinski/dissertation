@@ -37,20 +37,22 @@
 % \begin{document}
 % \maketitle
 
+Portions of this chapter were originally published in the conference proceedings for AIAA Modeling and Simulation Technologies 2019 \citep{karasinski_evaluating_2019}.
+
 % % \doublespacing
 % \begin{abstract}
-Recent advances in computing hardware have enabled a new generation of mobile augmented reality devices which have the potential to improve human performance and reduce workload in a variety of tasks.
-The aim of this study was to investigate the effect of several factors on human performance and workload in a three-axis manual tracking task.
-Twenty four (24) engineering students at the University of California, Davis were randomly placed into a one of two device groups ($n=12$ per group): a 2D or 3D display.
-Subjects in both groups evaluated three different displays in a random order: a baseline display, a concurrent bandwidth feedback display, and an rotated display.
-Subjects' objective performance was evaluated using the root-mean-square error (RMSE) of the depth ($z$) axis.
-Objective workload was measured by the response time to a two-choice task, and subjective workload was evaluated using the NASA Task Load Index (NASA-TLX).
-Results of ANOVA analysis on the $z$ axis RMSE showed significant effects for design ($F(2, 36)=84.92, p<.001$), device ($F(1, 18)=7.22, p<0.015$), and start design ($F(2, 18)=4.81, p<0.021$).
-The ANOVA also showed a significant interaction effect between design and starting design ($F(4, 36)=8.55, p<0.0001$), and a three way interaction between design, device, and starting design ($F(4, 36)=5.57, p<0.002$).
-In general, there were no significant effects found for workload measurements.
-Both concurrent bandwidth feedback and a rotated display resulted in superior performance when compared to a baseline display.
-Providing a 3D display did not, in general, improve performance.
-Subjects in the 3D display group and that had early exposure to the concurrent bandwidth feedback, however, were able to use the feedback to achieve superior performance.
+% Recent advances in computing hardware have enabled a new generation of mobile augmented reality devices which have the potential to improve human performance and reduce workload in a variety of tasks.
+% The aim of this study was to investigate the effect of several factors on human performance and workload in a three-axis manual tracking task.
+% Twenty four (24) engineering students at the University of California, Davis were randomly placed into a one of two device groups ($n=12$ per group): a 2D or 3D display.
+% Subjects in both groups evaluated three different displays in a random order: a baseline display, a concurrent bandwidth feedback display, and an rotated display.
+% Subjects' objective performance was evaluated using the root-mean-square error (RMSE) of the depth ($z$) axis.
+% Objective workload was measured by the response time to a two-choice task, and subjective workload was evaluated using the NASA Task Load Index (NASA-TLX).
+% Results of ANOVA analysis on the $z$ axis RMSE showed significant effects for design ($F(2, 36)=84.92, p<.001$), device ($F(1, 18)=7.22, p<0.015$), and start design ($F(2, 18)=4.81, p<0.021$).
+% The ANOVA also showed a significant interaction effect between design and starting design ($F(4, 36)=8.55, p<0.0001$), and a three way interaction between design, device, and starting design ($F(4, 36)=5.57, p<0.002$).
+% In general, there were no significant effects found for workload measurements.
+% Both concurrent bandwidth feedback and a rotated display resulted in superior performance when compared to a baseline display.
+% Providing a 3D display did not, in general, improve performance.
+% Subjects in the 3D display group and that had early exposure to the concurrent bandwidth feedback, however, were able to use the feedback to achieve superior performance.
 % \end{abstract}
 
 \section{Introduction}
@@ -60,58 +62,58 @@ The aim of this study was to investigate the effect of several factors on human 
 The Microsoft HoloLens is a head-mounted, mobile augmented reality device which provides a stereoscopic 3D view to the user which is not available with traditional 2D displays.
 To evaluate whether this new display technology could improve user performance in a tracking task, we designed an experiment that investigated if the depth cueing delivered by stereoscopic display could provide improved performance and decreased workload.
 We were also interested to see if a 2D display could gain the benefits of a depth cue by rotating the axis of the task such that the depth cue was more readily available.
-Research has also shown that presenting three-dimensional information on a two-dimensional screen is not a simple task, and that the projection of the 3D information onto the 2D screen can cause large changes in the performance of the user~\cite{Kim1987}.
+Research has also shown that presenting three-dimensional information on a two-dimensional screen is not a simple task, and that the projection of the 3D information onto the 2D screen can cause large changes in the performance of the user~\citep{kim_quantitative_1987}.
 In addition to these cues, we also investigated the effects of concurrent bandwidth feedback on task performance and workload as an alternate technique to improving performance.
 Concurrent bandwidth feedback alerts the operator when their real-time performance has drifted outside an acceptable, predefined window of performance.
-The use of this type of feedback has been shown to improve performance in a wide variety of motor control tasks~\cite{salmoni1984knowledge,Sigrist2013,Karasinski2017}.
+The use of this type of feedback has been shown to improve performance in a wide variety of motor control tasks~\citep{salmoni_knowledge_1984,sigrist_augmented_2013,karasinski_real-time_2017}.
 
 \subsection{Literature Review}
 \subsubsection{Augmented Feedback}
-The concept of feedback was popularized when closed-loop control systems were first developed and has since been defined many times~\cite{Wierner1948}.
-In the context of this work, a convenient definition of feedback comes from Ramaprasad, ``[f]eedback is information about the gap between the actual level and the reference level of a system parameter which is used to alter the gap in some way~\cite{Ramaprasad1983}.''
+The concept of feedback was popularized when closed-loop control systems were first developed and has since been defined many times~\citep{Wierner1948}.
+In the context of this work, a convenient definition of feedback comes from Ramaprasad, ``[f]eedback is information about the gap between the actual level and the reference level of a system parameter which is used to alter the gap in some way~\citep{ramaprasad_definition_1983}.''
 The aforementioned ``gap'' is the error and can be conveyed to the operator of a system in a variety of ways.
-Feedback can be broadly classified into two types: intrinsic, feedback which is generated from within the context of the action itself, and extrinsic, feedback which is given from an external source~\cite{laurillard1993rethinking}.
+Feedback can be broadly classified into two types: intrinsic, feedback which is generated from within the context of the action itself, and extrinsic, feedback which is given from an external source~\citep{laurillard_rethinking_2002}.
 
-Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field motor learning~\cite{Sigrist2013}.
-In their 2013 review, Sigrist et al. write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning~\cite{Sigrist2013}.''
+Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field motor learning~\citep{sigrist_augmented_2013}.
+In their 2013 review, Sigrist et al. write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning~\citep{sigrist_augmented_2013}.''
 There are a variety of different forms of augmented feedback, that can be further classified by how, when, and by what form the feedback is provided.
 Concurrent, or real-time, feedback is displayed to the operator while the task is being executed, in contrast to terminal feedback, which is displayed after the task is complete.
 Bandwidth feedback is displayed to the operator when some parameter is inside (on-track feedback) or outside (off-track feedback) of an acceptable, predefined tolerance limit.
 
-Experimentation with bandwidth feedback traces its origins to Thorndike's 1927 line-drawing experiment~\cite{thorndike1927law}.
+Experimentation with bandwidth feedback traces its origins to Thorndike's 1927 line-drawing experiment~\citep{thorndike_law_1927}.
 In his experiment, subjects were seated and blindfolded at a table, then asked to draw lines of 3, 4, 5, or 6 inches.
 The experiment was divided into two groups of subjects, one group of subjects received no verbal feedback, while the other group was told ``right'' if they were within an 1/8th of an inch of the desired length for the 3 inch line, or 1/4 of an inch for the other three line lengths, and ``wrong'' if they were outside this bandwidth.
 Subjects that received the verbal bandwidth feedback improved from an initial median ``right'' percentage of 13\% to 54\% after several training sessions.
 The feedback was then removed after these training trials, during which time subjects dropped to a median percentage of 26\%.
-This is consistent with the guidance hypothesis (which was not formalized for another fifty years after this experiment was concluded), which states that consistent feedback during the acquisition phase of learning leads to a dependency on the feedback~\cite{salmoni1984knowledge}.
+This is consistent with the guidance hypothesis (which was not formalized for another fifty years after this experiment was concluded), which states that consistent feedback during the acquisition phase of learning leads to a dependency on the feedback~\citep{salmoni_knowledge_1984}.
 Subjects became dependent on the verbal feedback (extrinsic feedback) rather than their visual or proprioceptive sense (intrinsic feedback) to such an extent that they could no longer perform with the verbal feedback removed.
 
-Payne and Hauty performed one of the first concurrent bandwidth feedback studies in 1955~\cite{payne1955effect}.
+Payne and Hauty performed one of the first concurrent bandwidth feedback studies in 1955~\citep{payne_effect_1955}.
 In their study, subjects completed a multidimensional pursuit test, which required them to scan four simulated aircraft instruments and counter their drift by adjusting simulated aircraft controls.
 Subjects were placed into one of three feedback groups: a control level, where no feedback was provided, a second level, which included a single peripheral visual signal when a deviation in one of the displays occurred, but did not specify which instrument, and a third level, which provided individual indicators for each of the four instruments, and noted the locus of the deviation.
 They found a very significant effect between the different feedback groups, with the control group performing the worst, the second level performing better, and the third level performing better still.
 Subjects completed the test every hour for a four hour period.
 Performance dropped across all three groups as time elapsed and subjects fatigued, but the performance of the subjects in level three was superior at the end of this period compared to the subjects in the control group at the beginning of the experiment.
-They concluded by stating that ``the increment is a positive function of the specificity of the information supplied, it can be ascribed largely to the directive properties of the cues, i.e., the cues impose a more efficient temporal and spatial organization upon [the subject's] scanning behavior~\cite{payne1955effect}.''
+They concluded by stating that ``the increment is a positive function of the specificity of the information supplied, it can be ascribed largely to the directive properties of the cues, i.e., the cues impose a more efficient temporal and spatial organization upon [the subject's] scanning behavior~\citep{payne_effect_1955}.''
 
-Gordon and Gottlieb performed a rotary pursuit study investigating the effects on on-track and off-track concurrent bandwidth feedback in 1967~\cite{Gordon1967}.
+Gordon and Gottlieb performed a rotary pursuit study investigating the effects on on-track and off-track concurrent bandwidth feedback in 1967~\citep{gordon_effect_1967}.
 Subjects in their study were placed into one of three groups: a control, on-track feedback, and off-track feedback.
 The subjects in the bandwidth feedback groups had to track a 0.75 inch by 0.75 inch target with 0.187 inch rigid stylus tip.
 For subjects in the on-track feedback group, a light bulb was illuminated when they were on target, and the light bulb was illuminated for subjects in the off-track group when they were not on the target.
 While both the on-track and off-track groups performed better than the control group, the off-target group performance was slightly superior.
-This finding was consistent with the results Williams and Briggs found in a similar task~\cite{williams1962target}.
+This finding was consistent with the results Williams and Briggs found in a similar task~\citep{williams_-target_1962}.
 Additionally, subjects in the feedback groups completed several trials at the end of the experiment without feedback and did not experience the loss of performance which is often seen due to the guidance hypothesis.
 This indicates that subjects were able to use the feedback to better learn the task and were not completely dependent on the feedback.
 Subjects used their own intrinsic feedback to learn the task, and were able to take advantage of the concurrent bandwidth feedback to better learn and perform the task without becoming dependent on the external feedback.
 
 Recent work in the field has taken advantage of modern computing and visualization technology to produce higher fidelity simulations.
-In 2011, de Groot et al. investigated the effects of concurrent bandwidth feedback on learning a lane-keeping task in a driving simulator~\cite{DeGroot2011}.
-Similar to Gordon and Gottlieb, they investigated the effects of on-track and off-track feedback compared to a control group~\cite{Gordon1967}.
-Instead of using a visual indicator, however, de Groot et al. used haptic feedback in the form of a vibrating chair for their feedback groups~\cite{DeGroot2011}.
-They found that on-target and off-target groups had better lane-keeping performance than the control group, and that, similar to Gordon and Gottlieb and Williams and Brigg, the off-target group performed best~\cite{Gordon1967,williams1962target}.
+In 2011, de Groot et al. investigated the effects of concurrent bandwidth feedback on learning a lane-keeping task in a driving simulator~\citep{de_groot_effect_2011}.
+Similar to Gordon and Gottlieb, they investigated the effects of on-track and off-track feedback compared to a control group~\citep{gordon_effect_1967}.
+Instead of using a visual indicator, however, de Groot et al. used haptic feedback in the form of a vibrating chair for their feedback groups~\citep{de_groot_effect_2011}.
+They found that on-target and off-target groups had better lane-keeping performance than the control group, and that, similar to Gordon and Gottlieb and Williams and Brigg, the off-target group performed best~\citep{gordon_effect_1967,williams_-target_1962}.
 Retention trials, however, showed that a majority of this performance improvement was lost during when the feedback was removed, which was in accordance with the guidance hypothesis.
-The off-target group, though, did still retain some minor performance improvement, which the authors partially attribute to the onset advantage~\cite{fischer2008differential}.
-The onset advantage ``suggests that the sudden onset of a stimulus is a more powerful perceptual event than a stimulus offset, facilitating low-level perceptual processing and resulting in faster reaction times~\cite{DeGroot2011}.''
+The off-target group, though, did still retain some minor performance improvement, which the authors partially attribute to the onset advantage~\citep{fischer_differential_2008}.
+The onset advantage ``suggests that the sudden onset of a stimulus is a more powerful perceptual event than a stimulus offset, facilitating low-level perceptual processing and resulting in faster reaction times~\citep{de_groot_effect_2011}.''
 This effect could explain a repeated finding that off-track feedback is superior to on-track feedback, even if the effect is, in general, small.
 de Groot et al. also measured response time to a secondary task as an estimate of workload, but found no differences across groups.
 
@@ -119,13 +121,13 @@ de Groot et al. also measured response time to a secondary task as an estimate o
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/SAFER_DangerChris.jpg}
-        \caption{A subject from the Simplified Aid for EVA Rescue (SAFER) experiment seated in the fixed-base simulator~\cite{Karasinski2016Masters}.}
+        \caption{A subject from the Simplified Aid for EVA Rescue (SAFER) experiment seated in the fixed-base simulator~\citep{karasinski_real-time_2016}.}
         \label{figure:safersim}
     \end{center}
 \end{figure}
 
-Our recent work includes investigations into concurrent bandwidth feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\cite{Karasinski2016Masters, Karasinski2017, Karasinski2016}.
-SAFER is a small propulsive jet pack worn during spacewalks for self-rescue~\cite{Vassigh1998}.
+Our recent work includes investigations into concurrent bandwidth feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\citep{karasinski_real-time_2016, karasinski_real-time_2017, karasinski_development_2016}.
+SAFER is a small propulsive jet pack worn during spacewalks for self-rescue~\citep{Vassigh1998}.
 Subjects were tasked with flying a SAFER simulation to perform an inspection of the International Space Station's (ISS) solar arrays.
 Subjects were initially placed 40 feet away from the solar array and were asked to close to 30 feet and hold this distance for the remainder of the task.
 They could gauge their distance from the solar array using the indicator on the guidance display and the out-the-window display.
@@ -146,7 +148,7 @@ The secondary display located directly below the primary display portrayed infor
             \caption{Mean subjective workload rating, by group.}
             \label{figure:saferworkload}
         \end{subfigure}
-        \caption{Subjects with concurrent bandwidth feedback (CBF) performed the best (a) and reported the lowest workload (b). Errors are the standard error of the mean~\cite{Karasinski2016Masters}.}
+        \caption{Subjects with concurrent bandwidth feedback (CBF) performed the best (a) and reported the lowest workload (b). Errors are the standard error of the mean~\citep{karasinski_real-time_2016}.}
     \end{center}
 \end{figure}
 
@@ -161,25 +163,25 @@ The concurrent bandwidth feedback also had the added benefit of significantly re
 Subjects with the CBF performed better on their first trial than subjects in the control group did on their last, which was after approximately two hours on the task.
 
 \subsubsection{Stereoscopic Displays}
-Stereoscopic displays are systems ``in which two slightly different views of a scene are provided to a viewer, one image for each eye... allow[ing] the viewer's binocular visual system to extract depth information in a scene using this disparate information''~\cite{McIntire2014}.
+Stereoscopic displays are systems ``in which two slightly different views of a scene are provided to a viewer, one image for each eye... allow[ing] the viewer's binocular visual system to extract depth information in a scene using this disparate information''~\citep{mcintire_stereoscopic_2014}.
 Without the aid of the binocular depth cue presented by stereoscopic displays, viewers are instead entirely reliant on monocular clues such relative sizing, occlusion, and motion.
-One of the primary motivation for stereoscopic displays is that ``[t]he visual scene of a 3D world is a more `natural,' `ecological,' or `compatible' representation than that provided by 2D displays''~\cite{Wickens1990}.
+One of the primary motivation for stereoscopic displays is that ``[t]he visual scene of a 3D world is a more `natural,' `ecological,' or `compatible' representation than that provided by 2D displays''~\citep{wickens_three-dimensional_1990}.
 As a result of this motivation, the effects of stereoscopic displays on human performance have been extensively studied in the literature.
-Several authors have attempted to classify which types of tasks may stand to benefit~\cite{McIntire2014, Wickens1990, Wickens1989, Naikar1998, Dixon2009}.
-A recent review of 184 papers, for example, suggests that 60\% of studies showed some benefit of 3D stereo displays, 15\% of tasks showed unclear or mixed benefits, and 25\% of studies showed no clear benefits~\cite{McIntire2014}.
+Several authors have attempted to classify which types of tasks may stand to benefit~\citep{mcintire_stereoscopic_2014, wickens_three-dimensional_1990, wickens_three-dimensional_1989, naikar_perspective_1998, dixon_human_2009}.
+A recent review of 184 papers, for example, suggests that 60\% of studies showed some benefit of 3D stereo displays, 15\% of tasks showed unclear or mixed benefits, and 25\% of studies showed no clear benefits~\citep{mcintire_stereoscopic_2014}.
 In their review, tasks involving finding/identifying/classifying objects and tasks involving real/virtual spatial manipulations of objects benefited the most, while learning/training/planning tasks were the least likely to show a benefit.
 
-Kim et al. also performed a quantitative evaluation of perspective and stereoscopic displays in a three-axis manual tracking task~\cite{Kim1987}.
+Kim et al. also performed a quantitative evaluation of perspective and stereoscopic displays in a three-axis manual tracking task~\citep{kim_quantitative_1987}.
 They investigated the differences between perspective and stereoscopic displays, the elevation angle, azimuth angle, and the effects of two visual enhancements: a grid and a reference line.
 They found very strong relationships between elevation and azimuth angles and tracking performance, with the best performance occurring at an elevation angle of 45 degrees and an azimuth angle of 0 degrees.
 Tracking performance decreased rapidly as the azimuth angle varied, and decreased less rapidly as the elevation angle varied.
 In general, they found that the stereoscopic display allowed for better tracking performance, though the inclusion of the reference line visual enhancement greatly decreased the benefit over the perspective display.
 Using only two subjects, they provided some insight into intrasubject and intersubject variability.
 In several instances, intrasubject variability showed 50\% changes within the same experimental condition, while intersubject variability also appeared quite large in some conditions.
-Kim et al. repeated the evaluation of these parameters on a telerobotics pick-and-place study~\cite{WonKim1987}.
+Kim et al. repeated the evaluation of these parameters on a telerobotics pick-and-place study~\citep{kim_visual_1987}.
 They found similar results in this second study, suggesting that their results could be generalized and that three-axis tracking performance can be correlated with pick-and-place completion time.
 
-Smallman at al. similarly investigated the effect of visual enhancements and 2D vs 3D displays for the development of a naval air warfare console~\cite{Smallman2000}.
+Smallman at al. similarly investigated the effect of visual enhancements and 2D vs 3D displays for the development of a naval air warfare console~\citep{smallman_track_2000}.
 Participants viewed naval and aircraft tracks in either a conventional 2D top-down display or a 3D display, and then attempted to reconstruct track positions.
 They investigated the effectiveness of drop-lines and drop-shadows, and found that they significantly improved subjects ability to localize aircraft compared to when the enhancements were not present.
 Furthermore, in the absence of either visual enhancement, subjects performed better with the 2D display than the 3D display.
@@ -187,12 +189,12 @@ Similar to Kim et al., they ultimately recommended that 3D stereoscopic displays
 
 \subsubsection{Workload Measurement}
 Improving performance, through some kind of feedback or other technique, often comes at the cost of increased workload, which can lead to a loss of the ability to maintain performance.
-Workload was defined by Hart and Staveland as ``the perceived relationship between the amount of mental processing capability or resources and the amount required by the task''~\cite{Hart1988}.
+Workload was defined by Hart and Staveland as ``the perceived relationship between the amount of mental processing capability or resources and the amount required by the task''~\citep{hart_development_1988}.
 Having a low workload indicates that it would be easy to complete additional tasks, while having a high workload suggests that it would be difficult.
 
 The NASA Task Load Index (NASA-TLX) is one of the most well known and commonly used subjective workload measures.
-The NASA-TLX has been in use for thirty years, and has been used and validated over a large variety of tasks~\cite{Hart2006}.
-The NASA-TLX is a multidimensional rating scale which uses the magnitude and ranking of six subscales to produce an overall estimate of subjective workload~\cite{Hart1988}.
+The NASA-TLX has been in use for thirty years, and has been used and validated over a large variety of tasks~\citep{hart_nasa-task_2006}.
+The NASA-TLX is a multidimensional rating scale which uses the magnitude and ranking of six subscales to produce an overall estimate of subjective workload~\citep{hart_development_1988}.
 The six subscales are: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration.
 Each of these scales is rated on a 0 (Very Low) to 100 (Very High) scale, with the exception of Performance, which is rated from 0 (Perfect) to 100 (Failure).
 After marking a value for each of these subscales, subjects then make fifteen pairwise weightings, allowing them to rate each pair of subscales based on its perceived contribution to their overall workload.
@@ -200,13 +202,13 @@ A final, overall workload score is computed by multiplying each subscale's score
 As certain subscales may be more or less important than others, depending on the task being evaluated, some researchers can drop subscales or simply not compute the overall score.
 
 In addition to subjective measures of workload, there are a variety of techniques which aim to estimate objective workload.
-One of the most common objective measurement techniques is the secondary task, which requires subjects to complete the primary task, then use any spare workload to respond to an additional task~\cite{gawron2008human}.
-Secondary tasks can provide a measure more sensitive to differences in workload and performance than a single task alone and allow for a common measure between experimental conditions~\cite{slocum1971meaningful}.
-Care must be taken, however, to ensure that the secondary task does not intrude upon primary task performance~\cite{williges1979behavioral}.
+One of the most common objective measurement techniques is the secondary task, which requires subjects to complete the primary task, then use any spare workload to respond to an additional task~\citep{gawron_human_2008}.
+Secondary tasks can provide a measure more sensitive to differences in workload and performance than a single task alone and allow for a common measure between experimental conditions~\citep{slocum1971meaningful}.
+Care must be taken, however, to ensure that the secondary task does not intrude upon primary task performance~\citep{williges_behavioral_1979}.
 In our previous studies, we have used a multiple choice reaction time task as an objective workload measurement.
-In this secondary task, subjects are presented with several different stimuli, each of which requires a different response~\cite{lysaght1989operator}.
+In this secondary task, subjects are presented with several different stimuli, each of which requires a different response~\citep{lysaght_operator_1989}.
 A subject's objective workload can then be inferred by either the percentage of secondary tasks which were correctly responded to within a given time, the number of secondary tasks which were correctly responded to in a trial, or both.
-We have previously found this type of task to be correlated with subjective workload scales in the aforementioned SAFER task~\cite{Karasinski2017}.
+We have previously found this type of task to be correlated with subjective workload scales in the aforementioned SAFER task~\citep{karasinski_real-time_2017}.
 
 \subsubsection{Summary}
 Concurrent bandwidth feedback has been used in a large variety of motor control tasks, and has generally been found to improve performance.
@@ -358,7 +360,7 @@ The disturbing force, as a function of time, $d(t)$, was
 d(t) = \sum_{i=1}^{13} A_i \sin \left( w_i t + \phi_i \right)
 \label{eq:disturbance}
 \end{align}
-Each sine wave amplitude, frequency, and phase offset was borrowed from a similar experiment~\cite{hess1984effects}.
+Each sine wave amplitude, frequency, and phase offset was borrowed from a similar experiment~\citep{hess_effects_1984}.
 This disturbance was the same for all subjects and trials, though the subjects were naive to this.
 The $x$, $y$, and $z$ axes all experienced the same disturbance force generating function, but the $y$ axis was temporally offset by 60 seconds and the $z$ axis was offset by 120 seconds.
 This allowed for a very similar generation of disturbance forces for each axis.
@@ -448,7 +450,7 @@ In general, there were no significant effects found for workload measurements.
 To summarize these results, there were significant effects found in the $z$ axis RMSE for design, with subjects generally performing the best using the rotated design, followed by the CBF design, and performing worst with the baseline design.
 There were significant effects found for the factors of device and starting design, though these must be interpreted carefully.
 Subjects who started with concurrent bandwidth feedback performed better than subjects who did not.
-We believe that this result reinforces that found in our prior SAFER experiment, where subjects who were exposed to the CBF early on learned the task better than those who were not exposed~\cite{Karasinski2017,Karasinski2016,Karasinski2016Masters}.
+We believe that this result reinforces that found in our prior SAFER experiment, where subjects who were exposed to the CBF early on learned the task better than those who were not exposed~\citep{karasinski_real-time_2017,karasinski_development_2016,karasinski_real-time_2016}.
 An interesting effect of this exposure is that, after learning the task with CBF, subjects continued on to perform significantly better in the baseline condition than those subjects that did not start in the CBF design.
 
 Subjects who started in the CBF design and who were wearing the HoloLens appear to have used the CBF to better learn the depth cue presented in the stereoscopic display.
