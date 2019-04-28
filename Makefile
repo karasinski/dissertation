@@ -2,7 +2,7 @@
 
 all: thesis draft count
 
-CHAPTERS = introduction.tex 3dar.tex conclusion.tex appendix.tex
+CHAPTERS = introduction.tex background.tex 3dar.tex conclusion.tex appendix.tex
 CHAPTERS := $(addprefix chapters/, $(CHAPTERS))
 TABLES = $(shell find tables -type f)
 FIGURES = $(shell find figures -type f)
