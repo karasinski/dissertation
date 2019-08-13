@@ -1,0 +1,118 @@
+\documentclass[tikz, convert=false, border=10pt]{standalone}
+
+\usepackage[utf8]{inputenx}%  http://ctan.org/pkg/inputenx
+% Euler for math | Palatino for rm | Helvetica for ss | Courier for tt
+% \renewcommand{\rmdefault}{ppl}% rm
+% \linespread{1.05}% Palatino needs more leading
+\usepackage[scaled]{helvet}% ss //  http://ctan.org/pkg/helvet
+% \usepackage{courier}% tt // http://ctan.org/pkg/courier
+% \usepackage{eulervm}  %  http://ctan.org/pkg/eulervm
+% a better implementation of the euler package (not in gwTeX)
+% \normalfont%
+\usepackage[T1]{fontenc}%  http://ctan.org/pkg/fontenc
+% \usepackage{textcomp}%  http://ctan.org/pkg/textcomp
+
+\usetikzlibrary{shapes, arrows.meta, positioning, calc}
+
+\begin{document}
+\tikzset{block/.style = {draw, rectangle, thick, inner sep=0pt,
+                         minimum height = 3em, minimum width = 3em},
+         input/.style = {coordinate},
+         output/.style = {coordinate},
+         sum/.style={draw, thick, circle, path picture={%
+         % https://tex.stackexchange.com/questions/47263/tikz-node-with-multiple-shapes
+         \draw[thick, black]
+            (path picture bounding box.north west) -- (path picture bounding box.south east)
+            (path picture bounding box.south west) -- (path picture bounding box.north east);
+         }},
+         line/.style ={draw, very thick,-},
+}
+
+\begin{tikzpicture}[auto, node distance = 1.5em]
+  \node[input, name = input] {};
+  \node[sum, right = of input] (sum_1) {};
+  \node[block, above right = 2em and 3em of sum_1] (s1) {$s$};
+  \node[sum, right  = of s1] (sum_2) {};
+  \node[block, right = of sum_2] (K_dote) {$K_{\dot{e}}$};
+
+  \node[block, below = 4em of sum_2] (K_e) {$K_e$};
+  \node[block, below = 1em of K_e] (epsilon_s) {$\frac{\epsilon}{s}$};
+  \node[sum, below right = 0.25em and 2.25em of K_e] (sum_3) {};
+
+  \node[block, below right = 0.5em and 4em of K_dote] (delay) {$e^{-{\tau_{0}} s}$};
+
+  % Define the first switch, this blows
+  \node[coordinate, below right = 1em and 2em of K_dote] (upper_switch_one) {};
+  \node at (upper_switch_one)[circle,fill,inner sep=1pt]{};
+  \node[coordinate, below = 2em of upper_switch_one] (lower_switch_one) {};
+  \node at (lower_switch_one)[circle,fill,inner sep=1pt]{};
+  \node[coordinate, below right = 1em and 1em of upper_switch_one] (switch_one) {};
+
+  \draw[-latex] ($(lower_switch_one)+(-.5em, 0)$) to [bend left]($(upper_switch_one)+(-.5em, 0)$);
+  \draw[thick, -] (sum_3) -| (lower_switch_one);
+  \draw[thick, -] (K_dote) -| (upper_switch_one);
+  \draw[thick, -] (switch_one) -- (delay);
+  \draw[thick, -, shorten >=-0.5em, cap=round] (switch_one) -- (lower_switch_one);
+  % End the switch
+
+  \node[sum, right = of delay] (sum_4) {};
+  \node[block, right = of sum_4] (Y_NM) {$Y_{NM}$};
+  \node[block, right = 3em of Y_NM] (Y_FS) {$Y_{FS}$};
+  \node[coordinate, right = 1.5em of Y_NM] (switch_three_left_connector) {};
+
+  % Define the third switch, this blows too
+  \node[coordinate, right = 3em of Y_FS] (lower_switch_three) {};
+  \node[coordinate, right = 1.5em of Y_FS] (switch_three_right_connector) {};
+  \node[coordinate, above = 2em of lower_switch_three] (upper_switch_three) {};
+  \node[coordinate, right = 1em of lower_switch_three] (switch_three) {};
+  \draw[-latex] ($(lower_switch_three)+(.5em, 0)$) to [bend left]($(upper_switch_three)+(.5em, 0)$);
+
+  \draw[thick, -] (Y_FS) -- (lower_switch_three);
+  \node at (upper_switch_three)[circle,fill,inner sep=1pt]{};
+  \node at (lower_switch_three)[circle,fill,inner sep=1pt]{};
+
+  \node[block, right = 1em of switch_three] (Y_c) {$Y_{c}$};
+  \draw[thick, -] (switch_three) -- (Y_c);
+
+  \draw[thick, -, shorten <=-0.5em, cap=round] ($(lower_switch_three)+(0, .5em)$) -- (switch_three);
+  \draw[thick, -] (switch_three_left_connector) -- ++(0, 2em) |- (upper_switch_three);
+  % End the switch
+
+  \node[output, right = 4em of Y_c] (M) {};
+
+  \node[block, below = of Y_FS] (Y_PF) {$Y_{PF}$};
+  \node[block, below = of Y_PF] (Y_s2K) {$s^2 K_{\ddot{m}}$};
+  \draw[thick, -latex] (switch_three_right_connector) |- (Y_PF);
+
+  \node[block, below = of Y_s2K] (Y_sK) {$s K_{\dot{m}}$};
+
+  \node[coordinate, below right = 1em and 1.5em of Y_s2K] (switch_four_right_split) {};
+  \node[coordinate, right = 8.6em of switch_four_right_split] (switch_four_right_connect) {};
+  \draw[thick, -latex] (switch_four_right_split) |- (Y_s2K);
+  \draw[thick, -latex] (switch_four_right_split) |- (Y_sK);
+  \draw[thick, -] (switch_four_right_split) -- (switch_four_right_connect);
+
+
+  \draw[thick, -latex] (input) -- node[] {$C$} (sum_1);
+
+  \draw[thick, -latex] (sum_1) -- ++(2em,0) |- (s1);
+  \draw[thick, -latex] (s1) -- node[] {} (sum_2);
+  \draw[thick, -latex] (sum_2) -- (K_dote);
+
+  \draw[thick, -latex] (sum_1) -- ++(2em,0) |- (K_e);
+  \draw[thick, -latex] (K_e) -| (sum_3);
+  \draw[thick, -latex] (sum_1) -- ++(2em,0) |- (epsilon_s);
+  \draw[thick, -latex] (epsilon_s) -| (sum_3);
+
+  \coordinate[right = 2em of Y_c, name = outer_loop_empty] {};
+  \coordinate[below = 20em of outer_loop_empty, name = outer_loop_empty_lower] {};
+
+  \draw [thick, -latex] (delay) -- (sum_4);
+  \draw [thick, -latex] (sum_4) -- (Y_NM);
+  \draw [thick, -latex] (Y_NM) -- (Y_FS);
+  \draw [thick, -latex] (Y_c) -- (M);
+
+  \draw[thick] (outer_loop_empty) -| (outer_loop_empty_lower);
+  \draw[thick, -latex] (outer_loop_empty_lower) -| (sum_1);
+\end{tikzpicture}
+\end{document}
