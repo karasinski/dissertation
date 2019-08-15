@@ -12,8 +12,11 @@
 \usepackage[T1]{fontenc}%  http://ctan.org/pkg/fontenc
 % \usepackage{textcomp}%  http://ctan.org/pkg/textcomp
 
-\usetikzlibrary{shapes, arrows.meta, positioning, calc}
+\usetikzlibrary{shapes, arrows.meta, positioning, calc, bending}
 \usepackage{circuitikz}
+
+\def\Plus{\texttt{+}}
+\def\Minus{\texttt{-}}
 
 \begin{document}
 \tikzset{block/.style = {draw, rectangle, thick, inner sep=0pt,
@@ -37,7 +40,7 @@
   \node[block, right = of sum_2] (K_dote) {$K_{\dot{e}}$};
 
   \node[block, below = 4em of sum_2] (K_e) {$K_e$};
-  \node[block, below = 1em of K_e] (epsilon_s) {$\frac{\epsilon}{s}$};
+  \node[block, below = 1em of K_e] (epsilon_s) {\Large $\frac{\epsilon}{s}$};
   \node[sum, below right = 0.25em and 2.25em of K_e] (sum_3) {};
 
   \node[block, below right = 0.5em and 4em of K_dote] (delay) {$e^{-{\tau_{0}} s}$};
@@ -69,19 +72,19 @@
   \draw[latex-latex] ($(lower_switch_three)+(.75em, -.5em)$) to [bend left]($(upper_switch_three)+(.75em, -.5em)$);
 
   \draw[thick, -] (Y_FS) -- (lower_switch_three);
-  \node at (upper_switch_three)[circle,fill,inner sep=1pt]{};
+  \node at ($(upper_switch_three)+(0, -1em)$)[circle,fill,inner sep=1pt]{};
   \node at (lower_switch_three)[circle,fill,inner sep=1pt]{};
 
   \node[block, right = 1.5em of switch_three] (Y_c) {$Y_{c}$};
   \draw[thick, -] (switch_three) -- (Y_c);
 
   \draw[thick, -, shorten <=-0.5em, cap=round] ($(lower_switch_three)+(0, .5em)$) -- (switch_three);
-  \draw[thick, -] (switch_three_left_connector) -- ++(0, 2em) |- (upper_switch_three);
+  \draw[thick, -] (switch_three_left_connector) -- ++(0, 2em) |- (upper_switch_three) -| ++(0, -1em);
   % End the switch
 
   \node[output, right = 4em of Y_c] (M) {};
 
-  \node[block, below = of Y_FS] (Y_PF) {$Y_{PF}$};
+  \node[block, below = 4em of Y_FS] (Y_PF) {$Y_{PF}$};
   \node[block, below = of Y_PF] (Y_s2K) {$s^2 K_{\ddot{m}}$};
   \draw[thick, -latex] (switch_three_right_connector) |- (Y_PF);
 
@@ -89,14 +92,14 @@
   \node[coordinate, left = 2em of Y_PF] (switch_two) {};
   \node[coordinate, left = 2em of switch_two] (lower_switch_two) {};
   \node at (lower_switch_two)[circle,fill,inner sep=1pt]{};
-  \node[coordinate, above = 2em of lower_switch_two] (upper_switch_two) {};
+  \node[coordinate, above = 1em of lower_switch_two] (upper_switch_two) {};
   \node at (upper_switch_two)[circle,fill,inner sep=1pt]{};
   \draw[thick, -] (Y_PF) -- (switch_two);
 
   \draw[thick, -, shorten <=-0.5em, cap=round] ($(lower_switch_two)+(0, .5em)$) -- (switch_two);
-  \draw[latex-latex] ($(lower_switch_two)+(.75em, -.5em)$) to [bend left]($(upper_switch_two)+(.75em, -.5em)$);
+  \draw[latex-latex] ($(lower_switch_two)+(.75em, -.5em)$) to [bend left]($(upper_switch_two)+(.75em, .5em)$);
   \draw[thick, -latex] (lower_switch_two) -- ++(-2em, 0) -- (sum_4);
-  \draw[cap=round] (upper_switch_two) -- ++(0, 0.5em) -- ++(2em, 0) node[ground]{}; 
+  \draw[cap=round] (upper_switch_two) -- ++(0, 1.5em) -- ++(2em, 0) node[ground]{};
   % End the switch
 
   \node[block, below = of Y_s2K] (Y_sK) {$s K_{\dot{m}}$};
@@ -108,7 +111,6 @@
   \draw[thick, -] (switch_four_right_split) -- (switch_four_right_connect);
 
   % Define the fourth switch, this blows too
-
   \node[coordinate, below left = -.25em and 4em of Y_s2K] (upper_switch_four) {};
   \node at (upper_switch_four)[circle,fill,inner sep=1pt]{};
   \draw[thick, -] (Y_s2K) -| (upper_switch_four);
@@ -119,14 +121,13 @@
 
   \node[coordinate, left = 7em of switch_four_right_split] (middle_switch_four) {};
   \node at (middle_switch_four)[circle,fill,inner sep=1pt]{};
-  \draw[cap=round] (middle_switch_four) -- ++(1em, 0) node[ground]{}; 
+  \draw[cap=round] (middle_switch_four) -- ++(1em, 0) node[ground]{};
 
   \node[coordinate, left = 3em of middle_switch_four] (switch_four) {};
   \draw[latex-latex] ($(lower_switch_four)+(.5em, 0)$) to [bend right]($(upper_switch_four)+(.5em, 0)$);
   \draw[thick, -, shorten <=-0.25em, cap=round] ($(middle_switch_four)+(0, .25em)$) -- (switch_four);
 
   \draw[thick, -latex] (switch_four) -| (sum_4);
-
   % End the switch
 
   \draw[thick, -latex] (input) -- node[] {} (sum_1);
@@ -141,7 +142,7 @@
   \draw[thick, -latex] (epsilon_s) -| (sum_3);
 
   \coordinate[right = 2em of Y_c, name = outer_loop_empty] {};
-  \coordinate[below = 16em of outer_loop_empty, name = outer_loop_empty_lower] {};
+  \coordinate[below = 19em of outer_loop_empty, name = outer_loop_empty_lower] {};
 
   \draw [thick, -latex] (delay) -- (sum_4);
   \draw [thick, -latex] (sum_4) -- (Y_NM);
@@ -160,16 +161,44 @@
   \node[] at (49em,0.25em) {$M$};
 
   \node[] at (27em,-2.5em) {$U_M$};
-  \node[] at (25.5em,-8em) {$U_s$};
+  \node[] at (25.5em,-10em) {$U_s$};
 
   \node[coordinate, below = of sum_2] (noise) {};
   \draw[thick, -latex] (noise) -- node[] {} (sum_2);
   \node[] at ($(noise)+(0, -.5em)$) {$noise$};
 
   \draw (18.85em,-2em) circle [radius=0.3] node {$S_1$};
-  \draw (28em,-6em) circle [radius=0.3] node {$S_2$};
-  \draw (39em,-1.5em) circle [radius=0.3] node {$S_3$};
+  \draw (27.5em,-8em) circle [radius=0.3] node {$S_2$};
+  \draw (38.5em,-1em) circle [radius=0.3] node {$S_3$};
   \draw (27.5em,-12.5em) circle [radius=0.3] node {$S_4$};
+
+  \node[text width=2em] at (21em,-10em) {\itshape{vestibular\\feedback}};
+  \node[text width=3em] at (39.25em,-6.5em) {\itshape{proprioceptive\\feedback}};
+  \node[] at (20em,-18em) {\itshape{visual feedback}};
+
+  \draw [thick, dashed] (4em, 6em) -- (4em, -19.5em);
+  \draw [thick, dashed] (4em, -19.5em) -- (42em, -19.5em);
+  \draw [thick, dashed] (42em, -19.5em) -- (42em, -7em);
+  \draw [thick, dashed] (42em, -5em) -- (42em, -3em);
+  \draw [thick, dashed] (42em, -3em) -- (30.5em, -3em);
+  \draw [thick, dashed] (30.5em, -3em) -- (30.5em, 0em);
+  \draw [thick, dashed] (30.5em, 2em) -- (30.5em, 6em);
+  \draw [thick, dashed] (30.5em, 6em) -- (4em, 6em);
+
+  \node[] at (18.85em, 7em) {\itshape{PILOT}};
+  \node[] at ($(Y_c)+(0, 2.5em)$) {\itshape{VEHICLE}};
+
+  \node[] at (1em,1em) {\Plus};
+  \node[] at (3em,-1em) {\Minus};
+
+  \node[] at (15.5em,-3.5em) {\Plus};
+  \node[] at (15.5em,-5em) {\Plus};
+
+  \node[] at (23.5em,-0.5em) {\Plus};
+  \node[] at (25.75em,-0.5em) {\Minus};
+  \node[] at (25em,-2em) {\Minus};
+
+  \draw[{Stealth[bend]}-{Stealth[bend]}] (18.85em,-2.85em) to[out=-90,in=180] (26.65em,-8em);
 
 \end{tikzpicture}
 \end{document}
