@@ -13,6 +13,7 @@
 % \usepackage{textcomp}%  http://ctan.org/pkg/textcomp
 
 \usetikzlibrary{shapes, arrows.meta, positioning, calc}
+\usepackage{circuitikz}
 
 \begin{document}
 \tikzset{block/.style = {draw, rectangle, thick, inner sep=0pt,
@@ -48,7 +49,7 @@
   \node at (lower_switch_one)[circle,fill,inner sep=1pt]{};
   \node[coordinate, below right = 1em and 1em of upper_switch_one] (switch_one) {};
 
-  \draw[-latex] ($(lower_switch_one)+(-.5em, 0)$) to [bend left]($(upper_switch_one)+(-.5em, 0)$);
+  \draw[latex-latex] ($(lower_switch_one)+(.75em, -.5em)$) to [bend left]($(upper_switch_one)+(.75em, -.5em)$);
   \draw[thick, -] (sum_3) -| (lower_switch_one);
   \draw[thick, -] (K_dote) -| (upper_switch_one);
   \draw[thick, -] (switch_one) -- (delay);
@@ -65,13 +66,13 @@
   \node[coordinate, right = 1.5em of Y_FS] (switch_three_right_connector) {};
   \node[coordinate, above = 2em of lower_switch_three] (upper_switch_three) {};
   \node[coordinate, right = 1em of lower_switch_three] (switch_three) {};
-  \draw[-latex] ($(lower_switch_three)+(.5em, 0)$) to [bend left]($(upper_switch_three)+(.5em, 0)$);
+  \draw[latex-latex] ($(lower_switch_three)+(.75em, -.5em)$) to [bend left]($(upper_switch_three)+(.75em, -.5em)$);
 
   \draw[thick, -] (Y_FS) -- (lower_switch_three);
   \node at (upper_switch_three)[circle,fill,inner sep=1pt]{};
   \node at (lower_switch_three)[circle,fill,inner sep=1pt]{};
 
-  \node[block, right = 1em of switch_three] (Y_c) {$Y_{c}$};
+  \node[block, right = 1.5em of switch_three] (Y_c) {$Y_{c}$};
   \draw[thick, -] (switch_three) -- (Y_c);
 
   \draw[thick, -, shorten <=-0.5em, cap=round] ($(lower_switch_three)+(0, .5em)$) -- (switch_three);
@@ -84,28 +85,63 @@
   \node[block, below = of Y_PF] (Y_s2K) {$s^2 K_{\ddot{m}}$};
   \draw[thick, -latex] (switch_three_right_connector) |- (Y_PF);
 
+  % Define the second switch, this blows too
+  \node[coordinate, left = 2em of Y_PF] (switch_two) {};
+  \node[coordinate, left = 2em of switch_two] (lower_switch_two) {};
+  \node at (lower_switch_two)[circle,fill,inner sep=1pt]{};
+  \node[coordinate, above = 2em of lower_switch_two] (upper_switch_two) {};
+  \node at (upper_switch_two)[circle,fill,inner sep=1pt]{};
+  \draw[thick, -] (Y_PF) -- (switch_two);
+
+  \draw[thick, -, shorten <=-0.5em, cap=round] ($(lower_switch_two)+(0, .5em)$) -- (switch_two);
+  \draw[latex-latex] ($(lower_switch_two)+(.75em, -.5em)$) to [bend left]($(upper_switch_two)+(.75em, -.5em)$);
+  \draw[thick, -latex] (lower_switch_two) -- ++(-2em, 0) -- (sum_4);
+  \draw[cap=round] (upper_switch_two) -- ++(0, 0.5em) -- ++(2em, 0) node[ground]{}; 
+  % End the switch
+
   \node[block, below = of Y_s2K] (Y_sK) {$s K_{\dot{m}}$};
 
-  \node[coordinate, below right = 1em and 1.5em of Y_s2K] (switch_four_right_split) {};
+  \node[coordinate, below right = 0.75em and 1.5em of Y_s2K] (switch_four_right_split) {};
   \node[coordinate, right = 8.6em of switch_four_right_split] (switch_four_right_connect) {};
   \draw[thick, -latex] (switch_four_right_split) |- (Y_s2K);
   \draw[thick, -latex] (switch_four_right_split) |- (Y_sK);
   \draw[thick, -] (switch_four_right_split) -- (switch_four_right_connect);
 
+  % Define the fourth switch, this blows too
 
-  \draw[thick, -latex] (input) -- node[] {$C$} (sum_1);
+  \node[coordinate, below left = -.25em and 4em of Y_s2K] (upper_switch_four) {};
+  \node at (upper_switch_four)[circle,fill,inner sep=1pt]{};
+  \draw[thick, -] (Y_s2K) -| (upper_switch_four);
 
-  \draw[thick, -latex] (sum_1) -- ++(2em,0) |- (s1);
-  \draw[thick, -latex] (s1) -- node[] {} (sum_2);
+  \node[coordinate, above left = -.25em and 4em of Y_sK] (lower_switch_four) {};
+  \node at (lower_switch_four)[circle,fill,inner sep=1pt]{};
+  \draw[thick, -] (Y_sK) -| (lower_switch_four);
+
+  \node[coordinate, left = 7em of switch_four_right_split] (middle_switch_four) {};
+  \node at (middle_switch_four)[circle,fill,inner sep=1pt]{};
+  \draw[cap=round] (middle_switch_four) -- ++(1em, 0) node[ground]{}; 
+
+  \node[coordinate, left = 3em of middle_switch_four] (switch_four) {};
+  \draw[latex-latex] ($(lower_switch_four)+(.5em, 0)$) to [bend right]($(upper_switch_four)+(.5em, 0)$);
+  \draw[thick, -, shorten <=-0.25em, cap=round] ($(middle_switch_four)+(0, .25em)$) -- (switch_four);
+
+  \draw[thick, -latex] (switch_four) -| (sum_4);
+
+  % End the switch
+
+  \draw[thick, -latex] (input) -- node[] {} (sum_1);
+
+  \draw[thick, -latex] (sum_1) -- ++(2.5em,0) |- (s1);
+  \draw[thick, -latex] (s1) -- (sum_2);
   \draw[thick, -latex] (sum_2) -- (K_dote);
 
-  \draw[thick, -latex] (sum_1) -- ++(2em,0) |- (K_e);
+  \draw[thick, -latex] (sum_1) -- ++(2.5em,0) |- (K_e);
   \draw[thick, -latex] (K_e) -| (sum_3);
-  \draw[thick, -latex] (sum_1) -- ++(2em,0) |- (epsilon_s);
+  \draw[thick, -latex] (sum_1) -- ++(2.5em,0) |- (epsilon_s);
   \draw[thick, -latex] (epsilon_s) -| (sum_3);
 
   \coordinate[right = 2em of Y_c, name = outer_loop_empty] {};
-  \coordinate[below = 20em of outer_loop_empty, name = outer_loop_empty_lower] {};
+  \coordinate[below = 16em of outer_loop_empty, name = outer_loop_empty_lower] {};
 
   \draw [thick, -latex] (delay) -- (sum_4);
   \draw [thick, -latex] (sum_4) -- (Y_NM);
@@ -114,5 +150,26 @@
 
   \draw[thick] (outer_loop_empty) -| (outer_loop_empty_lower);
   \draw[thick, -latex] (outer_loop_empty_lower) -| (sum_1);
+
+  \node[] at (-.75em,0) {$C$};
+  \node[] at (3.25em,0.5em) {$E$};
+  \node[] at (18.85em,1.25em) {$E_c$};
+  \node[] at (23.5em,1.25em) {$E_m$};
+  \node[] at (30.5em,1.25em) {$\delta_F$};
+  \node[] at (40.5em,1.25em) {$\delta_M$};
+  \node[] at (49em,0.25em) {$M$};
+
+  \node[] at (27em,-2.5em) {$U_M$};
+  \node[] at (25.5em,-8em) {$U_s$};
+
+  \node[coordinate, below = of sum_2] (noise) {};
+  \draw[thick, -latex] (noise) -- node[] {} (sum_2);
+  \node[] at ($(noise)+(0, -.5em)$) {$noise$};
+
+  \draw (18.85em,-2em) circle [radius=0.3] node {$S_1$};
+  \draw (28em,-6em) circle [radius=0.3] node {$S_2$};
+  \draw (39em,-1.5em) circle [radius=0.3] node {$S_3$};
+  \draw (27.5em,-12.5em) circle [radius=0.3] node {$S_4$};
+
 \end{tikzpicture}
 \end{document}
