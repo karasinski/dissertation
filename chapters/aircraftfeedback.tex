@@ -3,9 +3,9 @@
 % John A. Karasinski, Stephen K. Robinson
 % Department of Mechanical and Aerospace Engineering, University of California, Davis
 
-Portions of this chapter were originally published in the conference proceedings for the Human Factors and Ergonomics Society 2019% \citep{karasinski_evaluating_2019}.
+Portions of this chapter were originally published in the conference proceedings for the Human Factors and Ergonomics Society 2019~\citep{RN42}.
 
-\section{ABSTRACT}
+\section{Abstract}
 The effects of concurrent bandwidth feedback on operator performance and workload was analyzed in training an aircraft flight control task.
 In the experiment, participants completed a simulated flight task consisting of three complexity levels using traditional flight instruments.
 Thirty participants were divided into equal sized control and feedback groups.
@@ -17,28 +17,27 @@ Statistical analyses showed that participants in the feedback group immediately 
 We found that concurrent bandwidth feedback does not reduce workload in our flight tasks, and that for the short periods tested, participants continued to perform at the same performance and workload levels when the feedback was removed.
 
 
-\section{INTRODUCTION}
-
-Augmented feedback, information that relates an individual's performance to a desired performance, has been found to generally enhance motor learning in a wide variety of manual motor control tasks (Salmoni, Schmidt, \& Walter, 1984).
+\section{Introduction}
+Augmented feedback, information that relates an individual's performance to a desired performance, has been found to generally enhance motor learning in a wide variety of manual motor control tasks~\citep{salmoni_knowledge_1984}.
 Many feedback modalities and implementations have been investigated in the literature, some of which have been found to be more effective than others.
 One of the key aspects to successfully implementing feedback is knowing when to provide feedback to the participant.
 Feedback can be provided concurrently, in real-time as the task is executed; or terminally, after the task is completed.
-Visual concurrent feedback, for example, has been shown to greatly enhance motor learning as task complexity increases, while terminal feedback is better suited for tasks with low functional complexity (Sigrist, Rauter, Riener, \& Wolf, 2013).
-As Sigrist et al. note in their review of augmented visual, auditory, haptic, and multimodal feedback, however, "[u]p to now, mostly low-dimensional, simple, and rather artificial labor tasks have been investigated even though, in real life, most motor tasks are multidimensional and complex" (Sigrist et al., 2013).
+Visual concurrent feedback, for example, has been shown to greatly enhance motor learning as task complexity increases, while terminal feedback is better suited for tasks with low functional complexity~\citep{sigrist_augmented_2013}.
+As Sigrist et al. note in their review of augmented visual, auditory, haptic, and multimodal feedback, however, "[u]p to now, mostly low-dimensional, simple, and rather artificial labor tasks have been investigated even though, in real life, most motor tasks are multidimensional and complex"~\citep{sigrist_augmented_2013}.
 Aircraft and spacecraft flight-control tasks are complex, multidimensional challenges for human manual control, and present both demanding learning requirements and high cognitive demands.
 In the pursuit of improving pilot performance during training, several researchers have investigated the effects of adding visual and/or audio feedback to flight displays.
-Bronkhorst et al. explored the use of auditory displays in a 3D flight task (Bronkhorst, Veltman, \& Van Breda, 1996).
+Bronkhorst et al. explored the use of auditory displays in a 3D flight task~\citep{doi:10.1518/001872096778940859}.
 By adding auditory displays to the existing simulation, they were able to reduce search time in an aircraft location and tracking task.
-Similarly, Tannen et al. showed that U.S. Air Force pilots could better maintain flight parameters and report reduced workload with the use of multisensory cueing (Tannen, Nelson, Bolia, Warm, \& Dember, 2004).
+Similarly, Tannen et al. showed that U.S. Air Force pilots could better maintain flight parameters and report reduced workload with the use of multisensory cueing~\citep{doi:10.1207/s15327108ijap1403}.
 Of the many studied feedback strategies, concurrent bandwidth feedback is among the most promising for complex tasks.
 Concurrent bandwidth feedback is presented in real-time, during task execution, but only when some variable deviates outside of a defined bandwidth of acceptable values.
-Researchers have used concurrent bandwidth feedback to study participants ability to learn to drive a vehicle, having found it to be effective at improving lane keeping (de Groot, de Winter, García, Mulder, \& Wieringa, 2011).
+Researchers have used concurrent bandwidth feedback to study participants ability to learn to drive a vehicle, having found it to be effective at improving lane keeping~\citep{de_groot_effect_2011}.
 
 At UC Davis, our recent experiments with concurrent bandwidth feedback in complex manual tasks have resulted in large improvements in human performance with an added benefit of reduced workload.
-Our experiment with simulated spacecraft-piloting investigated the effects of concurrent bandwidth feedback on a complex, four-degree-of-freedom manually controlled on-orbit inspection task (Karasinski, Robinson, Handley, \& Duda, 2017).
+Our experiment with simulated spacecraft-piloting investigated the effects of concurrent bandwidth feedback on a complex, four-degree-of-freedom manually controlled on-orbit inspection task~\citep{RN40}.
 We found that simple visual feedback on the controlled degrees of freedom improved initial and fully trained performance while reducing inferred and self-reported workload.
 In fact, participants in the feedback group performed as well in their first trial as participants in the control group did after two hours of training.
-Our recent work also includes an investigation into the effectiveness of concurrent bandwidth feedback for learning a 3D joystick-controlled tracking task in augmented reality (Karasinski \& Robinson, 2019).
+Our recent work also includes an investigation into the effectiveness of concurrent bandwidth feedback for learning a 3D joystick-controlled tracking task in augmented reality~\citep{karasinski_evaluating_2019}.
 This experiment investigated whether concurrent bandwidth feedback could teach participants to interpret 3D depth cues.
 Our results suggested that participants who were exposed to visual concurrent bandwidth feedback early on sustained improved performance through the duration of the experiment compared to participants that began in a baseline condition without feedback.
 Through these previous experiments, we have shown that concurrent bandwidth feedback can be effective at improving human performance for complex manual tasks.
@@ -48,16 +47,16 @@ In the research reported here, we build upon our previous work and that in the l
 In our current experiment, subjects controlled a simulated aircraft with realistic flight dynamics through a series of tasks of increasing functional complexity.
 By allowing for multiple levels of functional complexity, we can investigate what level of complexity is required to observe changes in human performance and cognitive workload.
 This experiment also investigated the effects of removing concurrent feedback after training to evaluate changes in performance and workload during participants' immediate retention.
-The retention portion of the experiment was performed to investigate whether the guidance hypothesis, which states that consistent feedback during the acquisition phase of learning leads to a dependency on the feedback (Salmoni et al., 1984).
+The retention portion of the experiment was performed to investigate whether the guidance hypothesis, which states that consistent feedback during the acquisition phase of learning leads to a dependency on the feedback~\citep{salmoni_knowledge_1984}.
 
-\section{METHOD}
-
+\section{Method}
 \subsection{Task}
-
 \subsubsection{Control Modes.} Participants were tasked with flying a simulated Boeing 747 aircraft in three control modes. In order of increasing degrees of freedom and functional complexity, these three control modes were:
-•	P — Pitch only (low complexity)
-•	PR — Pitch and Roll (moderate complexity)
-•	PRA — Pitch, Roll and Altitude (significant complexity)
+\begin{itemize}
+\item P — Pitch only (low complexity)
+\item PR — Pitch and Roll (moderate complexity)
+\item PRA — Pitch, Roll and Altitude (significant complexity)
+\end{itemize}
 Depending on the control mode, participants were required to use a joystick to null disturbances in pitch, roll, and/or to maintain a constant altitude.
 Participants were informed that all three tasks were equally important, and to try not to neglect or prioritize individual tasks.
 
@@ -68,26 +67,25 @@ This design was chosen to provide exposure to each control mode as quickly as po
 
 \subsubsection{Forcing Functions.}
 Both the pitch and roll axes were affected by disturbance signals, resulting in a disturbance-rejection task.
-The disturbance signal took the form of a quasi-random sum of sines (based on Zaal, Pool, Bruin, Mulder, \& Van Paassen, 2009).
+The disturbance signal took the form of a quasi-random sum of sines (based on~\cite{doi:10.2514/1.39953}).
 The same forcing function was used for disturbing both pitch and roll, though the roll disturbance function was temporally shifted by 85 seconds to minimize the correlation between resulting pitch and roll disturbances.
 Aircraft altitude varied as a result of pitch variation.
 The same disturbing function was used for every trial, though participants were naïve to this.
 
 \subsubsection{Secondary Task.}
 To estimate participant workload more objectively than with a questionnaire, we added a secondary task that assesses the subject's cognitive margin available for attending to non-primary task execution.
-The secondary task was displayed to the right of the flight-guidance display (see Figure 1) and consisted of a teal colored indicator which changed color to blue or green at pseudorandom times.
+The secondary task was displayed to the right of the flight-guidance display (see Figure~\ref{figure-hfes:userinterface}) and consisted of a teal colored indicator which changed color to blue or green at pseudorandom times.
 Ten 8-second windows were established in each 82-second long trial.
 The indicator would randomly change during this interval, providing participants up to 5 seconds to respond.
 The pseudorandom times and colors for the secondary task were identical for each participant.
-This secondary task has been validated in previous studies, which have shown it to correlate well with participants' subjective workload estimates (Hainley, Duda, Oman, \& Natapoff, 2013; Karasinski et al., 2017).
+This secondary task has been validated in previous studies, which have shown it to correlate well with participants' subjective workload estimates~\citep{hainley_pilot_2013}.
 
 \subsection{Simulator}
-
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image1.png}
         \caption{The user interface consisting of the attitude indicator, altimeter, and secondary task.}
-        % \label{figure:safersim}
+        \label{figure-hfes:userinterface}
     \end{center}
 \end{figure}
 
@@ -95,22 +93,21 @@ This secondary task has been validated in previous studies, which have shown it 
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image2.png}
         \caption{A participant seated in front of the simulator display, controlling the flight task with the joystick.}
-        % \label{figure:safersim}
+        \label{figure-hfes:participant}
     \end{center}
 \end{figure}
 
-Participants were seated at a fixed-base simulator for the duration of the experiment, see Figure 2.
+Participants were seated at a fixed-base simulator for the duration of the experiment, see Figure~\ref{figure-hfes:participant}.
 The simulator consisted of a 30-inch monitor and a single joystick.
 The user interface was centered in the display and presented to the user at 1000x500 pixels.
 The user interface consists of a traditional attitude indicator on the left, an altimeter in the middle, and the secondary task on the right.
-The Boeing 747 was modeled using data available in NASA CR-2144 (Heffley \& Jewell, 1972).
+The Boeing 747 was modeled using data available in NASA CR-2144~\citep{heffley1972aircraft}.
 Flight Condition 2 was chosen for this experiment, and represents slow, sea-level flight, with the landing gear retracted and with flaps extended to 20 degrees.
-Longitudinal and lateral body axis derivatives were converted to the stability axis and implemented in a state-space model (Stevens, Lewis, \& Johnson, 2015).
+Longitudinal and lateral body axis derivatives were converted to the stability axis and implemented in a state-space model~\citep{stevens2015aircraft}.
 Participants used the elevators and ailerons to control pitch and roll, respectively.
 Altitude was controlled by the subject with time-integrated pitch commands, as in a real aircraft.
 
 \subsection{Experimental Design}
-
 Participants were evenly split into two groups: a control group and a feedback group.
 Participants in the feedback group received concurrent bandwidth feedback on the first 27 trials (9 in each control mode) and then flew the last 9 trials (3 in each control mode) without feedback to test their immediate retention.
 Participants in the control group never received concurrent bandwidth feedback, nor was it mentioned to them during the study.
@@ -121,7 +118,7 @@ Acceptable bandwidths of 3 degrees for pitch and roll, and 30 feet for altitude 
 Pitch feedback occurred on the center dot.
 Roll feedback was shown on the wings and the roll indicator at the top of the attitude indicator.
 Altitude feedback was enabled on the background color of the altimeter.
-In Figure 1, all three parameters are shown inside the acceptable bandwidth, and are therefore displayed in yellow.
+In Figure~\ref{figure-hfes:userinterface}, all three parameters are shown inside the acceptable bandwidth, and are therefore displayed in yellow.
 
 Participants began the experiment by signing a consent form, filled out a survey with demographic questions, then had a brief, pre-recorded training session.
 After this training, participants immediately began the experiment and progressed through the 36 trials at their own pace.
@@ -143,75 +140,71 @@ The secondary task was activated ten times per trial.
 Participants had five seconds to correctly respond to the secondary task once it changed color.
 We recorded the rates for correct and incorrect responses, as well as lack of response.
 We used the average correct response time as objective indication of workload.
-The Modified Bedford Workload Scale is a ten-point subjective workload measurement tool (Roscoe \& Ellis, 1990).
+The Modified Bedford Workload Scale is a ten-point subjective workload measurement tool~\citep{roscoe_subjective_1990}.
 Participants were asked to follow the scale and record their workload after each trial, allowing us to observe changes in workload during training.
 
 \subsection{Hypotheses}
-
 We had three major hypotheses for this experiment:
 H1.	Participants in the feedback group will immediately outperform those in the control group. We expect this effect to be most pronounced for the most complex mode and to see little to no improvement for simple trials.
 H2.	Participants in the feedback group will have lower workload than participants in the control at the end of the experiment. We expect this effect to be most pronounced for the most complex mode and to see little to no improvement for simple trials.
 H3.	Participants in the feedback group will not suffer from the guidance hypothesis and will retain their performance and workload levels when the feedback is removed in the immediate retention trials.
 These hypotheses were established from the literature, our previous experiments with feedback, and early pilot studies with this simulation framework.
 
-\section{RESULTS}
-
+\section{Results}
 \subsection{Participants}
-
 Participants in the experiment were 30 engineering students from the University of California, Davis (23 men, M = 23.0 years, SD = 4.4; 7 women, M = 22.6 years, SD = 3.0).
 All participants had normal or corrected-to-normal vision and full motor control of their upper bodies.
-Eighty percent of participants had previously used a joystick, 43\% had spent time in flight simulators, and 30% had prior flight experience.
+Eighty percent of participants had previously used a joystick, 43\% had spent time in flight simulators, and 30\% had prior flight experience.
 Both gender and participants with flight experience were counterbalanced between the two groups.
 Written informed consent was obtained prior to testing in accordance with the University of California, Davis Institutional Review Board.
 
 \subsection{Analysis}
-
 Mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers which were removed from the analysis.
-The Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R (Bates, Mächler, Bolker, \& Walker, 2014).
+The Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R~\citep{RN53}.
 When significant effects were observed, post hoc comparisons using the Tukey Honest Significance Difference (HSD) test were performed and considered significant at the p < .05 level, and the Satterthwaite method was again used to calculate the degrees of freedom.
 Only 7 of the 1080 total trials (30 subjects with 36 trials per subject) were removed.
 These trials were extreme performance outliers, and including these trials does not change the primary results of the study.
 A three-factor (Group, Mode, and Trial) mixed model with two repeated measures (Mode and Trial) was run on the pitch root-mean-square error.
-There were significant main factors of group (F(1, 27.97) = 6.3, p = 0.018), mode (F(2, 53.47) = 29.7, p < .001), and trial (F(11, 300.29) = 48.4, p < .001).
-There were also significant interaction effects between group and trial (F(11, 300.29) = 2.5, p < 0.01) and between mode and trial (F(22, 601.58) = 2.8, p < .001).
-Despite the presence of interaction effects that result from participants learning the task (as indicated by the trial factor), the main effects can still be interpreted, see Figure 3.
-A Tukey test showed that the participants in the groups differed significantly, with the participants in the feedback group outperforming those in the control group (M = 2.35, 3.05, respectively, SE = 0.20).
-An additional Tukey test showed that the participants' performance in the modes differed significantly, and participants performed best in P mode, followed by the PR mode, and finally the PRA mode (M = 2.30, 2.67, 3.14 respectively, SE = 0.15).
+There were significant main factors of group ($F(1, 27.97) = 6.3, p = 0.018$), mode ($F(2, 53.47) = 29.7, p < .001$), and trial ($F(11, 300.29) = 48.4, p < .001$).
+There were also significant interaction effects between group and trial ($F(11, 300.29) = 2.5, p < 0.01$) and between mode and trial ($F(22, 601.58) = 2.8, p < .001$).
+Despite the presence of interaction effects that result from participants learning the task (as indicated by the trial factor), the main effects can still be interpreted, see Figure~\ref{figure-hfes:pitchrmse}.
+A Tukey test showed that the participants in the groups differed significantly, with the participants in the feedback group outperforming those in the control group ($M = 2.35, 3.05$, respectively, $SE = 0.20$).
+An additional Tukey test showed that the participants' performance in the modes differed significantly, and participants performed best in P mode, followed by the PR mode, and finally the PRA mode ($M = 2.30, 2.67, 3.14$ respectively, $SE = 0.15$).
 
 This same analysis was completed on the roll root-mean-square error, with similar results.
-There were significant main factors of group (F(1, 28.00) = 8.8, p < 0.01), mode (F(1, 27.93) = 6.8, p = 0.015), and trial (F(11, 308.22) = 19.6, p < .001).
-There was also a significant interaction effect between mode and trial (F(11, 308.06) = 4.6, p < .001), see Figure 4.
-Tukey tests showed that the participants' performance between the groups and the modes each differed significantly, with the participants in the feedback group again outperforming those in the control group (M = 1.96, 2.43, respectively, SE = 0.11), and performance was best in the PR mode followed by the PRA mode (M = 2.15, 2.24, respectively, SE = 0.08).
+There were significant main factors of group $(F(1, 28.00) = 8.8, p < 0.01)$, mode $(F(1, 27.93) = 6.8, p = 0.015)$, and trial $(F(11, 308.22) = 19.6, p < .001)$.
+There was also a significant interaction effect between mode and trial $(F(11, 308.06) = 4.6, p < .001)$, see Figure~\ref{figure-hfes:rollrmse}.
+Tukey tests showed that the participants' performance between the groups and the modes each differed significantly, with the participants in the feedback group again outperforming those in the control group ($M = 1.96, 2.43$, respectively, $SE = 0.11$), and performance was best in the PR mode followed by the PRA mode ($M = 2.15, 2.24$, respectively, $SE = 0.08$).
 A two-factor (Group and Trial) mixed model with one repeated measure (Trial) was run on the altitude root-mean-square error.
-There were significant main factors of group (F(1, 27.54) = 5.2, p = 0.030) and trial (F(11, 301.57) = 11.4, p < .001).
-Tukey tests showed that the participants' performance between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group (M = 28.3, 50.2, respectively, SE = 6.8), and the trial effect showing learning throughout the experiment for both groups, see Figure 5.
+There were significant main factors of group ($F(1, 27.54) = 5.2, p = 0.030$) and trial ($F(11, 301.57) = 11.4, p < .001$).
+Tukey tests showed that the participants' performance between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group ($M = 28.3, 50.2$, respectively, $SE = 6.8$), and the trial effect showing learning throughout the experiment for both groups, see Figure~\ref{figure-hfes:altitudermse}.
 A three-factor (Group, Mode, and Trial) mixed model with two repeated measures (Mode and Trial) was run on the modified Bedford workload scores.
-There were significant main factors of mode (F(2, 56) = 134.8, p < .001), and trial (F(11, 308) = 8.7, p < .001), and a significant interaction effect between mode and trial (F(22, 616) = 2.0, p < 0.01).
-Tukey tests showed that the participants' workload between the modes differed significantly, with workload lowest in P, then PR, and finally PRA (M = 3.80, 4.99, 6.16, respectively, SE = 0.28), and the trial effect representing slightly reduced workload throughout the experiment.
+There were significant main factors of mode ($F(2, 56) = 134.8, p < .001$), and trial ($F(11, 308) = 8.7, p < .001$), and a significant interaction effect between mode and trial ($F(22, 616) = 2.0, p < 0.01$).
+Tukey tests showed that the participants' workload between the modes differed significantly, with workload lowest in P, then PR, and finally PRA ($M = 3.80, 4.99, 6.16$, respectively, $SE = 0.28$), and the trial effect representing slightly reduced workload throughout the experiment.
 
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image3.png}
         \caption{The mean Pitch RMSE for each trial for participants in the P control mode. Data points are the mean, and error bars are the standard error of the mean.}
-        % \label{figure:safersim}
+        \label{figure-hfes:pitchrmse}
     \end{center}
 \end{figure}
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image4.png}
         \caption{The mean Roll RMSE for each trial for participants in the PR control mode. Data points are the mean, and error bars are the standard error of the mean.}
-        % \label{figure:safersim}
+        \label{figure-hfes:rollrmse}
     \end{center}
 \end{figure}
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image5.png}
         \caption{The mean Altitude RMSE for each trial for participants in the PRA control mode. Data points are the mean, and error bars are the standard error of the mean.}
-        % \label{figure:safersim}
+        \label{figure-hfes:altitudermse}
     \end{center}
 \end{figure}
 
-\section{DISCUSSION}
+\section{Discussion}
 % MODE	PITCH	ROLL	ALTITUDE
 % P	20.1%	-	-
 % PR	17.8%	21.1%	-
@@ -223,7 +216,7 @@ For the first time that participants completed P, PR, and PRA trials, the feedba
 Participants in the feedback not only immediately performed better, they also reached their peak performance much faster and had a final performance level which was significantly better than the control group, see Table 1.
 The largest performance improvement was seen in controlling altitude, where the feedback group had a final performance level which was 44.2\% better than the control group, confirming H1.
 No group-related workload differences were detected in either the Modified Bedford scores or in the secondary task reaction times.
-This suggests that, for tasks of this complexity, concurrent bandwidth feedback may not reduce workload (Karasinski \& Robinson, 2019).
+This suggests that, for tasks of this complexity, concurrent bandwidth feedback may not reduce workload~\citep{karasinski_evaluating_2019}.
 Thus, for our second hypothesis, H2—we find that concurrent bandwidth feedback does not reduce workload in our flight tasks, and that tasks with higher functional complexity may be required to observe these effects.
 Our third hypothesis was that subjects would primarily use the concurrent bandwidth feedback as a learning tool but that they would not become dependent on the feedback to the point that they required it to complete the task.
 Retention tests are commonly used in the augmented feedback literature to verify that participants are not dependent on the feedback techniques.
@@ -231,40 +224,9 @@ Our analysis indicates no significant performance changes across any of our perf
 After the experimental trials, we asked participants in the feedback group to complete a survey designed to identify when the feedback was or was not useful and how participants thought their performance and workload changed in the retention phase of the experiment.
 One hundred percent of participants thought that the feedback helped them perform the task, 80\% reported that it helped them regain focus when their mind wandered, 73\% reported that it helped them to learn a scan pattern, and 27\% reported that the feedback was motivating.Survey results suggested that participants found the feedback especially useful in the roll and altitude tasks, which was reflected in the objective performance metrics.
 
-\section{CONCLUSIONS}
-
+\section{Conclusions}
 Participants took part in a study investigating the effect of concurrent bandwidth feedback on flight performance and workload in three flight control modes of increasing complexity.
 The participants in the feedback group performed significantly better than those in the control group, generally performing better on their second trial than those in the control group could by the end of the experiment.
 Subjective and objective workload metrics showed no change in participant workload between the groups.
 Survey questions identified that most participants found the feedback helpful in training them to establish a scan pattern, helping them to learn the task much quicker than those without feedback.
 Feedback was removed for immediate retention trials, and participants showed no changes in performance or workload, suggesting that participants did not suffer from the guidance hypothesis.
-
-\section{REFERENCES}
-
-TO DO
-
-% Bates, D., Mächler, M., Bolker, B., & Walker, S. (2014). Fitting linear mixed-effects models using lme4. ArXiv Preprint ArXiv:1406.5823.
-
-% Bronkhorst, A. W., Veltman, J. A., & Van Breda, L. (1996). Application of a three-dimensional auditory display in a flight task. Human Factors, 38(1), 23–33.
-
-% de Groot, S., de Winter, J. C., García, J. M. L., Mulder, M., & Wieringa, P. A. (2011). The effect of concurrent bandwidth feedback on learning the lane-keeping task in a driving simulator. Human Factors, 53(1), 50–62.
-
-% Hainley, C. J., Duda, K. R., Oman, C. M., & Natapoff, A. (2013). Pilot Performance, Workload, and Situation Awareness During Lunar Landing Mode Transitions. Journal of Spacecraft and Rockets, 50(4), 793–801. https://doi.org/10.2514/1.A32267
-
-% Heffley, R. K., & Jewell, W. F. (1972). Aircraft handling qualities data.
-
-% Karasinski, J., & Robinson, S. (2019). Evaluating Augmented Reality in a Three-Axis Manual Tracking Task. AIAA Scitech 2019 Forum. Presented at the AIAA Scitech 2019 Forum, San Diego, California. https://doi.org/10.2514/6.2019-1227
-
-% Karasinski, J., Robinson, S., Handley, P., & Duda, K. (2017). Real-Time Performance Feedback in a Manually-Controlled Spacecraft Inspection Task. AIAA Modeling and Simulation Technologies Conference. Presented at the AIAA Modeling and Simulation Technologies Conference, Grapevine, Texas. https://doi.org/10.2514/6.2017-1314
-
-% Roscoe, A. H., & Ellis, G. A. (1990). A Subjective Rating Scale for Assessing Pilot Workload in Flight: A decade of Practical Use (No. RAE-TR-90019). Retrieved from Royal Aerospace Establishment Farnborough (United Kingdom) website: https://apps.dtic.mil/docs/citations/ADA227864
-
-% Salmoni, A. W., Schmidt, R. A., & Walter, C. B. (1984). Knowledge of results and motor learning: A review and critical reappraisal. Psychological Bulletin, 95(3), 355–386. https://doi.org/10.1037/0033-2909.95.3.355
-
-% Sigrist, R., Rauter, G., Riener, R., & Wolf, P. (2013). Augmented visual, auditory, haptic, and multimodal feedback in motor learning: A review. Psychonomic Bulletin & Review, 20(1), 21–53. https://doi.org/10.3758/s13423-012-0333-8
-
-% Stevens, B. L., Lewis, F. L., & Johnson, E. N. (2015). Aircraft control and simulation: dynamics, controls design, and autonomous systems. John Wiley & Sons.
-
-% Tannen, R. S., Nelson, W. T., Bolia, R. S., Warm, J. S., & Dember, W. N. (2004). Evaluating adaptive multisensory displays for target localization in a flight task. The International Journal of Aviation Psychology, 14(3), 297–312.
-
-% Zaal, P. M., Pool, D. M., Bruin, J. D., Mulder, M., & Van Paassen, M. M. (2009). Use of pitch and heave motion cues in a pitch control task. Journal of Guidance, Control, and Dynamics, 32(2), 366–377.
