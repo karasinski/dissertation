@@ -104,50 +104,40 @@ We completed a review of human factors and automation/robotics integration surve
 Non-survey papers from highly cited and established experts were also added to this review to provide additional insights.
 When reading these papers, care was taken to note recurrent topics and technologies that received specific focus, were forecast to generate additional interest in the near future or were otherwise noted as requiring greater study.
 
-As a result of this literature review, major themes of in human and automation/robotic integration technology development and research were identified, see Table 2.
+As a result of this literature review, major themes of in human and automation/robotic integration technology development and research were identified, see Table~\ref{table:key-papers}.
 
-% 	Machine Learning	Flexible/
-% Adaptive/
-% Adaptable Automation	Networked Multi-robot Systems, Swarms	Trust
-% Admoni and Scassellati, 2017~\citep{admoni_social_2017}
-% 			x
-% Ahmad et al., 2017~\citep{ahmad_systematic_2017}
-% x	x
-% Chen and Barnes, 2014~\citep{chen_humanagent_2014}
-% x	x	x
-% Endsley 2017~\citep{endsley_here_2017}
-% x	x		x
-% Guiochet et al., 2017~\citep{guiochet_safety-critical_2017}
-% 			x
-% Kehoe et al., 2015~\citep{kehoe_survey_2015}
-% x		x
-% Kolling et al., 2016~\citep{kolling_human_2016}
-% 	x	x
-% Liu and Wang, 2018~\citep{liu_gesture_2018}
-% x
-% Losey et al., 2018~\citep{losey_review_2018}
-% x	x		x
-% Lu et al., 2016~\citep{lu_human_2016}
-% 	x
-% Ososky et al., 2013~\citep{ososky_building_2013}
-% 		x	x
-% Parasuraman and Wickens, 2008~\citep{parasuraman_humans:_2008}
-% 	x
-% Phillips et al., 2016~\citep{phillips_human-animal_2016}
-% 			x
-% Rautaray and Agrawal, 2015~\citep{rautaray_vision_2015}
-% x
-% Schaefer et al., 2016~\citep{schaefer_meta-analysis_2016}
-% 			x
-% Sheridan, 2016~\citep{sheridan_humanrobot_2016}
-% x			x
-% Vagia et al., 2016~\citep{vagia_literature_2016}
-% 	x
-% Wang et al., 2018~\citep{wang_current_2018}
-% x		x
-% Zamora et al., 2017~\citep{zamora_machine_2017}
-% x
-% Table 2: Table of the key papers reviewed, and the topics discussed in each
+\begin{table}[tb]
+    \caption{Table of the key papers reviewed, and the topics discussed in each}
+    \centering
+    \begin{tabular}{r | C{2cm} | C{2cm} | C{2cm} | C{2cm} | }
+        % \toprule
+        \cline{2-5}
+                                             & \thead{Machine             \\Learning} & \thead{Flexible/\\Adaptive/\\Adaptable\\Automation}  &  \thead{Networked\\Multi-robot\\Systems,\\Swarms}   & Trust \\
+        \cline{2-5}
+        % \midrule
+        \cite{admoni_social_2017}            &                &   &   & x \\ \cline{2-5}
+        \cite{ahmad_systematic_2017}         & x              & x &   &   \\ \cline{2-5}
+        \cite{chen_humanagent_2014}          & x              & x & x &   \\ \cline{2-5}
+        \cite{endsley_here_2017}             & x              & x &   & x \\ \cline{2-5}
+        \cite{guiochet_safety-critical_2017} &                &   &   & x \\ \cline{2-5}
+        \cite{kehoe_survey_2015}             & x              &   & x &   \\ \cline{2-5}
+        \cite{kolling_human_2016}            &                & x & x &   \\ \cline{2-5}
+        \cite{liu_gesture_2018}              & x              &   &   &   \\ \cline{2-5}
+        \cite{losey_review_2018}             & x              & x &   & x \\ \cline{2-5}
+        \cite{lu_human_2016}                 &                & x &   &   \\ \cline{2-5}
+        \cite{ososky_building_2013}          &                &   & x & x \\ \cline{2-5}
+        \cite{parasuraman_humans:_2008}      &                & x &   &   \\ \cline{2-5}
+        \cite{phillips_human-animal_2016}    &                &   &   & x \\ \cline{2-5}
+        \cite{rautaray_vision_2015}          & x              &   &   &   \\ \cline{2-5}
+        \cite{schaefer_meta-analysis_2016}   &                &   &   & x \\ \cline{2-5}
+        \cite{sheridan_humanrobot_2016}      & x              &   &   & x \\ \cline{2-5}
+        \cite{vagia_literature_2016}         &                & x &   &   \\ \cline{2-5}
+        \cite{wang_current_2018}             & x              &   & x &   \\ \cline{2-5}
+        \cite{zamora_machine_2017}           & x              &   &   &   \\ \cline{2-5}
+        % \bottomrule
+    \end{tabular}
+    \label{table:key-papers}
+\end{table}
 
 Each of these topics is briefly discussed below, referencing their fundamental papers when possible, as well as their forecasts from the previously reviewed articles.
 
@@ -288,19 +278,25 @@ SMEs were intentionally selected from different backgrounds, including military 
 We conducted ten phone interviews with SMEs who integrate humans, automation, and robotics in their work.
 These interviews generally took between twenty and forty minutes.
 We asked each expert the following questions:
-\begin{itemize}
+\begin{enumerate}
     \item What technologies do you think are on the horizon in your field in the integration of humans, automation, and robotics?
     \item How would you prioritize what technologies are in development involving the integration of humans, automation, and robotics?
-    \item What technologies would be the most responsive to increased research support?
-    \item For these technologies, what are the current TRLs? How much effort do you think it will take to raise the TRL over time?
+          \begin{enumerate}
+              \item What technologies would be the most responsive to increased research support?
+              \item For these technologies, what are the current TRLs? How much effort do you think it will take to raise the TRL over time?
+          \end{enumerate}
     \item What are you most concerned about for the integration of humans, automation, and robotics? What technologies do you think could mitigate these risks?
-    \item What risks do you see arising from inclusion of these technologies (what new risks do you anticipate)?
-    \item What risks currently have no technology solutions?
+          \begin{enumerate}
+              \item What risks do you see arising from inclusion of these technologies (what new risks do you anticipate)?
+              \item What risks currently have no technology solutions?
+          \end{enumerate}
     \item How will these technologies fill the gaps in our current abilities?
-    \item Where do you see additional automation as a plausible way to fill those gaps?
-    \item What other technology gaps should we be concerned about?
+          \begin{enumerate}
+              \item Where do you see additional automation as a plausible way to fill those gaps?
+              \item What other technology gaps should we be concerned about?
+          \end{enumerate}
     \item Based on this discussion, is there anything else we should know?
-\end{itemize}
+\end{enumerate}
 
 Based on the information gathered from literature and discussion with subject matter experts, the following specific HARI-related technologies and research topics emerged as areas for future research and development for the advancement of human automation and robotic interaction relevant to human spaceflight.
 
@@ -461,43 +457,61 @@ Factors are characteristics of a technology that our team, in collaboration the 
 These factors were generated from our review of the background literature and conversations with the SMEs.
 NASA stakeholders were informed that these factors would be weighted and used to conduct a trade study designed to help NASA in prioritizing which technologies and, consequently, which HARI research areas, should be further invested in to help with future long duration exploration missions.
 After our NASA stakeholders provided their input, we averaged and ranked their assessment of the factors.
-The ranked factors appear in Table 3.
+The ranked factors appear in Table~\ref{table:factor-ranking}.
 
-% Factor	Weight
-% Task applicability 	6
-% Task enabling 	6
-% Potential for reducing risk 	5
-% Potential for introducing risk 	(-)4
-% External Investment (outside of NASA) 	3
-% Technology Readiness Level (TRL) 	2
-% Research Interest (within NASA) 	1
-% Table 3: The ranking of seven factors resulting from feedback from our NASA stakeholders
+\begin{table}[tb]
+    \caption{The ranking of seven factors resulting from feedback from our NASA stakeholders}
+    \centering
+    \begin{tabular}{*{2}{r}}
+        \toprule
+        Factor                                & Weight \\
+        \midrule
+        Task applicability                    & 6      \\
+        Task enabling                         & 6      \\
+        Potential for reducing risk           & 5      \\
+        Potential for introducing risk        & (-)4   \\
+        External Investment (outside of NASA) & 3      \\
+        Technology Readiness Level (TRL)      & 2      \\
+        Research Interest (within NASA)       & 1      \\
+        \bottomrule
+    \end{tabular}
+    \label{table:factor-ranking}
+\end{table}
 
 \subsubsection{Task applicability}
-Which tasks does the technology have an impact on? This factor characterizes how much impact the technology may have on the various HARI tasks identified for future exploration missions [39].
+Which tasks does the technology have an impact on? This factor characterizes how much impact the technology may have on the various HARI tasks identified for future exploration missions~\citep{marquez2017future}.
 We determined if each technology applies to each task in order to measure the technology's applicability to space HARI.
-These tasks, common to long duration orbital missions, deep space surface exploration missions, or both, are shown in Table 4.
+These tasks, common to long duration orbital missions, deep space surface exploration missions, or both, are shown in Table~\ref{table:har-tasks}.
 
-% Applicable to Orbit Operations	Maneuver/reboost/rendezvous
-% 	Docking/undocking
-% 	Spacecraft support, system maintenance
-% 	Complex assembly, capture and berth
-% 	Science and assigned activity support, payload assistance
-% 	Science and assigned activity support, crew assistance–physical
-% 	Science and assigned activity support, crew assistance–cognitive
-% Applicable to Surface Operations	Spacecraft support, system maintenance
-% 	Spacecraft support, system preparation
-% 	Site preparation assembly, excavation
-% 	Complex assembly, heavy lift
-% 	Drive/navigate
-% 	Exploration, scouting
-% 	Exploration, mapping
-% 	Exploration, sampling/analyzing
-% 	Science and assigned activity support, science/sample collection
-% 	Science and assigned activity support, payload assistance
-% 	Science and assigned activity support, crew assistance–physical
-% 	Science and assigned activity support, crew assistance–cognitive
-% Table 4: HAR tasks for spaceflight
+\begin{table}[tb]
+    \caption{HAR tasks for spaceflight}
+    \centering
+    \begin{tabular}{|c|l|}
+        \hline
+        \multirow{7}{*}{\textbf{\makecell{Applicable to                     \\Orbit Operations}}}    & Maneuver/reboost/rendezvous                                      \\ \cline{2-2}
+         & Docking/undocking                                                \\ \cline{2-2}
+         & Spacecraft support, system maintenance                           \\ \cline{2-2}
+         & Complex assembly, capture and berth                              \\ \cline{2-2}
+         & Science and assigned activity support, payload assistance        \\ \cline{2-2}
+         & Science and assigned activity support, crew assistance–physical  \\ \cline{2-2}
+         & Science and assigned activity support, crew assistance–cognitive \\
+        \hline
+        \multirow{12}{*}{\textbf{\makecell{Applicable to                    \\Surface Operations}}} & Spacecraft support, system maintenance                           \\ \cline{2-2}
+         & Spacecraft support, system preparation                           \\ \cline{2-2}
+         & Site preparation assembly, excavation                            \\ \cline{2-2}
+         & Complex assembly, heavy lift                                     \\ \cline{2-2}
+         & Drive/navigate                                                   \\ \cline{2-2}
+         & Exploration, scouting                                            \\ \cline{2-2}
+         & Exploration, mapping                                             \\ \cline{2-2}
+         & Exploration, sampling/analyzing                                  \\ \cline{2-2}
+         & Science and assigned activity support, science/sample collection \\ \cline{2-2}
+         & Science and assigned activity support, payload assistance        \\ \cline{2-2}
+         & Science and assigned activity support, crew assistance–physical  \\ \cline{2-2}
+         & Science and assigned activity support, crew assistance–cognitive \\
+        \hline
+    \end{tabular}
+    \label{table:har-tasks}
+\end{table}
 
 \subsubsection{Task enabling}
 Does the technology enable a new capability? This factor describes how much the technology enables one or more of the various HARI tasks identified for future exploration missions.
@@ -529,7 +543,7 @@ ALL FIELDS: (technology)
 Timespan: 2013-2018.
 Indexes: SCI-EXPANDED, SSCI, A\&HCI, CPCI-S, CPCI-SSH, BKCI-S, BKCI-SSH, ESCI, CCR-EXPANDED, IC.
 Similarly, the technologies were also searched for in Google Scholar on the same date and with the same time span.
-The sums from both searches were used to determine scores for this factor (see Trade Study Approach).
+The sums from both searches were used to determine scores for this factor (see Trade Study Approach~\ref{ss:tsapproach}).
 
 \subsubsection{Technology Readiness Level (TRL)}
 What is the current TRL? This factor characterizes the maturity level of the technology.
@@ -540,7 +554,7 @@ TRL was split into three categories: Below TRL 3, TRL 3-5, and TRL 6 or greater.
 What is the current research interest within NASA? This factor describes if the technology has any potential for infusion into NASA missions as determined by the NASA Technology roadmaps/NASA Strategic Technology Investment Plan.
 We qualify this by checking if the technology is present on the NASA technology roadmap.
 
-\subsection{Trade Study Approach}
+\subsection{Trade Study Approach} \label{ss:tsapproach}
 A multi-dimensional trade analysis was performed to objectively score HARI research topics and specific technologies in a recommended order of priority for NASA investment.
 The approach used was similar to a Relationship Matrix Decomposition Scheme (RMDS) [40], see Figure~\ref{figure-hari:tradestudy}.
 The factors for assessment described above pertain directly to HARI technologies, while research topics are assessed through direct relationships with those technologies, see Figure~\ref{figure-hari:tradestudyA}.
@@ -577,8 +591,13 @@ The factor scores were multiplied by the factor weights as defined in the NASA S
 The factor-level trades for Risk Reduced, Risk Introduced, and TRL each assessed the specific technologies against three weighted options.
 Risk Reduced, for example assigned an individual score of 0 or 1 to each technology if it potentially reduced risk to crew, risk to mission/vehicle, or risk of loss of performance.
 Each potentially reduced risk was weighted (1 to 3) based on relative ranking as found by the NASA stakeholders.
-The total weighted scores for each technology (sum of weights x scores) were normalized by the highest possible score for a single technology to find the factor scores on a scale between 0 and 1 (see Equation 1, below).
-% Normalized\ Score\ =\ \frac{\mathrm{\Sigma}(Weighted\ Scores\ for\ a\ Technology)}{\mathrm{\Sigma}(weights)\ast m a x(individual\ score)}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)
+The total weighted scores for each technology (sum of weights x scores) were normalized by the highest possible score for a single technology to find the factor scores on a scale between 0 and 1 (see Equation~\ref{eq:weighted-score}, below).
+
+\begin{align}
+    \mbox{Normalized Score} =  \frac{{\Sigma}(\mbox{Weighted Scores for a Technology})}{{\Sigma}(\mbox{Weights}) \times \max(\mbox{Individual Score})}
+    \label{eq:weighted-score}
+\end{align}
+
 For Risk Introduced, normalized scores were multiplied by -1, as introduced risk were tallied as a negative contribution to overall technology assessment.
 The TRL trade was performed identically to Reduced Risk, with the exception that technologies could only be assigned to a single average TRL range.
 Assessment for Research Interest (within NASA) was simplified compared to other factor-level trades as scoring had a single binary level (trade table included in Appendix A: Trade Analysis Tables for completeness).
@@ -594,7 +613,7 @@ In this way, the relative publication totals for each service could be normalize
 \section{Results}
 
 \subsection{Research Topics}
-The final scores for research topics have been ranked, such that a high score represents a recommended higher priority for research investment by NASA (see ).
+The final scores for research topics have been ranked, such that a high score represents a recommended higher priority for research investment by NASA (see Table~\ref{table:topic-prioritization}).
 The top-ranking research topics are:
 \begin{enumerate}
     \item Improving training for HAR systems and tasks
@@ -602,17 +621,27 @@ The top-ranking research topics are:
     \item Understanding human intent
 \end{enumerate}
 
-% Research Topic	Score	Rank
-% Improving training for HAR systems and tasks	84.66	1
-% Establishing appropriate trust in automation/robotics systems	79.27	2
-% Understanding human intent	77.13	3
-% Enabling command/control of complex robotic systems	72.80	4
-% HAR team performance optimization and function allocation	68.76	5
-% Autonomous/robotic system communication to humans	58.82	6
-% Ensuring human safety (physical)	50.66	7
-% Improving situation awareness in HAR systems	50.07	8
-% Continuous human performance monitoring	44.68	9
-% Table 5: The resulting prioritization of research topics from linking research topics to the upcoming technologies
+\begin{table}[tb]
+    \caption{The resulting prioritization of research topics from linking research topics to the upcoming technologies}
+    \centering
+    \begin{tabular}{*{3}{r}}
+        \toprule
+        Research Topic                                                & Score & Rank \\
+        \midrule
+        Improving training for HAR systems and tasks                  & 84.66 & 1    \\
+        Establishing appropriate trust in automation/robotics systems & 79.27 & 2    \\
+        Understanding human intent                                    & 77.13 & 3    \\
+        Enabling command/control of complex robotic systems           & 72.80 & 4    \\
+        HAR team performance optimization and function allocation     & 68.76 & 5    \\
+        Autonomous/robotic system communication to humans             & 58.82 & 6    \\
+        Ensuring human safety (physical)                              & 50.66 & 7    \\
+        Improving situation awareness in HAR systems                  & 50.07 & 8    \\
+        Continuous human performance monitoring                       & 44.68 & 9    \\
+        \bottomrule
+    \end{tabular}
+    \label{table:topic-prioritization}
+\end{table}
+
 Note that all these topics were identified as areas applicable to HARI concerns, regardless of the score.
 A high score here is highly dependent on the impact of the surveyed technologies on the research topic and suggests which research topics should be able to make relatively quick progress given the technology that is being developed now and in the next 5-10 years.
 A low score reflects research topics that either have relatively few technology solutions on the horizon, had relatively low factor scores for the technologies that are related to the topic, or both.
@@ -637,7 +666,7 @@ Improving situation awareness in HAR systems lower score came as a surprise as s
 Although it also benefited from being linked to a top-ranking technology—robotic/human information interfaces—but the topic otherwise suffered from few direct technology solutions.
 
 \subsection{Technologies}
-The resulting ranks of the technologies from the weighted factors are shown in .
+The resulting ranks of the technologies from the weighted factors are shown in Table~\ref{table:technology-prioritization}.
 The top-ranking technologies identified from the trade study are:
 \begin{enumerate}
     \item Machine Learning
@@ -646,21 +675,31 @@ The top-ranking technologies identified from the trade study are:
     \item Artificial Intelligence
 \end{enumerate}
 
-% Technology	Score	Rank
-% Machine Learning	19.33	1
-% Autonomous obstacle detection/imaging	16.37	2
-% Robotic/human information interfaces	15.86	3
-% Artificial Intelligence	15.25	4
-% Intuitive physical control interfaces	13.98	5
-% Autonomous path planning	12.36	6
-% Augmented Reality and Virtual Reality	12.29	7
-% Robotic agents	12.25	8
-% Flexible, Adaptive, or Adaptable Automation	12.24	9
-% Assistive Robotics	9.69	10
-% Speech recognition	8.78	11
-% Non-invasive behavioral and physiological sensing	8.12	12
-% Implantable Biometrics	4.98	13
-% Table 6: The resulting prioritization of technologies using the trade study
+\begin{table}[tb]
+    \caption{The resulting prioritization of technologies using the trade study}
+    \centering
+    \begin{tabular}{*{3}{r}}
+        \toprule
+        Technology                                        & Score & Rank \\
+        \midrule
+        Machine Learning                                  & 19.33 & 1    \\
+        Autonomous obstacle detection/imaging             & 16.37 & 2    \\
+        Robotic/human information interfaces              & 15.86 & 3    \\
+        Artificial Intelligence                           & 15.25 & 4    \\
+        Intuitive physical control interfaces             & 13.98 & 5    \\
+        Autonomous path planning                          & 12.36 & 6    \\
+        Augmented Reality and Virtual Reality             & 12.29 & 7    \\
+        Robotic agents                                    & 12.25 & 8    \\
+        Flexible, Adaptive, or Adaptable Automation       & 12.24 & 9    \\
+        Assistive Robotics                                & 9.69  & 10   \\
+        Speech recognition                                & 8.78  & 11   \\
+        Non-invasive behavioral and physiological sensing & 8.12  & 12   \\
+        Implantable Biometrics                            & 4.98  & 13   \\
+        \bottomrule
+    \end{tabular}
+    \label{table:technology-prioritization}
+\end{table}
+
 These top-ranking technologies have seen enormous advancements in research interest and development over the past few years, and all offer a large benefit to the tasks required by NASA on future LDEMs.
 In contrast to the top-ranking technologies, low ranking technologies show a trend of reflecting a combination of low research interest, task relevance, or TRL.
 
@@ -731,187 +770,5 @@ Improvement of training, trust, and human intent interpretation in HAR systems e
 \section{References}
 TO DO
 
-%~\citep{admoni_social_2017}	H. Admoni and B. Scassellati, ``Social Eye Gaze in Human-robot Interaction: A Review,'' J. Hum.-Robot Interact., vol. 6, no. 1, pp. 25–63, May 2017.
-%~\citep{ahmad_systematic_2017}	M. Ahmad, O. Mubin, and J. Orlando, ``A Systematic Review of Adaptivity in Human-Robot Interaction,'' Multimodal Technologies and Interaction, vol. 1, no. 3, p. 14, Sep. 2017.
-%~\citep{chen_humanagent_2014}	J. Y. Chen and M. J. Barnes, ``Human–agent teaming for multirobot control: A review of human factors issues,'' IEEE Transactions on Human-Machine Systems, vol. 44, no. 1, pp. 13–29, 2014.
-%~\citep{endsley_here_2017}	M. R. Endsley, ``From Here to Autonomy: Lessons Learned From Human–Automation Research,'' Hum Factors, vol. 59, no. 1, pp. 5–27, Feb. 2017.
-%~\citep{guiochet_safety-critical_2017}	J. Guiochet, M. Machin, and H. Waeselynck, ``Safety-critical advanced robots: A survey,'' Robotics and Autonomous Systems, vol. 94, pp. 43–52, Aug. 2017.
-%~\citep{kehoe_survey_2015}	B. Kehoe, S. Patil, P. Abbeel, and K. Goldberg, ``A Survey of Research on Cloud Robotics and Automation,'' IEEE Transactions on Automation Science and Engineering, vol. 12, no. 2, pp. 398–409, Apr. 2015.
-%~\citep{kolling_human_2016}	A. Kolling, P. Walker, N. Chakraborty, K. Sycara, and M. Lewis, ``Human Interaction With Robot Swarms: A Survey,'' IEEE Transactions on Human-Machine Systems, vol. 46, no. 1, pp. 9–26, Feb. 2016.
-%~\citep{liu_gesture_2018}	H. Liu and L. Wang, ``Gesture recognition for human-robot collaboration: A review,'' International Journal of Industrial Ergonomics, vol. 68, pp. 355–367, Nov. 2018.
-%~\citep{losey_review_2018}	D. P. Losey, C. G. McDonald, E. Battaglia, and M. K. O'Malley, ``A Review of Intent Detection, Arbitration, and Communication Aspects of Shared Control for Physical Human–Robot Interaction,'' Appl. Mech. Rev, vol. 70, no. 1, pp. 010804-010804–19, Feb. 2018.
-%~\citep{lu_human_2016}	Z. Lu, R. Happee, C. D. Cabrall, M. Kyriakidis, and J. C. de Winter, ``Human factors of transitions in automated driving: A general framework and literature survey,'' Transportation research part F: traffic psychology and behaviour, vol. 43, pp. 183–198, 2016.
-%~\citep{ososky_building_2013}	S. Ososky, D. Schuster, E. Phillips, and F. G. Jentsch, ``Building Appropriate Trust in Human-Robot Teams,'' in 2013 AAAI Spring Symposium Series, 2013.
-%~\citep{parasuraman_humans:_2008}	R. Parasuraman and C. D. Wickens, ``Humans: Still vital after all these years of automation,'' Human factors, vol. 50, no. 3, pp. 511–520, 2008.
-%~\citep{phillips_human-animal_2016}	E. Phillips, K. E. Schaefer, D. R. Billings, F. Jentsch, and P. A. Hancock, ``Human-animal Teams As an Analog for Future Human-robot Teams: Influencing Design and Fostering Trust,'' J. Hum.-Robot Interact., vol. 5, no. 1, pp. 100–125, Mar. 2016.
-%~\citep{rautaray_vision_2015}	S. S. Rautaray and A. Agrawal, ``Vision based hand gesture recognition for human computer interaction: a survey,'' Artif Intell Rev, vol. 43, no. 1, pp. 1–54, Jan. 2015.
-%~\citep{schaefer_meta-analysis_2016}	K. E. Schaefer, J. Y. C. Chen, J. L. Szalma, and P. A. Hancock, ``A Meta-Analysis of Factors Influencing the Development of Trust in Automation: Implications for Understanding Autonomy in Future Systems,'' Hum Factors, vol. 58, no. 3, pp. 377–400, May 2016.
-%~\citep{sheridan_humanrobot_2016}	T. B. Sheridan, ``Human–Robot Interaction: Status and Challenges,'' Hum Factors, vol. 58, no. 4, pp. 525–532, Jun. 2016.
-%~\citep{vagia_literature_2016}	M. Vagia, A. A. Transeth, and S. A. Fjerdingen, ``A literature review on the levels of automation during the years. What are the different taxonomies that have been proposed?,'' Applied ergonomics, vol. 53, pp. 190–202, 2016.
-%~\citep{wang_current_2018}	T.-M. Wang, Y. Tao, and H. Liu, ``Current Researches and Future Development Trend of Intelligent Robot: A Review,'' International Journal of Automation and Computing, vol. 15, no. 5, pp. 525–546, 2018.
-%~\citep{zamora_machine_2017}	M. Zamora, E. Caldwell, J. Garcia-Rodriguez, J. Azorin-Lopez, and M. Cazorla, ``Machine Learning Improves Human-Robot Interaction in Productive Environments: A Review,'' in Advances in Computational Intelligence, 2017, pp. 283–293.
-%~\citep{8701742}	Z. He, ``Gesture Recognition Based on Tri-Axis Accelerometer Using 1D Gabor Filters,'' in 2018 9th International Symposium on Parallel Architectures, Algorithms and Programming (PAAP), 2018, pp. 146–151.
-%~\citep{beer_toward_2014}	J. M. Beer, A. D. Fisk, and W. A. Rogers, ``Toward a Framework for Levels of Robot Autonomy in Human-robot Interaction,'' J. Hum.-Robot Interact., vol. 3, no. 2, pp. 74–99, Jul. 2014.
-%~\citep{kaber_situation_2006}	D. B. Kaber, C. M. Perry, N. Segall, C. K. McClernon, and L. J. Prinzel, ``Situation awareness implications of adaptive automation for information processing in an air traffic control-related task,'' International Journal of Industrial Ergonomics, vol. 36, no. 5, pp. 447–462, May 2006.
-%~\citep{norman_user_1986}	D. A. Norman and S. W. Draper, User Centered System Design; New Perspectives on Human-Computer Interaction. Hillsdale, NJ, USA: L. Erlbaum Associates Inc., 1986.
-%~\citep{simoens_internet_2018}	P. Simoens, M. Dragone, and A. Saffiotti, ``The Internet of Robotic Things: A review of concept, added value and applications,'' International Journal of Advanced Robotic Systems, vol. 15, no. 1, p. 1729881418759424, Jan. 2018.
-%~\citep{lee_trust_2004}	J. D. Lee and K. A. See, ``Trust in automation: Designing for appropriate reliance,'' Human factors, vol. 46, no. 1, pp. 50–80, 2004.
-%~\citep{jian_foundations_2000}	J.-Y. Jian, A. M. Bisantz, and C. G. Drury, ``Foundations for an empirically determined scale of trust in automated systems,'' International Journal of Cognitive Ergonomics, vol. 4, no. 1, pp. 53–71, 2000.
-%~\citep{muir_trust_1996}	B. M. Muir and N. Moray, ``Trust in automation. Part II. Experimental studies of trust and human intervention in a process control simulation,'' Ergonomics, vol. 39, no. 3, pp. 429–460, 1996.
-%~\citep{SEPPELT201966}	B. D. Seppelt and J. D. Lee, ``Keeping the driver in the loop: Dynamic feedback to support appropriate use of imperfect vehicle control automation,'' International Journal of Human-Computer Studies, vol. 125, pp. 66–80, May 2019.
-%~\citep{de_visser_almost_2016}	E. J. de Visser et al., ``Almost human: Anthropomorphism increases trust resilience in cognitive agents,'' Journal of Experimental Psychology: Applied, vol. 22, no. 3, pp. 331–349, 2016.
-%~\citep{culley_note_2013}	K. E. Culley and P. Madhavan, ``A note of caution regarding anthropomorphism in HCI agents,'' Computers in Human Behavior, vol. 29, no. 3, pp. 577–579, May 2013.
-%~\citep{pak_multi-level_2014}	R. Pak, A. C. McLaughlin, and B. Bass, ``A multi-level analysis of the effects of age and gender stereotypes on trust in anthropomorphic technology by younger and older adults,'' Ergonomics, vol. 57, no. 9, pp. 1277–1289, Sep. 2014.
-%~\citep{verberne_trusting_2013}	F. M. F. Verberne, J. Ham, A. Ponnada, and C. J. H. Midden, ``Trusting Digital Chameleons: The Effect of Mimicry by a Virtual Social Agent on User Trust,'' in Persuasive Technology, 2013, pp. 234–245.
-%~\citep{fitts_human_1951}	P. M. Fitts, ``Human engineering for an effective air-navigation and traffic-control system,'' Ohio State University Foundation, Columbus, OH, 1951.
-%~\citep{tsarouchi_humanrobot_2016}	P. Tsarouchi, S. Makris, and G. Chryssolouris, ``Human–robot interaction review and challenges on task planning and programming,'' International Journal of Computer Integrated Manufacturing, vol. 29, no. 8, pp. 916–931, Aug. 2016.
-%~\citep{Singh:2018:CPG:3237383.3237457}	R. Singh, T. Miller, J. Newn, L. Sonenberg, E. Velloso, and F. Vetere, ``Combining Planning with Gaze for Online Human Intention Recognition,'' in Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems, Richland, SC, 2018, pp. 488–496.
-%~\citep{ruhland_review_2015}	K. Ruhland et al., ``A Review of Eye Gaze in Virtual Agents, Social Robotics and HCI: Behaviour Generation, User Interaction and Perception,'' Computer Graphics Forum, vol. 34, no. 6, pp. 299–326, 2015.
-%~\citep{yanco_analysis_2015}	H. A. Yanco, A. Norton, W. Ober, D. Shane, A. Skinner, and J. Vice, ``Analysis of Human-robot Interaction at the DARPA Robotics Challenge Trials,'' Journal of Field Robotics, vol. 32, no. 3, pp. 420–444, 2015.
-%~\citep{endsley2017toward}	M. R. Endsley, ``Toward a Theory of Situation Awareness in Dynamic Systems,'' Hum Factors, vol. 37, no. 1, pp. 32–64, Mar. 1995.
-% [39]	J. J. Marquez, B. D. Adelstein, M. L. Chang, S. R. Ellis, K. A. Hambuchen, and R. L. Howard, ``Future Exploration Missions' Tasks Associated with the Risk of Inadequate Design of Human and Automation/Robotic Integration,'' 2017.
 % [40]	Boppe, Charlie, ``Program/Project Decision-Aiding Methodology Training,'' Charles Stark Draper Laboratory, 18-May-2010.
 % [41]	``HRR - Risk - Risk of Inadequate Design of Human and Automation/Robotic Integration.'' [Online]. Available: https://humanresearchroadmap.nasa.gov/Risks/risk.aspx?i=163. [Accessed: 05-Aug-2019].
-
-% \appendix
-% \chapter{Appendix A: Trade Analysis Tables}
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figurea1.png}
-%         \caption{Top-level trade table with final research topic scores (top right), final technology scores based on factors (bottom) and weighted factor-level scores for each technology}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figurea2.png}
-%         \caption{Technology to Task Applicability factor-level trade table}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figurea3.png}
-%         \caption{Technology to Task Enabling factor-level trade table}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figurea4.png}
-%         \caption{Technology to Risk Reduced factor-level trade table}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figurea5.png}
-%         \caption{Technology to Risk Introduced factor-level trade table}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figurea6.png}
-%         \caption{Technology to Research Interest (outside NASA) factor-level trade table}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figurea7.png}
-%         \caption{Technology to TRL factor-level trade table}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figurea8.png}
-%         \caption{Technology to Research Interest (within NASA) factor-level trade table}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-
-% Appendix B: Subject Matter Expert Summary of Backgrounds
-% The SMEs interviewed to gather background information on the HARI trade space all have extensive experience in either HAR integration research, human factors, or both, in their respective fields. Additionally, three SMEs have experience in related fields: one person in data analytics, and two others in psychology/neuroscience. The SMEs have a wide range of experience addressing different research applications, captured in Table B1.
-
-% SME	Background	Expertise
-% 		Space	Aviation	Military	Medical	Automotive	Locomotive	Robotics (general)
-% 1	Industry		x	x
-% 2	Industry		x	x
-% 3	Academia	x	x			x	x	x
-% 4	Industry,
-% Former NASA	x	x		x
-% 5	Military			x	x			x
-% 6	Academia, Industry				x	x
-% 7	Academia	x	x	x			x
-% 8	Academia,
-% Industry		x					x
-% 9	Academia	x			x			x
-% 10	Industry,
-% Former NASA	x			x	x
-% Table B1: Background and application area expertise of interviewed subject matter experts
-% Appendix C: Annotated Bibliography
-% Parasuraman, Raja, and Christopher D. Wickens. "Humans: Still vital after all these years of automation." Human factors 50.3 (2008): 511-520.
-% 	In their 2008 review, Parasuraman and Wickens discuss major discoveries and developments in levels and stages of automation, reliance on and compliance with automation, and adaptive automation. "Parasuraman, Sheridan, and Wickens (2000) accordingly proposed an extension of the LOA concept to four information-processing stages: (a) information acquisition, (b) information analysis, (c) decision making, and (d) action, with each stage having its own LOA scale (for similar scales, see Endsley & Kaber, 1999; Endsley & Kiris, 1995)."
-% Ososky, Scott, et al. "Building Appropriate Trust in Human-Robot Teams." AAAI Spring Symposium: Trust and Autonomous Systems. 2013.
-% 	In their 2013 paper, Ososky et al. describe autonomous, intelligent robots as teammates, rather than tools, and describe the importance of appropriate, rather than maximal, trust in the human-robot team. They discuss how human operators must create a sufficiently developed mental model of a robot to appropriately use it for tasks which the robot can perform superiorly to the human. They note that inaccurate mental models can create "pitfalls for robotic system misuse or disuse", and that accurate mental models are required for the human to appropriately trust the robot. They argue that appropriate trust in the robotic system leads to how the robotic system is ultimately used.
-% Beer, Jenay M., Arthur D. Fisk, and Wendy A. Rogers. "Toward a framework for levels of robot autonomy in human-robot interaction." Journal of Human-Robot Interaction 3.2 (2014): 74-99.
-% 	In their 2014 paper, Beer, Fisk, and Rogers outline a framework for levels of robot autonomy (LORA) for human-robot interaction (HRI), with the goal of allowing researchers to identify the impacts of autonomy on the interaction between human and robot. They outline a set of guidelines which can serve as "(1) a set of guidelines suggesting task and environmental influences on robot autonomy, (2) guidelines for determining or measuring autonomy, (3) a taxonomy for categorizing autonomy, and finally, (4) a set of HRI variables that may be influenced by robot autonomy."
-% Chen, Jessie YC, and Michael J. Barnes. "Human–agent teaming for multirobot control: A review of human factors issues." IEEE Transactions on Human-Machine Systems 44.1 (2014): 13-29.
-% 	In their 2014 paper, Chen and Barnes identified important human factors issued related to human-agent teams in multirobot control. They conclude that agents acting as interfaces between human operators and intelligent systems are an efficient way for operators to supervise multiple systems, while natural language processing is not required, the agents must have the ability to recognize operator intent, and that mixed initiative architectures can take advantage of both the human's expertise and the agent's precision and ability to act quickly. Mixed initiative systems, a subset of flexible automation, which allows for a dynamic level of automation based on the operator's state and events in the environment. Chen and Barnes further note the importance of transparency in effectively calibrating operator trust in an autonomous system.
-% Kehoe, Ben, et al. "A survey of research on cloud robotics and automation." IEEE Trans. Automation Science and Engineering 12.2 (2015): 398-409.
-% 	Kehoe et al.'s 2015 paper considers robots and automation systems that rely on externally networked support, and focuses on the benefits of the cloud, including: big data, cloud computing, collective robot learning, and human computation. They note the state of the art in each of these areas while considering the current challenges and future directions research must should be taken. New issues associated with the rise in cloud technology include the need for techniques to consider time varying latency and quality of service, privacy concerns, and big data cleaning and filtering techniques. The note three levels at which a cloud computing framework are currently established: Infrastructure as a Service (IaaS), where bare operating systems are available; Platform as a Service (PaaS), where more structure is provided, including access to application frameworks, databases, and programming languages; and Software as a Service (SaaS), where software is made available online rather than as a local service. They conclude by proposing a fourth cloud framework, Robotics and Automation as a Service (RAaaS), which merges PaaS and SaaS frameworks to provide a cloud service which processes inputs for robotics, suggests output actions, and monitors results to update future recommendations.
-% Rautaray, Siddharth S., and Anupam Agrawal. "Vision based hand gesture recognition for human computer interaction: a survey." Artificial Intelligence Review 43.1 (2015): 1-54.
-% 	Rautaray and Agrawal's 2015 survey provides a summary of progress in the field of vision-based hand gesture recognition and reviews the three main phases of hand gesture recognition: detection, tracking, and recognition. They analyze existing literature and note the required advances to further improve hand gesture recognition systems. They note the primary application domains of hand gesture recognition are desktop applications, followed by gaming and sign language. In terms of the challenges of operating in real-time and robustness, the authors find that comparisons are difficult as there is no commonly accepted baseline technique to compare to. Psychological aspects of gestures have been found to play an important role in hand gesture recognition systems. The authors find that, despite plenty of research into the field, 3D based gesture representations are still less preferred to appearance-based hand gesture representations.
-% Ruhland, Kerstin, et al. "A review of eye gaze in virtual agents, social robotics and hci: Behaviour generation, user interaction and perception." Computer Graphics Forum. Vol. 34. No. 6. 2015.
-% 	Ruhland et al.'s 2015 review covers the state of the art in generating artificial entities which include attempts to replicate the human eye, the role of social robotics, and the human-computer interaction issues involved. They found that research into eye-gaze models would greatly benefit from a fundamental foundation, and that individual differences in eye gaze are often ignored as research has traditionally attempted to model and recreate general behavior. Human-robot interaction in the field of eye gaze has largely focused on shared attention and gaze cueing, factors that have affected task performance and user speech. The authors note several challenges mapping virtual to physical robots, especially that robot expression has fewer degrees of freedom. They also, however, suggest that physical systems may be able to better direct human gaze to targets of interest in a real environment as they can avoid the Mona Lisa gaze effect associated with virtual agents.
-% Yanco, Holly A., et al. "Analysis of human‐robot interaction at the darpa robotics challenge trials." Journal of Field Robotics 32.3 (2015): 420-444.
-% 	Yanco et al.'s 2015 paper reviewed team performance at the DARPA Robotics Challenge (DRC) trials, analyzing the results, team structure, and human-robotic interfaces. The DRC trials were designed to test humanoid robots' ability to respond to disaster scenarios where communications bandwidth was limited or degraded. Yanco et al.'s team analyzed 8 of the 15 teams which volunteered to participate in their study, observing their team interaction and robot's performance during the challenge. They identified four areas required for teams to be successful in the challenge: robot mobility, robot manipulation, situation awareness of the robot and its surroundings, and an effective way to command the robot. They further found that the most effective team was successful largely due to their: increased sensor fusion, which reduced the operator's cognitive load and reduced the need to repeat tasks; decreased number of operators, which both increased situational awareness and decreased the amount of required operator input.
-% Kolling, Andreas, et al. "Human interaction with robot swarms: A survey." IEEE Transactions on Human-Machine Systems 46.1 (2016): 9-26.
-% 	Kolling et al.'s 2016 review is the first survey of human-swarm interaction, and presents the basics of swarm robotics, the cognitive needs of a swarm operator, and the challenges involved with providing a human-swarm interface. They break the cognitive complexity of the human-robot system into three difficulties, using an analogy of computational complexity: robots performing independent activities, with complexity O(n), which allows more robots to be controlled simply by adding more operators in a linear manner; robots interacting with other robots fully autonomously, with complexity O(1), which allows for a fixed number of robots to control any number of robots; and the case where robot-robot interaction must be controlled by an operator, with complexity O(>n), as the dependencies between robots results in more demand faster than the number of robots grows. Under the assumption that O(1) complexity (only one operator) is desired, they review various control methods of conveying operator intent to the swarm.
-% Phillips, Elizabeth, et al. "Human-animal teams as an analog for future human-robot teams: influencing design and fostering trust." Journal of Human-Robot Interaction 5.1 (2016): 100-125.
-% 	In their 2016 paper, Phillips et al. discuss the advantages of human-animal teams as an analog for the ongoing development of human-robot teams. They discuss the ways that trust is established and changes in human-animal teaming, how these effects are beginning to be seen in human-robot teams, and how this trust determines how humans interact with their robotic teammates. They argue that including nonverbal communication in robots can help humans to better understand their actions and intents, allowing humans to form appropriate expectations of them. They further suggest that it may be beneficial, in the short term, to make robots more co-dependent on their users until these autonomous systems are capable of more sophisticated capabilities.
-% Schaefer, Kristin E., et al. "A meta-analysis of factors influencing the development of trust in automation: Implications for understanding autonomy in future systems." Human factors 58.3 (2016): 377-400.
-% 	Schaefer et al.'s 2016 meta-analysis reviews thirty studies to identify the significance of many factors influencing trust in automation. They first include three main moderators on trust, human, automation, and environment, and then further divide these main moderators into several submoderating effects. The authors observed that human-related factors have an overall moderate effect on trust development, and that automation or robotic capabilities play an important role on the formation of trust. They conclude by noting a large difference between human-robot interaction and human-automation interaction, attributing this to the need for more studies on system feature-based characteristics. They further recommend research on "the effects of human states, mode of communication, anthropomorphism, and agent transparency on trust development."
-% Sheridan, Thomas B. "Human–robot interaction: status and challenges." Human factors 58.4 (2016): 525-532.
-% 	In his 2016 paper, Sheridan discusses the state of human-robotic interaction and challenges, breaking the field into four areas: human supervisory control of robots for industrial tasks, teleoperation in hazardous environments, automated highway and rail vehicles, and commercial aircraft, and human-robot social interaction. He suggests that major human factors research challenges include: "(a) task analysis that includes dynamics, economics, and other factors; (b) teaching the robot and avoidance of unintended consequences; (c) considering how both human and robot have mutual models of each other; (d) use of robots in education; (e) coping with user culture, fears, and other value considerations."
-% Tsarouchi, Panagiota, Sotiris Makris, and George Chryssolouris. "Human–robot interaction review and challenges on task planning and programming." International Journal of Computer Integrated Manufacturing 29.8 (2016): 916-931.
-% 	Tsarouchi et al.'s 2016 review focuses on human-robotics interaction in the topics of task planning/coordination, intuitive programming, and communication frameworks. They also note important technologies and sensors for human-robotic interaction, which include visual guidance and imitation learning, vocal commanding, haptics and force control, and physical HRI and safety. They note voice guidance as one of the most promising interaction modalities, suggesting that it is "the most natural and intuitive way of communication", and that physical HRI applications are lacking despite considerable research into the field.
-% Lu, Zhenji, et al. "Human factors of transitions in automated driving: A general framework and literature survey." Transportation research part F: traffic psychology and behaviour 43 (2016): 183-198.
-% 	In their 2016 paper, Lu et al. propose a classification tree which distinguishes six types of transitions in automated driving, provide use cases for these transitions, and apply their proposed framework to a review of the literature of experimental research of transitions in automated driving. Their decision tree has three levels, based on the questions of "Who initiates the transition?", followed by "Who is in control after the transition?", and finally, "Is the transition required?". By utilizing the resulting six types of transitions and comparing to the research available in the literature, the authors were able to identify transitions which were rarely studied. They also consider the emerging abilities of adaptive automation. They end by noting that "[u]ntil the driving task is wholly automated under all possible circumstances and humans are prohibited from driving manually, transitions between the driver and the automation will remain a key element of automated driving."
-% Vagia, Marialena, Aksel A. Transeth, and Sigurd A. Fjerdingen. "A literature review on the levels of automation during the years. What are the different taxonomies that have been proposed?." Applied ergonomics 53 (2016): 190-202.
-% 	In their 2016 paper, Vagia et al. review the level of automation taxonomies that have been proposed since the 1950s, present the differences between these taxonomies, provide an example taxonomy generated from their review, and review the recent trend of adaptive automation. As a result of their review, Vagia et al. identified 24 automation level characteristics and present how their reviewed authors grouped them. They further identify which of these levels are popular among their reviewed authors and discuss how some levels are more appropriate than others based on the context in which level of automation is meant to be used. Vagia et al. stress that "[w]hat is important to remember is that amongst the different levels presented by the authors there exist no ‘correct' or ‘wrong' levels, ‘better or worse' ones, they are just different. It would be wrong to claim that some levels are better than others, or that one taxonomy is the best one. To be accurate, there is no available tool in measuring how "good" or "bad" a taxonomy is, which gives the opportunity to every potential user to use the one that fits his needs better." They end by briefly noting the benefits of adaptive automation.
-% Admoni, Henny, and Brian Scassellati. "Social eye gaze in human-robot interaction: a review." Journal of Human-Robot Interaction 6.1 (2017): 25-63.
-% 	Admoni and Scassellati's 2017 paper reviews the state of the art in social eye gaze for human-robot interaction. They break the research field into three categories: human-focused, research that characterizes human behavior during robotic interaction, design-focused, research that focuses on how the design and behavior of a robot affects its interactions with humans, and technology-focused, which focuses on the computational tools for generating robotic eye gaze, and does not generally focus on human interactions. The human-focused research to date has shown that humans can identify the target of a robot's gaze, but that humans tend to have different patterns of behavior between robotic gaze and gaze from other humans. The design-focused research has shown that "contextually contingent gaze is more effective than gaze behaviors that are uncorrelated with the interaction" and increases human performance in a variety of tasks across many metrics.
-% Ahmad, Muneeb, Omar Mubin, and Joanne Orlando. "A systematic review of adaptivity in human-robot interaction." Multimodal Technologies and Interaction 1.3 (2017): 14.
-% 	Ahmad et al.'s 2017 review covered reported adaptive interactions across several domains in human-robot interaction, which included healthcare and therapy, education, public domains and work environments, and homes. After reviewing 37 papers which included user studies, they summarize their results by domain and provide future directions and challenges. They note the recognition of emotion as "one of the key technical challenges in state of the art HRI", and that including the user's emotion can lead to greater social engagement. Another technical challenge involves robot memory, and that research is needed to produce more sophisticated methods based on a robot's previous interactions with a user. One issue with robot memory is user ethical concerns on their personal data storage, which are varied. The authors conclude by calling for a need for standardized evaluation metrics, noting that, while most results are driven from video analysis, there is "no protocol to analyze these videos for a set of measurements for different domains." They also conclude that most studies, though reporting positive findings, are only based on short term exposure with social robots, and that longitudinal research is needed to provide greater context.
-% Endsley, Mica R. "From here to autonomy: lessons learned from human–automation research." Human factors 59.1 (2017): 5-27.
-% 	Endsley's 2017 paper discusses the emerging problem of loss of operator situational awareness and out-of-the-loop performance problems associated with increasing system autonomy, reliability, and robustness. Endsley presents a model for human-autonomy system oversight (HASO), incorporating situation awareness, trust, workload and automation interfaces among the key system design features influencing human cognitive processes involved in successful interaction with automated systems. Twenty guidelines for the design of human-autonomy systems are presented, based off twenty years of research and an extensive literature search. Endsley closes her review by noting a number of areas where further research is required to realize fully autonomous systems: autonomy software validation, as traditional software testing techniques are not sufficient for testing autonomy because exhaustive state testing is difficult or impossible; learning system consistency, as there is concern that individuals acting with many different autonomous systems will be unclear how the current system interprets and adapts to their behavior, which leads to; transparency of learning systems, where it is both difficult for human operators to understand how machine learning techniques incorporate new information and for software programmers to understand what the system will do in every situation. While systems have an ever-increasing level of autonomy and intervention is increasingly rare, there are still situations where human intervention is required. Maintaining situational awareness in these systems will pose a continued problem for the foreseeable future.
-% Guiochet, Jérémie, Mathilde Machin, and Hélène Waeselynck. "Safety-critical advanced robots: A survey." Robotics and Autonomous Systems 94 (2017): 43-52.
-% 	Guiochet et al.'s 2017 survey discusses the deployment of advanced robotic applications to "real life" outside the laboratory and manufacturing warehouse. The authors suggest that the major question about robots is "how can we trust them?" and continue to discuss dependability and safety as two active issues and fields of work. They discuss the requirements to product commercialization in Europe, and robotics specific standards that have recently been released for industrial (ISO 10218:2011) and personal robots (ISO 13482:2014), which the authors note as lacking. In order to discuss dependability, the definition of which the authors use "ability to deliver service that can justifiably be trusted", the authors discuss the challenges associated with fault prevention, fault removal, fault forecasting, and fault tolerance. The authors end by noting the current challenges for dependability in autonomous systems, including adaptive safety monitoring, modeling and simulation for safety analysis, perception of hazardous situations, and human-robot interaction models.
-% Zamora, Mauricio, et al. "Machine learning improves human-robot interaction in productive environments: a review." International Work-Conference on Artificial Neural Networks. Springer, Cham, 2017.
-% 	Zamora et al.'s 2017 review presents the necessary technologies for effectively linking humans, robots, and intelligent and traditional machines in the new generation of Industry 4.0. They identify machine learning, computer vision, and augmented reality as three fundamental upcoming technologies. They discuss human-robot interaction in manufacturing regarding robotic level of autonomy, noting that most robots are controlled largely by humans, and that few could be fully controlled by artificial intelligence. In reviewing which machine learning algorithms are currently being used, they found that neural networks accounted for an overwhelming majority, but that both supervised and unsupervised algorithms were about equally common. Their discussion proposes a future for manufacturing where robots use computer vision to detect human intentions, humans use augmented reality interfaces to view robot intentions, and artificial intelligence enables an optimal manufacturing workflow.
-% Liu, Hongyi, and Lihui Wang. "Gesture recognition for human-robot collaboration: A review." International Journal of Industrial Ergonomics 68 (2018): 355-367.
-% 	Liu and Wang's 2018 review of covers the most essential technologies and algorithms for gesture recognition and human-robot collaboration. Their review breaks gesture recognition into four technical components for further discussion: sensor technologies, gesture identification, gesture tracking and gesture classification. Reviewing these technical components, they note the advantages and disadvantages to the different approaches within each. They end by noting that non-wearable sensors development and deep learning-based gesture recognition systems as the most promising upcoming technologies.
-% Losey, Dylan P., et al. "A Review of Intent Detection, Arbitration, and Communication Aspects of Shared Control for Physical Human–Robot Interaction." Applied Mechanics Reviews 70.1 (2018): 010804.
-
-% \begin{figure}[b!]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/TradeStudy/figureb1.png}
-%         \caption{Losey et al.'s proposed framework for human-robot interaction with the environment.}
-%         % \label{figure:}
-%     \end{center}
-% \end{figure}
-% 	Losey et al.'s 2018 review discusses the state of the art in the field of physical human-robot interaction, where human abilities are enhanced or supported by robotic aids, and discuss the human factors involved with shared task execution between the human and robot. They present a unified view of shared human-robot control in physical task execution, using case studies of applications in healthcare to demonstrate their framework. Their framework focuses on three distinct phases of decision making: detection, the task of understanding the human's intent; arbitration, the task of distributing control between the human and robot; and feedback, the task of presenting the result of the human's intent, which is often done through haptic devices. One ongoing field of research in physical human-robot interaction is that of dynamic changes in role arbitration using machine learning and artificial intelligence techniques. The authors note role arbitration should re-evaluated when trust changes, and further note "robotic performance has the largest and most identifiable influence on trust in HRI." As such, the real-time monitoring of performance metrics is an area of active research.
-
-% Wang, Tian-Miao, Yong Tao, and Hui Liu. "Current Researches and Future Development Trend of Intelligent Robot: A Review." International Journal of Automation and Computing (2018): 1-22.
-% 	In their 2018 review, Wang et al. discuss current research and future development trends of "intelligent" robots. They note several key and leading technologies in the field of robotics. They include key technologies such as human-robot collaboration technology, autonomous navigation technology under non-structured environments, multi-agent robot systems (swarms), and emotion recognition and interaction mechanism of robot oriented to harmonious human-robot cooperation. They also highlight innovative leading technologies such as brain computer interfaces, brain-like robot control and decision making (artificial intelligence and supervised/unsupervised learning techniques), material cross-innovation and applications of robot oriented to software structure (3D printed materials, soft grippers, flexible robots), and network decision mechanism of robot based on cloud computing and big data (IoT, SLAM). Their review further breaks down these technology areas into more specific, individual technologies and notes the current state of the art in each.
