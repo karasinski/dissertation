@@ -47,3 +47,7 @@ vendor/
 *.tdo
 *.fls
 __latexindent_temp.tex
+
+
+### Other ###
+.vscode/*
