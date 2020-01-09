@@ -295,9 +295,9 @@ Objective performance was measured using the root-mean-square error (RMSE) of th
 Objective workload was measured using the response time to the secondary task, and subjective workload was measured using the NASA-TLX.
 It was hypothesized that:
 \begin{description}[align=left]
-\item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the depth ($z$) axis for both display types, and will decrease workload.
-\item [Hypothesis 2] Stereoscopic augmented reality displays improve performance in the depth ($z$) axis, but do not affect workload.
-\item [Hypothesis 3] Rotating the display improves performance in the depth ($z$) axis for both display types, and will decrease workload.
+    \item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the depth ($z$) axis for both display types, and will decrease workload.
+    \item [Hypothesis 2] Stereoscopic augmented reality displays improve performance in the depth ($z$) axis, but do not affect workload.
+    \item [Hypothesis 3] Rotating the display improves performance in the depth ($z$) axis for both display types, and will decrease workload.
 \end{description}
 
 \subsection{Procedure}
@@ -316,8 +316,8 @@ All participating subjects had normal vision (no colorblindness, eyesight correc
             \includegraphics[width=\linewidth]{figures/DSC_0803.JPG}
             \caption{3D Group}
         \end{subfigure}
-    \caption{The fixed-based simulator used by both groups.}%
-    \label{fig:simulator}%
+        \caption{The fixed-based simulator used by both groups.}%
+        \label{fig:simulator}%
     \end{center}
 \end{figure}
 
@@ -339,7 +339,7 @@ All participating subjects had normal vision (no colorblindness, eyesight correc
             \label{fig:designs_rotated}
         \end{subfigure}
         \caption{The three different designs in the same error state.
-        (b) The color feedback has been activated here, changing the guidance target from green to red.}
+            (b) The color feedback has been activated here, changing the guidance target from green to red.}
         \label{fig:designs}%
     \end{center}
 \end{figure}
@@ -357,8 +357,8 @@ Subjects in both groups used the same Microsoft Xbox controller and control sche
 The disturbance function was a sum of 13 sinusoids approximating a rectangular spectrum with a 2.0 rad/s cutoff frequency.
 The disturbing force, as a function of time, $d(t)$, was
 \begin{align}
-d(t) = \sum_{i=1}^{13} A_i \sin \left( w_i t + \phi_i \right)
-\label{eq:disturbance}
+    d(t) = \sum_{i=1}^{13} A_i \sin \left( w_i t + \phi_i \right)
+    \label{eq:disturbance}
 \end{align}
 Each sine wave amplitude, frequency, and phase offset was borrowed from a similar experiment~\citep{hess_effects_1984}.
 Table~\ref{sine-table} lists the sine wave amplitude, frequency, number of cycles in a 60 second run, and phase offset for each sine wave in the disturbance force.
@@ -368,43 +368,43 @@ This allowed for a very similar generation of disturbance forces for each axis.
 The RMSE of the disturbance force was normalized along each axis such that all three were the same.
 
 \begin{table}[tb]
-\caption{The relative amplitude, frequency, number of cycles in each 60 second run, and phase offset each $i^{th}$ sine, see Equation~\ref{eq:disturbance}.}
-\centering
-\begin{tabular}{*{5}{r}}
-\toprule
-i & $A_i/A_1$ & $w_i$ rad/s & \multicolumn{1}{p{3cm}}{\centering No. of cycles \\in 60-s run} & $\phi_i$ \\
-\midrule
-1  & 1.0 &  0.18850 & 1   & $\pi/6.5$ \\
-2  & 1.0 &  0.31416 & 3   & $2 \times \phi_1$ \\
-3  & 1.0 &  0.50265 & 4   & $3 \times \phi_1$ \\
-4  & 1.0 &  0.87965 & 8   & $4 \times \phi_1$ \\
-5  & 1.0 &  1.44513 & 13  & $5 \times \phi_1$ \\
-6  & 1.0 &  2.13628 & 20  & $6 \times \phi_1$ \\
-7  & 0.1 &  3.07876 & 29  & $7 \times \phi_1$ \\
-8  & 0.1 &  4.20973 & 40  & $8 \times \phi_1$ \\
-9  & 0.1 &  5.78053 & 55  & $9 \times \phi_1$ \\
-10 & 0.1 &  8.23097 & 78  & $10 \times \phi_1$ \\
-11 & 0.1 & 11.24690 & 107 & $11 \times \phi_1$ \\
-12 & 0.1 & 15.77079 & 150 & $12 \times \phi_1$ \\
-13 & 0.1 & 23.93894 & 228 & $13 \times \phi_1$ \\
-\bottomrule
-\end{tabular}
-\label{sine-table}
+    \caption{The relative amplitude, frequency, number of cycles in each 60 second run, and phase offset each $i^{th}$ sine, see Equation~\ref{eq:disturbance}.}
+    \centering
+    \begin{tabular}{*{5}{r}}
+        \toprule
+        i  & $A_i/A_1$ & $w_i$ rad/s & \multicolumn{1}{p{3cm}}{\centering No. of cycles                      \\in 60-s run} & $\phi_i$ \\
+        \midrule
+        1  & 1.0       & 0.18850     & 1                                                & $\pi/6.5$          \\
+        2  & 1.0       & 0.31416     & 3                                                & $2 \times \phi_1$  \\
+        3  & 1.0       & 0.50265     & 4                                                & $3 \times \phi_1$  \\
+        4  & 1.0       & 0.87965     & 8                                                & $4 \times \phi_1$  \\
+        5  & 1.0       & 1.44513     & 13                                               & $5 \times \phi_1$  \\
+        6  & 1.0       & 2.13628     & 20                                               & $6 \times \phi_1$  \\
+        7  & 0.1       & 3.07876     & 29                                               & $7 \times \phi_1$  \\
+        8  & 0.1       & 4.20973     & 40                                               & $8 \times \phi_1$  \\
+        9  & 0.1       & 5.78053     & 55                                               & $9 \times \phi_1$  \\
+        10 & 0.1       & 8.23097     & 78                                               & $10 \times \phi_1$ \\
+        11 & 0.1       & 11.24690    & 107                                              & $11 \times \phi_1$ \\
+        12 & 0.1       & 15.77079    & 150                                              & $12 \times \phi_1$ \\
+        13 & 0.1       & 23.93894    & 228                                              & $13 \times \phi_1$ \\
+        \bottomrule
+    \end{tabular}
+    \label{sine-table}
 \end{table}
 
 \begin{table}[tb]
-\caption{The factors that were modified between the different designs.}
-\centering
-\begin{tabular}{*{3}{r}}
-\toprule
-Design & $\theta$ (degrees) & Feedback \\
-\midrule
-Baseline & 0 & No \\
-Feedback & 0 & Yes \\
-Rotated & 30 & No \\
-\bottomrule
-\end{tabular}
-\label{tab:designs}
+    \caption{The factors that were modified between the different designs.}
+    \centering
+    \begin{tabular}{*{3}{r}}
+        \toprule
+        Design   & $\theta$ (degrees) & Feedback \\
+        \midrule
+        Baseline & 0                  & No       \\
+        Feedback & 0                  & Yes      \\
+        Rotated  & 30                 & No       \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:designs}
 \end{table}
 
 Three designs were presented to the subjects to evaluate: a baseline design, a color-based concurrent bandwidth feedback (CBF) design, and a rotated design.

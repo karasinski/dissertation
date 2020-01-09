@@ -53,9 +53,9 @@ The retention portion of the experiment was performed to investigate whether the
 \subsection{Task}
 \subsubsection{Control Modes.} Participants were tasked with flying a simulated Boeing 747 aircraft in three control modes. In order of increasing degrees of freedom and functional complexity, these three control modes were:
 \begin{itemize}
-\item P — Pitch only (low complexity)
-\item PR — Pitch and Roll (moderate complexity)
-\item PRA — Pitch, Roll and Altitude (significant complexity)
+    \item P — Pitch only (low complexity)
+    \item PR — Pitch and Roll (moderate complexity)
+    \item PRA — Pitch, Roll and Altitude (significant complexity)
 \end{itemize}
 Depending on the control mode, participants were required to use a joystick to null disturbances in pitch, roll, and/or to maintain a constant altitude.
 Participants were informed that all three tasks were equally important, and to try not to neglect or prioritize individual tasks.
@@ -205,15 +205,25 @@ Tukey tests showed that the participants' workload between the modes differed si
 \end{figure}
 
 \section{Discussion}
-% MODE	PITCH	ROLL	ALTITUDE
-% P	20.1%	-	-
-% PR	17.8%	21.1%	-
-% PRA	20.5%	26.1%	44.2%
-% Table 1. Performance improvement of the feedback group over the control group at the end of the experiment for each flight RMSE metric.
+
+\begin{table}[tb]
+    \caption{Performance improvement of the feedback group over the control group at the end of the experiment for each flight RMSE metric.}
+    \centering
+    \begin{tabular}{*{4}{r}}
+        \toprule
+        Mode & Pitch  & Roll   & Altitude \\
+        \midrule
+        P    & 20.1\% & -      & -        \\
+        PR   & 17.8\% & 21.1\% & -        \\
+        PRA  & 20.5\% & 26.1\% & 44.2\%   \\
+        \bottomrule
+    \end{tabular}
+    \label{aircraft:perf-improvement}
+\end{table}
 
 Our analysis showed that participants in the feedback group performed significantly better than the control group in every trial across every metric and flight control mode.
 For the first time that participants completed P, PR, and PRA trials, the feedback group performed 17.5\%, 31.7\%, and 37.4\% better than the control group according to the pitch RMSE metric.
-Participants in the feedback not only immediately performed better, they also reached their peak performance much faster and had a final performance level which was significantly better than the control group, see Table 1.
+Participants in the feedback not only immediately performed better, they also reached their peak performance much faster and had a final performance level which was significantly better than the control group, see Table~\ref{aircraft:perf-improvement}.
 The largest performance improvement was seen in controlling altitude, where the feedback group had a final performance level which was 44.2\% better than the control group, confirming H1.
 No group-related workload differences were detected in either the Modified Bedford scores or in the secondary task reaction times.
 This suggests that, for tasks of this complexity, concurrent bandwidth feedback may not reduce workload~\citep{karasinski_evaluating_2019}.

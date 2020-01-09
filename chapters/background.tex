@@ -34,7 +34,7 @@ McRuer revisited these results in 1974, after three decades of supporting engine
 In his study, McRuer completed a detailed analysis which included the human response to proportional, rate/velocity, and acceleration type controlled element dynamics, see Table~\ref{table:mcruer1974a}.
 The result of this report was the now famous ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
 \begin{align}
-Y_c(jw) Y_p(jw) = \dfrac{w_c e^{-jw \tau_e}}{jw}
+    Y_c(jw) Y_p(jw) = \dfrac{w_c e^{-jw \tau_e}}{jw}
 \end{align}
 where $Y_c$ is the controlled element transfer function, $Y_p$ is the approximate human operator transfer function, $w_c$ is the crossover frequency, and $\tau_e$ is the effective time delay of the pilot.
 The crossover model is so named as it allows for linear behavior at approximately -20 dB/decade slope in the region of the crossover frequency.
@@ -49,11 +49,11 @@ Even today, the crossover model is used as the standard for describing pilot/veh
     \small
     \begin{tabular}{p{.2\linewidth} *{2}{p{.3\linewidth}}}
         \toprule
-            Controlled Element Form & Aerospace Control & Automobile Control \\
+        Controlled Element Form & Aerospace Control                                & Automobile Control                        \\
         \midrule
-            $K_c$ & Attitude control with ACAH system & Speed control \\
-            $\dfrac{K_c}{s}$ & Attitude control with a rate command system & Heading control at low to moderate speeds \\
-            $\dfrac{K_c}{s^2}$ & Attitude control of a spacecraft with damper off & Longitudinal position control \\
+        $K_c$                   & Attitude control with ACAH system                & Speed control                             \\
+        $\dfrac{K_c}{s}$        & Attitude control with a rate command system      & Heading control at low to moderate speeds \\
+        $\dfrac{K_c}{s^2}$      & Attitude control of a spacecraft with damper off & Longitudinal position control             \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -65,12 +65,12 @@ Even today, the crossover model is used as the standard for describing pilot/veh
     \label{table:mcruer1974b}
     \small
     \begin{tabular}{*{3}{c}}
-         \toprule
-            \thead{Controlled Element\\ Transfer Function\\ $Y_c$} & \thead{Approximate Human Operator\\ Transfer Function\\ $Y_p$} & \thead{Open-Loop\\ Transfer Function\\ $Y_c Y_p$} \\
+        \toprule
+        \thead{Controlled Element                                                            \\ Transfer Function\\ $Y_c$} & \thead{Approximate Human Operator\\ Transfer Function\\ $Y_p$} & \thead{Open-Loop\\ Transfer Function\\ $Y_c Y_p$} \\
         \midrule
-            $K_c$ & $\dfrac{K_p e^{-\tau_1 s}}{s}$ & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
-            $\dfrac{K_c}{s}$ & $K_p e^{-\tau_2 s}$ & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
-            $\dfrac{K_c}{s^2}$ & $K_p s e^{-\tau_3 s}$ & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
+        $K_c$              & $\dfrac{K_p e^{-\tau_1 s}}{s}$ & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
+        $\dfrac{K_c}{s}$   & $K_p e^{-\tau_2 s}$            & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
+        $\dfrac{K_c}{s^2}$ & $K_p s e^{-\tau_3 s}$          & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -98,7 +98,6 @@ The model has been used in predicting and evaluating handling qualities and pilo
 Hess has also investigated how pilot control characteristics change with time due to flight anomalies, changing flight dynamics, and sudden increases in task demand~\citep{hess_modeling_2009, hess_modeling_2016}.
 The results of this model have been compared to the results of a human-in-the-loop simulation for a well trained subject, and showed good comparison~\citep{hess_modeling_2016}.
 Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload and to enable the modeling of pulsive pilot behavior~\citep{bachelder_modeling_2017, bachelder_linking_2018}.
-
 
 %!TEX root = ../main.tex
 % \documentclass[float=false, crop=false]{standalone}
@@ -139,32 +138,31 @@ To this end, this proposed research includes three research aims.
 These aims build on each other, starting with a compensatory tracking task, extending to a robotics task, and finishing with a descriptive model describing both.
 The first aim is complete, and the second and third aims are in progress.
 \begin{description}[align=left]
-\item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in a three-axis manual tracking task.
-\item [Aim Two] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in a robotics track and capture task.
-\item [Aim Three] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
+    \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in a three-axis manual tracking task.
+    \item [Aim Two] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in a robotics track and capture task.
+    \item [Aim Three] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
 \end{description}
 
 There are a number of research questions that we intend to answer by completing these aims, which include:
 \begin{enumerate}
-\item Can concurrent bandwidth feedback improve human performance in a three-axis manual tracking task?
-\begin{enumerate}
-\item Do 3D augmented reality displays show improved performance compared to traditional 2D displays?
-\item Can performance be increased without increasing workload?
-\end{enumerate}
-\item Can concurrent bandwidth feedback improve performance of simulated robotics tasks?
-\begin{enumerate}
-\item Can CBF reduce the required training time to peak performance?
-\item Can CBF be removed after reaching peak performance without reducing subject performance?
-\item Can performance be increased without increasing workload?
-\end{enumerate}
-\item Can we develop a descriptive model of human performance which includes the effects of concurrent bandwidth feedback?
-\begin{enumerate}
-\item Can we use this model to estimate operational limits?
-\end{enumerate}
+    \item Can concurrent bandwidth feedback improve human performance in a three-axis manual tracking task?
+          \begin{enumerate}
+              \item Do 3D augmented reality displays show improved performance compared to traditional 2D displays?
+              \item Can performance be increased without increasing workload?
+          \end{enumerate}
+    \item Can concurrent bandwidth feedback improve performance of simulated robotics tasks?
+          \begin{enumerate}
+              \item Can CBF reduce the required training time to peak performance?
+              \item Can CBF be removed after reaching peak performance without reducing subject performance?
+              \item Can performance be increased without increasing workload?
+          \end{enumerate}
+    \item Can we develop a descriptive model of human performance which includes the effects of concurrent bandwidth feedback?
+          \begin{enumerate}
+              \item Can we use this model to estimate operational limits?
+          \end{enumerate}
 \end{enumerate}
 
 The remainder of this proposal is divided into three sections: a literature review, the proposed research, and a timeline.
-
 
 %!TEX root = ../main.tex
 % \documentclass[float=false, crop=false]{standalone}
@@ -177,9 +175,9 @@ We propose to run human-in-the-loop subject testing experiments to understand th
 To investigate the three Aims outlined in the Problem Statement, we propose two experiments and the development of a model.
 
 \begin{description}[align=left]
-\item [Experiment One] investigates if concurrent bandwidth feedback can be used to teach novice subjects to improve performance in a three-axis manual tracking task.
-\item [Experiment Two] investigates if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
-\item [The Model] will extend Professor Hess' structural model of the human pilot to include the effects of concurrent bandwidth feedback.
+    \item [Experiment One] investigates if concurrent bandwidth feedback can be used to teach novice subjects to improve performance in a three-axis manual tracking task.
+    \item [Experiment Two] investigates if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
+    \item [The Model] will extend Professor Hess' structural model of the human pilot to include the effects of concurrent bandwidth feedback.
 \end{description}
 
 Concurrent bandwidth feedback has been used in a large variety of motor control tasks, and has generally been found to improve performance.
@@ -225,9 +223,9 @@ Objective performance data will be measured using time to capture, alignment err
 Subjective workload will be measured using the NASA-TLX at several points throughout the experiment.
 It is hypothesized that:
 \begin{description}[align=left]
-\item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the track-and-capture task.
-\item [Hypothesis 2] Concurrent bandwidth feedback will cause subjects to more quickly reach their peak performance in the track-and-capture task.
-\item [Hypothesis 3] Concurrent bandwidth feedback will decrease workload in the track-and-capture task.
+    \item [Hypothesis 1] Concurrent bandwidth feedback will improve performance in the track-and-capture task.
+    \item [Hypothesis 2] Concurrent bandwidth feedback will cause subjects to more quickly reach their peak performance in the track-and-capture task.
+    \item [Hypothesis 3] Concurrent bandwidth feedback will decrease workload in the track-and-capture task.
 \end{description}
 
 \subsubsection{Previous Work}
@@ -289,8 +287,8 @@ Our initial approach to adding concurrent bandwidth feedback into the Structural
 While this model of the adaptive pilot has been successful in predicting changes in performance for a well trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
 Our modified model will include two major changes to Hess' current model:
 \begin{itemize}
-\item The adaptation logic will be changed to focus on concurrent bandwidth feedback
-\item The timescale of the adaptation will be significantly longer
+    \item The adaptation logic will be changed to focus on concurrent bandwidth feedback
+    \item The timescale of the adaptation will be significantly longer
 \end{itemize}
 
 We propose to modify the adaptive logic to trigger when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
@@ -306,7 +304,6 @@ The results of our experiment with SAFER and the three-axis tracking task also s
 While it should be noted that this work is in preliminary stages and not scheduled to begin until the Fall Quarter, some early work has been started in preparation for the qualifying examination.
 An effort has been made to begin to replicate some of Hess' results.
 Working with Professor Hess, we have been able to replicate some of the existing adaptation logic for a two-axis tracking task, and begun exploratory research into modifying the model.
-
 
 %!TEX root = ../main.tex
 % \documentclass[float=false, crop=false]{standalone}
@@ -335,15 +332,15 @@ If we are successful in creating a model which closely follows human behavior, w
 This schedule is flexible to changes in plans, and was designed with the full awareness that we may face setbacks.
 There are a number of places where we may suffer delays or other issues:
 \begin{itemize}
-\item% 
-% It is difficult to predict how long it will take to recruit subjects and run them through an experiment.
-While the author has experience subject testing over one hundred subjects over three hundred hours of experiment time, it is difficult to predict how long subject testing will take to complete.
-Under the assumption that we will run approximately twenty to thirty subjects in the robotic arm experiment, and that the experiment will last for approximately two to three hours per subject, we have budgeted one quarter to recruit subjects and run them through the experiment.
-This could, however, easily stretch to two quarters, depending on subject availability and success rates.
-\item NASA Ames has agreed to allow the Human/Robotics/Vehicle Integration and Robotics Lab to use the ROBoT simulator for this proposed experiment at UC Davis.
-If, for whatever reason, we are unable to use ROBoT, we could either run the experiment at Ames or attempt to build our own robotic arm simulation.
-\item While we believe we have sufficient evidence that our feedback techniques will improve performance, it is also possible that we will not see significant effects in the robotic arm task.
-If this is the case we will need to further investigate how this task is different from our previous successes.
-This would allow us, for instance, to make begin to make recommendations for which types of tasks can and cannot benefit from this feedback.
-\item It is possible that we may be unable to create a model which incorporates feedback and that accurately mirrors the effects we have seen in our experiments. This may require us to investigate other types of performance models or to create a novel technique.
+    \item% 
+          % It is difficult to predict how long it will take to recruit subjects and run them through an experiment.
+          While the author has experience subject testing over one hundred subjects over three hundred hours of experiment time, it is difficult to predict how long subject testing will take to complete.
+          Under the assumption that we will run approximately twenty to thirty subjects in the robotic arm experiment, and that the experiment will last for approximately two to three hours per subject, we have budgeted one quarter to recruit subjects and run them through the experiment.
+          This could, however, easily stretch to two quarters, depending on subject availability and success rates.
+    \item NASA Ames has agreed to allow the Human/Robotics/Vehicle Integration and Robotics Lab to use the ROBoT simulator for this proposed experiment at UC Davis.
+          If, for whatever reason, we are unable to use ROBoT, we could either run the experiment at Ames or attempt to build our own robotic arm simulation.
+    \item While we believe we have sufficient evidence that our feedback techniques will improve performance, it is also possible that we will not see significant effects in the robotic arm task.
+          If this is the case we will need to further investigate how this task is different from our previous successes.
+          This would allow us, for instance, to make begin to make recommendations for which types of tasks can and cannot benefit from this feedback.
+    \item It is possible that we may be unable to create a model which incorporates feedback and that accurately mirrors the effects we have seen in our experiments. This may require us to investigate other types of performance models or to create a novel technique.
 \end{itemize}
