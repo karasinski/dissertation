@@ -1,34 +1,11 @@
 \chapter{Introduction}
 
-\section{Overview}
-
-We propose to run human-in-the-loop subject testing experiments to understand the effects of concurrent bandwidth feedback, and to integrate the effects of this feedback into a human performance model.
-To investigate the three Aims outlined in the Problem Statement, we propose two experiments and the development of a model.
-
-\begin{description}[align=left]
-    \item [Experiment One] investigates if concurrent bandwidth feedback can be used to teach novice subjects to improve performance in a three-axis manual tracking task.
-    \item [Experiment Two] investigates if concurrent bandwidth feedback can decrease the required learning time to peak performance in a simulated robotic arm track and capture task.
-    \item [The Model] will extend Professor Hess' structural model of the human pilot to include the effects of concurrent bandwidth feedback.
-\end{description}
-
-Concurrent bandwidth feedback has been used in a large variety of motor control tasks, and has generally been found to improve performance.
-Until recently, however, only simple tasks such as physical movements or low-dimensional pursuit tasks have been investigated.
-More recent works, including the lane-keeping task by de Groot et al., and our previous work with the SAFER task, have indicated that concurrent bandwidth feedback can also be quite effective for complex tasks.
-Unlike simple tasks, in which the guidance hypothesis dominates when feedback is removed, there is some evidence that concurrent bandwidth feedback can be removed after training without a loss of performance.
-The decrease in required learning time, improved performance, and decreased workload seen in the SAFER task show that concurrent bandwidth feedback may prove to be most useful very early in training when subjects are first exposed to complex, highly dynamic tasks.
-As concurrent bandwidth feedback can improve performance without an increase in workload, it may prove a useful technique for training other robotics tasks.
-
-There has been considerable improvement in the field of pilot modeling since McRuer's crossover model, especially with models that incorporate human physiology.
-The Structural Model, in particular, has been very effective in predicting pilot performance, handling qualities, pilot-induced oscillation rating levels, and workload for a variety of system dynamics.
-None of these pilot models, however, are able to include the effects of concurrent bandwidth feedback.
-The performance improving effects of this feedback, seen throughout the literature, make this a compelling feature to be incorporated into a pilot model.
-
 \subsection{Motivation}
 \label{sec:intro_overview}
 We aim to improve performance and decrease learning times for novice operators of highly complex motor control tasks.
-We are specifically interested in modeling and improving human performance in robotic arm tasks, which generally require extensive training to master.
-The robotic arm on the International Space Station (ISS), for instance, requires hundreds of hours of training time for astronauts to reach proficiency.
-Being able to decrease this training time could lead to significant savings in cost, and the predictive ability provided by modeling human performance allows for safer operation of the robotic arm.
+We are specifically interested in modeling and improving human performance in flight tasks, which generally require extensive training to master.
+The Federal Aviation Administration (FAA), for instance, requires a minimum of 1,500 hours as a pilot to captain a U.S. airline~\citep{FAA}.
+Being able to decrease this training time could lead to significant savings in cost, and the predictive ability provided by modeling human performance allows for safer operation of the aircraft.
 
 A variety of skills can be classified as motor control tasks, such as playing tuba, pole vaulting, or flying an aircraft.
 An individual's performance in any of these skills can change dramatically as they transition from a novice to an expert through training.
@@ -144,36 +121,53 @@ Hess has also investigated how pilot control characteristics change with time du
 The results of this model have been compared to the results of a human-in-the-loop simulation for a well trained subject, and showed good comparison~\citep{hess_modeling_2016}.
 Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload and to enable the modeling of pulsive pilot behavior~\citep{bachelder_modeling_2017, bachelder_linking_2018}.
 
+\subsection{Summary}
+We propose to run human-in-the-loop subject testing experiments to understand the effects of concurrent bandwidth feedback, and to integrate the effects of this feedback into a human performance model.
+To investigate the two Aims outlined below, we completed four experiments and the development of a model.
+
+\begin{description}[align=left]
+    \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in complex manual control task.
+    \item [Aim Two] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
+\end{description}
+
+Concurrent bandwidth feedback has been used in a large variety of motor control tasks, and has generally been found to improve performance.
+Until recently, however, only simple tasks such as physical movements or low-dimensional pursuit tasks have been investigated.
+More recent works, including the lane-keeping task by de Groot et al., and our previous work with the SAFER task, have indicated that concurrent bandwidth feedback can also be quite effective for complex tasks.
+Unlike simple tasks, in which the guidance hypothesis dominates when feedback is removed, there is some evidence that concurrent bandwidth feedback can be removed after training without a loss of performance.
+The decrease in required learning time, improved performance, and decreased workload seen in the SAFER task show that concurrent bandwidth feedback may prove to be most useful very early in training when subjects are first exposed to complex, highly dynamic tasks.
+As concurrent bandwidth feedback can improve performance without an increase in workload, it may prove a useful technique for training other complex manual control tasks.
+
+There has been considerable improvement in the field of pilot modeling since McRuer's crossover model, especially with models that incorporate human physiology.
+The Structural Model, in particular, has been very effective in predicting pilot performance, handling qualities, pilot-induced oscillation rating levels, and workload for a variety of system dynamics.
+None of these pilot models, however, are able to include the effects of concurrent bandwidth feedback.
+The performance improving effects of this feedback, seen throughout the literature, make this a compelling feature to be incorporated into a pilot model.
+
 \section{Research Questions}
 \label{sec:intro_questions}
-We are interested in measuring, modeling, and predicting the effects of concurrent bandwidth feedback (CBF) on human performance in robotics manual control tasks.
-To this end, this proposed research includes three research aims.
-These aims build on each other, starting with a compensatory tracking task, extending to a robotics task, and finishing with a descriptive model describing both.
-The first aim is complete, and the second and third aims are in progress.
+We are interested in measuring, modeling, and predicting the effects of concurrent bandwidth feedback (CBF) on human performance in complex manual control tasks.
+To this end, this proposed research includes two research aims.
+These aims build on each other, starting with a compensatory tracking task, extending to surface electromyography and aircraft flight tasks, and finishing with a theoretical model.
 \begin{description}[align=left]
-    \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in a three-axis manual tracking task.
-    \item [Aim Two] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in a robotics track and capture task.
-    \item [Aim Three] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
+    \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in complex manual control task.
+    \item [Aim Two] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
 \end{description}
 
 There are a number of research questions that we intend to answer by completing these aims, which include:
 \begin{enumerate}
-    \item Can concurrent bandwidth feedback improve human performance in a three-axis manual tracking task?
-          \begin{enumerate}
-              \item Do 3D augmented reality displays show improved performance compared to traditional 2D displays?
-              \item Can performance be increased without increasing workload?
-          \end{enumerate}
-    \item Can concurrent bandwidth feedback improve performance of simulated robotics tasks?
+    \item Can concurrent bandwidth feedback improve performance of complex manual control tasks?
           \begin{enumerate}
               \item Can CBF reduce the required training time to peak performance?
-              \item Can CBF be removed after reaching peak performance without reducing subject performance?
+              \item Can CBF be removed after reaching peak performance without reducing subject performance (i.e., does the guidance hypothesis not hold)?
+              \item Does CBF improve performance in transfer of training tasks?
               \item Can performance be increased without increasing workload?
           \end{enumerate}
-    \item Can we develop a descriptive model of human performance which includes the effects of concurrent bandwidth feedback?
+    \item Can we develop a model of human performance which includes the effects of concurrent bandwidth feedback?
           \begin{enumerate}
               \item Can we use this model to estimate operational limits?
           \end{enumerate}
 \end{enumerate}
 
 \section{Summary}
-TODO
+We have introduced our goals and motivation for the design and use of the concurrent bandwidth feedback, a techique for enhancing motor control training without inducing higher levels of workload.
+The background for the experimental work has been described and the open research questions that we explore in this work have been summarized.
+In the following chapters, we first present a systematic assessment of current and upcoming human automation/robotic integration technologies and research topics (Chapter~\ref{chapter:tradestudy}), then report on four experiments involving augmented feedback (Chapters~\ref{chap:3dtracking}-\ref{chapter:aircraftfeedback}), propose a theoretical model which explains the observed effects of the feedback (Chapter~\ref{chapter:modeling}), and summarize our findings and proposed future work (Chapter~\ref{chap:conclusion}).
