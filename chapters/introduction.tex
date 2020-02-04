@@ -1,6 +1,6 @@
 \chapter{Introduction}
 
-\subsection{Motivation}
+\section{Motivation}
 \label{sec:intro_overview}
 We aim to improve performance and decrease learning times for novice operators of highly complex motor control tasks.
 We are specifically interested in modeling and improving human performance in flight tasks, which generally require extensive training to master.
@@ -35,7 +35,7 @@ We will attempt to explain why this feedback is effective in enhancing learning 
 \begin{figure}[tb]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Screen_Shot_2018-07-25_at_10_37_08_AM.png}
-        \caption{Variables affecting the pilot/vehicle system, from~\citep{mcruer_mathematical_1974}.}
+        \caption[Variables affecting the pilot/vehicle system]{Variables affecting the pilot/vehicle system, from~\citep{mcruer_mathematical_1974}.}
         \label{figure:mcruer1974}
     \end{center}
 \end{figure}
@@ -66,35 +66,16 @@ Even today, the crossover model is used as the standard for describing pilot/veh
 
 \begin{table}[tb]
     \centering
-    \caption{Example Applications of Idealized Controlled Element Forms, adapted from~\citep{mcruer_mathematical_1974}}
+    \includetable{intro-idealized-control-elements.tex}
+    \caption[Example Applications of Idealized Controlled Element Forms]{Example Applications of Idealized Controlled Element Forms, adapted from~\citep{mcruer_mathematical_1974}}
     \label{table:mcruer1974a}
-    \small
-    \begin{tabular}{p{.2\linewidth} *{2}{p{.3\linewidth}}}
-        \toprule
-        Controlled Element Form & Aerospace Control                                & Automobile Control                        \\
-        \midrule
-        $K_c$                   & Attitude control with ACAH system                & Speed control                             \\
-        $\dfrac{K_c}{s}$        & Attitude control with a rate command system      & Heading control at low to moderate speeds \\
-        $\dfrac{K_c}{s^2}$      & Attitude control of a spacecraft with damper off & Longitudinal position control             \\
-        \bottomrule
-    \end{tabular}
 \end{table}
 
 \begin{table}[tb]
-    \renewcommand{\arraystretch}{2}
     \centering
-    \caption{Summary of Human Operator Approximate Characteristics, adapted from~\citep{mcruer_mathematical_1974}}
+    \includetable{intro-human-operator-characteristics.tex}
+    \caption[Summary of Human Operator Approximate Characteristics]{Summary of Human Operator Approximate Characteristics, adapted from~\citep{mcruer_mathematical_1974}}
     \label{table:mcruer1974b}
-    \small
-    \begin{tabular}{*{3}{c}}
-        \toprule
-        \thead{Controlled Element                                                            \\ Transfer Function\\ $Y_c$} & \thead{Approximate Human Operator\\ Transfer Function\\ $Y_p$} & \thead{Open-Loop\\ Transfer Function\\ $Y_c Y_p$} \\
-        \midrule
-        $K_c$              & $\dfrac{K_p e^{-\tau_1 s}}{s}$ & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
-        $\dfrac{K_c}{s}$   & $K_p e^{-\tau_2 s}$            & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
-        $\dfrac{K_c}{s^2}$ & $K_p s e^{-\tau_3 s}$          & $\dfrac{w_c e^{-\tau_e s}}{s}$ \\
-        \bottomrule
-    \end{tabular}
 \end{table}
 
 The continued demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a variety of more complex pilot models since the creation of the crossover model.
@@ -107,7 +88,7 @@ Recent intelligence models take advantage of techniques including fuzzy control 
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Screen_Shot_2018-07-31_at_11_21_44_AM.png}
-        \caption{The Hess Structural Model of the Human Pilot, from~\citep{hess_unified_1997}.}
+        \caption[The Hess Structural Model of the Human Pilot]{The Hess Structural Model of the Human Pilot, from~\citep{hess_unified_1997}.}
         \label{figure:structuralmodel}
     \end{center}
 \end{figure}
