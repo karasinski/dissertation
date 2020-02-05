@@ -50,7 +50,8 @@ The retention portion of the experiment was performed to investigate whether the
 
 \section{Method}
 \subsection{Task}
-\subsubsection{Control Modes.} Participants were tasked with flying a simulated Boeing 747 aircraft in three control modes. In order of increasing degrees of freedom and functional complexity, these three control modes were:
+\subsubsection{Control Modes}
+Participants were tasked with flying a simulated Boeing 747 aircraft in three control modes. In order of increasing degrees of freedom and functional complexity, these three control modes were:
 \begin{itemize}
     \item[\textbf{P}] Pitch only (low complexity)
     \item[\textbf{PR}] Pitch and Roll (moderate complexity)
@@ -64,14 +65,14 @@ Each trial had a duration of 82 seconds, and participants self-initiated the tri
 The trial order was designed such that each participant flew the simulator in increasing order of task complexity, with the sequence of P, PR, PRA, P, PR, …, PRA.
 This design was chosen to provide exposure to each control mode as quickly as possible, such that we could capture the early learning phases of each mode.
 
-\subsubsection{Forcing Functions.}
+\subsubsection{Forcing Functions}
 Both the pitch and roll axes were affected by disturbance signals, resulting in a disturbance-rejection task.
 The disturbance signal took the form of a quasi-random sum of sines (based on~\cite{doi:10.2514/1.39953}).
 The same forcing function was used for disturbing both pitch and roll, though the roll disturbance function was temporally shifted by 85 seconds to minimize the correlation between resulting pitch and roll disturbances.
 Aircraft altitude varied as a result of pitch variation.
 The same disturbing function was used for every trial, though participants were naïve to this.
 
-\subsubsection{Secondary Task.}
+\subsubsection{Secondary Task}
 To estimate participant workload more objectively than with a questionnaire, we added a secondary task that assesses the subject's cognitive margin available for attending to non-primary task execution.
 The secondary task was displayed to the right of the flight-guidance display (see Figure~\ref{figure-hfes:userinterface}) and consisted of a teal colored indicator which changed color to blue or green at pseudorandom times.
 Ten 8-second windows were established in each 82-second long trial.
@@ -83,7 +84,7 @@ This secondary task has been validated in previous studies, which have shown it 
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image1.png}
-        \caption[The user interface.]{The user interface consisting of the attitude indicator, altimeter, and secondary task.}
+        \caption[The user interface]{The user interface consisting of the attitude indicator, altimeter, and secondary task.}
         \label{figure-hfes:userinterface}
     \end{center}
 \end{figure}
@@ -91,7 +92,7 @@ This secondary task has been validated in previous studies, which have shown it 
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image2.png}
-        \caption[A participant seated in front of the simulator display.]{A participant seated in front of the simulator display, controlling the flight task with the joystick.}
+        \caption[A participant seated in front of the simulator display]{A participant seated in front of the simulator display, controlling the flight task with the joystick.}
         \label{figure-hfes:participant}
     \end{center}
 \end{figure}
@@ -124,13 +125,13 @@ After this training, participants immediately began the experiment and progresse
 Participants noted their workload on a piece of paper after each trial.
 Subjects in the feedback group were paused after the 27th trial, at which time the proctor explained that the feedback would no longer appear, but that they "should continue to perform the task to the best of [their] ability." Subjects in the feedback group also filled out a questionnaire after the end of the experiment trials which asked them about their experience with the feedback.
 
-\subsubsection{Independent variables.}
+\subsubsection{Independent variables}
 The three independent variables in this experiment were Group, Mode, and Trial.
 Group, a between subjects factor, described if subjects received feedback — Control or Feedback.
 Mode, a within subjects factor, was the three different control modes — P, PR, or PRA.
 Trial, also a within subjects factor, was the trial that subjects repeated 12 times in each mode.
 
-\subsubsection{Dependent measures.}
+\subsubsection{Dependent measures}
 The root-mean-square error (RMSE) of pitch was calculated for every trial.
 This allowed for a consistent measurement across every trial as the same pitch disturbance was present regardless of the control mode.
 The roll RMSE was calculated for each PR and PRA trial, and the altitude RMSE was calculated for each PRA trial.
@@ -186,21 +187,21 @@ Tukey tests showed that the participants' workload between the modes differed si
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image3.png}
-        \caption[The mean Pitch RMSE for each trial.]{The mean Pitch RMSE for each trial for participants in the P control mode. Data points are the mean, and error bars are the standard error of the mean.}
+        \caption[The mean Pitch RMSE for each trial]{The mean Pitch RMSE for each trial for participants in the P control mode. Data points are the mean, and error bars are the standard error of the mean.}
         \label{figure-hfes:pitchrmse}
     \end{center}
 \end{figure}
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image4.png}
-        \caption[The mean Roll RMSE for each trial.]{The mean Roll RMSE for each trial for participants in the PR control mode. Data points are the mean, and error bars are the standard error of the mean.}
+        \caption[The mean Roll RMSE for each trial]{The mean Roll RMSE for each trial for participants in the PR control mode. Data points are the mean, and error bars are the standard error of the mean.}
         \label{figure-hfes:rollrmse}
     \end{center}
 \end{figure}
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/image5.png}
-        \caption[The mean Altitude RMSE for each trial.]{The mean Altitude RMSE for each trial for participants in the PRA control mode. Data points are the mean, and error bars are the standard error of the mean.}
+        \caption[The mean Altitude RMSE for each trial]{The mean Altitude RMSE for each trial for participants in the PRA control mode. Data points are the mean, and error bars are the standard error of the mean.}
         \label{figure-hfes:altitudermse}
     \end{center}
 \end{figure}
@@ -210,7 +211,7 @@ Tukey tests showed that the participants' workload between the modes differed si
 \begin{table}[tb]
     \centering
     \includetable{aircraft-perf-improvement.tex}
-    \caption[Performance improvement of the feedback group over the control group.]{Performance improvement of the feedback group over the control group at the end of the experiment for each flight RMSE metric.}
+    \caption[Performance improvement of the feedback group over the control group]{Performance improvement of the feedback group over the control group at the end of the experiment for each flight RMSE metric.}
     \label{aircraft:perf-improvement}
 \end{table}
 

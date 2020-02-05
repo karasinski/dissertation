@@ -13,7 +13,7 @@
 % \begin{figure}[tb]
 %     \begin{center}
 %         \includegraphics[width=0.8\linewidth]{figures/Screen_Shot_2018-08-09_at_4_15_24_PM.png}
-%         \caption[Hess' model of the adaptive human pilot.]{Hess' model of the adaptive human pilot, from~\citep{hess_modeling_2009}.}
+%         \caption[Hess' model of the adaptive human pilot]{Hess' model of the adaptive human pilot, from~\citep{hess_modeling_2009}.}
 %         \label{figure:hesspursuit}
 %     \end{center}
 % \end{figure}
@@ -104,17 +104,17 @@ This model is more interesting because it has multiple parameters which could be
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figures/structural_model/structural_model.pdf}
-        \caption{The complete Structural Model, from~\cite{hess_unified_1997}.}
+        \caption[The complete Structural Model]{The complete Structural Model, from~\cite{hess_unified_1997}.}
         \label{fig:structuralmodel}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figures/structural_model_reduced/structural_model.pdf}
-        \caption{The reduced structural model used in this analysis.}
+        \caption[The reduced structural model used in this analysis]{The reduced structural model used in this analysis.}
         \label{fig:structuralmodelreduced}
     \end{subfigure}
-    \caption{The Structural Model of the Human Pilot.}
+    \caption[The Structural Model of the Human Pilot]{The Structural Model of the Human Pilot.}
     \label{fig:structuralmodels}
 \end{figure}
 
@@ -125,7 +125,7 @@ This model is more interesting because it has multiple parameters which could be
 \begin{figure}[b]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/image1.png}
-    \caption{The interface that participants were presented with during the experiment, showing the flight task on the right with deviations from nominal in pitch, roll, and altitude, and the secondary, two-choice, task on the right.}
+    \caption[The interface]{The interface that participants were presented with during the experiment, showing the flight task on the right with deviations from nominal in pitch, roll, and altitude, and the secondary, two-choice, task on the right.}
     \label{fig:display}
 \end{figure}
 
@@ -155,7 +155,7 @@ Additionally, subjects in the feedback group were able to maintain their improve
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/model_prms.png}
-    \caption{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate retention.}
+    \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate retention.}
     \label{fig:prmse}
 \end{figure}
 
@@ -173,45 +173,25 @@ The VAF is calculated by
 \end{equation}
 where $u$ is the participant's command input to the vehicle's elevators, and $u_{sim}$ is the model's simulated input.
 
-% \begin{figure}
-%     \centering
-%     \begin{subfigure}[b]{0.49\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{../../Analysis/figures/model_vaf.png}
-%         \caption{Variance accounted for (VAF).}
-%         % \label{fig:y equals x}
-%     \end{subfigure}
-%     \hfill
-%     \begin{subfigure}[b]{0.49\textwidth}
-%         \centering
-%         \includegraphics[width=\textwidth]{../../Analysis/figures/model_rmserr.png}
-%         \caption{Root-mean-square error.}
-%         % \label{fig:three sin x}
-%     \end{subfigure}
-%        \caption{Goodness of fit metrics. Error bars are standard error of the mean.}
-%        \label{fig:goodnessoffit}
-% \end{figure}
-
 \begin{figure}[t]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figures/model_output.png}
-        \caption{Comparison between estimated transfer function model and experimental data.}
+        \caption[Comparison between estimated transfer function model and experimental data]{Comparison between estimated transfer function model and experimental data.}
         \label{fig:comparison}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figures/YpYc_204.png}
-        \caption{Combined pilot/vehicle open-loop bode diagram showing the standard crossover model characteristics.}
+        \caption[Combined pilot/vehicle open-loop bode diagram]{Combined pilot/vehicle open-loop bode diagram showing the standard crossover model characteristics.}
         \label{fig:bode}
     \end{subfigure}
-    \caption{Example results from using the estimated pilot models from \textit{gettf1}.}
+    \caption[Example results from using the estimated pilot models from \textit{gettf1}]{Example results from using the estimated pilot models from \textit{gettf1}.}
     %    \label{fig:goodnessoffit}
 \end{figure}
 
-% Both metrics are available in Figure~\ref{fig:goodnessoffit}.
 The VAF of the feedback group's models immediately jumps up after the first trial to an average of $\approx.75$, indicating a good fit.
 The control groups VAF increases more slowly, to a value of approximately $\approx.68$.
 An increased VAF indicates that the pilot is behaving in a more linear fashion, and these results suggest that the concurrent feedback is able to immediately assist participants to this end.
@@ -227,7 +207,7 @@ These results are sustained during retention, and again show an immediate increa
 \begin{figure}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/model_Wcp.png}
-    \caption{Crossover frequency.}
+    \caption[Crossover frequency]{Crossover frequency.}
     \label{fig:crossover}
 \end{figure}
 
@@ -309,17 +289,17 @@ The constraints for the solver were the bounds of the global brute force search,
     \begin{subfigure}[h]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{figures/wcp.png}
-        \caption{Crossover frequency.}
+        \caption[Crossover frequency]{Crossover frequency.}
         \label{fig:sm_crossover}
     \end{subfigure}
     \hfill
     \begin{subfigure}[h]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{figures/rmse.png}
-        \caption{Root-mean-square-error}
+        \caption[Root-mean-square-error]{Root-mean-square-error.}
         \label{fig:sm_rmse}
     \end{subfigure}
-    \caption{Identified crossover frequency and predicted RMSE.}
+    \caption[Identified crossover frequency and predicted RMSE]{Identified crossover frequency and predicted RMSE.}
     %    \label{fig:goodnessoffit}
 \end{figure}
 
@@ -330,17 +310,17 @@ The constraints for the solver were the bounds of the global brute force search,
     \begin{subfigure}[h]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{figures/ke.png}
-        \caption{$K_e$}
+        \caption[$K_e$]{$K_e$.}
         \label{fig:sm_ke}
     \end{subfigure}
     \hfill
     \begin{subfigure}[h]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{figures/tdel.png}
-        \caption{$\tau$}
+        \caption[$\tau$]{$\tau$.}
         \label{fig:sm_tdel}
     \end{subfigure}
-    \caption{Visual feedback outer loop.}
+    \caption[Visual feedback outer loop]{Visual feedback outer loop.}
     %    \label{fig:goodnessoffit}
 \end{figure}
 
@@ -349,17 +329,17 @@ The constraints for the solver were the bounds of the global brute force search,
     \begin{subfigure}[h]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{figures/ypf.png}
-        \caption{$K_{PF}$}
+        \caption[$K_{PF}$]{$K_{PF}$.}
         \label{fig:sm_ypf}
     \end{subfigure}
     \hfill
     \begin{subfigure}[h]{0.49\textwidth}
         \centering
         \includegraphics[width=\linewidth]{figures/a.png}
-        \caption{$a$}
+        \caption[$a$]{$a$.}
         \label{fig:sm_a}
     \end{subfigure}
-    \caption{Proprioceptive feedback inner loop.}
+    \caption[Proprioceptive feedback inner loop]{Proprioceptive feedback inner loop.}
     %    \label{fig:goodnessoffit}
 \end{figure}
 
