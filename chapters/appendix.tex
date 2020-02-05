@@ -143,3 +143,65 @@
 
 % Wang, Tian-Miao, Yong Tao, and Hui Liu. "Current Researches and Future Development Trend of Intelligent Robot: A Review." International Journal of Automation and Computing (2018): 1-22.
 % 	In their 2018 review, Wang et al. discuss current research and future development trends of "intelligent" robots. They note several key and leading technologies in the field of robotics. They include key technologies such as human-robot collaboration technology, autonomous navigation technology under non-structured environments, multi-agent robot systems (swarms), and emotion recognition and interaction mechanism of robot oriented to harmonious human-robot cooperation. They also highlight innovative leading technologies such as brain computer interfaces, brain-like robot control and decision making (artificial intelligence and supervised/unsupervised learning techniques), material cross-innovation and applications of robot oriented to software structure (3D printed materials, soft grippers, flexible robots), and network decision mechanism of robot based on cloud computing and big data (IoT, SLAM). Their review further breaks down these technology areas into more specific, individual technologies and notes the current state of the art in each.
+
+\chapter{Aircraft Dynamics}
+
+\section{Longitudinal Dynamics}
+\begin{align*}
+    \dot{\vec{x}}_{long} =
+    \left[ \begin{array}{ *{5}{c} }
+            X_u                     & X_w                     & X_q                                          & -g \cos \theta_0 & 0 \\
+            Z_u                     & Z_w                     & Z_q + U_0                                    & -g \sin \theta_0 & 0 \\
+            M_u + M_{\dot{w}} Z_{u} & M_w + M_{\dot{w}} Z_{w} & M_q + M_{\dot{w}} \left( Z_{q} + U_0 \right) & 0                & 0 \\
+            0                       & 0                       & 1                                            & 0                & 0 \\
+            0                       & -1                      & 0                                            & U_0              & 0 \\
+        \end{array} \right]
+    \left[ \begin{array}{ *{1}{c} }
+            \Delta u      \\
+            \Delta w      \\
+            \Delta q      \\
+            \Delta \theta \\
+            \Delta z      \\
+        \end{array} \right] & + \\
+    \left[ \begin{array}{ *{5}{c} }
+            X_{\delta_e}                            & X_{\delta_{th}}                               \\
+            Z_{\delta_e}                            & Z_{\delta_{th}}                               \\
+            M_{\delta_e} + M_{\dot{w}} Z_{\delta_e} & M_{\delta_{th}} + M_{\dot{w}} Z_{\delta_{th}} \\
+            0                                       & 0                                             \\
+            0                                       & 0                                             \\
+        \end{array} \right]
+    \left[ \begin{array}{ *{1}{c} }
+            \Delta \delta_e    \\
+            \Delta \delta_{th} \\
+        \end{array} \right] &   \\
+\end{align*}
+
+\section{Lateral Dynamics}
+\begin{align*}
+    \dot{\vec{x}}_{lat} =
+    \left[ \begin{array}{ *{5}{c} }
+            Y_v  & Y_p  & Y_r - U_0     & g \cos \theta_0  & 0 \\
+            L'_v & L'_p & L'_r          & -g \sin \theta_0 & 0 \\
+            N'_v & N'_p & N'_r          & 0                & 0 \\
+            0    & 1    & \tan \theta_0 & 0                & 0 \\
+            0    & 0    & \sec \theta_0 & 0                & 0 \\
+        \end{array} \right]
+    \left[ \begin{array}{ *{1}{c} }
+            \Delta v    \\
+            \Delta p    \\
+            \Delta r    \\
+            \Delta \phi \\
+            \Delta \psi \\
+        \end{array} \right] & + \\
+    \left[ \begin{array}{ *{5}{c} }
+            Y_{\delta_{a}}  & Y_{\delta_{r}}  \\
+            L'_{\delta_{a}} & L'_{\delta_{r}} \\
+            N'_{\delta_{a}} & N'_{\delta_{r}} \\
+            0               & 0               \\
+            0               & 0               \\
+        \end{array} \right]
+    \left[ \begin{array}{ *{1}{c} }
+            \Delta \delta_a \\
+            \Delta \delta_r \\
+        \end{array} \right] &   \\
+\end{align*}
