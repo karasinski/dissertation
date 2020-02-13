@@ -1,0 +1,103 @@
+\documentclass[tikz, convert=false, border=10pt]{standalone}
+
+\usepackage[utf8]{inputenx}%  http://ctan.org/pkg/inputenx
+% Euler for math | Palatino for rm | Helvetica for ss | Courier for tt
+% \renewcommand{\rmdefault}{ppl}% rm
+% \linespread{1.05}% Palatino needs more leading
+\usepackage[scaled]{helvet}% ss //  http://ctan.org/pkg/helvet
+% \usepackage{courier}% tt // http://ctan.org/pkg/courier
+% \usepackage{eulervm}  %  http://ctan.org/pkg/eulervm
+% a better implementation of the euler package (not in gwTeX)
+% \normalfont%
+\usepackage[T1]{fontenc}%  http://ctan.org/pkg/fontenc
+% \usepackage{textcomp}%  http://ctan.org/pkg/textcomp
+
+\usetikzlibrary{shapes, arrows.meta, positioning, calc, bending}
+\usepackage{circuitikz}
+
+\def\Plus{\texttt{+}}
+\def\Minus{\texttt{-}}
+
+\begin{document}
+\tikzset{block/.style = {draw, rectangle, thick, inner sep=0pt,
+      minimum height = 3em, minimum width = 3em},
+  input/.style = {coordinate},
+  output/.style = {coordinate},
+  sum/.style={draw, thick, circle, path picture={%
+          % https://tex.stackexchange.com/questions/47263/tikz-node-with-multiple-shapes
+          \draw[thick, black]
+          (path picture bounding box.north west) -- (path picture bounding box.south east)
+          (path picture bounding box.south west) -- (path picture bounding box.north east);
+        }},
+  line/.style ={draw, very thick,-},
+}
+
+\begin{tikzpicture}[auto, node distance = 1.5em]
+  \node[input, name = input] {};
+  \node[sum, right = of input] (sum_1) {};
+  \node[block, right = 3.5em of sum_1] (K_e) {$K_e$};
+  \node[block, above = of K_e] (K_f) {$CBF$};
+  \node[sum, right = of K_e] (sum_2) {};
+  \node[block, right = of sum_2] (delay) {$e^{-{\tau_{0}} s}$};
+  \node[sum, right = of delay] (sum_4) {};
+  \node[block, right = of sum_4] (Y_NM) {$Y_{NM}$};
+  \node[block, right = of Y_NM] (Y_FS) {$Y_{FS}$};
+  \node[coordinate, right = 1.5em of Y_FS] (switch_three_right_connector) {};
+  \node[block, right = 3em of Y_FS] (Y_c) {$Y_{c}$};
+  \node[output, right = 3em of Y_c] (M) {};
+  \node[block, below = of Y_NM] (Y_PF) {$Y_{PF}$};
+  \coordinate[right = 1.5em of sum_1, name = Espace] {};
+  \coordinate[right = 1em of Y_c, name = outer_loop_empty] {};
+  \coordinate[below = 8em of outer_loop_empty, name = outer_loop_empty_lower] {};
+  \draw[thick] (outer_loop_empty) -| (outer_loop_empty_lower);
+  
+  \node[] at (-0.5em,0) {$C$};
+  % \node[] at (3.25em,0.75em) {$E$};
+  % \node[] at (12.5em,0.75em) {$E_c$};
+  % \node[] at (14.75em,0.75em) {$E_m$};
+  % \node[] at (19.5em,0.75em) {$\delta_F$};
+  \node[] at ($(switch_three_right_connector)+(0, .75em)$) {$\delta_M$};
+  \node[] at ($(outer_loop_empty)+(2.5em, 0)$) {$M$};
+  % \node[] at (27em,-2.5em) {$U_M$};
+  
+  \node[text width=3em] at (26.5em,-6em) {\itshape{proprioceptive\\feedback}};
+  \node[] at (8em,-7.25em) {\itshape{visual feedback}};
+  
+  \draw[thick, dashed] (3em, 7em) -- (3em, -9em);
+  \draw[thick, dashed] (3em, -9em) -- (32.5em, -9em);
+  \draw[thick, dashed] (32.5em, -9em) -- (32.5em, -2.5em);
+  \draw[thick, dashed] (32.5em, -2.5em) -- (24em, -2.5em);
+  \draw[thick, dashed] (24em, -2.5em) -- (24em, 2.5em);
+  \draw[thick, dashed] (24em, 2.5em) -- (12em, 2.5em);
+  \draw[thick, dashed] (12em, 2.5em) -- (12em, 7em);
+  \draw[thick, dashed] (12em, 7em) -- (3em, 7em);
+  
+  \node[] at ($(delay)+(0, 3.5em)$) {\itshape{PILOT}};
+  \node[] at ($(Y_c)+(0, 2.25em)$) {\itshape{VEHICLE}};
+  
+  \node[] at ($(sum_1)+(-1.em, +.5em)$) {\Plus};
+  \node[] at ($(sum_1)+(-.5em, -1.em)$) {\Minus};
+  
+  \node[] at ($(sum_2)+(-1.em, +.5em)$) {\Plus};
+  \node[] at ($(sum_2)+(+.5em, +1.em)$) {\Plus};
+
+  \node[] at ($(sum_4)+(-1.em, +.5em)$) {\Plus};
+  \node[] at ($(sum_4)+(-.5em, -1.em)$) {\Minus};
+  
+  \draw[thick, -latex] (K_e) -- (sum_2);
+  \draw[thick, -latex] (K_f) -| (sum_2);
+  \draw[thick, -latex] (Espace) |- (K_f);
+  \draw[thick, -latex] (sum_2) -- (delay);
+  \draw[thick, -latex] (switch_three_right_connector) |- (Y_PF);
+  \draw[thick, -latex] (Y_FS) -- (Y_c);
+  \draw[thick, -latex] (Y_PF) -| (sum_4);
+  \draw[thick, -latex] (input) -- node[] {} (sum_1);
+  \draw[thick, -latex] (sum_1) -- (K_e);
+  \draw[thick, -latex] (delay) -- (sum_4);
+  \draw[thick, -latex] (sum_4) -- (Y_NM);
+  \draw[thick, -latex] (Y_NM) -- (Y_FS);
+  \draw[thick, -latex] (Y_c) -- (M);
+  \draw[thick, -latex] (outer_loop_empty_lower) -| (sum_1);
+  
+\end{tikzpicture}
+\end{document}

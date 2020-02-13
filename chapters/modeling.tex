@@ -12,7 +12,7 @@
 
 % \begin{figure}[tb]
 %     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/Screen_Shot_2018-08-09_at_4_15_24_PM.png}
+%         \includegraphics[width=0.8\linewidth]{figures/Modeling/Screen_Shot_2018-08-09_at_4_15_24_PM.png}
 %         \caption[Hess' model of the adaptive human pilot]{Hess' model of the adaptive human pilot, from~\citep{hess_modeling_2009}.}
 %         \label{figure:hesspursuit}
 %     \end{center}
@@ -124,7 +124,7 @@ This model is more interesting because it has multiple parameters which could be
 
 \begin{figure}[b]
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/image1.png}
+    \includegraphics[width=0.8\linewidth]{figures/Aircraft/image1.png}
     \caption[The interface]{The interface that participants were presented with during the experiment, showing the flight task on the right with deviations from nominal in pitch, roll, and altitude, and the secondary, two-choice, task on the right.}
     \label{fig:display}
 \end{figure}
@@ -154,7 +154,7 @@ Additionally, subjects in the feedback group were able to maintain their improve
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/model_prms.png}
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/prms_arx.png}
     \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate retention.}
     \label{fig:prmse}
 \end{figure}
@@ -177,14 +177,14 @@ where $u$ is the participant's command input to the vehicle's elevators, and $u_
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/model_output.png}
+        \includegraphics[width=0.8\textwidth]{figures/Modeling/model_output.png}
         \caption[Comparison between estimated transfer function model and experimental data]{Comparison between estimated transfer function model and experimental data.}
         \label{fig:comparison}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/YpYc_204.png}
+        \includegraphics[width=0.8\textwidth]{figures/Modeling/YpYc_204.png}
         \caption[Combined pilot/vehicle open-loop bode diagram]{Combined pilot/vehicle open-loop bode diagram showing the standard crossover model characteristics.}
         \label{fig:bode}
     \end{subfigure}
@@ -206,9 +206,9 @@ These results are sustained during retention, and again show an immediate increa
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/model_Wcp.png}
-    \caption[Crossover frequency]{Crossover frequency.}
-    \label{fig:crossover}
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_arx.png}
+    \caption[Crossover frequency (ARX)]{Crossover frequency predicted by the ARX technique.}
+    \label{fig:arx_crossover}
 \end{figure}
 
 Mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers which were removed from the analysis.
@@ -266,7 +266,7 @@ Equation~\ref{eq:ypf} is chosen to satisfy $Y_{PF} \propto s Y_c (s)$.
 
 The flight dynamics for this task represent a Boeing 747 in Flight Condition 2, and resultant elevator to pitch dynamics take the form~\citep{heffley1972aircraft}:
 \begin{equation}
-Y_c = \frac{0.5716 (s+0.5535) (s+0.03952)}{(s^2 + 0.006158s + 0.01512) (s^2 + 1.12s + 0.8006)}
+    Y_c = \frac{0.5716 (s+0.5535) (s+0.03952)}{(s^2 + 0.006158s + 0.01512) (s^2 + 1.12s + 0.8006)}
 \end{equation}
 
 \subsubsection{Value Identification Technique}
@@ -286,61 +286,26 @@ The constraints for the solver were the bounds of the global brute force search,
 
 \begin{figure}[t]
     \centering
-    \begin{subfigure}[h]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figures/wcp.png}
-        \caption[Crossover frequency]{Crossover frequency.}
-        \label{fig:sm_crossover}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[h]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figures/rmse.png}
-        \caption[Root-mean-square-error]{Root-mean-square-error.}
-        \label{fig:sm_rmse}
-    \end{subfigure}
-    \caption[Identified crossover frequency and predicted RMSE]{Identified crossover frequency and predicted RMSE.}
-    %    \label{fig:goodnessoffit}
-\end{figure}
-
-\clearpage
-
-\begin{figure}[t]
     \centering
-    \begin{subfigure}[h]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figures/ke.png}
-        \caption[$K_e$]{$K_e$.}
-        \label{fig:sm_ke}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[h]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figures/tdel.png}
-        \caption[$\tau$]{$\tau$.}
-        \label{fig:sm_tdel}
-    \end{subfigure}
-    \caption[Visual feedback outer loop]{Visual feedback outer loop.}
-    %    \label{fig:goodnessoffit}
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_group.png}
+    \label{fig:sm_crossover}
+    \caption[Crossover frequency (Structural Model)]{Crossover frequency predicted by the Structural Model parameter identification.}
 \end{figure}
 
 \begin{figure}[t]
     \centering
-    \begin{subfigure}[h]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figures/ypf.png}
-        \caption[$K_{PF}$]{$K_{PF}$.}
-        \label{fig:sm_ypf}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[h]{0.49\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{figures/a.png}
-        \caption[$a$]{$a$.}
-        \label{fig:sm_a}
-    \end{subfigure}
-    \caption[Proprioceptive feedback inner loop]{Proprioceptive feedback inner loop.}
-    %    \label{fig:goodnessoffit}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/ke_group.png}
+    \label{fig:ke_group}
+    \caption[$K_e$ is greater for subjects exposed to feedback]{$K_e$ is greater for subjects exposed to feedback.}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
+    \label{fig:feedback_kfd}
+    \caption[Feedback exposure correlates with $\dot{K_f}$]{Feedback exposure correlates with $\dot{K_f}$, which confirms that the accumulation of exposure to feedback drives $K_f$.}
 \end{figure}
 
 % Structural Model Parameter Identification Technique
@@ -407,10 +372,9 @@ The constraints for the solver were the bounds of the global brute force search,
 \section{Discussion}
 % \begin{figure*}
 %     \centering
-%     \includegraphics[width=6in]{figures/crossover_measures.pdf}
+%     \includegraphics[width=6in]{figures/Modeling/crossover_measures.pdf}
 %     \caption{The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
 %         The dashed line indicates where the feedback was removed from participants in the feedback group.
 %         Error bars are the standard error of the mean.}
 %     \label{figure:crossover_frequency_all}
 % \end{figure*}
-

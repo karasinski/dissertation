@@ -1,45 +1,8 @@
 \chapter{Augmented Reality Tracking Task}
 \label{chap:3dtracking}
-% \documentclass[conf]{new-aiaa}
-% %\documentclass[journal]{new-aiaa} %for journal papers
-% \usepackage[utf8]{inputenc}
-
-% \usepackage[version=4]{mhchem}
-% \usepackage{siunitx}
-% \usepackage{longtable,tabularx}
-% \setlength\LTleft{0pt}
-
-% \usepackage{hyperref}
-% \hypersetup{
-%     colorlinks,
-%     citecolor=black,
-%     filecolor=black,
-%     linkcolor=black,
-%     urlcolor=black
-% }
-% \usepackage{enumitem}
-% \usepackage{booktabs}
-% \usepackage{graphicx}
-% \usepackage{subcaption}
-% \usepackage{amsmath}
-% \usepackage{setspace}
-% \usepackage{amsmath}
-% \usepackage{tikz}
-% \usetikzlibrary{arrows}
-% \usepackage{color}
-% \usepackage{flexisym}
-
-% \title{Evaluating Augmented Reality in a\\ Three-Axis Manual Tracking Task}
-
-% \author{John A. Karasinski\footnote{Graduate Student Researcher, Mechanical and Aerospace Engineering, Student Member AIAA.} and Stephen K. Robinson\footnote{Director – UC Davis Human/Robotics/Vehicle Integration and Performance Lab, Professor – Mechanical and Aerospace Engineering, Senior Member AIAA.}}
-% \affil{University of California, Davis, 1 Shields Avenue, Davis, CA 95616}
-
-% \begin{document}
-% \maketitle
 
 Portions of this chapter were originally published in the conference proceedings for AIAA Modeling and Simulation Technologies 2019 \citep{karasinski_evaluating_2019}.
 
-% % \doublespacing
 % \begin{abstract}
 % Recent advances in computing hardware have enabled a new generation of mobile augmented reality devices which have the potential to improve human performance and reduce workload in a variety of tasks.
 % The aim of this study was to investigate the effect of several factors on human performance and workload in a three-axis manual tracking task.
@@ -120,7 +83,7 @@ de Groot et al. also measured response time to a secondary task as an estimate o
 \subsubsection{SAFER Experiment}
 \begin{figure}[b!]
     \begin{center}
-        \includegraphics[width=0.8\linewidth]{figures/SAFER_DangerChris.jpg}
+        \includegraphics[width=0.8\linewidth]{figures/AR/SAFER_DangerChris.jpg}
         \caption[Simplified Aid for EVA Rescue (SAFER) experiment subject seated in the fixed-base simulator]{A subject from the Simplified Aid for EVA Rescue (SAFER) experiment seated in the fixed-base simulator~\citep{karasinski_real-time_2016}.}
         \label{figure:safersim}
     \end{center}
@@ -139,12 +102,12 @@ The secondary display located directly below the primary display portrayed infor
 \begin{figure}[tb!]
     \begin{center}
         \begin{subfigure}{0.49\textwidth}
-            \includegraphics[width=\linewidth]{plots/Group_absDistErr_clean_fit_30.png}
+            \includegraphics[width=\linewidth]{figures/AR/Group_absDistErr_clean_fit_30.png}
             \caption[Mean absolute distance error]{Mean absolute distance error, by group.}
             \label{figure:saferdistance}
         \end{subfigure}\hfill
         \begin{subfigure}{0.49\textwidth}
-            \includegraphics[width=\linewidth]{plots/Group_Workload_fit_30.png}
+            \includegraphics[width=\linewidth]{figures/AR/Group_Workload_fit_30.png}
             \caption[Mean subjective workload rating]{Mean subjective workload rating, by group.}
             \label{figure:saferworkload}
         \end{subfigure}
@@ -309,11 +272,11 @@ All participating subjects had normal vision (no colorblindness, eyesight correc
 \begin{figure}[t!]
     \begin{center}
         \begin{subfigure}{0.49\textwidth}
-            \includegraphics[width=\linewidth]{figures/DSC_0801.JPG}
+            \includegraphics[width=\linewidth]{figures/AR/DSC_0801.JPG}
             \caption[2D Group]{2D Group.}
         \end{subfigure}\hfill
         \begin{subfigure}{0.49\textwidth}
-            \includegraphics[width=\linewidth]{figures/DSC_0803.JPG}
+            \includegraphics[width=\linewidth]{figures/AR/DSC_0803.JPG}
             \caption[3D Group]{3D Group.}
         \end{subfigure}
         \caption[The fixed-based simulator used by both groups]{The fixed-based simulator used by both groups.}%
@@ -324,17 +287,17 @@ All participating subjects had normal vision (no colorblindness, eyesight correc
 \begin{figure}[t!]
     \begin{center}
         \begin{subfigure}{0.32\textwidth}
-            \includegraphics[trim={5cm 0 5cm 0},clip,width=\linewidth]{figures/Baseline.png}
+            \includegraphics[trim={5cm 0 5cm 0},clip,width=\linewidth]{figures/AR/Baseline.png}
             \caption[Baseline]{Baseline.}
             \label{fig:designs_baseline}
         \end{subfigure}\hfill
         \begin{subfigure}{0.32\textwidth}
-            \includegraphics[trim={5cm 0 5cm 0},clip,width=\linewidth]{figures/Color.png}
+            \includegraphics[trim={5cm 0 5cm 0},clip,width=\linewidth]{figures/AR/Color.png}
             \caption[Color Feedback]{Color Feedback.}
             \label{fig:designs_feedback}
         \end{subfigure}\hfill
         \begin{subfigure}{0.32\textwidth}
-            \includegraphics[trim={5cm 0 5cm 0},clip,width=\linewidth]{figures/Angled.png}
+            \includegraphics[trim={5cm 0 5cm 0},clip,width=\linewidth]{figures/AR/Angled.png}
             \caption[Rotated (about the $y$ axis)]{Rotated (about the $y$ axis).}
             \label{fig:designs_rotated}
         \end{subfigure}
@@ -430,7 +393,7 @@ It was also expected that, due to the stereoscopic nature of the display, the Ho
 
 \begin{figure}[tb!]
     \begin{center}
-        \includegraphics[height=7cm]{plots/x_design_y_zrmse_col_startdesign_hue_device.png}
+        \includegraphics[height=7cm]{figures/AR/x_design_y_zrmse_col_startdesign_hue_device.png}
         \caption[The resulting normalized RMSE along the $z$ axis]{The resulting normalized RMSE along the $z$ axis. Subjects started in either the (a) Baseline, (b) Feedback, or (c) Rotated design.}
         \label{fig:zrmseanovas}
     \end{center}
@@ -450,7 +413,7 @@ Subjects who started in the CBF design performed significantly better in the 3D 
 
 \begin{figure}[tb!]
     \begin{center}
-        \includegraphics[height=7cm]{plots/x_design_y_zrmse_hue_device_col_cbf_first.png}
+        \includegraphics[height=7cm]{figures/AR/x_design_y_zrmse_hue_device_col_cbf_first.png}
         \caption[The resulting normalized RMSE along the $z$ axis]{The resulting normalized RMSE along the $z$ axis, grouping by subjects that started (a) without or (b) with feedback.}
         \label{fig:zrmseanovas2}
     \end{center}
@@ -491,7 +454,3 @@ Care must be taken to provide subjects with the feedback required to adequately 
 % \section*{Acknowledgments}
 % The authors would like to thank all the subjects for volunteering to take part in the study.
 % This work was supported by the Link Foundation's Modeling, Simulation, and Training Fellowship.
-
-% \bibliography{MyCollection}
-
-% \end{document}
