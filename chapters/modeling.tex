@@ -271,17 +271,19 @@ The flight dynamics for this task represent a Boeing 747 in Flight Condition 2, 
 
 \subsubsection{Value Identification Technique}
 A brute force parameter search was used to identify the value of the remaining parameters.
-Each combination of the parameters $K_e, \tau_0, K,$ and $a$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment.
-The resulting 55,575 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
+Each combination of the parameters $K_e, \tau_0, K, a$, and $\omega_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment.
+The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
 
 Once this initial global best fit was identified, the parameters were further tuned in MATLAB using ``fmincon'' to find the minimum of the constrained nonlinear multivariable function.
 The constraints for the solver were the bounds of the global brute force search, though, in general, the optimizer did not result in large parameter changes from the initial values.
 
 \begin{align}
-    K_e    & = [1, 2, 3, \ldots, 25]             \\
-    \tau_0 & = [.100, .125, .150, \ldots, 3.0] s \\
+    K_e    & = [1, 2, 3, \ldots, 30]             \\
+    \tau_0 & = [.20, .25, .30] s \\
     K      & = [1.0, 1.5, 2.0, \ldots, 10.0]     \\
-    a      & = [.0, .25, .50, \ldots, 3.0]
+    a      & = [.0, .25, .50, \ldots, 3.0] \\
+    \omega_{NM} & = [7, 8, 9, 10, 11, 12] \\
+    \zeta_{NM} & = [0.7] \\
 \end{align}
 
 \begin{figure}[t]
