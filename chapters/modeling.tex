@@ -55,7 +55,7 @@ The ARX identification technique provided a consistently high variance accounted
 These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
 
 % Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field motor learning.
-% In their 2013 review, Sigrist et al. write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning''~\cite{sigrist_augmented_2013}.
+% In their 2013 review, Sigrist et al. write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning''~\citet{sigrist_augmented_2013}.
 % There are a variety of different forms of augmented feedback, that can be further classified by how, when, and by what form the feedback is provided.
 % For this work, however, we sought to evaluate a type of feedback which was both conceptually simple and could be tied to operational requirements.
 % With these requirements in mind, we investigated the effects of concurrent bandwidth feedback.
@@ -63,9 +63,9 @@ These results are more pronounced for modes with increased functional complexity
 % Bandwidth feedback is displayed to the operator when some parameter is inside (on-track feedback) or outside (off-track feedback) of an acceptable, predefined tolerance limit.
 % In our implementation, concurrent bandwidth feedback describes feedback conveyed to the operator when their real-time performance drifts outside of an acceptable tolerance limit.
 
-% Early control theory based models of human operators were summarized in McRuer's 1957 report, ``Dynamic Response of Human Operators''~\cite{mcruer_dynamic_1957}, which evaluated measurements for single-input/single-output manual control systems and developed predictive models consistent with this data.
+% Early control theory based models of human operators were summarized in McRuer's 1957 report, ``Dynamic Response of Human Operators''~\citet{mcruer_dynamic_1957}, which evaluated measurements for single-input/single-output manual control systems and developed predictive models consistent with this data.
 % The report concludes by describing a transfer function of the human operator which includes a time delay, a neuromuscular lag, and a gain.
-% McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments and was able to further generalize these results to a wide variety of system dynamics~\cite{mcruer_mathematical_1974}.
+% McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments and was able to further generalize these results to a wide variety of system dynamics~\citet{mcruer_mathematical_1974}.
 % The result of this report was the now famous ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
 % \begin{equation}
 %     Y_c(jw) Y_p(jw) = \dfrac{w_c e^{-jw \tau_e}}{jw}
@@ -73,23 +73,23 @@ These results are more pronounced for modes with increased functional complexity
 % where $Y_c$ is the controlled element transfer function, $Y_p$ is the approximate human operator transfer function, $w_c$ is the crossover frequency, and $\tau_e$ is the effective time delay of the pilot.
 % The crossover model is so named as it allows for linear behavior at approximately -20 dB/decade slope in the region of the crossover frequency.
 % Modeling the human pilot with the crossover enables a more complete view of the complete pilot/vehicle system, and allows for human factors recommendations towards the design of new vehicles.
-% The crossover model is used as the standard for describing pilot/vehicle systems at the crossover frequency~\cite{mcruer_mathematical_1974,mcruer_human_1965,xu_review_2017}.
+% The crossover model is used as the standard for describing pilot/vehicle systems at the crossover frequency~\citet{mcruer_mathematical_1974,mcruer_human_1965,xu_review_2017}.
 
 % The continued demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a variety of more complex pilot models since the creation of the crossover model.
-% A recent review by Xu et al. in 2017 surveyed the state of the art in human pilot modeling and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\cite{xu_review_2017}.
-% Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\cite{kleinman_optimal_1970,baron_optimal_1970}.
+% A recent review by Xu et al. in 2017 surveyed the state of the art in human pilot modeling and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\citet{xu_review_2017}.
+% Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\citet{kleinman_optimal_1970,baron_optimal_1970}.
 % Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
-% Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\cite{hess_structural_1980,hess_model_1990,hess_unified_1997}, Hosman's descriptive model~\cite{hosman_pilots_nodate,hosman_pilots_1999}, and the biodynamic model~\cite{griffin_validation_2001}.
-% Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\cite{zaychik_conspectus_2006,gestwa_modelling_2003}.
+% Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\citet{hess_structural_1980,hess_model_1990,hess_unified_1997}, Hosman's descriptive model~\citet{hosman_pilots_nodate,hosman_pilots_1999}, and the biodynamic model~\citet{griffin_validation_2001}.
+% Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\citet{zaychik_conspectus_2006,gestwa_modelling_2003}.
 
-% While the McRuer was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\cite{hess_structural_1980}.''
-% For this reason, the Structural Model is of particular interest due to the incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\cite{hess_modeling_2009}.
+% While the McRuer was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\citet{hess_structural_1980}.''
+% For this reason, the Structural Model is of particular interest due to the incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\citet{hess_modeling_2009}.
 % The Structural Model includes the effects of the neuromuscular system, the force-feel characteristics of the input device, and the contributions of proprioceptive, vestibular, and visual feedback, see Figure~\ref{fig:structuralmodels}.
 % One of the key strengths of the Structural Model is the relatively few number of free parameters that need to be set to predict pilot performance.
-% The model has been used in predicting and evaluating handling qualities and pilot-induced oscillation rating levels for helicopters, Boeing 747, Lockheed C-5A, and twin ducted-fan aircraft~\cite{hess_analytical_2013,andreea-irina_prediction_2014,grant_handling_2015}.
-% Hess has also investigated how pilot control characteristics change with time due to flight anomalies, changing flight dynamics, and sudden increases in task demand~\cite{hess_modeling_2009,hess_modeling_2016}.
-% The results of this model have been compared to the results of a human-in-the-loop simulation for a well trained subject, and showed good comparison~\cite{hess_modeling_2016}.
-% Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload and to enable the modeling of pulsive pilot behavior~\cite{bachelder_modeling_2017,bachelder_linking_2018}.
+% The model has been used in predicting and evaluating handling qualities and pilot-induced oscillation rating levels for helicopters, Boeing 747, Lockheed C-5A, and twin ducted-fan aircraft~\citet{hess_analytical_2013,andreea-irina_prediction_2014,grant_handling_2015}.
+% Hess has also investigated how pilot control characteristics change with time due to flight anomalies, changing flight dynamics, and sudden increases in task demand~\citet{hess_modeling_2009,hess_modeling_2016}.
+% The results of this model have been compared to the results of a human-in-the-loop simulation for a well trained subject, and showed good comparison~\citet{hess_modeling_2016}.
+% Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload and to enable the modeling of pulsive pilot behavior~\citet{bachelder_modeling_2017,bachelder_linking_2018}.
 
 % \section{Pilot Modeling Techniques}
 We have a ``black box'' model which can give us a coarse understanding of the pilot.
@@ -107,7 +107,7 @@ This model is more interesting because it has multiple parameters which could be
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figures/structural_model/structural_model.pdf}
-        \caption[The complete Structural Model]{The complete Structural Model, from~\cite{hess_unified_1997}.}
+        \caption[The complete Structural Model]{The complete Structural Model, from~\citet{hess_unified_1997}.}
         \label{fig:structuralmodel}
     \end{subfigure}
     \hfill
@@ -166,7 +166,7 @@ Additionally, subjects in the feedback group were able to maintain their improve
 This is pretty simple, we simply pass the input/output data into gettf1 and observe the characteristics of the resulting transfer function.
 We can also combine the estimated operator transfer function with the vehicle dynamics to observe the overall system characteristics, such as the crossover frequency.
 
-An autoregressive technique to identify a transfer function from an input/output time sequence pair was previously developed by Hess et al.~\cite{hess_modeling_2002}.
+An autoregressive technique to identify a transfer function from an input/output time sequence pair was previously developed by Hess et al.~\citet{hess_modeling_2002}.
 Using this technique, called \textit{gettf1}, we identified transfer functions representing pilot models for the data trials from our experiment.
 The resulting pilot models can be compared with the experimental data from which they are generated in order to determine the goodness of fit.
 Two goodness of fit metrics are available: the variance accounted for (VAF) and the root-mean-square error between the model output and participant data.
@@ -202,7 +202,7 @@ The RMSE between the simulated and actual data is similar between groups and tre
 Visual inspection of the experimental and simulated data also shows very good agreement, see Figure~\ref{fig:comparison}.
 
 By combining these pilot models with the system dynamics the crossover frequency (Figure~\ref{fig:bode}) and gain and phase margins can be found.
-The crossover model has long been used as the standard model for human control tasks, where the crossover frequency represents ``how hard'' the pilot is working~\cite{mcruer_dynamic_1957}.
+The crossover model has long been used as the standard model for human control tasks, where the crossover frequency represents ``how hard'' the pilot is working~\citet{mcruer_dynamic_1957}.
 The results of these parameters reflect what was found in the pitch RMSE performance analysis.
 Subjects in the feedback group immediately show increased crossover frequency and decreased phase and gain margins.
 These results are sustained during retention, and again show an immediate increase/decrease when the feedback is removed.
@@ -215,7 +215,7 @@ These results are sustained during retention, and again show an immediate increa
 \end{figure}
 
 Mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers which were removed from the analysis.
-The Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R~\cite{RN53}.
+The Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R~\citet{RN53}.
 When significant effects were observed, post hoc comparisons using the Tukey Honest Significance Difference (HSD) test were performed and considered significant at the $p < .05$ level, and the Satterthwaite method was again used to calculate the degrees of freedom.
 Only 7 of the 1080 total trials (30 subjects with 36 trials per subject) were removed.
 These trials were extreme performance outliers, and including these trials does not change the primary results of the study.
