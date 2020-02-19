@@ -3,25 +3,10 @@
 
 Portions of this chapter were originally published in the conference proceedings for AIAA SciTech 2020 \citep{doi:10.2514/6.2020-1110}.
 
-% \documentclass[conf]{new-aiaa}
-% %\documentclass[journal]{new-aiaa} for journal papers
-% \usepackage[utf8]{inputenc}
-
-% \usepackage{graphicx}
-% \usepackage{amsmath}
-% \usepackage[version=4]{mhchem}
-% \usepackage{siunitx}
-% \usepackage{longtable,tabularx}
-% \setlength\LTleft{0pt}
-
 % \title{The Effects of Training Methodology on Performance, Workload, and Trust During Human Learning of a Computer-Based Task}
 
 % \author{Sarah M. O'Meara\footnote{Graduate Student Researcher, Mechanical and Aerospace Engineering Department.} and John A. Karasinski\footnote{Graduate Student Researcher, Mechanical and Aerospace Engineering Department, Student Member AIAA.} and Casey L. Miller\footnote{Research Assistant, Mechanical and Aerospace Engineering Department.} and Sanjay S. Joshi\footnote{Director, Robotics, Autonomous Systems, and Controls Laboratory, Professor, Mechanical and Aerospace Engineering Department.} and Stephen K. Robinson\footnote{Principal Investigator, Human/Robotics/Vehicle Integration and Performance Lab, Professor, Mechanical and Aerospace Engineering Department, Associate Fellow AIAA.}}
 % \affil{University of California, Davis, Davis, CA, 95616, USA}
-
-% \begin{document}
-
-% \maketitle
 
 % \begin{abstract}
 % To further close the gap between human and automation, research has explored various forms of biophysical measurements for use as feedback control, such as electromyography (EMG).
@@ -66,16 +51,16 @@ In general, concurrent feedback has been shown to be more useful with increasing
 Concurrent feedback has recently shown great promise in EMG control, though less progress has been made comparing the effects of terminal feedback strategies or investigating long-term learning effects~\citep{RN29, RN30, RN31, RN32}.
 
 Users learn and adapt to improve performance, and surface EMG (sEMG) control adaptation may follow Bayesian theory~\citep{RN33}.
-Johnson, et al.~\citep{RN33} showed significant increases in adaptation rate with increased mean error and decreased feedback uncertainty.
+\citeauthor{RN33} showed significant increases in adaptation rate with increased mean error and decreased feedback uncertainty.
 Noisier sEMG control methods provide richer feedback, or information about the control signal, which can lead to a larger adaptation rate compared to a more filtered classification method~\citep{RN34}.
-Lyons and Joshi~\citep{RN35} demonstrated that subjects exposed to a mapping uncertainty during cursor control had larger adaptation rates when the mapping uncertainty was removed, indicating that noise during training may increase adaptation.
+\citeauthor{RN35} demonstrated that subjects exposed to a mapping uncertainty during cursor control had larger adaptation rates when the mapping uncertainty was removed, indicating that noise during training may increase adaptation.
 Inducing adaption may be a viable training methodology and has been previously shown to support generalized task learning~\citep{RN36}.
 
 \subsection{Trust in Automation}
 Trust is an important factor when considering human-automation interaction, and inappropriate trust can lead to the disuse or misuse of automated systems.
 Trust is ``the attitude that an agent will help achieve an individual's goals in a situation characterized by uncertainty and vulnerability''~\citep{lee_trust_2004}.
 The reliability of a system, in particular, has been shown to be an important aspect of an operator's trust in a system~\citep{RN38}.
-While there have been many proposed models for trust, Hoff and Bashir's three layer model deserves particular attention~\citep{RN39}.
+While there have been many proposed models for trust, \citeauthor{RN39}'s three layer model deserves particular attention.
 After performing a systematic review of the literature, they developed a three-layer model of trust which is split between dispositional trust, situational trust, and learned trust.
 Though researchers have little control over dispositional trust, they can affect situational trust by varying an experimental interface or environment and learned trust can be evaluated using repeated measures.
 
@@ -105,10 +90,10 @@ A total of 55 subjects volunteered.
 Subjects were released from the study due to equipment issues (N = 3), withdrawal request (N = 2), and significant motivation issues (e.g. not attempting the task; N = 2).
 The remaining 48 subjects that completed the protocol had an average age of 20.07 years $\pm$ 1.39 years ($\mu\pm\sigma$), included 2 left-hand dominant subjects, and had equal participation of females (N = 24).
 
-The experimental setup followed Lyons and Joshi~\citep{RN44}.
+The experimental setup followed \citeauthor{RN44}.
 Two electrodes (ConMed 1620 Ag/AgCl center snap) approximately 2.5 cm apart were placed on the dominant hand side near the extensor digitorum proximal attachment.
 A reference electrode was located near the lateral epicondyle of the humerus.
-The electrodes' signal was acquired as described in Ref.~\citep{RN44}, and the signal processing followed Ref.~\citep{RN45}.
+The electrodes' signal was acquired as described in \citet{RN44}, and the signal processing followed \citet{RN45}.
 The root mean square (rms) value for each window is calculated, normalized by a manually set calibration constant, and incorporated into a moving average window (length 8) to yield an updated $\bar{x}$ at 16 Hz (used in Eq.~\ref{equation:one}).
 The software for the study used the Python AxoPy library~\citep{RN46}.
 
@@ -129,13 +114,13 @@ The Fitts's Law task was divided into 16 Blocks of 10 Trials with the first 120 
 After each Block there was a 30 s minimum rest time during which subjects completed surveys.
 In addition, a maximum voluntary contraction measurement was collected before and after the experiment to confirm that subjects were not significantly fatigued during the experiment, which has been shown to affect sEMG signals~\citep{RN47}.
 We developed a ``Command Accuracy Test'' to assess each subject's ability to produce commands.
-The Command Accuracy Test was conducted prior to training, at the end of training, and at the end of retention to provide an assessment similar to offline classification accuracy (see Ref.~\citep{RN48} for an EMG example).
+The Command Accuracy Test was conducted prior to training, at the end of training, and at the end of retention to provide an assessment similar to offline classification accuracy (see \citet{RN48} for an EMG example).
 
 \subsection{Fitts's Law Task}
 In our study, the purpose of the Fitts's Law task was to evaluate the effects of the training methodology.
 The sEMG control methodology was first presented in~\citep{RN45} and was used to command the cursor motion.
 The premise of the methodology was to use serial patterns of muscle activation (``inputs'') to convey commands, similar to Morse code.
-The first two inputs selected a command and the third input allowed for continuous control (See Fig.~\ref{figure:label1}a).
+The first two inputs selected a command and the third input allowed for continuous control (See Figure~\ref{figure:label1}a).
 The command was determined based on the prior inputs with a timeout to reset in the case of errors.
 In this study, subjects learned the 2-input code for four commands: up, down, left, right.
 The codes were defined by the duration that the sEMG input exceeded the threshold; each input was identified as ``short'' ($\leq$ 0.50 s) or ``long'' ($>$ 0.50 s).
@@ -155,11 +140,11 @@ Each Trial began with the cursor at the center of the interface and a target in 
 There were 40 unique target positions that covered a range of Index of Difficulties (IDs) from 1.00 to 4.09 bits (calculated by the Shannon formulation~\citep{RN50}).
 The subject used sEMG to convey commands and moved the cursor to the target.
 The cursor had to dwell on the target for 1 s to successfully complete the trial.
-The maximum Trial time was 60 s, which was determined by reviewing data from Ref.~\citep{RN45} and preliminary testing.
-As shown in Fig.~\ref{figure:label2}, the Control, Concurrent Feedback and Adaptive Threshold groups viewed similar interfaces.
-The additional visual feedback in the Concurrent Feedback group was provided by changing the color of the cursor (Fig.~\ref{figure:label2}b).
-The Terminal Feedback group had additional visual elements at the edges of the cursor interface that changed color to reflect the command (Fig.~\ref{figure:label2}c).
-The visual feedback was displayed according to the timing shown in Fig.~\ref{figure:label1}b.
+The maximum Trial time was 60 s, which was determined by reviewing data from \citet{RN45} and preliminary testing.
+As shown in Figure~\ref{figure:label2}, the Control, Concurrent Feedback and Adaptive Threshold groups viewed similar interfaces.
+The additional visual feedback in the Concurrent Feedback group was provided by changing the color of the cursor (Figure~\ref{figure:label2}b).
+The Terminal Feedback group had additional visual elements at the edges of the cursor interface that changed color to reflect the command (Figure~\ref{figure:label2}c).
+The visual feedback was displayed according to the timing shown in Figure~\ref{figure:label1}b.
 
 \begin{figure}[hbt!]
 	\centering
@@ -246,7 +231,7 @@ The Tukey test also showed that subjects in the Adaptive Threshold group perform
 	\label{figure:label3}
 \end{figure}
 
-The interaction effect resulted from different learning rates between the groups (see Fig.~\ref{figure:label3}), where subjects learned in the following order (fastest to slowest): Concurrent Feedback, Terminal, Control, and Adaptive Threshold.
+The interaction effect resulted from different learning rates between the groups (see Figure~\ref{figure:label3}), where subjects learned in the following order (fastest to slowest): Concurrent Feedback, Terminal, Control, and Adaptive Threshold.
 Compared to the Control group, the Concurrent Feedback group significantly outperformed them for the first 6 Blocks.
 Unlike the Concurrent Feedback group, the Terminal Feedback and Adaptive Threshold groups started with the same initial performance as the Control group.
 The Terminal Feedback group learned more quickly than the Control group, however, and significantly outperformed the Control group for Blocks 4 and 5.
@@ -262,7 +247,7 @@ The mean throughput for all subjects was found to be 0.56 $\pm$ 0.02 bits/s ($\m
 
 The randomization of the 40 target positions occurred over 4 Blocks, thus it seemed appropriate to average Trial time over a Session (i.e. set of 4 Blocks).
 Trial time was only defined for successfully completed Trials, and the Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R~\citep{RN53}.
-The results are displayed in Fig.~\ref{figure:label4}.
+The results are displayed in Figure~\ref{figure:label4}.
 There were significant main factors of Group ($F(3, 43.97) = 4.39, p < 0.01$) and Session ($F(3, 131.07) = 24.91, p < 0.001$).
 The interaction effect between Group and Session was not significant ($F(9, 131.07) = 0.78, p = 0.63$).
 A Tukey test showed that the Concurrent Feedback group performed significantly better than those in the Adaptive Threshold group ($p = 0.004$), which was the only significant difference between groups.
@@ -281,7 +266,7 @@ These results further supported that the guidance hypothesis did not occur.
 \subsection{Trust and Perceived Workload}
 The Modified Bedford Workload metric is a subjective measurement of perceived workload that ranges from 1-10, where 1 indicates low workload and 10 indicates high workload.
 There was a significant main factor of Block ($F(15, 660) = 18.29, p < 0.001$), but Group was not found to be significant ($F(3, 44) = 2.16, p = 0.106$).
-There was also a significant interaction effect between Group and Block ($F(45, 660)= 1.82, p = 0.001$) (see Fig.~\ref{figure:label5}).
+There was also a significant interaction effect between Group and Block ($F(45, 660)= 1.82, p = 0.001$) (see Figure~\ref{figure:label5}).
 The interaction effect resulted from subjects reporting lower workload as they learn the task at different rates, as indicated by the Block factor.
 In further investigation of the interaction, we observed that the Adaptive Threshold group reported a significantly higher workload than the Concurrent Feedback group for Blocks 9, 10, and 11.
 This perception of high workload may possibly have resulted from the significantly worse performance of the Adaptive Threshold group.
@@ -303,7 +288,7 @@ The Control group's workload was significantly higher for Blocks 1-6, possibly d
 Finally, the Adaptive Threshold group reported the highest workload in Blocks 1-5, but also saw the largest improvement transitioning into the retention phase where their $l_1$ threshold stabilized to the same fixed value as the other groups.
 
 Trust was measured using Jian's twelve question trust survey~\citep{jian_foundations_2000}.
-Each question was rated on a 7-point Likert scale, the five reverse coded questions were reversed, and the results were averaged to create a single trust score (see Fig.~\ref{figure:label6}).
+Each question was rated on a 7-point Likert scale, the five reverse coded questions were reversed, and the results were averaged to create a single trust score (see Figure~\ref{figure:label6}).
 There was a significant main factor of Block ($F(15, 660) = 13.05, p < 0.001$), but Group was not found to be significant ($F(3, 44) = 2.59, p = 0.065$).
 There was also significant interaction effect between Group and Block ($F(45, 660) = 2.00, p < 0.001$).
 The significant main effect of Block showed a gradual increase in trust throughout the duration of the study.
@@ -326,7 +311,7 @@ The Command Accuracy Test occurred three times (before Block 1, after Block 12, 
 
 In each Command Accuracy Test, subjects responded to prompts to perform commands.
 The command accuracy percent indicates the percentage of the 20 prompts in each Test that subjects correctly performed.
-Results were averaged by group (see Fig.~\ref{figure:label7}).
+Results were averaged by group (see Figure~\ref{figure:label7}).
 There was a significant main factor of Test ($F(2, 88) = 108.48, p < 0.001$), but Group was not significant ($F(3, 44) = 2.63, p = 0.06$).
 The interaction effect between Group and Test was not significant ($F(6, 88) = 0.82, p = 0.55$).
 Investigation into the Test variable showed that subjects performed significantly better between Test 1 and 2, and between Test 1 and 3, but not between Test 2 and 3.
@@ -368,12 +353,12 @@ Firstly, an adaptive training methodology did not appear to cause adverse effect
 Unreliable automation behavior can lead to poor human-automation interaction~\citep{RN54}, but was not the case in this study.
 Secondly, the benefits of increased adaption induced by uncertainty did not manifest (e.g. generalization for novel tasks).
 The adaption training methodology may be better tested with a different task with the same underlying structure instead of returning to a stable condition.
-For example, Braun, et al.~\citep{RN36} showed that subjects trained with an adaptive training strategy were able to quickly generalize to novel tasks with similar underlying structure.
+For example, \citeauthor{RN36} showed that subjects trained with an adaptive training strategy were able to quickly generalize to novel tasks with similar underlying structure.
 It is also possible that the cursor dynamics unpredictability was not sufficiently large compared to the inherent sEMG control noise.
 
 Our results aligned with previously published research.
-The Concurrent Feedback and Terminal Feedback groups follow the findings of Basmajian~\citep{RN27} that augmented feedback can improve performance.
-We also observed effects that may be explained by Hoff and Bashir's three layer model~\citep{RN39}.
+The Concurrent Feedback and Terminal Feedback groups follow the findings of \citeauthor{RN27} that augmented feedback can improve performance.
+We also observed effects that may be explained by \citeauthor{RN39}'s three layer model.
 At times, there were significantly different levels of trust between the groups, which indicated that the training methodologies altered situational trust.
 Subjects' trust levels also increased, which supported the notion of learned trust.
 While developing a brain computer interface (BCI) was not the study objective, the throughput values during the retention phase for all groups fell within published results for sEMG cursor control systems.
@@ -394,7 +379,3 @@ This study provided insights on the relationship between performance, workload, 
 
 % \section*{Acknowledgments}
 % The authors would like to acknowledge the subjects who took part in this study, without whom this paper would not be possible.
-
-% \bibliography{bib}
-
-% \end{document}
