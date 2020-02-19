@@ -5,102 +5,41 @@
 \textbf{\color{red} This chapter discusses the last of my PhD work.
     The work is approximately 90\% complete, but the final results and writeup are not yet complete.}
 
-% \subsection{Model Extension}
-% The second Aim of this work is to develop a model of the human pilot which includes the effects of concurrent bandwidth feedback.
-% The model presented here extends Professor Hess' structural model of the human pilot.
-% The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
-% Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed~\citep{hess_modeling_2009}.
-% This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot~\citep{hess_modeling_2009}.''
-% The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more responsive, which could be interpreted as more focused on the task.
+\subsection{Motivation}
+The second Aim of this dissertation is to develop a model of the human pilot which includes the effects of concurrent bandwidth feedback.
+The model presented here extends Hess' Structural Model of the human pilot.
+The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
+Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed~\citep{hess_modeling_2009}.
+This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot~\citep{hess_modeling_2009}.''
+The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more responsive, which could be interpreted as more focused on the task.
 
-% \begin{figure}[tb]
-%     \begin{center}
-%         \includegraphics[width=0.8\linewidth]{figures/Modeling/Screen_Shot_2018-08-09_at_4_15_24_PM.png}
-%         \caption[Hess' model of the adaptive human pilot]{Hess' model of the adaptive human pilot, from~\citep{hess_modeling_2009}.}
-%         \label{figure:hesspursuit}
-%     \end{center}
-% \end{figure}
+\begin{figure}[tb]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{figures/Modeling/Screen_Shot_2018-08-09_at_4_15_24_PM.png}
+        \caption[Hess' model of the adaptive human pilot]{Hess' model of the adaptive human pilot, from~\citet{hess_modeling_2009}.}
+        \label{figure:hesspursuit}
+    \end{center}
+\end{figure}
 
-% While this model of the adaptive pilot has been successful in predicting changes in performance for a well trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
-% Our modified model will include two major changes to Hess' current model:
-% \begin{itemize}
-%     \item The adaptation logic will be changed to focus on concurrent bandwidth feedback
-%     \item The timescale of the adaptation will be significantly longer
-% \end{itemize}
+While this model of the adaptive pilot has been successful in predicting changes in performance for a well trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
+The modified model presented here includes two major changes to Hess' current model:
+\begin{itemize}
+    \item The adaptation logic is changed to focus on concurrent bandwidth feedback
+    \item The timescale of the adaptation is significantly longer
+\end{itemize}
 
-% We propose to modify the adaptive logic to trigger when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
-% This will require the addition of a feedback loop onto the Structural Model which triggers when the bandwidth feedback is activated.
-% This loop will likely be based around the $K_e$ gain, which is currently the primary way of setting the crossover frequency in the Structural Model.
-% This implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback that their current level of aggressiveness is not sufficient to complete the task.
-% While there must be a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours, the change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly, within a few minutes.
-% This is reflected in the delta of performance between subjects in the different groups of our SAFER experiment, even on the first trial, see Figure~\ref{figure:saferdistance}.
-% This relates to the second required change, the amount of required adaptation time.
-% Professor Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
-% The results of our experiment with SAFER and the three-axis tracking task also suggest relatively short adaptation times, though they are on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
+Here, the adaptive logic to triggers when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
+This will requires the addition of a feedback loop onto the Structural Model which triggers when the bandwidth feedback is activated.
+This loop is based around the $K_e$ gain, which is the primary way of setting the crossover frequency in the Structural Model.
+This change implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback that their current level of aggressiveness is not sufficient to complete the task.
 
-We want to use models to identify some aspect(s) which cause the pilot to perform better.
+While there must be a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours, the change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly, within a few minutes.
+This is reflected in the delta of performance between subjects in the different groups of our SAFER experiment, even on the first trial, see Figure~\ref{figure:saferdistance}.
+This relates to the second required change, the amount of required adaptation time.
+Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
+The results of our experiment with SAFER and the three-axis tracking task also suggest relatively short adaptation times, though they are on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
 
-Training operators to perform complex manual control tasks is expensive and time consuming, and poorly trained operators can cause catastrophic failures.
-The use of concurrent feedback techniques has been shown to improve performance and reduce training times, but has not been evaluated for complex, real-world tasks such as flying aircraft.
-Thirty participants were evenly split into two groups and tasked with flying a simulated Boeing 747 aircraft in three control modes of increasing degrees of freedom and functional complexity.
-The control group controlled simulated aircraft motion with visual guidance for pitch, roll, and altitude provided by traditional flight instruments.
-The feedback group received additional visual concurrent feedback for each controlled degree of freedom.
-For both groups, performance measurements were evaluated to determine the effects of the feedback on subject learning rate and maximum skill level.
-To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed, and performance was again evaluated.
-
-A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions and the estimated pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
-The Hess Structural Model of the pilot is also investigated, which “describe the underlying structure which contributes to human pilot dynamics.'' The Structural Model is of interest for interpreting the effects of concurrent feedback as it incorporates multiple sensory channels and models of visual acuity and the time-varying human pilot.
-Results indicate that participants in the feedback group had a significantly lower root-mean-square error and higher crossover frequency than those in the control group, indicating better performance.
-The ARX identification technique provided a consistently high variance accounted for (VAF), indicating that it can identify transfer functions representing a variety of operators at various levels of training.
-These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
-
-% Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field motor learning.
-% In their 2013 review, Sigrist et al. write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning''~\citet{sigrist_augmented_2013}.
-% There are a variety of different forms of augmented feedback, that can be further classified by how, when, and by what form the feedback is provided.
-% For this work, however, we sought to evaluate a type of feedback which was both conceptually simple and could be tied to operational requirements.
-% With these requirements in mind, we investigated the effects of concurrent bandwidth feedback.
-% Concurrent, or real-time, feedback is displayed to the operator while the task is being executed, in contrast to terminal feedback, which is displayed after the task is complete.
-% Bandwidth feedback is displayed to the operator when some parameter is inside (on-track feedback) or outside (off-track feedback) of an acceptable, predefined tolerance limit.
-% In our implementation, concurrent bandwidth feedback describes feedback conveyed to the operator when their real-time performance drifts outside of an acceptable tolerance limit.
-
-% Early control theory based models of human operators were summarized in McRuer's 1957 report, ``Dynamic Response of Human Operators''~\citet{mcruer_dynamic_1957}, which evaluated measurements for single-input/single-output manual control systems and developed predictive models consistent with this data.
-% The report concludes by describing a transfer function of the human operator which includes a time delay, a neuromuscular lag, and a gain.
-% McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments and was able to further generalize these results to a wide variety of system dynamics~\citet{mcruer_mathematical_1974}.
-% The result of this report was the now famous ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
-% \begin{equation}
-%     Y_c(jw) Y_p(jw) = \dfrac{w_c e^{-jw \tau_e}}{jw}
-% \end{equation}
-% where $Y_c$ is the controlled element transfer function, $Y_p$ is the approximate human operator transfer function, $w_c$ is the crossover frequency, and $\tau_e$ is the effective time delay of the pilot.
-% The crossover model is so named as it allows for linear behavior at approximately -20 dB/decade slope in the region of the crossover frequency.
-% Modeling the human pilot with the crossover enables a more complete view of the complete pilot/vehicle system, and allows for human factors recommendations towards the design of new vehicles.
-% The crossover model is used as the standard for describing pilot/vehicle systems at the crossover frequency~\citet{mcruer_mathematical_1974,mcruer_human_1965,xu_review_2017}.
-
-% The continued demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a variety of more complex pilot models since the creation of the crossover model.
-% A recent review by Xu et al. in 2017 surveyed the state of the art in human pilot modeling and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\citet{xu_review_2017}.
-% Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\citet{kleinman_optimal_1970,baron_optimal_1970}.
-% Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
-% Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\citet{hess_structural_1980,hess_model_1990,hess_unified_1997}, Hosman's descriptive model~\citet{hosman_pilots_nodate,hosman_pilots_1999}, and the biodynamic model~\citet{griffin_validation_2001}.
-% Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\citet{zaychik_conspectus_2006,gestwa_modelling_2003}.
-
-% While the McRuer was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\citet{hess_structural_1980}.''
-% For this reason, the Structural Model is of particular interest due to the incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\citet{hess_modeling_2009}.
-% The Structural Model includes the effects of the neuromuscular system, the force-feel characteristics of the input device, and the contributions of proprioceptive, vestibular, and visual feedback, see Figure~\ref{fig:structuralmodels}.
-% One of the key strengths of the Structural Model is the relatively few number of free parameters that need to be set to predict pilot performance.
-% The model has been used in predicting and evaluating handling qualities and pilot-induced oscillation rating levels for helicopters, Boeing 747, Lockheed C-5A, and twin ducted-fan aircraft~\citet{hess_analytical_2013,andreea-irina_prediction_2014,grant_handling_2015}.
-% Hess has also investigated how pilot control characteristics change with time due to flight anomalies, changing flight dynamics, and sudden increases in task demand~\citet{hess_modeling_2009,hess_modeling_2016}.
-% The results of this model have been compared to the results of a human-in-the-loop simulation for a well trained subject, and showed good comparison~\citet{hess_modeling_2016}.
-% Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload and to enable the modeling of pulsive pilot behavior~\citet{bachelder_modeling_2017,bachelder_linking_2018}.
-
-% \section{Pilot Modeling Techniques}
-We have a ``black box'' model which can give us a coarse understanding of the pilot.
-This is the ARX technique which Professor Hess has used, \textit{gettf1}.
-We also have the control theory based model, the Structural Model, which Professor Hess has used for several decades.
-This model is more interesting because it has multiple parameters which could be responsible for the observed change in performance.
-
-% \subsection{AutoRegressive Models with eXogenous Variables (ARX)}
-% This is the ARX technique which Professor Hess has used, \textit{gettf1}.
-
-% \subsection{The Structural Model}
+% We want to use models to identify some aspect(s) which cause the pilot to perform better.
 
 \begin{figure}[t]
     \centering
@@ -132,12 +71,20 @@ This model is more interesting because it has multiple parameters which could be
     \label{fig:display}
 \end{figure}
 
-Thirty participants were randomly split into two groups and tasked with flying a simulated Boeing 747 aircraft in three control modes. In order of increasing degrees of freedom and functional complexity, these three control modes were:
+Training operators to perform complex manual control tasks is expensive and time consuming, and poorly trained operators can cause catastrophic failures.
+The use of concurrent feedback techniques has been shown to improve performance and reduce training times, but has not previously been evaluated for complex, real-world tasks such as flying aircraft.
+In the experiment (fully described in Chapter~\ref{chapter:aircraftfeedback}), thirty participants were evenly split into two groups and tasked with flying a simulated Boeing 747 aircraft in three control modes of increasing degrees of freedom and functional complexity.
+In order of increasing degrees of freedom and functional complexity, these three control modes were:
 \begin{itemize}
     \item[\textbf{P}] Pitch only (low complexity)
     \item[\textbf{PR}] Pitch and Roll (moderate complexity)
     \item[\textbf{PRA}] Pitch, Roll and Altitude (significant complexity)
 \end{itemize}
+The control group controlled simulated aircraft motion with visual guidance for pitch, roll, and altitude provided by traditional flight instruments.
+The feedback group received additional visual concurrent feedback for each controlled degree of freedom.
+For both groups, performance measurements were evaluated to determine the effects of the feedback on subject learning rate and maximum skill level.
+To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed, and performance was again evaluated.
+
 Each participant completed a total of 36 trials; 12 in each of the three control modes.
 Each trial had a duration of 82 seconds, and participants self-initiated the trial by activating a trigger on the joystick.
 The complete results of this experiment can be seen in Chapter~\ref{chapter:aircraftfeedback}.
@@ -163,6 +110,18 @@ Additionally, subjects in the feedback group were able to maintain their improve
 \end{figure}
 
 \subsection{ARX Model Identification}
+% \subsection{AutoRegressive Models with eXogenous Variables (ARX)}
+% A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions and the estimated pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
+% The Hess Structural Model of the pilot is also investigated, which “describe the underlying structure which contributes to human pilot dynamics.'' The Structural Model is of interest for interpreting the effects of concurrent feedback as it incorporates multiple sensory channels and models of visual acuity and the time-varying human pilot.
+% Results indicate that participants in the feedback group had a significantly lower root-mean-square error and higher crossover frequency than those in the control group, indicating better performance.
+% The ARX identification technique provided a consistently high variance accounted for (VAF), indicating that it can identify transfer functions representing a variety of operators at various levels of training.
+% These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
+
+% We have a ``black box'' model which can give us a coarse understanding of the pilot.
+% This is the ARX technique which Hess has used, \textit{gettf1}.
+% We also have the control theory based model, the Structural Model, which Hess has used for several decades.
+% This model is more interesting because it has multiple parameters which could be responsible for the observed change in performance.
+
 This is pretty simple, we simply pass the input/output data into gettf1 and observe the characteristics of the resulting transfer function.
 We can also combine the estimated operator transfer function with the vehicle dynamics to observe the overall system characteristics, such as the crossover frequency.
 
@@ -234,10 +193,10 @@ There were significant main factors of group $(F(1, 27.92) = 4.4, p = 0.046)$ an
 Tukey tests showed that the participants' crossover frequency between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group $(M = 0.98, 1.29,$ respectively, $SE = 0.11)$, and the trial effect showing learning throughout the experiment for both groups.
 
 \subsection{Structural Model Parameter Identification}
+% \subsection{The Structural Model}
 This is more complicated, as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
 
 \section{Results}
-
 
 \subsection{Model Parameterization}
 \begin{equation}
