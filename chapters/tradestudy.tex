@@ -57,7 +57,7 @@ The final ranks were used in our trade analysis.
 A multi-dimensional trade analysis was performed to objectively assess HARI research topics and specific technologies.
 The factors for assessment were traded directly with HARI technologies, while research topics were assessed through direct relationships with those technologies.
 Technologies were first assessed against each factor in a series of individual one-dimensional trade analyses (each trading technologies against one factor).
-The results of these factor-level trades were normalized and used to score technologies, taking into account the relative factor weights, in the factor-to-technology dimension of the larger analysis (Figure 1).
+The results of these factor-level trades were normalized and used to score technologies, taking into account the relative factor weights, in the factor-to-technology dimension of the larger analysis (Figure~\ref{figure:tradestudyapproach}).
 The research-topic-to-technology dimension was assessed based on relationships between the two.
 Research topics and technologies were defined as related if a given technology supports the research topic such that its development would fundamentally drive investigation of that topic.
 The scores for each related technology for a given research topic were summed to achieve the total score for that topic.
@@ -159,14 +159,14 @@ Exhaustive testing of rules and potential system states will not be possible and
 Validating machine learning solutions is currently an active area of research.
 There is concern about consistency in learning systems, as different systems will learn using different techniques and provide different levels of feedback about how their automation has changed based off new data.
 Endsley notes the lack of transparency in learning systems as a unique challenge, saying ``[t]he actual logic and lessons 'learned' by neural networks and deep learning software are typically opaque not only to the human operator but also to software developers who may not fully understand how the system will behave in all circumstances"~\citep{endsley_here_2017}.
-These problems are exemplified by Sheridan, who notes that ``[i]t is becoming clear that many complex traffic situations are exceedingly difficult for computer vision and artificial intelligence to 'understand' and that many accidents are avoided by social interaction between drivers, such as mutual eye contact, hand signals, and so on.
-Understanding the social aspects of driving in traffic, as well as the degree to which cars can be safely automated, demands much further research"~\citep{sheridan_humanrobot_2016}.
+These problems are exemplified by \citeauthor{sheridan_humanrobot_2016}, who notes that ``[i]t is becoming clear that many complex traffic situations are exceedingly difficult for computer vision and artificial intelligence to 'understand' and that many accidents are avoided by social interaction between drivers, such as mutual eye contact, hand signals, and so on.
+Understanding the social aspects of driving in traffic, as well as the degree to which cars can be safely automated, demands much further research".
 
 \subsubsection{Flexible, Adaptive, or Adaptable Automation}
 Flexible, adaptive, and adaptable automation are widely praised in the literature for their ability to provide dynamic levels of automation.
 The flexibility to provide different sets of automated features during different mission phases, for instance, is an effective requirement for many modern tasks.
 One example of this is the autopilot software used in modern transport aircraft, which includes multiple modes of automation for takeoff, cruise, and landing.
-Chen and Barnes define flexible automation as ``systems that invoke various levels of automation depending on the operator's state, critical events in the environment, or algorithms related to specialized problem sets"~\citep{chen_humanagent_2014}.
+~\citeauthor{chen_humanagent_2014} define flexible automation as ``systems that invoke various levels of automation depending on the operator's state, critical events in the environment, or algorithms related to specialized problem sets".
 Chen and Barnes and others have subdivided flexible automation into subtypes, based on the involvement of humans in the decision making process: adaptive automation—where tasks are assigned using conditions established before a mission, adjustable automation—where the human decides when to invoke automation, and mixed-initiative systems—where both the human and the system jointly decide how to allocate tasks~\citep{chen_humanagent_2014, beer_toward_2014}.
 These dynamic changes in the role of the human in the human-automation interaction are meant to ``either increase the robot's level of autonomy at the expense of the human's authority, or, conversely, increase the human's control over the shared cooperative activity at the expense of the robot's autonomy"~\citep{losey_review_2018}.
 These systems help maintain overall performance while attempting to reduce workload and maintain situational awareness for their human operators~\citep{kaber_situation_2006}.
@@ -182,7 +182,7 @@ This type of automation is already present in self-driving vehicles on the road 
 While this flexible automation is often effective in common and well understood systems such as driving, there is some concern that flexible automation may prove detrimental in complex and potentially unpredictable systems such as robotic swarms~\citep{kolling_human_2016}.
 
 While adaptive and adaptable automation has been the subject of many experiments over the past few decades, the question of who should be in charge of setting the level of automation remains an open question in need of further study, though mixed-initiative systems may provide the best of both worlds~\citep{chen_humanagent_2014, parasuraman_humans:_2008}.
-Chen and Barnes conclude their review by noting that ``[m]ixed-initiative architectures take advantage of the synergy between the more sophisticated worldview of an experienced human as well as the agent's logical precision and more rapid latencies"~\citep{chen_humanagent_2014}.
+\citeauthor{chen_humanagent_2014} conclude their review by noting that ``[m]ixed-initiative architectures take advantage of the synergy between the more sophisticated worldview of an experienced human as well as the agent's logical precision and more rapid latencies".
 This architecture is inherently complex and difficult to study, however, as individual differences such as age, expertise, and trust have large effects when interacting with these systems~\citep{schaefer_meta-analysis_2016}.
 Further research is recommended into different types of flexible automation, especially when it deals with very complex systems.
 
@@ -192,7 +192,7 @@ The ability for swarms to dynamically reconfigure themselves in response to chan
 There remain important questions to be answered in the realm of human systems integration with swarms, especially regarding human supervisory control~\citep{kolling_human_2016}.
 There is a specific concern with monitoring human workload and situational awareness as the number of robots increases.
 Depending on the number and ability of robots and the type of tasks being performed, it is possible to quickly overburden the swarm operator, especially when operator is required to negotiate swarm-swarm interactions.
-Kolling et al.'s 2016 review breaks the cognitive complexity of the human-robot system into three complexities: robots performing independent activities, with complexity O(n), which allows more robots to be controlled simply by adding more operators in a linear manner; robots interacting with other robots fully autonomously, with complexity O(1), which allows for a fixed number of robots to control any number of robots; and the case where robot-robot interaction must be controlled by an operator, with complexity O(>n), as the dependencies between robots results in more demand faster than the number of robots grows~\citep{kolling_human_2016}.
+\citeauthor{kolling_human_2016}'s \citeyear{kolling_human_2016} review breaks the cognitive complexity of the human-robot system into three complexities: robots performing independent activities, with complexity O(n), which allows more robots to be controlled simply by adding more operators in a linear manner; robots interacting with other robots fully autonomously, with complexity O(1), which allows for a fixed number of robots to control any number of robots; and the case where robot-robot interaction must be controlled by an operator, with complexity O($>$n), as the dependencies between robots results in more demand faster than the number of robots grows.
 See Figure~\ref{figure-hari:controlcomplexity} for a graphical illustration of control complexity under each of these conditions.
 
 \begin{figure}[b!]
@@ -208,7 +208,7 @@ The development and design of human-swarm interfaces for multi-robot collaborati
 The ability for swarms to multitask, and the requirement for the human operator to quickly task switch has been shown to cause detrimental effects on overall system performance~\citep{chen_humanagent_2014}.
 High workload phases have been shown to be most sensitive to interruptions from tasks switching, suggesting that task switching should be avoided during these phases unless absolutely necessary~\citep{norman_user_1986}.
 Issues relating to multitasking, task switching, and the loss of situational awareness can be mitigated with properly designed human-swarm interfaces.
-Chen and Barnes outlined several of the prominent issues in user interface design and offered solutions in the form of guidelines~\citep{chen_humanagent_2014}.
+\citeauthor{chen_humanagent_2014} outlined several of the prominent issues in user interface design and offered solutions in the form of guidelines.
 They identified six issues range from ``maintaining operator's ultimate decision authority" to ``visualization and training techniques enhance human-agent collaboration", and present guidelines based on the findings of their review.
 
 The concept of robots and automation systems that rely on externally networked support has also been explored by researchers~\citep{kehoe_survey_2015}.
@@ -229,18 +229,18 @@ Currently, cloud computing can be described as a framework with consists of thre
 Human trust has numerous definitions but for our purposes can be considered to be ``the attitude that an agent will help achieve an individual's goals in a situation characterized by uncertainty and vulnerability''~\citep{lee_trust_2004}.
 Trust has become an increasing topic of research as robotics increasingly moves out of traditional settings such as manufacturing and into more common-place locations such as the office and the home.
 Trust has a large impact on the physical safety of people operating around robots, as improper trust can lead a person to inadvertently place themselves in harm's way.
-Considering the ways that trust changes over time has been an important aspect of the research into trust, and Schaefer et al. define trust as a three-dimensional expression of a relational property:
+Considering the ways that trust changes over time has been an important aspect of the research into trust, and \cite{schaefer_meta-analysis_2016} define trust as a three-dimensional expression of a relational property:
 \begin{enumerate}
     \item An individual's overall, long-term propensity to trust in general
     \item A transient, momentary trust responsive to immediate ambient conditions
-    \item How 1) and 2) evolve over time~\citep{schaefer_meta-analysis_2016}
+    \item How 1) and 2) evolve over time
 \end{enumerate}
 Their meta-analysis found strong effects between human-robot interaction and analyzed the factors that determine trust.
 A robot or robotic system's ability to garner trust relies on several factors.
-See Figure~\ref{figure-hari:trust} for Schaefer et al.'s conceptual organization of influencing the development of trust.
+See Figure~\ref{figure-hari:trust} for \citeauthor{schaefer_meta-analysis_2016}'s conceptual organization of influencing the development of trust.
 Trust is commonly assessed using surveys, many of which have been proposed, which attempt to measure the individual factors which establish trust.
 These scales attempt to measure individual elements of trust, asking about the operator's assessment of the automation's competence, predictability, and dependability, among other factors.
-Of these measurement techniques, two of the most commonly used scales are the ``Checklist for Trust between People and Automation''~\citep{jian_foundations_2000} and versions of Muir and Moray's subjective rating scales~\citep{muir_trust_1996}, though research into real-time techniques is ongoing~\citep{SEPPELT201966}.
+Of these measurement techniques, two of the most commonly used scales are the ``Checklist for Trust between People and Automation''~\citep{jian_foundations_2000} and versions of \citeauthor{muir_trust_1996}'s subjective rating scales, though research into real-time techniques is ongoing~\citep{SEPPELT201966}.
 Appropriate trust is important when shared control between human-robot teams is essential, as the human is more likely to arbitrate additional tasks to the robot when this trust is established~\citep{losey_review_2018}.
 
 \begin{figure}[b!]
@@ -251,18 +251,18 @@ Appropriate trust is important when shared control between human-robot teams is 
     \end{center}
 \end{figure}
 
-Ososky et al. made several propositions regarding human trust of robotics, among the most important being that:
+\citeauthor{ososky_building_2013} made several propositions regarding human trust of robotics, among the most important being that:
 \begin{itemize}
     \item Humans are easily influenced by superficial characteristics of robots
-    \item Human subjective assessment of trust in robots ultimately determines the use of robotic systems~\citep{ososky_building_2013}
+    \item Human subjective assessment of trust in robots ultimately determines the use of robotic systems
 \end{itemize}
 They noted that robot characteristics had the strongest influence on trust in human-robot teams, which included factors such as reliability, transparency, and anthropomorphic qualities.
-One example of this is de Visser et al.'s 2016 study, which found that anthropomorphic automation associated greater trust resilience~\citep{de_visser_almost_2016}.
-de Visser et al. concluded their study by suggesting that designers incorporate these features into future robots as a deliberate design choice to garner greater trust.
+One example of this is \citeauthor{de_visser_almost_2016}'s \citeyear{de_visser_almost_2016} study, which found that anthropomorphic automation associated greater trust resilience.
+\citeauthor{de_visser_almost_2016} concluded their study by suggesting that designers incorporate these features into future robots as a deliberate design choice to garner greater trust.
 Even very simple additions such as high levels of mutual gaze have been shown to increase trust, while gaze aversions stoke feelings of distrust between human-robotic teams~\citep{admoni_social_2017}.
 
 While anthropomorphism can lead to greater trust, some authors note caution when incorporating these features.
-Culley and Madhaven warn that individual differences can lead some individuals to place too great a trust in anthropomorphic robots~\citep{culley_note_2013}.
+\citeauthor{culley_note_2013} warn that individual differences can lead some individuals to place too great a trust in anthropomorphic robots.
 Individuals are even more likely to trust anthropomorphic robots if they perceive similarities to the robot and themselves regarding age, gender, and even similarity of movement~\citep{pak_multi-level_2014, verberne_trusting_2013}.
 Ososky further warns that trust in a robot's reliability alone is insufficient for better teamwork, and that over-trust combined with an inaccurate or incomplete mental model can lead to worse overall performance.
 This is especially important when considering changing levels of automation in the field of human-automation interaction, for example, as an operator may not fully understand what they are currently responsible for, if the robotic system is in control.
@@ -386,7 +386,7 @@ This technology has an estimated TRL of 6 or greater.
 \subsubsection{Flexible, Adaptive, or Adaptable Automation}
 As noted earlier in the report, flexible, adaptive, and adaptable automation are widely praised in the literature for their ability to provide dynamic levels of automation.
 The flexibility to provide different sets of automated features during different mission phases, for instance, is an effective requirement for many modern tasks.
-Chen and Barnes define flexible automation as ``systems that invoke various levels of automation depending on the operator's state, critical events in the environment, or algorithms related to specialized problem sets"~\citep{chen_humanagent_2014}.
+\citeauthor{chen_humanagent_2014} define flexible automation as ``systems that invoke various levels of automation depending on the operator's state, critical events in the environment, or algorithms related to specialized problem sets".
 This technology has an estimated TRL of 6 or greater.
 
 \subsection{Research Topics}
@@ -427,7 +427,7 @@ It also looks at new methods to enable humans to make time-critical decisions us
 \subsubsection{Improving situation awareness in HAR systems}
 One of the most accepted definitions of situation awareness states that ``[s]ituation awareness is the perception of the elements in the environment within a volume of time and space, the comprehension of their meaning, and the projection of their status in the near future"~\citep{endsley2017toward}.
 This research topic focuses on techniques to both maintain and improve operator situation awareness when interacting with automation/robotics systems.
-Recent work by Endsley has further expanded early models of situation awareness, discussing the emerging problem of loss of operator situational awareness and out-of-the-loop performance problems associated with increasing system autonomy, reliability, and robustness~\citep{endsley_here_2017}.
+Recent work by \citeauthor{endsley_here_2017} has further expanded early models of situation awareness, discussing the emerging problem of loss of operator situational awareness and out-of-the-loop performance problems associated with increasing system autonomy, reliability, and robustness.
 This new model for human-autonomy system oversight (HASO), incorporates situation awareness, trust, workload and automation interfaces among the key system design features influencing human cognitive processes involved in successful interaction with automated systems.
 
 \subsubsection{Improving training for HAR systems and tasks}
