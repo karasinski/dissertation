@@ -8,10 +8,10 @@
 
 \section{Motivation}
 \label{sec:intro_overview}
-We aim to improve performance and decrease learning times for novice operators of highly complex motor control tasks.
+We aim to improve performance and decrease learning times for novice operators of highly complex motor control tasks without increasing cognitive workload.
 We are specifically interested in modeling and improving human performance in flight tasks, which generally require extensive training to master.
 The Federal Aviation Administration (FAA), for instance, requires a minimum of 1,500 hours as a pilot to captain a U.S. airline~\citep{FAA}.
-Being able to decrease this training time could lead to significant savings in cost, and the predictive ability provided by modeling human performance allows for safer operation of the aircraft.
+Being able to decrease this training time could lead to significant savings in cost, and the predictive ability provided by modeling human performance allows for safer operation of aircraft.
 
 A variety of skills can be classified as motor control tasks, such as playing tuba, pole vaulting, or flying an aircraft.
 An individual's performance in any of these skills can change dramatically as they transition from a novice to an expert through training.
@@ -37,30 +37,36 @@ We will attempt to explain why this feedback is effective in enhancing learning 
 \section{Background}
 
 \subsection{Augmented Feedback}
-\textbf{\color{red} I am currently performing another literature review of this topic.}
+\textbf{\color{red} I am currently performing another literature review of this topic.
+    Include a page on the ``instructor model'' of feedback that we have developed and how it relates to CBF.
+    Include a page on the guidance hypothesis.
+    Include a page on the SAFER experiment.}
+
+\subsection{Workload}
+\textbf{\color{red} Briefly discuss the Modified Bedford Workload Score and the NASA-TLX.}
 
 \subsection{Pilot Modeling}
 \begin{figure}[tb]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Introduction/Screen_Shot_2018-07-25_at_10_37_08_AM.png}
-        \caption[Variables affecting the pilot/vehicle system]{Variables affecting the pilot/vehicle system, from~\citep{mcruer_mathematical_1974}.}
+        \caption[Variables affecting the pilot/vehicle system]{Variables affecting the pilot/vehicle system, from~\citet{mcruer_mathematical_1974}.}
         \label{figure:mcruer1974}
     \end{center}
 \end{figure}
 
 In addition to popularizing the concept of feedback, the creation of control theory in the early 1940s also provided the tools required for the mathematical modeling of the human pilot.
-At the time, new weapons were being created for World War 2 which could only be used effectively with trained operators working in tandem with the machine.
+At the time, new weapons were being created for World War 2 which could only be used effectively with trained operators working with a machine.
 While it was thought that a human could be viewed as a unique kind of servomechanism in the control feedback loop, it was still unclear what factors affected human performance.
-Early work by Tustin and others extended the control theory framework and applied these theories to actual human operators~\citep{tustin_investigation_nodate}.
-Particular interest was focused on ``attempt[ing] to find the laws of relationship of movement and error. In particular, it was hoped that this relationship [would] be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following~\citep{tustin_investigation_nodate}.''
+Early work by Tustin and others extended the control theory framework and applied these theories to actual human operators~\citep{tustin1944investigation}.
+Particular interest was focused on ``attempt[ing] to find the laws of relationship of movement and error. In particular, it was hoped that this relationship [would] be approximately linear and so permit well developed theory of `linear servomechanisms' to be applied to manual control in the same way as it applies to automatic following~\citep{tustin1944investigation}.''
 This would allow for the prediction of human performance and the ability to predict the limits of human control.
 
-These early works were summarized in McRuer's 1957 report, ``Dynamic Response of Human Operators''~\citep{mcruer_dynamic_1957}.
+These early works were summarized in \citeauthor{mcruer_dynamic_1957}'s report, ``Dynamic Response of Human Operators''.
 This work evaluated measurements for single-input/single-output (SISO) manual control systems and developed predictive models consistent with this data.
-Indeed, McRuer writes, ``[i]t is possible, without doing violence to the data, to obtain describing functions which are generally applicable to the results of the many diverse experiments~\citep{mcruer_dynamic_1957}.''
+Indeed, \citeauthor*{mcruer_dynamic_1957} write, ``[i]t is possible, without doing violence to the data, to obtain describing functions which are generally applicable to the results of the many diverse experiments.''
 The report concludes by describing a hypothetical transfer function of the human operator which includes a time delay, a neuromuscular lag, and a gain.
 McRuer's early model of the complete pilot/vehicle system is presented in Figure~\ref{figure:mcruer1974}.
-McRuer revisited these results in 1974, after three decades of supporting engineering and experimental psychology experiments and was able to further generalize these results to a wide variety of system dynamics~\citep{mcruer_mathematical_1974}.
+McRuer revisited these results in \citeyear{mcruer_mathematical_1974}, after three decades of supporting engineering and experimental psychology experiments and was able to further generalize these results to a wide variety of system dynamics.
 In his study, McRuer completed a detailed analysis which included the human response to proportional, rate/velocity, and acceleration type controlled element dynamics, see Table~\ref{table:mcruer1974a}.
 The result of this report was the now famous ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
 \begin{align}
@@ -75,33 +81,33 @@ Even today, the crossover model is used as the standard for describing pilot/veh
 \begin{table}[tb]
     \centering
     \includetable{intro-idealized-control-elements.tex}
-    \caption[Example Applications of Idealized Controlled Element Forms]{Example Applications of Idealized Controlled Element Forms, adapted from~\citep{mcruer_mathematical_1974}.}
+    \caption[Example Applications of Idealized Controlled Element Forms]{Example Applications of Idealized Controlled Element Forms, adapted from~\citet{mcruer_mathematical_1974}.}
     \label{table:mcruer1974a}
 \end{table}
 
 \begin{table}[tb]
     \centering
     \includetable{intro-human-operator-characteristics.tex}
-    \caption[Summary of Human Operator Approximate Characteristics]{Summary of Human Operator Approximate Characteristics, adapted from~\citep{mcruer_mathematical_1974}.}
+    \caption[Summary of Human Operator Approximate Characteristics]{Summary of Human Operator Approximate Characteristics, adapted from~\citet{mcruer_mathematical_1974}.}
     \label{table:mcruer1974b}
 \end{table}
 
 The continued demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a variety of more complex pilot models since the creation of the crossover model.
 A recent review by Xu et al. in 2017 surveyed the state of the art in human pilot modeling and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\citep{xu_review_2017}.
 Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\citep{kleinman_optimal_1970, baron_optimal_1970}.
-Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
 Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\citep{hess_structural_1980, hess_model_1990, hess_unified_1997}, Hosman's descriptive model~\citep{hosman_pilots_nodate, hosman_pilots_1999}, and the biodynamic model~\citep{griffin_validation_2001}.
 Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\citep{zaychik_conspectus_2006, gestwa_modelling_2003}.
+Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
 
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Introduction/Screen_Shot_2018-07-31_at_11_21_44_AM.png}
-        \caption[The Hess Structural Model of the Human Pilot]{The Hess Structural Model of the Human Pilot, from~\citep{hess_unified_1997}.}
+        \caption[The Hess Structural Model of the Human Pilot]{The Hess Structural Model of the Human Pilot, from~\citet{hess_unified_1997}.}
         \label{figure:structuralmodel}
     \end{center}
 \end{figure}
 
-While the McRuer was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\citep{hess_structural_1980}.''
+While the crossover model was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\citep{hess_structural_1980}.''
 For this reason, the Hess Structural Model is of particular interest due to the incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\citep{hess_modeling_2009}.
 The Structural Model includes the effects of the neuromuscular system, the force-feel characteristics of the input device, and the contributions of proprioceptive, vestibular, and visual feedback, see Figure~\ref{figure:structuralmodel}.
 One of the key strengths of the Structural Model is the relatively few number of free parameters that need to be set to predict pilot performance.
@@ -111,17 +117,9 @@ The results of this model have been compared to the results of a human-in-the-lo
 Recent work from Bachelder et al. has included modifications to the Structural Model to link pilot performance and workload and to enable the modeling of pulsive pilot behavior~\citep{bachelder_modeling_2017, bachelder_linking_2018}.
 
 \subsection{Summary}
-We propose to run human-in-the-loop subject testing experiments to understand the effects of concurrent bandwidth feedback, and to integrate the effects of this feedback into a human performance model.
-To investigate the two Aims outlined below, we completed four experiments and the development of a model.
-
-\begin{description}[align=left]
-    \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in complex manual control task.
-    \item [Aim Two] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
-\end{description}
-
 Concurrent bandwidth feedback has been used in a large variety of motor control tasks, and has generally been found to improve performance.
 Until recently, however, only simple tasks such as physical movements or low-dimensional pursuit tasks have been investigated.
-More recent works, including the lane-keeping task by de Groot et al., and our previous work with the SAFER task, have indicated that concurrent bandwidth feedback can also be quite effective for complex tasks.
+More recent works, including the lane-keeping task by \citeauthor{de_groot_effect_2011}, and our previous work with the SAFER task, have indicated that concurrent bandwidth feedback can also be quite effective for complex tasks~\citep{karasinski_real-time_2017}.
 Unlike simple tasks, in which the guidance hypothesis dominates when feedback is removed, there is some evidence that concurrent bandwidth feedback can be removed after training without a loss of performance.
 The decrease in required learning time, improved performance, and decreased workload seen in the SAFER task show that concurrent bandwidth feedback may prove to be most useful very early in training when subjects are first exposed to complex, highly dynamic tasks.
 As concurrent bandwidth feedback can improve performance without an increase in workload, it may prove a useful technique for training other complex manual control tasks.
@@ -131,13 +129,23 @@ The Structural Model, in particular, has been very effective in predicting pilot
 None of these pilot models, however, are able to include the effects of concurrent bandwidth feedback.
 The performance improving effects of this feedback, seen throughout the literature, make this a compelling feature to be incorporated into a pilot model.
 
+This literature review covered the development of the augmented feedback, focusing on examples of concurrent and bandwidth feedback.
+Extra focus was spent on cases where augmented feedback techniques were applied to aerospace related tasks.
+Additionally, this review covered human performance models applied to piloted aircraft and flight-like tasks.
+
 \section{Research Questions}
 \label{sec:intro_questions}
 We are interested in measuring, modeling, and predicting the effects of concurrent bandwidth feedback (CBF) on human performance in complex manual control tasks.
 To this end, this proposed research includes two research aims.
 These aims build on each other, starting with a compensatory tracking task, extending to surface electromyography and aircraft flight tasks, and finishing with a theoretical model.
+
+We set out to accomplish two aims with the research included in this disseration.
+This dissertation contains the results of human-in-the-loop subject testing experiments which were designed to understand the effects of concurrent bandwidth feedback.
+Using the data from these experiments, the structural model has modified to integrate the effects of this feedback into a human performance model.
+To investigate the two Aims outlined below, we completed four experiments and the development of a model.
+
 \begin{description}[align=left]
-    \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload effects in complex manual control task.
+    \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload in complex manual control tasks.
     \item [Aim Two] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
 \end{description}
 
