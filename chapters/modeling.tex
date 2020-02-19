@@ -1,6 +1,24 @@
 \chapter{Modeling the Effects of Feedback}
 \label{chapter:modeling}
 
+% % Outline
+% Introduction
+% Method
+%     The Task (data source)
+%     ARX
+%     Structural Model
+% Results
+%     ARX
+%         full wc results
+%     SM
+%         wc results for pitch only
+%         differences between groups
+%     Comparison
+%         of wc results
+% SM Model Extension
+%     Ke is diff, add new Kf parameter
+% Discussions
+
 \section{Introduction}
 \textbf{\color{red} This chapter discusses the last of my PhD work.
     The work is approximately 90\% complete, but the final results and writeup are not yet complete.}
@@ -39,14 +57,12 @@ This relates to the second required change, the amount of required adaptation ti
 Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
 The results of our experiment with SAFER and the three-axis tracking task also suggest relatively short adaptation times, though they are on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
 
-% We want to use models to identify some aspect(s) which cause the pilot to perform better.
-
 \begin{figure}[t]
     \centering
     \begin{subfigure}[b]{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figures/structural_model/structural_model.pdf}
-        \caption[The complete Structural Model]{The complete Structural Model, from~\citet{hess_unified_1997}.}
+        \caption[The Structural Model]{The Structural Model, adapted from~\citet{hess_unified_1997}.}
         \label{fig:structuralmodel}
     \end{subfigure}
     \hfill
@@ -109,21 +125,15 @@ Additionally, subjects in the feedback group were able to maintain their improve
     \label{fig:prmse}
 \end{figure}
 
-\subsection{ARX Model Identification}
-% \subsection{AutoRegressive Models with eXogenous Variables (ARX)}
+% \subsection{ARX Model Identification}
+\subsection{AutoRegressive Model with eXogenous Variables (ARX)}
+\textbf{\color{red} Briefly describe what an ARX model is an how it works.}
+
 % A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions and the estimated pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
 % The Hess Structural Model of the pilot is also investigated, which “describe the underlying structure which contributes to human pilot dynamics.'' The Structural Model is of interest for interpreting the effects of concurrent feedback as it incorporates multiple sensory channels and models of visual acuity and the time-varying human pilot.
 % Results indicate that participants in the feedback group had a significantly lower root-mean-square error and higher crossover frequency than those in the control group, indicating better performance.
 % The ARX identification technique provided a consistently high variance accounted for (VAF), indicating that it can identify transfer functions representing a variety of operators at various levels of training.
 % These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
-
-% We have a ``black box'' model which can give us a coarse understanding of the pilot.
-% This is the ARX technique which Hess has used, \textit{gettf1}.
-% We also have the control theory based model, the Structural Model, which Hess has used for several decades.
-% This model is more interesting because it has multiple parameters which could be responsible for the observed change in performance.
-
-This is pretty simple, we simply pass the input/output data into gettf1 and observe the characteristics of the resulting transfer function.
-We can also combine the estimated operator transfer function with the vehicle dynamics to observe the overall system characteristics, such as the crossover frequency.
 
 An autoregressive technique to identify a transfer function from an input/output time sequence pair was previously developed by Hess et al.~\citet{hess_modeling_2002}.
 Using this technique, called \textit{gettf1}, we identified transfer functions representing pilot models for the data trials from our experiment.
@@ -192,13 +202,17 @@ A two-factor (Group and Trial) mixed model with one repeated measure (Trial) was
 There were significant main factors of group $(F(1, 27.92) = 4.4, p = 0.046)$ and trial $(F(11, 301.95) = 18.3, p < .001)$.
 Tukey tests showed that the participants' crossover frequency between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group $(M = 0.98, 1.29,$ respectively, $SE = 0.11)$, and the trial effect showing learning throughout the experiment for both groups.
 
-\subsection{Structural Model Parameter Identification}
-% \subsection{The Structural Model}
+% \subsection{Structural Model Parameter Identification}
+\subsection{Structural Model}
 This is more complicated, as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
 
 \section{Results}
 
-\subsection{Model Parameterization}
+\subsection{ARX}
+
+\subsection{Structural Model}
+
+\subsubsection{Model Parameterization}
 \begin{equation}
     Y_{NM} = \frac{\omega^2_{NM}}{s^2 + 2 \zeta_{NM} \omega_{NM} s + \omega^2_{NM}}
 \end{equation}
@@ -212,7 +226,7 @@ This is more complicated, as there are many parameters to identify which interac
 \end{equation}
 Equation~\ref{eq:ypf} is chosen to satisfy $Y_{PF} \propto s Y_c (s)$.
 
-\subsection{Parameter Value Selection}
+\subsubsection{Parameter Value Selection}
 
 \begin{equation}
     K_{\dot{e}} = \epsilon = K_{\dot{m}} = K_{\ddot{m}} = 0
@@ -247,30 +261,6 @@ The constraints for the solver were the bounds of the global brute force search,
     \omega_{NM} & = [7, 8, 9, 10, 11, 12]         \\
     \zeta_{NM}  & = [0.7]                         \\
 \end{align}
-
-\begin{figure}[t]
-    \centering
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_group.png}
-    \label{fig:sm_crossover}
-    \caption[Crossover frequency (Structural Model)]{Crossover frequency predicted by the Structural Model parameter identification.}
-\end{figure}
-
-\begin{figure}[t]
-    \centering
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/Modeling/ke_group.png}
-    \label{fig:ke_group}
-    \caption[$K_e$ is greater for subjects exposed to feedback]{$K_e$ is greater for subjects exposed to feedback.}
-\end{figure}
-
-\begin{figure}[t]
-    \centering
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
-    \label{fig:feedback_kfd}
-    \caption[Feedback exposure correlates with $\dot{K_f}$]{Feedback exposure correlates with $\dot{K_f}$, which confirms that the accumulation of exposure to feedback drives $K_f$.}
-\end{figure}
 
 % Structural Model Parameter Identification Technique
 
@@ -322,7 +312,6 @@ The constraints for the solver were the bounds of the global brute force search,
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-
 % All variables can be treated as constants with the exception of  K_e, which changes with both Trial and Group.
 % tdel	Ypf	a	Wnm	Zetanm
 % 0.238±0.006	5.927±0.163	1.301±0.041	7.768±0.185	0.707±0.001
@@ -332,6 +321,32 @@ The constraints for the solver were the bounds of the global brute force search,
 % 	A	B	C
 % Control	-7.34466243	0.37349137	12.40429001
 % Feedback	-67.32338104	1.99463577	17.40238421
+
+\begin{figure}[t]
+    \centering
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_group.png}
+    \label{fig:sm_crossover}
+    \caption[Crossover frequency (Structural Model)]{Crossover frequency predicted by the Structural Model parameter identification.}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/ke_group.png}
+    \label{fig:ke_group}
+    \caption[$K_e$ is greater for subjects exposed to feedback]{$K_e$ is greater for subjects exposed to feedback.}
+\end{figure}
+
+\section{Extending the Structural Model}
+
+\begin{figure}[t]
+    \centering
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
+    \label{fig:feedback_kfd}
+    \caption[Feedback exposure correlates with $\dot{K_f}$]{Feedback exposure correlates with $\dot{K_f}$, which confirms that the accumulation of exposure to feedback drives $K_f$.}
+\end{figure}
 
 \section{Discussion}
 % \begin{figure*}
