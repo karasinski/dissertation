@@ -4,9 +4,10 @@
 % % Outline
 % Introduction
 % Method
-%     The Task (data source)
-%     ARX
-%     Structural Model
+%     The Task
+%     Modeling Techniques
+%         ARX
+%         Structural Model
 % Results
 %     ARX
 %         full wc results
@@ -28,7 +29,7 @@ The second Aim of this dissertation is to develop a model of the human pilot whi
 The model presented here extends Hess' Structural Model of the human pilot.
 The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
 Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed~\citep{hess_modeling_2009}.
-This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot~\citep{hess_modeling_2009}.''
+This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot''~\citep{hess_modeling_2009}.
 The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more responsive, which could be interpreted as more focused on the task.
 
 \begin{figure}[tb]
@@ -55,7 +56,7 @@ While there must be a separate loop that adjusts the crossover frequency as lear
 This is reflected in the delta of performance between subjects in the different groups of our SAFER experiment, even on the first trial, see Figure~\ref{figure:saferdistance}.
 This relates to the second required change, the amount of required adaptation time.
 Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
-The results of our experiment with SAFER and the three-axis tracking task also suggest relatively short adaptation times, though they are on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
+The results of our experiment with SAFER and the three-axis tracking task also suggest relatively long adaptation times, on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
 
 \begin{figure}[t]
     \centering
@@ -113,6 +114,7 @@ Pitch feedback was provided on the central pitch indicator when the pitch was th
 After the 9th trial, subjects in the feedback group no longer experienced feedback, and the interfaces for the control and feedback groups were the same.
 This was done in order to investigate how well the subjects could retain their performance benefit.
 
+\subsection{Experiment Results}
 The resulting root-mean-square error for each group of participants by trial is presented in Figure~\ref{fig:prmse}.
 Both groups of participants had a relatively high initial RMSE which was reduced through repeated training on the task.
 Participants in the feedback group, however, performed significantly better than those in the control group and learned the task much faster.
@@ -125,25 +127,49 @@ Additionally, subjects in the feedback group were able to maintain their improve
     \label{fig:prmse}
 \end{figure}
 
-% \subsection{ARX Model Identification}
-\subsection{AutoRegressive Model with eXogenous Variables (ARX)}
-\textbf{\color{red} Briefly describe what an ARX model is an how it works.}
+\subsection{Modeling Techniques}
+We investigated two techniques for creating models of human pilot in order to better understand the results of the aircraft training study.
+Both techniques produce an estimated transfer function of human operator, $Y_p$, which can be combined with the controlled system dynamics, $Y_c$, in order to explore the crossover model characteristics discussed in~\ref{background:pilotmodeling}.
+The crossover frequency can be identified using
+\begin{align}
+    Y_c Y_p = \dfrac{w_c e^{-s \tau_e}}{s}
+\end{align}
+which provides an indication of how hard the operator is working.
 
-% A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions and the estimated pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
-% The Hess Structural Model of the pilot is also investigated, which “describe the underlying structure which contributes to human pilot dynamics.'' The Structural Model is of interest for interpreting the effects of concurrent feedback as it incorporates multiple sensory channels and models of visual acuity and the time-varying human pilot.
-% Results indicate that participants in the feedback group had a significantly lower root-mean-square error and higher crossover frequency than those in the control group, indicating better performance.
-% The ARX identification technique provided a consistently high variance accounted for (VAF), indicating that it can identify transfer functions representing a variety of operators at various levels of training.
-% These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
+\subsubsection{Autoregressive Model with Exogenous Variables (ARX)}
+Autogregressive (AR) models are commonly used to represent time-varying processes in which an output variable linearly depends on its previous value and a stochastic error term.
+When a process also depends on an input variable (often referred to as an exogenous variable), the resulting model is known as an autoregressive model with exogenous variables (ARX).
+The structure of an ARX model is given by
+% https://www.mathworks.com/help/ident/ref/arx.html
+\begin{equation}
+    y(t) + a_1 y(t-1) + \ldots + a_{n_a} y(t - n_a) = \\
+    b_1 u(t-n_k) + \ldots + b_{n_b} u(t-n_b - n_k+1) + e(t)
+\end{equation}
+where $y(t)$ is the output variable at time $t$, $n_a$ is the number of poles, $n_b$ is the number of zeros, $n_k$ is the number of input samples which occur between input and output (also known as the dead time or time delay in the system), $y(t-1) \ldots y(t-n_a)$ are the previous outputs on which the current output depends, $u(t-nk) \ldots u(t-n_b - n_k+1)$ are the delayed inputs on which the current output depends, and $e(t)$ is a white-noise error term.
 
-An autoregressive technique to identify a transfer function from an input/output time sequence pair was previously developed by Hess et al.~\citet{hess_modeling_2002}.
+An autoregressive technique to identify a transfer function from an input/output time sequence pair was previously developed in~\citet{hess_modeling_2002}.
 Using this technique, called \textit{gettf1}, we identified transfer functions representing pilot models for the data trials from our experiment.
-The resulting pilot models can be compared with the experimental data from which they are generated in order to determine the goodness of fit.
-Two goodness of fit metrics are available: the variance accounted for (VAF) and the root-mean-square error between the model output and participant data.
+The inputs to this technique are the input and output timeseries and $n_a, n_b,$ and $n_k$.
+For the results presented in this Chapter, $n_a = n_b = 10$ and $n_k = 0$.
+This technique uses an ARX model which is fit using least-squares, and results in a discrete transfer function model estimation of the input/output system.
+The script also produces a continuous transfer function using a Tustin approximation.
+The result of this process is a transfer function of the pilot with ten poles and zeros describing the human operator's response to the displayed flight dynamics.
+
+\subsubsection{Structural Model}
+This is more complicated, as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
+
+\section{Results}
+
+\subsection{ARX}
+The original input to the system from the experiment participants $(u)$ can be fed into this resulting transfer function to produce an simulated output $(u_{sim})$.
+The resulting output from the pilot models can be compared with the experimental data from which they are generated in order to determine the goodness of fit.
+The variance accounted for (VAF) is a commonly used metric to quantify the goodness of the fit between the outputs of the model and the experimental data.
 The VAF is calculated by
 \begin{equation}
     \mbox{VAF} = \left( 1 - \dfrac{\sum{|u - u_{sim}|^2}} {\sum{u^2}} \right) \times \mbox{100\%}
 \end{equation}
 where $u$ is the participant's command input to the vehicle's elevators, and $u_{sim}$ is the model's simulated input.
+The VAF ranges between 0 (no correlation) and 1 (perfect match).
 
 \begin{figure}[t]
     \centering
@@ -171,7 +197,7 @@ The RMSE between the simulated and actual data is similar between groups and tre
 Visual inspection of the experimental and simulated data also shows very good agreement, see Figure~\ref{fig:comparison}.
 
 By combining these pilot models with the system dynamics the crossover frequency (Figure~\ref{fig:bode}) and gain and phase margins can be found.
-The crossover model has long been used as the standard model for human control tasks, where the crossover frequency represents ``how hard'' the pilot is working~\citet{mcruer_dynamic_1957}.
+The crossover model has long been used as the standard model for human control tasks, where the crossover frequency represents ``how hard'' the pilot is working~\citep{mcruer_dynamic_1957}.
 The results of these parameters reflect what was found in the pitch RMSE performance analysis.
 Subjects in the feedback group immediately show increased crossover frequency and decreased phase and gain margins.
 These results are sustained during retention, and again show an immediate increase/decrease when the feedback is removed.
@@ -184,7 +210,7 @@ These results are sustained during retention, and again show an immediate increa
 \end{figure}
 
 Mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers which were removed from the analysis.
-The Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R~\citet{RN53}.
+The Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R~\citep{RN53}.
 When significant effects were observed, post hoc comparisons using the Tukey Honest Significance Difference (HSD) test were performed and considered significant at the $p < .05$ level, and the Satterthwaite method was again used to calculate the degrees of freedom.
 Only 7 of the 1080 total trials (30 subjects with 36 trials per subject) were removed.
 These trials were extreme performance outliers, and including these trials does not change the primary results of the study.
@@ -201,14 +227,6 @@ Tukey tests showed that the participants' crossover frequency between the groups
 A two-factor (Group and Trial) mixed model with one repeated measure (Trial) was run on the altitude crossover frequency.
 There were significant main factors of group $(F(1, 27.92) = 4.4, p = 0.046)$ and trial $(F(11, 301.95) = 18.3, p < .001)$.
 Tukey tests showed that the participants' crossover frequency between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group $(M = 0.98, 1.29,$ respectively, $SE = 0.11)$, and the trial effect showing learning throughout the experiment for both groups.
-
-% \subsection{Structural Model Parameter Identification}
-\subsection{Structural Model}
-This is more complicated, as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
-
-\section{Results}
-
-\subsection{ARX}
 
 \subsection{Structural Model}
 
@@ -259,7 +277,7 @@ The constraints for the solver were the bounds of the global brute force search,
     K           & = [1.0, 1.5, 2.0, \ldots, 10.0] \\
     a           & = [.0, .25, .50, \ldots, 3.0]   \\
     \omega_{NM} & = [7, 8, 9, 10, 11, 12]         \\
-    \zeta_{NM}  & = [0.7]                         \\
+    \zeta_{NM}  & = [0.7]
 \end{align}
 
 % Structural Model Parameter Identification Technique
@@ -357,3 +375,10 @@ The constraints for the solver were the bounds of the global brute force search,
 %         Error bars are the standard error of the mean.}
 %     \label{figure:crossover_frequency_all}
 % \end{figure*}
+
+A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions and the estimated pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
+The Hess Structural Model of the pilot was also investigated, which ``describe the underlying structure which contributes to human pilot dynamics.''
+The Structural Model is of interest for interpreting the effects of concurrent feedback as it incorporates multiple sensory channels and models of visual acuity and the time-varying human pilot.
+Results indicate that participants in the feedback group had a significantly lower root-mean-square error and higher crossover frequency than those in the control group, indicating better performance.
+The ARX identification technique provided a consistently high variance accounted for (VAF), indicating that it can identify transfer functions representing a variety of operators at various levels of training.
+These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
