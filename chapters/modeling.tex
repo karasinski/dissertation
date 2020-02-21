@@ -58,25 +58,6 @@ This relates to the second required change, the amount of required adaptation ti
 Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
 The results of our experiment with SAFER and the three-axis tracking task also suggest relatively long adaptation times, on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
 
-\begin{figure}[t]
-    \centering
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{figures/structural_model/structural_model.pdf}
-        \caption[The Structural Model]{The Structural Model, adapted from~\citet{hess_unified_1997}.}
-        \label{fig:structuralmodel}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{\textwidth}
-        \centering
-        \includegraphics[width=0.8\textwidth]{figures/structural_model_reduced/structural_model.pdf}
-        \caption[The reduced structural model used in this analysis]{The reduced structural model used in this analysis.}
-        \label{fig:structuralmodelreduced}
-    \end{subfigure}
-    \caption[The Structural Model of the Human Pilot]{The Structural Model of the Human Pilot.}
-    \label{fig:structuralmodels}
-\end{figure}
-
 \section{Method}
 
 \subsection{The Piloting Task}
@@ -114,7 +95,7 @@ Pitch feedback was provided on the central pitch indicator when the pitch was th
 After the 9th trial, subjects in the feedback group no longer experienced feedback, and the interfaces for the control and feedback groups were the same.
 This was done in order to investigate how well the subjects could retain their performance benefit.
 
-\subsection{Experiment Results}
+\subsubsection{Experiment Results}
 The resulting root-mean-square error for each group of participants by trial is presented in Figure~\ref{fig:prmse}.
 Both groups of participants had a relatively high initial RMSE which was reduced through repeated training on the task.
 Participants in the feedback group, however, performed significantly better than those in the control group and learned the task much faster.
@@ -157,6 +138,54 @@ The result of this process is a transfer function of the pilot with ten poles an
 
 \subsubsection{Structural Model}
 This is more complicated, as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
+
+\begin{figure}[t]
+    \centering
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figures/structural_model/structural_model.pdf}
+        \caption[The Structural Model]{The Structural Model, adapted from~\citet{hess_unified_1997}.}
+        \label{fig:structuralmodel}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{\textwidth}
+        \centering
+        \includegraphics[width=0.8\textwidth]{figures/structural_model_reduced/structural_model.pdf}
+        \caption[The reduced structural model used in this analysis]{The reduced structural model used in this analysis.}
+        \label{fig:structuralmodelreduced}
+    \end{subfigure}
+    \caption[The Structural Model of the Human Pilot]{The Structural Model of the Human Pilot.}
+    \label{fig:structuralmodels}
+\end{figure}
+
+The complete Structural Model in Figure~\ref{fig:structuralmodel} can be reduced to Figure~\ref{fig:structuralmodelreduced} by setting the following standard parameter values.
+
+\begin{align}
+    \nonumber    S_1 = S_2 = S_3 = \enspace \downarrow \\
+    \nonumber    K_{\dot{e}} = \epsilon = K_{\dot{m}} = K_{\ddot{m}} = 0
+\end{align}
+
+These switches are set to their standard locations for normal error sensing~\citep{hess_unified_1997}.
+$\epsilon$ is set to zero for simplicity.
+$K_{\dot{m}}$ and $K_{\ddot{m}}$ are set to zero because the participants did not experience any motion, removing the vestibular feedback loop.
+
+The resulting model can be parameterized by defining $Y_{NM}, Y_{FS},$ and $Y_{PF}$.
+$Y_{NM}$ describes the open-loop dynamics of the neuromuscular system driving the joystick, and can be defined
+\begin{align}
+    Y_{NM} = \frac{\omega^2_{NM}}{s^2 + 2 \zeta_{NM} \omega_{NM} s + \omega^2_{NM}}
+\end{align}
+where $\omega_{NM}$ and $\zeta_{NM}$ are the undamped natural frequency and damping ratio of the neuromuscular system.
+$Y_{FS}$ is set to 1 here, as it takes the form of a gain which is absorbed by the other elements in the model.
+Finally,
+\begin{align} \label{eq:ypf}
+    Y_{PF} = \frac{K}{s+a}
+\end{align}
+which is is chosen to satisfy $Y_{PF} \propto s Y_c (s)$~\citep{hess_unified_1997}.
+
+The flight dynamics for this task represent a Boeing 747 in Flight Condition 2, and resultant elevator to pitch dynamics take the form~\citep{heffley1972aircraft}:
+\begin{align}
+    Y_c = \frac{0.5716 (s+0.5535) (s+0.03952)}{(s^2 + 0.006158s + 0.01512) (s^2 + 1.12s + 0.8006)}
+\end{align}
 
 \section{Results}
 
@@ -229,40 +258,6 @@ There were significant main factors of group $(F(1, 27.92) = 4.4, p = 0.046)$ an
 Tukey tests showed that the participants' crossover frequency between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group $(M = 0.98, 1.29,$ respectively, $SE = 0.11)$, and the trial effect showing learning throughout the experiment for both groups.
 
 \subsection{Structural Model}
-
-\subsubsection{Model Parameterization}
-\begin{equation}
-    Y_{NM} = \frac{\omega^2_{NM}}{s^2 + 2 \zeta_{NM} \omega_{NM} s + \omega^2_{NM}}
-\end{equation}
-
-\begin{equation}
-    Y_{FS} \approx 1
-\end{equation}
-
-\begin{equation} \label{eq:ypf}
-    Y_{PF} = \frac{K}{s+a}
-\end{equation}
-Equation~\ref{eq:ypf} is chosen to satisfy $Y_{PF} \propto s Y_c (s)$.
-
-\subsubsection{Parameter Value Selection}
-
-\begin{equation}
-    K_{\dot{e}} = \epsilon = K_{\dot{m}} = K_{\ddot{m}} = 0
-\end{equation}
-
-\begin{equation}
-    S_1 = S_2 = S_3 = \enspace \downarrow
-\end{equation}
-
-% \begin{equation}
-%     \omega_{NM} = 10 \mbox{ rad/s}, \quad \zeta_{NM} = 0.707
-% \end{equation}
-
-The flight dynamics for this task represent a Boeing 747 in Flight Condition 2, and resultant elevator to pitch dynamics take the form~\citep{heffley1972aircraft}:
-\begin{equation}
-    Y_c = \frac{0.5716 (s+0.5535) (s+0.03952)}{(s^2 + 0.006158s + 0.01512) (s^2 + 1.12s + 0.8006)}
-\end{equation}
-
 \subsubsection{Value Identification Technique}
 A brute force parameter search was used to identify the value of the remaining parameters.
 Each combination of the parameters $K_e, \tau_0, K, a$, and $\omega_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment.
@@ -272,12 +267,12 @@ Once this initial global best fit was identified, the parameters were further tu
 The constraints for the solver were the bounds of the global brute force search, though, in general, the optimizer did not result in large parameter changes from the initial values.
 
 \begin{align}
-    K_e         & = [1, 2, 3, \ldots, 30]         \\
-    \tau_0      & = [.20, .25, .30] s             \\
-    K           & = [1.0, 1.5, 2.0, \ldots, 10.0] \\
-    a           & = [.0, .25, .50, \ldots, 3.0]   \\
-    \omega_{NM} & = [7, 8, 9, 10, 11, 12]         \\
-    \zeta_{NM}  & = [0.7]
+\nonumber    K_e         & = [1, 2, 3, \ldots, 30]         \\
+\nonumber    \tau_0      & = [.20, .25, .30] \mbox{s}             \\
+\nonumber    K           & = [1.0, 1.5, 2.0, \ldots, 10.0] \\
+\nonumber    a           & = [.0, .25, .50, \ldots, 3.0]   \\
+\nonumber    \omega_{NM} & = [7, 8, 9, 10, 11, 12] \mbox{rad/s}   \\
+\nonumber    \zeta_{NM}  & = [0.7] \mbox{rad/s}
 \end{align}
 
 % Structural Model Parameter Identification Technique
