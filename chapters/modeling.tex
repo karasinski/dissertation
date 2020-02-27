@@ -102,7 +102,7 @@ Both groups of participants had a relatively high initial root-mean-square error
 Participants in the feedback group, however, performed significantly better than those in the control group and learned the task much faster.
 Additionally, subjects in the feedback group were able to maintain their improved performance when the feedback was removed, and actually show a slight increase in performance when this occurs.
 
-\begin{figure}[t]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/prms_arx.png}
     \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate immediate retention.}
@@ -139,16 +139,16 @@ The script also produces a continuous transfer function using a Tustin approxima
 The result of this process is a transfer function of the pilot with ten poles and zeros describing the human operator's response to the displayed flight dynamics.
 
 \subsubsection{Structural Model}
-\begin{figure}[t]
+\begin{figure}[tb]
     \centering
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figures/structural_model/structural_model.pdf}
         \caption[The Structural Model]{The Structural Model, adapted from~\citet{hess_unified_1997}.}
         \label{fig:structuralmodel}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{figures/structural_model_reduced/structural_model.pdf}
         \caption[The reduced structural model used in this analysis]{The reduced structural model used in this analysis.}
@@ -198,18 +198,18 @@ The VAF is calculated by
 where $u$ is the participant's command input to the vehicle's elevators, and $u_{sim}$ is the model's simulated input.
 The VAF ranges between 0 (no correlation) and 1 (perfect match).
 
-\begin{figure}[t]
+\begin{figure}[p]
     \centering
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Modeling/model_output.png}
+        \includegraphics[width=0.9\textwidth]{figures/Modeling/model_output.png}
         \caption[Comparison between estimated transfer function model and experimental data]{Comparison between estimated transfer function model and experimental data.}
         \label{fig:comparison}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/Modeling/YpYc_204.png}
+        \includegraphics[width=0.9\textwidth]{figures/Modeling/YpYc_204.png}
         \caption[Combined pilot/vehicle open-loop bode diagram]{Combined pilot/vehicle open-loop bode diagram showing the standard crossover model characteristics.}
         \label{fig:bode}
     \end{subfigure}
@@ -228,11 +228,12 @@ The crossover model has long been used as the standard model for human control t
 The results of these parameters reflect what was found in the pitch RMSE performance analysis.
 Subjects in the feedback group immediately show increased crossover frequency and decreased phase and gain margins.
 These results are sustained during retention, and again show an immediate increase/decrease when the feedback is removed.
+The crossover frequency identified by the ARX for the pitch only trials is available in Figure~\ref{fig:arx_crossover}.
 
-\begin{figure}
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_arx.png}
-    \caption[Crossover frequency (ARX)]{Crossover frequency predicted by the ARX technique.}
+    \caption[Crossover frequency (ARX)]{Crossover frequency predicted by the ARX technique for the pitch only trials.}
     \label{fig:arx_crossover}
 \end{figure}
 
@@ -279,6 +280,13 @@ The general outline of the technique was:
 \end{enumerate}
 Each of these steps is further described below.
 
+\begin{table}[tb]
+    \centering
+    \includetable{modeling-structural-model-parameters.tex}
+    \caption[Structural Model parameters used for the initial global optimal fit]{Structural Model parameters used for the initial global optimal fit.}
+    \label{table:structuralmodelparameters}
+\end{table}
+
 The first step of the value identification technique was a brute force parameter search used to identify the value of the remaining parameters.
 Each combination of the parameters $K_e, \tau_0, K, a$, $\omega_{NM}$ and $\zeta_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment, see Table~\ref{table:structuralmodelparameters}.
 The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
@@ -289,13 +297,15 @@ The constraints for the solver were the bounds of the global brute force search,
 An interaction effect between trying to simultaneously fit $\omega_{NM}$ and $\zeta_{NM}$ initially resulted in convergence issues.
 To resolve this issue, $\zeta_{NM}$ was left out of the initial optimization step and tuned independently at the end of the optimization process.
 Finally, the the identified set of six parameters was inserted into the model and combined with the controlled system dynamics to identify the resultant crossover frequency.
+The resulting crossover frequency of this technique (Figure~\ref{fig:sm_crossover}) compares very favorably with that found using the ARX technique (Figure~\ref{fig:arx_crossover}).
+Both techniques show an initially small crossover frequency which approaches the generally accepted upper limit of $\approx 1.7-2$ rad/s~\citep{hess1984analysis}.
 
-\begin{table}[tb]
+\begin{figure}[tb]
     \centering
-    \includetable{modeling-structural-model-parameters.tex}
-    \caption[Structural Model parameters used for the initial global optimal fit]{Structural Model parameters used for the initial global optimal fit.}
-    \label{table:structuralmodelparameters}
-\end{table}
+    \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_group.png}
+    \caption[Crossover frequency (Structural Model)]{Crossover frequency predicted by the Structural Model parameter identification for the pitch only trials.}
+    \label{fig:sm_crossover}
+\end{figure}
 
 Only the first control mode, Pitch only, was analyzed for the results presented below.
 The technique developed here could be extended to all three control loops however, and the results should be similar (and more pronounced for modes of higher complexity).
@@ -320,21 +330,13 @@ As a result of this, $\zeta_{NM}$ was not considered an important variable to in
 Finally, the $K_e$ variable showed significant effects between both the Group and Trial variables, suggesting that it was the primary parameter responsible for changes in performance between the groups and as a result of repeated training in the simulator.
 As a consequence of this result, modifying this parameter to explain the results of increased performance in the feedback group became the focus of the remainder of this chapter.
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_group.png}
-    \label{fig:sm_crossover}
-    \caption[Crossover frequency (Structural Model)]{Crossover frequency predicted by the Structural Model parameter identification.}
-\end{figure}
-
-\begin{figure}[t]
+\section{Extending the Structural Model}
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/ke_group.png}
-    \label{fig:ke_group}
     \caption[$K_e$ is greater for subjects exposed to feedback]{$K_e$ is greater for subjects exposed to feedback.}
+    \label{fig:ke_group}
 \end{figure}
-
-\section{Extending the Structural Model}
 
 As a result of the analysis resulting from the linear mixed effects models, we determined that all of the parameters can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
 The resulting values for the remainder of the parameters were identified as the values listed in Table~\ref{table:structuralmodelresultants}, see below.
@@ -344,13 +346,13 @@ The resulting values for the remainder of the parameters were identified as the 
     \caption[Identified optimal parameters of the Structural Model for the Aircraft Flight Task]{Identified optimal parameters of the Structural Model for the Aircraft Flight Task.}
     \label{table:structuralmodelresultants}
 \end{table}
-The final parameter, $K_e$, can be modeled as an exponential function that increases with training.
+The final parameter, $K_e$, can be modeled as an exponential function that increases with training, see Figure~\ref{fig:ke_group}.
 We propose that the $K_f$, the change between the identified $K_e$ of the control and feedback groups, determines the change in performance of subjects exposed to the feedback.
 We further propose that this $K_f$ is a result of the accumulation of exposure to feedback, such that
 \begin{align}
-K_f &= K_{eF} - K_{eC} \\
-K_f &\propto \int \mbox{Feedback}(t) dt \\
-\dot{K_f} &\propto \mbox{Feedback}(t)
+    K_f       & = K_{eF} - K_{eC}                  \\
+    K_f       & \propto \int \mbox{Feedback}(t) dt \\
+    \dot{K_f} & \propto \mbox{Feedback}(t)
 \end{align}
 where $K_{eC}$ and $K_{eF}$ are the $K_e$ variables identified from exponential fits to the $K_e$ variable for the control and feedback groups, respectively.
 Here we have defined $K_f$ as a variable proportional to the total accumulated time operators were exposed to the feedback, and $\dot{K_f}$ is defined as change in $K_f$ trial-to-trial which results from the time exposed to the feedback in a given trial.
@@ -361,11 +363,11 @@ Here we have defined $K_f$ as a variable proportional to the total accumulated t
 % Control	-7.34466243	0.37349137	12.40429001
 % Feedback	-67.32338104	1.99463577	17.40238421
 
-\begin{figure}[t]
+\begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
-    \label{fig:feedback_kfd}
     \caption[Feedback exposure correlates with $\dot{K_f}$]{Feedback exposure correlates with $\dot{K_f}$, which confirms that the accumulation of exposure to feedback drives $K_f$.}
+    \label{fig:feedback_kfd}
 \end{figure}
 
 \section{Discussion}
