@@ -255,27 +255,36 @@ A two-factor (Group and Trial) mixed model with one repeated measure (Trial) was
 There were significant main factors of group $(F(1, 27.92) = 4.4, p = 0.046)$ and trial $(F(11, 301.95) = 18.3, p < .001)$.
 Tukey tests showed that the participants' crossover frequency between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group $(M = 0.98, 1.29,$ respectively, $SE = 0.11)$, and the trial effect showing learning throughout the experiment for both groups.
 
+% \begin{figure*}
+%     \centering
+%     \includegraphics[width=6in]{figures/Modeling/crossover_measures.pdf}
+%     \caption{The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
+%         The dashed line indicates where the feedback was removed from participants in the feedback group.
+%         Error bars are the standard error of the mean.}
+%     \label{figure:crossover_frequency_all}
+% \end{figure*}
+
 \subsection{Structural Model}
 \subsubsection{Value Identification Technique}
 Once the Structural Model was parameterized to the version presented in Figure~\ref{fig:structuralmodelreduced}, the problem then becomes best fitting the remaining parameters to best match the data collected in the experiment.
 This is more complicated than the ARX technique as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
 
-A four step process developed to tackle the problem of finding the optimal model parameters, the results of which were compared to the results of the ARX technique to validate our approach.
+A four step process was developed to tackle the problem of finding the optimal model parameters, the results of which were compared to the results of the ARX technique to validate our approach.
 The general outline of the technique was:
 \begin{enumerate}
-    \item A brute force parameter search over the six remaining model parameters.
+    \item Conduct a brute force parameter search over the six remaining model parameters.
     \item Identify the set of parameters that results in a maximum VAF as an initial best guess.
     \item Iterate on the initial guess to identify a final optimal set of parameters.
     \item Identify the crossover frequency using the system dynamics and identified optimal parameters.
 \end{enumerate}
 Each of these steps is further described below.
 
-The first step of the value identification technique was a brute force parameter search used to identify the value of the remaining parameters, see Table~\ref{table:structuralmodelparameters}.
-Each combination of the parameters $K_e, \tau_0, K, a$, $\omega_{NM}$ and $\zeta_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment.
+The first step of the value identification technique was a brute force parameter search used to identify the value of the remaining parameters.
+Each combination of the parameters $K_e, \tau_0, K, a$, $\omega_{NM}$ and $\zeta_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment, see Table~\ref{table:structuralmodelparameters}.
 The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
 Each combination of experimental subject data and simulations was then compared to find a set of simulation parameters that maximized the VAF.
 This solution represented a globally maximum set of a parameters, mitigating the issue resulting from the parameters nonlinear interaction with each other.
-Once this initial global best fit was identified, the parameters were further tuned in MATLAB using ``fmincon'' to find the minimum of the constrained nonlinear multivariable function.
+Once this initial global best fit was identified, the parameters were further tuned in MATLAB using ``fmincon'' to find the minimum of the constrained nonlinear multivariable function, which was the maximum VAF.
 The constraints for the solver were the bounds of the global brute force search, though, in general, the optimizer did not result in large parameter changes from the initial values.
 An interaction effect between trying to simultaneously fit $\omega_{NM}$ and $\zeta_{NM}$ initially resulted in convergence issues.
 To resolve this issue, $\zeta_{NM}$ was left out of the initial optimization step and tuned independently at the end of the optimization process.
@@ -290,10 +299,10 @@ Finally, the the identified set of six parameters was inserted into the model an
 
 Only the first control mode, Pitch only, was analyzed for the results presented below.
 The technique developed here could be extended to all three control loops however, and the results should be similar (and more pronounced for modes of higher complexity).
-By investigating the control mode with the smallest effect of the feedback, we can show that this technique is sensitive enough to detect the smallest changes between the two groups.
+By investigating the control mode with the smallest effect of the feedback, we show that this technique is sensitive enough to detect small changes between the two groups.
 A two-factor (Group and Trial) mixed model with repeated measures (Trial) was run on each of the six parameters to identify which parameters significantly changed between groups and over the course of training.
 As with the ARX technique, the Satterthwaite method was used to calculate the adjusted degrees of freedom.
-The results of this analysis are presented in Table~\ref{table:structuralmodelmixed}
+The results of this analysis are presented in Table~\ref{table:structuralmodelmixed}.
 
 \begin{table}[tb]
     \centering
@@ -302,15 +311,14 @@ The results of this analysis are presented in Table~\ref{table:structuralmodelmi
     \label{table:structuralmodelmixed}
 \end{table}
 
-% All variables can be treated as constants with the exception of  K_e, which changes with both Trial and Group.
-% tdel	Ypf	a	Wnm	Zetanm
-% 0.238±0.006	5.927±0.163	1.301±0.041	7.768±0.185	0.707±0.001
-
-% Model K_e as Exponential Fit: K_e=A*e^(-B*Trial)+C
-
-% 	A	B	C
-% Control	-7.34466243	0.37349137	12.40429001
-% Feedback	-67.32338104	1.99463577	17.40238421
+Evaluating the results of the linear mixed effects models presented in Table~\ref{table:structuralmodelmixed}, we immediately see that $\tau_0, K,$ and $\omega_{NM}$ have no significant effects dividing either Group or Trial.
+From this we can determine that these variables have no significant effect resulting from either training or the difference in performance between the feedback and control groups.
+Of the remaining variables, $a$ and $\zeta_{NM}$ show significant effects in the trial factor, suggesting that the change with time.
+Further investigation on these variables showed that $a$ was only significantly different for the very first trial, a result which was ignored for the remainder of this analysis to simplify the resulting model.
+$\zeta_{NM}$ also varied significantly as a result of training, but further investigating showed that the effects of varying this parameter did not significantly effect the resulting outputs of the model.
+As a result of this, $\zeta_{NM}$ was not considered an important variable to include in the feedback model.
+Finally, the $K_e$ variable showed significant effects between both the Group and Trial variables, suggesting that it was the primary parameter responsible for changes in performance between the groups and as a result of repeated training in the simulator.
+As a consequence of this result, modifying this parameter to explain the results of increased performance in the feedback group became the focus of the remainder of this chapter.
 
 \begin{figure}[t]
     \centering
@@ -328,6 +336,31 @@ The results of this analysis are presented in Table~\ref{table:structuralmodelmi
 
 \section{Extending the Structural Model}
 
+As a result of the analysis resulting from the linear mixed effects models, we determined that all of the parameters can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
+The resulting values for the remainder of the parameters were identified as the values listed in Table~\ref{table:structuralmodelresultants}, see below.
+\begin{table}[tb]
+    \centering
+    \includetable{modeling-structural-model-resultants.tex}
+    \caption[Identified optimal parameters of the Structural Model for the Aircraft Flight Task]{Identified optimal parameters of the Structural Model for the Aircraft Flight Task.}
+    \label{table:structuralmodelresultants}
+\end{table}
+The final parameter, $K_e$, can be modeled as an exponential function that increases with training.
+We propose that the $K_f$, the change between the identified $K_e$ of the control and feedback groups, determines the change in performance of subjects exposed to the feedback.
+We further propose that this $K_f$ is a result of the accumulation of exposure to feedback, such that
+\begin{align}
+K_f &= K_{eF} - K_{eC} \\
+K_f &\propto \int \mbox{Feedback}(t) dt \\
+\dot{K_f} &\propto \mbox{Feedback}(t)
+\end{align}
+where $K_{eC}$ and $K_{eF}$ are the $K_e$ variables identified from exponential fits to the $K_e$ variable for the control and feedback groups, respectively.
+Here we have defined $K_f$ as a variable proportional to the total accumulated time operators were exposed to the feedback, and $\dot{K_f}$ is defined as change in $K_f$ trial-to-trial which results from the time exposed to the feedback in a given trial.
+
+% Model K_e as Exponential Fit: K_e=A*e^(-B*Trial)+C
+
+% 	A	B	C
+% Control	-7.34466243	0.37349137	12.40429001
+% Feedback	-67.32338104	1.99463577	17.40238421
+
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
@@ -336,14 +369,6 @@ The results of this analysis are presented in Table~\ref{table:structuralmodelmi
 \end{figure}
 
 \section{Discussion}
-% \begin{figure*}
-%     \centering
-%     \includegraphics[width=6in]{figures/Modeling/crossover_measures.pdf}
-%     \caption{The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
-%         The dashed line indicates where the feedback was removed from participants in the feedback group.
-%         Error bars are the standard error of the mean.}
-%     \label{figure:crossover_frequency_all}
-% \end{figure*}
 
 A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions and the estimated pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
 The Hess Structural Model of the pilot was also investigated, which ``describe the underlying structure which contributes to human pilot dynamics.''
@@ -351,3 +376,6 @@ The Structural Model is of interest for interpreting the effects of concurrent f
 Results indicate that participants in the feedback group had a significantly lower root-mean-square error and higher crossover frequency than those in the control group, indicating better performance.
 The ARX identification technique provided a consistently high variance accounted for (VAF), indicating that it can identify transfer functions representing a variety of operators at various levels of training.
 These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
+
+An extension to the Structural Model was proposed which can explain the effects observed when operators were exposed to concurrent bandwidth feedback.
+This proposed model includes the addition of a single additional parameter, $K_f$, which accumulates when the operator is exposed to feedback.
