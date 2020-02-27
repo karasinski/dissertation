@@ -28,7 +28,7 @@
 The second Aim of this dissertation is to develop a model of the human pilot which includes the effects of concurrent bandwidth feedback.
 The model presented here extends Hess' Structural Model of the human pilot.
 The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
-Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed~\citep{hess_modeling_2009}.
+Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed, see Figure~\ref{figure:hesspursuit}~\citep{hess_modeling_2009}.
 This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot''~\citep{hess_modeling_2009}.
 The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more responsive, which could be interpreted as more focused on the task.
 
@@ -48,7 +48,7 @@ The modified model presented here includes two major changes to Hess' current mo
 \end{itemize}
 
 Here, the adaptive logic to triggers when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
-This will requires the addition of a feedback loop onto the Structural Model which triggers when the bandwidth feedback is activated.
+This requires the addition of an additional feedback loop onto the Structural Model which triggers when the bandwidth feedback is activated.
 This loop is based around the $K_e$ gain, which is the primary way of setting the crossover frequency in the Structural Model.
 This change implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback that their current level of aggressiveness is not sufficient to complete the task.
 
@@ -56,7 +56,7 @@ While there must be a separate loop that adjusts the crossover frequency as lear
 This is reflected in the delta of performance between subjects in the different groups of our SAFER experiment, even on the first trial, see Figure~\ref{figure:saferdistance}.
 This relates to the second required change, the amount of required adaptation time.
 Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
-The results of our experiment with SAFER and the three-axis tracking task also suggest relatively long adaptation times, on the order of a few minutes, again see Figure~\ref{figure:saferdistance}.
+The results of our experiments in the past three chapters suggest relatively long adaptation times, on the order of a few minutes.
 
 \section{Method}
 
@@ -70,7 +70,7 @@ The results of our experiment with SAFER and the three-axis tracking task also s
 \end{figure}
 
 Training operators to perform complex manual control tasks is expensive and time consuming, and poorly trained operators can cause catastrophic failures.
-The use of concurrent feedback techniques has been shown to improve performance and reduce training times, but has not previously been evaluated for complex, real-world tasks such as flying aircraft.
+The use of concurrent feedback techniques has been shown to improve performance and reduce training times, but had not previously been evaluated for complex, real-world tasks such as flying aircraft.
 In the experiment (fully described in Chapter~\ref{chapter:aircraftfeedback}), thirty participants were evenly split into two groups and tasked with flying a simulated Boeing 747 aircraft in three control modes of increasing degrees of freedom and functional complexity.
 In order of increasing degrees of freedom and functional complexity, these three control modes were:
 \begin{itemize}
@@ -78,33 +78,34 @@ In order of increasing degrees of freedom and functional complexity, these three
     \item[\textbf{PR}] Pitch and Roll (moderate complexity)
     \item[\textbf{PRA}] Pitch, Roll and Altitude (significant complexity)
 \end{itemize}
-The control group controlled simulated aircraft motion with visual guidance for pitch, roll, and altitude provided by traditional flight instruments.
-The feedback group received additional visual concurrent feedback for each controlled degree of freedom.
-For both groups, performance measurements were evaluated to determine the effects of the feedback on subject learning rate and maximum skill level.
-To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed, and performance was again evaluated.
 
 Each participant completed a total of 36 trials; 12 in each of the three control modes.
 Each trial had a duration of 82 seconds, and participants self-initiated the trial by activating a trigger on the joystick.
 The complete results of this experiment can be seen in Chapter~\ref{chapter:aircraftfeedback}.
 
+% The control group controlled simulated aircraft motion with visual guidance for pitch, roll, and altitude provided by traditional flight instruments.
+% The feedback group received additional visual concurrent feedback for each controlled degree of freedom.
 The two groups of participants are: control and feedback, and the interface that participants saw during the experiment is available in Figure~\ref{fig:display}.
 When the vehicle was well controlled (small errors in the controlled degrees of freedom), the interface was the same for participants in both groups.
 Depending on the control mode the the participant was completing, however, participants in the feedback group experienced concurrent bandwidth feedback on various elements of the attitude indicator and altimeter.
 This feedback was indicated by changing the element from the default yellow color to a red color when the error deviated outside of a predetermined bandwidth.
-Pitch feedback was provided on the central pitch indicator when the pitch was three or more degrees from zero, roll feedback was provided on the attitude indicator's ``wings'' when the roll was three or more degrees from zero, and attitude feedback was provided on the altimeter text box when the altitude was 30 feet or more off the nominal altitude of 1000 feet.
+For the Pitch only control mode, the display chagned from yellow to red when the pitch deviated by greater than three degrees.
+% Pitch feedback was provided on the central pitch indicator when the pitch was three or more degrees from zero, roll feedback was provided on the attitude indicator's ``wings'' when the roll was three or more degrees from zero, and attitude feedback was provided on the altimeter text box when the altitude was 30 feet or more off the nominal altitude of 1000 feet.
+For both groups, performance measurements were evaluated to determine the effects of the feedback on subject learning rate and maximum skill level.
 After the 9th trial, subjects in the feedback group no longer experienced feedback, and the interfaces for the control and feedback groups were the same.
+To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed, and performance was again evaluated.
 This was done in order to investigate how well the subjects could retain their performance benefit.
 
 \subsubsection{Experiment Results}
 The resulting root-mean-square error for each group of participants by trial is presented in Figure~\ref{fig:prmse}.
-Both groups of participants had a relatively high initial RMSE which was reduced through repeated training on the task.
+Both groups of participants had a relatively high initial root-mean-square error (RMSE) which was reduced through repeated training on the task.
 Participants in the feedback group, however, performed significantly better than those in the control group and learned the task much faster.
 Additionally, subjects in the feedback group were able to maintain their improved performance when the feedback was removed, and actually show a slight increase in performance when this occurs.
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/prms_arx.png}
-    \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate retention.}
+    \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate immediate retention.}
     \label{fig:prmse}
 \end{figure}
 
@@ -116,6 +117,7 @@ The crossover frequency can be identified using
     Y_c Y_p = \dfrac{w_c e^{-s \tau_e}}{s}
 \end{align}
 which provides an indication of how hard the operator is working.
+These two techniques are an Autoregressive Model with Exogenous Variables (ARX) technique and the Structural Model.
 
 \subsubsection{Autoregressive Model with Exogenous Variables (ARX)}
 Autogregressive (AR) models are commonly used to represent time-varying processes in which an output variable linearly depends on its previous value and a stochastic error term.
@@ -130,15 +132,13 @@ where $y(t)$ is the output variable at time $t$, $n_a$ is the number of poles, $
 
 An autoregressive technique to identify a transfer function from an input/output time sequence pair was previously developed in~\citet{hess_modeling_2002}.
 Using this technique, called \textit{gettf1}, we identified transfer functions representing pilot models for the data trials from our experiment.
-The inputs to this technique are the input and output timeseries and $n_a, n_b,$ and $n_k$.
+The inputs to this technique are the input and output timeseries and three integers describing the resulting model ($n_a, n_b,$ and $n_k$).
 For the results presented in this Chapter, $n_a = n_b = 10$ and $n_k = 0$.
 This technique uses an ARX model which is fit using least-squares, and results in a discrete transfer function model estimation of the input/output system.
 The script also produces a continuous transfer function using a Tustin approximation.
 The result of this process is a transfer function of the pilot with ten poles and zeros describing the human operator's response to the displayed flight dynamics.
 
 \subsubsection{Structural Model}
-This is more complicated, as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
-
 \begin{figure}[t]
     \centering
     \begin{subfigure}[b]{\textwidth}
@@ -159,14 +159,12 @@ This is more complicated, as there are many parameters to identify which interac
 \end{figure}
 
 The complete Structural Model in Figure~\ref{fig:structuralmodel} can be reduced to Figure~\ref{fig:structuralmodelreduced} by setting the following standard parameter values.
-
 \begin{align}
     \nonumber    S_1 = S_2 = S_3 = \enspace \downarrow \\
     \nonumber    K_{\dot{e}} = \epsilon = K_{\dot{m}} = K_{\ddot{m}} = 0
 \end{align}
-
 These switches are set to their standard locations for normal error sensing~\citep{hess_unified_1997}.
-$\epsilon$ is set to zero for simplicity.
+$K_{\dot{e}}$ is irrelevant as it no longer appears in the loop due to the orientation of the switches, abd $\epsilon$ is set to zero for simplicity.
 $K_{\dot{m}}$ and $K_{\ddot{m}}$ are set to zero because the participants did not experience any motion, removing the vestibular feedback loop.
 
 The resulting model can be parameterized by defining $Y_{NM}, Y_{FS},$ and $Y_{PF}$.
@@ -175,14 +173,14 @@ $Y_{NM}$ describes the open-loop dynamics of the neuromuscular system driving th
     Y_{NM} = \frac{\omega^2_{NM}}{s^2 + 2 \zeta_{NM} \omega_{NM} s + \omega^2_{NM}}
 \end{align}
 where $\omega_{NM}$ and $\zeta_{NM}$ are the undamped natural frequency and damping ratio of the neuromuscular system.
-$Y_{FS}$ is set to 1 here, as it takes the form of a gain which is absorbed by the other elements in the model.
-Finally,
+$Y_{FS}$ is set to 1 here, as for a simple joystick it takes the form of a gain which is otherwise absorbed by the other elements in the model.
+The proprioceptive feedback block is defined
 \begin{align} \label{eq:ypf}
     Y_{PF} = \frac{K}{s+a}
 \end{align}
-which is is chosen to satisfy $Y_{PF} \propto s Y_c (s)$~\citep{hess_unified_1997}.
-
-The flight dynamics for this task represent a Boeing 747 in Flight Condition 2, and resultant elevator to pitch dynamics take the form~\citep{heffley1972aircraft}:
+which is is chosen to satisfy $Y_{PF} \propto s Y_c (s)$, and represents the operator's internal model of the system dynamics~\citep{hess_unified_1997}.
+Finally, $Y_c$ describes the flight dynamics for the task.
+This task dynmaics describe a Boeing 747 in Flight Condition 2, and resultant elevator to pitch dynamics take the form~\citep{heffley1972aircraft}:
 \begin{align}
     Y_c = \frac{0.5716 (s+0.5535) (s+0.03952)}{(s^2 + 0.006158s + 0.01512) (s^2 + 1.12s + 0.8006)}
 \end{align}
@@ -259,71 +257,50 @@ Tukey tests showed that the participants' crossover frequency between the groups
 
 \subsection{Structural Model}
 \subsubsection{Value Identification Technique}
-A brute force parameter search was used to identify the value of the remaining parameters.
-Each combination of the parameters $K_e, \tau_0, K, a$, and $\omega_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment.
-The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
+Once the Structural Model was parameterized to the version presented in Figure~\ref{fig:structuralmodelreduced}, the problem then becomes best fitting the remaining parameters to best match the data collected in the experiment.
+This is more complicated than the ARX technique as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
 
+A four step process developed to tackle the problem of finding the optimal model parameters, the results of which were compared to the results of the ARX technique to validate our approach.
+The general outline of the technique was:
+\begin{enumerate}
+    \item A brute force parameter search over the six remaining model parameters.
+    \item Identify the set of parameters that results in a maximum VAF as an initial best guess.
+    \item Iterate on the initial guess to identify a final optimal set of parameters.
+    \item Identify the crossover frequency using the system dynamics and identified optimal parameters.
+\end{enumerate}
+Each of these steps is further described below.
+
+The first step of the value identification technique was a brute force parameter search used to identify the value of the remaining parameters, see Table~\ref{table:structuralmodelparameters}.
+Each combination of the parameters $K_e, \tau_0, K, a$, $\omega_{NM}$ and $\zeta_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment.
+The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
+Each combination of experimental subject data and simulations was then compared to find a set of simulation parameters that maximized the VAF.
+This solution represented a globally maximum set of a parameters, mitigating the issue resulting from the parameters nonlinear interaction with each other.
 Once this initial global best fit was identified, the parameters were further tuned in MATLAB using ``fmincon'' to find the minimum of the constrained nonlinear multivariable function.
 The constraints for the solver were the bounds of the global brute force search, though, in general, the optimizer did not result in large parameter changes from the initial values.
+An interaction effect between trying to simultaneously fit $\omega_{NM}$ and $\zeta_{NM}$ initially resulted in convergence issues.
+To resolve this issue, $\zeta_{NM}$ was left out of the initial optimization step and tuned independently at the end of the optimization process.
+Finally, the the identified set of six parameters was inserted into the model and combined with the controlled system dynamics to identify the resultant crossover frequency.
 
-\begin{align}
-\nonumber    K_e         & = [1, 2, 3, \ldots, 30]         \\
-\nonumber    \tau_0      & = [.20, .25, .30] \mbox{s}             \\
-\nonumber    K           & = [1.0, 1.5, 2.0, \ldots, 10.0] \\
-\nonumber    a           & = [.0, .25, .50, \ldots, 3.0]   \\
-\nonumber    \omega_{NM} & = [7, 8, 9, 10, 11, 12] \mbox{rad/s}   \\
-\nonumber    \zeta_{NM}  & = [0.7] \mbox{rad/s}
-\end{align}
+\begin{table}[tb]
+    \centering
+    \includetable{modeling-structural-model-parameters.tex}
+    \caption[Structural Model parameters used for the initial global optimal fit]{Structural Model parameters used for the initial global optimal fit.}
+    \label{table:structuralmodelparameters}
+\end{table}
 
-% Structural Model Parameter Identification Technique
+Only the first control mode, Pitch only, was analyzed for the results presented below.
+The technique developed here could be extended to all three control loops however, and the results should be similar (and more pronounced for modes of higher complexity).
+By investigating the control mode with the smallest effect of the feedback, we can show that this technique is sensitive enough to detect the smallest changes between the two groups.
+A two-factor (Group and Trial) mixed model with repeated measures (Trial) was run on each of the six parameters to identify which parameters significantly changed between groups and over the course of training.
+As with the ARX technique, the Satterthwaite method was used to calculate the adjusted degrees of freedom.
+The results of this analysis are presented in Table~\ref{table:structuralmodelmixed}
 
-% 	Run (Parallel)ModelGenerator.m in MATLAB to generate many model outputs.
-% 	Run ExperimentMatcher.py in Python to identify the global optimum best initial set of parameters.
-% 	Run ModelOptimizer.m in MATLAB to iterate on the initial guess to identify an optimal set of parameters.
-% 	Run ModelAnalysis.r in R to generate the statistics.
-% 	Run OptimalModelPlots.py in Python to make the plots.
-
-% Ke
-% Type III Analysis of Variance Table with Satterthwaite's method
-%       Sum Sq Mean Sq NumDF DenDF F value    Pr(>F)
-% group  113.8  113.80     1    27  7.2654   0.01195 *
-% trial 1493.7  135.79    11   308  8.6693 2.201e-13 ***
-% ---
-% Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-% tdel
-% Type III Analysis of Variance Table with Satterthwaite's method
-%         Sum Sq   Mean Sq NumDF DenDF F value Pr(>F)
-% group 0.000176 0.0001760     1    27  0.0171 0.8968
-% trial 0.068712 0.0062466    11   308  0.6081 0.8217
-
-% Ypf
-% Type III Analysis of Variance Table with Satterthwaite's method
-%       Sum Sq Mean Sq NumDF DenDF F value Pr(>F)
-% group 12.032  12.032     1    27  1.6509 0.2097
-% trial 82.819   7.529    11   308  1.0331 0.4168
-
-% a
-% Type III Analysis of Variance Table with Satterthwaite's method
-%        Sum Sq Mean Sq NumDF DenDF F value   Pr(>F)
-% group  0.0031 0.00314     1    27  0.0068 0.934953
-% trial 13.6429 1.24026    11   308  2.6798 0.002657 **
-% ---
-% Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-% Wnm
-% Type III Analysis of Variance Table with Satterthwaite's method
-%        Sum Sq Mean Sq NumDF DenDF F value Pr(>F)
-% group   0.477  0.4768     1    27  0.0487 0.8270
-% trial 130.831 11.8937    11   308  1.2141 0.2764
-
-% Zetanm
-% Type III Analysis of Variance Table with Satterthwaite's method
-%          Sum Sq    Mean Sq NumDF DenDF F value  Pr(>F)
-% group 0.0000331 0.00003309     1    27  0.1937 0.66338
-% trial 0.0035074 0.00031886    11   308  1.8665 0.04314 *
-% ---
-% Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+\begin{table}[tb]
+    \centering
+    \includetable{modeling-structural-model-mixed.tex}
+    \caption[Results of the linear mixed models of the identified Structural Model parameters]{Results of the linear mixed models of the identified Structural Model parameters.}
+    \label{table:structuralmodelmixed}
+\end{table}
 
 % All variables can be treated as constants with the exception of  K_e, which changes with both Trial and Group.
 % tdel	Ypf	a	Wnm	Zetanm
@@ -337,14 +314,12 @@ The constraints for the solver were the bounds of the global brute force search,
 
 \begin{figure}[t]
     \centering
-    \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_group.png}
     \label{fig:sm_crossover}
     \caption[Crossover frequency (Structural Model)]{Crossover frequency predicted by the Structural Model parameter identification.}
 \end{figure}
 
 \begin{figure}[t]
-    \centering
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/ke_group.png}
     \label{fig:ke_group}
@@ -354,7 +329,6 @@ The constraints for the solver were the bounds of the global brute force search,
 \section{Extending the Structural Model}
 
 \begin{figure}[t]
-    \centering
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
     \label{fig:feedback_kfd}
