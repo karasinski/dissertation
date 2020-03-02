@@ -1,28 +1,7 @@
 \chapter{Modeling the Effects of Feedback}
 \label{chapter:modeling}
 
-% % Outline
-% Introduction
-% Method
-%     The Task
-%     Modeling Techniques
-%         ARX
-%         Structural Model
-% Results
-%     ARX
-%         full wc results
-%     SM
-%         wc results for pitch only
-%         differences between groups
-%     Comparison
-%         of wc results
-% SM Model Extension
-%     Ke is diff, add new Kf parameter
-% Discussions
-
 \section{Introduction}
-\textbf{\color{red} This chapter discusses the last of my PhD work.
-    The work is approximately 90\% complete, but the final results and writeup are not yet complete.}
 
 \subsection{Motivation}
 The second Aim of this dissertation is to develop a model of the human pilot which includes the effects of concurrent bandwidth feedback.
@@ -289,6 +268,7 @@ Each of these steps is further described below.
 
 The first step of the value identification technique was a brute force parameter search used to identify the value of the remaining parameters.
 Each combination of the parameters $K_e, \tau_0, K, a$, $\omega_{NM}$ and $\zeta_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment, see Table~\ref{table:structuralmodelparameters}.
+The values from this table were chosen based on a coarse preliminary analysis such that they covered the expected range of values with sufficient granularity.
 The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
 Each combination of experimental subject data and simulations was then compared to find a set of simulation parameters that maximized the VAF.
 This solution represented a globally maximum set of a parameters, mitigating the issue resulting from the parameters nonlinear interaction with each other.
@@ -339,14 +319,29 @@ As a consequence of this result, modifying this parameter to explain the results
 \end{figure}
 
 As a result of the analysis resulting from the linear mixed effects models, we determined that all of the parameters can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
-The resulting values for the remainder of the parameters were identified as the values listed in Table~\ref{table:structuralmodelresultants}, see below.
+The resulting values for the remainder of the parameters were averaged and identified as the values listed in Table~\ref{table:structuralmodelresultants}, see below.
 \begin{table}[tb]
     \centering
     \includetable{modeling-structural-model-resultants.tex}
     \caption[Identified optimal parameters of the Structural Model for the Aircraft Flight Task]{Identified optimal parameters of the Structural Model for the Aircraft Flight Task.}
     \label{table:structuralmodelresultants}
 \end{table}
+Note that the standard error of the mean for the identified values was quite low, further reinforcing how little they changed between subjects, trials, and group.
 The final parameter, $K_e$, can be modeled as an exponential function that increases with training, see Figure~\ref{fig:ke_group}.
+$K_e$ was modeled for each group as a function of trial with three parameters, such that
+\begin{align} \label{eq:kefit}
+    K_e = A e^{(-B*\mbox{Trial})}+C
+\end{align}
+where $A$ is the scale factor, $B$ describes how rapidly $K_e$ changes with trial, and $C$ is a baseline value.
+The results of least squares best fits to the data are presented in Table~\ref{table:kevalues}.
+\begin{table}[tb]
+    \centering
+    \includetable{modeling-structural-ke-values.tex}
+    \caption[Identified $K_e$ parameters for the two groups]{Identified $K_e$ parameters from Equation~\ref{eq:kefit} for the two groups.}
+    \label{table:kevalues}
+\end{table}
+The resulting fit well represents the values identified by the value identification technique, and reflects what we have observed throughout this analysis--that the feedback group learns much more quickly and results in better performance (and a large $K_e$) than the control group.
+
 We propose that the $K_f$, the change between the identified $K_e$ of the control and feedback groups, determines the change in performance of subjects exposed to the feedback.
 We further propose that this $K_f$ is a result of the accumulation of exposure to feedback, such that
 \begin{align}
@@ -357,27 +352,47 @@ We further propose that this $K_f$ is a result of the accumulation of exposure t
 where $K_{eC}$ and $K_{eF}$ are the $K_e$ variables identified from exponential fits to the $K_e$ variable for the control and feedback groups, respectively.
 Here we have defined $K_f$ as a variable proportional to the total accumulated time operators were exposed to the feedback, and $\dot{K_f}$ is defined as change in $K_f$ trial-to-trial which results from the time exposed to the feedback in a given trial.
 
-% Model K_e as Exponential Fit: K_e=A*e^(-B*Trial)+C
-
-% 	A	B	C
-% Control	-7.34466243	0.37349137	12.40429001
-% Feedback	-67.32338104	1.99463577	17.40238421
-
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
-    \caption[Feedback exposure correlates with $\dot{K_f}$]{Feedback exposure correlates with $\dot{K_f}$, which confirms that the accumulation of exposure to feedback drives $K_f$.}
+    \caption[]{, which confirms that the accumulation of exposure to feedback drives $K_f$.}
     \label{fig:feedback_kfd}
 \end{figure}
 
-\section{Discussion}
+We can test this proposal by plotting average time subjects in the feedback group were exposed to the feedback in each trial and comparing this to the value of $\dot{K_f}$ calculated from the derivative of the exponential fits.
+This comparison is available in Figure~\ref{fig:feedback_kfd}.
+Here we see that the data from the experiment is directly proportional to the modeled value $\dot{K_f}$, suggesting that our proposal is a viable explanation of the observed effects.
+$\dot{K_f}$, which can also be thought of as the change in the amount benefit that subjects in the feedback group have over the control group in a given trial, sharply decreases over the first few trials to a steady value.
+This confirms what we observed in the experiment--that subjects gain most of the benefit from feedback very quickly, in just a few trials.
+Further analysis of Figure~\ref{fig:feedback_kfd} shows that, for this task, an exposure period of approximately 6 seconds (or $6/82\approx0.07\%$) in a trial leads to no change in performance.
+At this time it is unclear if this amount or percentage of time is task dependent, or if, for example, it simply represents the average boundary of human control for this task.
+As a result of this analysis, the proposed modified version of the Structural Model is available in Figure~\ref{fig:structuralmodel_feedback}.
 
-A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions and the estimated pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
-The Hess Structural Model of the pilot was also investigated, which ``describe the underlying structure which contributes to human pilot dynamics.''
-The Structural Model is of interest for interpreting the effects of concurrent feedback as it incorporates multiple sensory channels and models of visual acuity and the time-varying human pilot.
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/structural_model_reduced_modified/structural_model.pdf}
+    \caption[The proposed addition to the Structural Model to account for concurrent bandwidth feedback]{The proposed addition to the Structural Model to account for concurrent bandwidth feedback (CBF).}
+    \label{fig:structuralmodel_feedback}
+\end{figure}
+
+\section{Discussion}
+We were interested in using a pilot modeling approach to explain the differences in performance that we observed from the aircraft flight task study explored in Chapter~\ref{chapter:aircraftfeedback}).
+In this study, subjects repeatedly trained on flight tasks of increasing funcitonal complexity, and one group of subjects received visual concurrent bandwidth feedback.
+We explored two different modeling strategies, an ARX based technique called \textit(gettf1) and the Hess Structural Model.
+
+A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions.
+The estimated combined pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
 Results indicate that participants in the feedback group had a significantly lower root-mean-square error and higher crossover frequency than those in the control group, indicating better performance.
 The ARX identification technique provided a consistently high variance accounted for (VAF), indicating that it can identify transfer functions representing a variety of operators at various levels of training.
 These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
 
-An extension to the Structural Model was proposed which can explain the effects observed when operators were exposed to concurrent bandwidth feedback.
+The Hess Structural Model of the pilot was also investigated, which ``describe[s] the underlying structure which contributes to human pilot dynamics.''
+The Structural Model is of interest for interpreting the effects of concurrent feedback as it incorporates multiple sensory channels and models of visual acuity and the time-varying human pilot.
+We developed a novel approach for identifying the parameters in the Structural Model from experimental subject data.
+This approach was validated by comparing the crossover frequency identified from the ARX technique, which showed that both techniques identified a similar evolution of the crossover frequency with training and between groups.
+The result of a linear mixed effects model showed that, of the six parameters which were fit, only $K_e$, the leading visual gain, varied between both group and trial.
+
+An extension to the Structural Model was proposed which explains the effects observed when operators are exposed to concurrent bandwidth feedback.
 This proposed model includes the addition of a single additional parameter, $K_f$, which accumulates when the operator is exposed to feedback.
+This parameter is added in the primary control loop, next to the $K_e$ term, and results in operators performing the task with a statistically lower root-mean-square error.
+This exposed to the feedback also immediately approach the limit of human control, with identified crossover frequency values of $\approx 1.7-2$ rad/s.
