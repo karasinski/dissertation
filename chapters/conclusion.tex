@@ -6,7 +6,7 @@
 \subsubsection{Trade Study}
 Appropriate integration between automation and robotics systems and their human operators is essential for future space exploration.
 The Human Factors and Behavioral Performance Element of NASA's Human Research Program requires a systematic understanding of the critical human-automation/robotic (HAR) integration, or HARI, design challenges for future space exploration.
-This trade study reports the results of a systematic assessment of the spaceflight-relevant HARI technologies and research topics addressing critical gaps in spaceflight-relevant HARI knowledge, and prioritizes the research required for successful human performance and HAR integration.
+This trade study (Chapter~\ref{chapter:tradestudy}: \nameref{chapter:tradestudy}) reports the results of a systematic assessment of the spaceflight-relevant HARI technologies and research topics addressing critical gaps in spaceflight-relevant HARI knowledge, and prioritizes the research required for successful human performance and HAR integration.
 We reviewed relevant literature across the past ten years and interviewed ten subject matter experts across industry and academia to investigate the current state of HARI technology, challenges facing development, the state of HARI research across a wide range of fields, and opportunities for advancing the state of the art through directed research.
 This information was used to identify relevant HARI technologies and research topics, as well as factors to assess relative priority of HARI technologies.
 We worked with NASA stakeholders to weight the factors relevant to assessing HARI specific technologies.
@@ -14,7 +14,7 @@ A multi-dimensional trade analysis was performed to objectively score HARI resea
 
 \subsubsection{Testing Augmented Feedback in Augmented Reality}
 Recent advances in computing hardware have enabled a new generation of mobile augmented reality devices which have the potential to improve human performance and reduce workload in a variety of tasks.
-The aim of this study was to investigate the effect of several factors on human performance and workload in a three-axis manual tracking task.
+The aim of this study (Chapter~\ref{chap:3dtracking}: \nameref{chap:3dtracking}) was to investigate the effect of several factors on human performance and workload in a three-axis manual tracking task.
 Twenty four (24) engineering students at the University of California, Davis were randomly placed into a one of two device groups ($n=12$ per group): a 2D or 3D display.
 Subjects in both groups evaluated three different displays in a random order: a baseline display, a concurrent bandwidth feedback display, and an rotated display.
 Subjects' objective performance was evaluated using the root-mean-square error (RMSE) of the depth ($z$) axis.
@@ -30,7 +30,7 @@ Subjects in the 3D display group and that had early exposure to the concurrent b
 To further close the gap between human and automation, research has explored various forms of biophysical measurements for use as feedback control, such as electromyography (EMG).
 It is critical to evaluate the effects of training methodologies on performance and the evolution of workload and trust in order to achieve a seamless human-automation system.
 We developed a surface EMG control task to observe the effects of training methodology on the development of performance, workload, and trust.
-In this study, 48 subjects learned to use a surface EMG command system to perform a Fitts's Law computer-based cursor-to-target task.
+In this study (Chapter~\ref{chap:emg}: \nameref{chap:emg}), 48 subjects learned to use a surface EMG command system to perform a Fitts's Law computer-based cursor-to-target task.
 The training phase consisted of 120 Trials and the subsequent retention phase contained 40 Trials.
 Subjects were divided into four groups: Control, Concurrent Feedback, Terminal Feedback, and Adaptive Threshold.
 The Control group trained and learned through repetition using the visual feedback of the cursor position.
@@ -43,7 +43,7 @@ We concluded that including concurrent feedback during manual task learning may 
 
 \subsubsection{Augmented Feedback Benefits Scale with Functional Task Complexity}
 The effects of concurrent bandwidth feedback on operator performance and workload was analyzed in training an aircraft flight control task.
-In the experiment, participants completed a simulated flight task consisting of three complexity levels using traditional flight instruments.
+In the experiment (Chapter~\ref{chapter:aircraftfeedback}: \nameref{chapter:aircraftfeedback}), participants completed a simulated flight task consisting of three complexity levels using traditional flight instruments.
 Thirty participants were divided into equal sized control and feedback groups.
 The control group controlled simulated aircraft motion with visual guidance for pitch, roll, and altitude provided by traditional flight instruments.
 The feedback group received additional visual concurrent bandwidth feedback for each controlled degree of freedom.
@@ -53,7 +53,7 @@ Statistical analyses showed that participants in the feedback group immediately 
 We found that concurrent bandwidth feedback does not reduce workload in our flight tasks, and that for the short periods tested, participants continued to perform at the same performance and workload levels when the feedback was removed.
 
 \subsubsection{Modeling the Effects of Concurrent Bandwidth Feedback}
-The Structural Model of the human pilot was investigated to model the results of the aircraft feedback study.
+The Structural Model of the human pilot was investigated to model the results of the aircraft feedback study to better understand how the subjects' performance was changed by exposure to the feedback (Chapter~\ref{chapter:modeling}: \nameref{chapter:modeling}).
 We estimated the values of the parameters in the model using a novel parameter identification technique, and used the model to estimate the crossover frequency of the combined pilot/vehicle system.
 The results of this technique were validated using the crossover frequencies identified by an ARX technique, the comparison with which showed good agreement.
 Linear mixed effect models were used to evaluate how each structural model parameter changed between groups over the course of the experiment.
@@ -96,6 +96,17 @@ This was also the case in the aircraft study, where subjects saw immediate perfo
 
 \subsubsection{Can CBF be removed after reaching peak performance without reducing subject performance (i.e., does the guidance hypothesis not hold)?}
 Yes.
+Many forms of augmented feedback have been plagued by the ``guidance hypothesis''.
+This term describes when subjects become reliant on the augmented feedback given during training such that they come to use the augmented feedback, rather than other indicators available in the task, such that their performance is reduced when the augmented feedback is removed.
+The concurrent bandwidth feedback here does not seem to suffer from the guidance hypothesis.
+This was hinted at early on in the augmented reality tracking task, where subjects that were initially exposed to the feedback continued to perform at the same level during their other conditions.
+While there was a small, nonsignificant reduction in performance during the EMG task when the feedback was removed (see Figure~\ref{figure:label3}), we also saw a small, nonsignificant increase in performance when the feedback was removed in the aircraft task (see Figures \ref{figure-hfes:pitchrmse}).
+These results indicate that visual concurrent bandwidth feedback does not suffere from the guidance hypothesis, and that this form of augmented feedback can be used to help train tasks of this type and difficulty.
+
+The reason that this feedback works is likely that it naturally fades away as subjects perform the task better (see Figure~\ref{fig:feedback_kfd}, for example. which shows the average feedback exposure time as a function of trial).
+Fading feedback has usually been considered effective, but knowing how to set the fading rate has continued to be an unsolved issue.
+While bandwidth feedback of this type only replaces that issue with another (how does one best set the bandwidth for a given task?), it does provide an easy way to directly tie the fading rate to subject performance.
+Additionally, many tasks have known operational limits which can be used to set a bandwidth, which provides a simple way to justify bandwidth selection.
 
 \subsubsection{Does CBF improve performance in transfer of training tasks?}
 Work to answer this is in progress.
