@@ -15,8 +15,8 @@ A multi-dimensional trade analysis was performed to objectively score HARI resea
 % \subsubsection{Testing Augmented Feedback in Augmented Reality}
 Recent advances in computing hardware have enabled a new generation of mobile augmented reality devices which have the potential to improve human performance and reduce workload in a variety of tasks.
 The aim of Chapter~\ref{chap:3dtracking}: \nameref{chap:3dtracking} was to investigate the effect of several factors on human performance and workload in a three-axis manual tracking task.
-Twenty four (24) engineering students at the University of California, Davis were randomly placed into a one of two device groups ($n=12$ per group): a 2D or 3D display.
-Subjects in both groups evaluated three different displays in a random order: a baseline display, a concurrent bandwidth feedback display, and an rotated display.
+Twenty-four (24) engineering students at the University of California, Davis were randomly placed into a one of two device groups ($n=12$ per group): a 2D or 3D display.
+Subjects in both groups evaluated three different displays in a random order: a baseline display, a concurrent bandwidth feedback display, and a rotated display.
 Subjects' objective performance was evaluated using the root-mean-square error (RMSE) of the depth ($z$) axis.
 Objective workload was measured by the response time to a two-choice task, and subjective workload was evaluated using the NASA Task Load Index (NASA-TLX).
 Results of ANOVA analysis on the $z$ axis RMSE showed significant effects for design ($F(2, 36)=84.92, p<.001$), device ($F(1, 18)=7.22, p<0.015$), and start design ($F(2, 18)=4.81, p<0.021$).
@@ -54,7 +54,7 @@ We found that concurrent bandwidth feedback does not reduce workload in our flig
 
 % \subsubsection{Modeling the Effects of Concurrent Bandwidth Feedback}
 Finally, in Chapter~\ref{chapter:modeling}: \nameref{chapter:modeling} the Structural Model of the human pilot was investigated to model the results of the aircraft feedback study to better understand how the subjects' performance was changed by exposure to the feedback.
-We estimated the values of the parameters in the model using a novel parameter identification technique, and used the model to estimate the crossover frequency of the combined pilot/vehicle system.
+We estimated the values of the parameters in the model using a novel parameter identification technique and used the model to estimate the crossover frequency of the combined pilot/vehicle system.
 The results of this technique were validated using the crossover frequencies identified by an ARX technique, the comparison with which showed good agreement.
 Linear mixed effect models were used to evaluate how each structural model parameter changed between groups over the course of the experiment.
 The result of this statistical test led us to propose the extension of the model to include a new term, $K_f$, which accumulates with exposure to feedback, and which is linearly added to the normal error sensing and gain compensation, $K_e$.
@@ -83,7 +83,7 @@ Here we summarize our answers to these questions.
 Yes.
 The results presented in the three research studies in this dissertation, the augmented reality tracking task, surface electromyography task, and aircraft flight tested over one hundred subjects.
 In each of these tasks, subjects exposed to concurrent bandwidth feedback had improved performance in their control tasks compared to the control groups.
-The amount of performance improvement varied between the tasks, but appears to increase with functional task complexity.
+The amount of performance improvement varied between the tasks but appears to increase with functional task complexity.
 Performance improvement varied between 17.8\% and 44.2\% for the aircraft flight task, with the largest benefit appearing in the most complicated task mode (see Table~\ref{aircraft:perf-improvement}).
 In the augmented reality tracking task, subjects that trained with the feedback while wearing the augmented reality headset were able to better perform the task when the feedback was removed, which was not the case for subjects that did not wear the headset.
 
@@ -104,7 +104,7 @@ While there was a small, nonsignificant reduction in performance during the EMG 
 These results indicate that visual concurrent bandwidth feedback does not suffere from the guidance hypothesis, and that this form of augmented feedback can be used to help train tasks of this type and difficulty.
 
 The reason that this feedback works is likely that it naturally fades away as subjects perform the task better (see Figure~\ref{fig:feedback_kfd}, for example. which shows the average feedback exposure time as a function of trial).
-Fading feedback has usually been considered effective, but knowing how to set the fading rate has continued to be an unsolved issue.
+Fading feedback has usually been considered effective but knowing how to set the fading rate has continued to be an unsolved issue.
 While bandwidth feedback of this type only replaces that issue with another (how does one best set the bandwidth for a given task?), it does provide an easy way to directly tie the fading rate to subject performance.
 Additionally, many tasks have known operational limits which can be used to set a bandwidth, which provides a simple way to justify bandwidth selection.
 
@@ -124,7 +124,7 @@ As we are not adding additional tasks for subjects to attend to, they can use th
 Yes.
 In Chapter~\ref{chapter:modeling} we were able to motivate and develop a model of human performance, based on Structural Model of the Human Pilot, which includes the effects of concurrent bandwidth feedback.
 This model modifies the Structural Model to include one additional gain, $K_f$, which accumulates as subjects are exposed to the concurrent bandwidth feedback.
-Evidence from the aircraft study was used to develop this model, which shows that the amount of time exposed to the feedback in a given trial leads to the change in the $K_f$ term from trial to trial.
+Evidence from the aircraft study was used to develop this model, which shows that the amount of time exposed to the feedback in each trial leads to the change in the $K_f$ term from trial to trial.
 Using the modified Structural Model, differences between groups of subjects with and without feedback can be modeled as their performance changes through the training process.
 
 \subsubsection{Can we use this model to estimate operational limits?}
@@ -133,13 +133,41 @@ Work to answer this is ongoing.
 \section{Future Work}
 
 This research focused on the effect of one type of augmented feedback, concurrent bandwidth feedback on human performance and workload in complex manual control tasks.
+We primarily investigated how feedback works with manual tracking tasks, where we showed that performance increases were correlated with functional task complexity.
+The largest performance gains occurred in the most complex tasks, where subjects used the feedback to improve dramatically over very short periods of time when compared to subjects in the control group.
+An extension of this work could further investigate the utility of concurrent bandwidth feedback to improve performance in emergency or other off-nominal scenarios.
+If operators could use concurrent bandwidth feedback in actual operation, this research may have the potential to reduce aviation accidents by increasing operator situational awareness or reducing workload inflight.
+One limitation of this work, however, was that it focused only on inexperienced and untrained undergraduate students.
+Future work should investigate if concurrent bandwidth feedback can improve performance in well-trained operators.
+If feedback only works for naive subjects, then it may only be useful in the very early stages of training.
 
-This work has spawned a large number of new questions worth investigating, including:
+In this research, we showed that concurrent bandwidth feedback did not cause subjects to suffer from the guidance hypothesis.
+While we investigated immediate retention, it is unclear how much performance benefit would be retained in longer term experiments.
+We also provided a uniform number of trials with feedback for all subjects and did not attempt to schedule or remove the feedback pre-emptively for subjects that were already performing well.
+Future work could investigate the minimum number of trials that subject need to be exposed to concurrent bandwidth feedback to retain a performance benefit.
+We also did not investigate the effect of changing the acceptable performance bandwidth as subjects improved through training.
+It is possible that future work could investigate the effect of progressively narrowing the bandwidth as subjects improve their performance.
+This allow for further improvements in performance but may ultimately lead to impossible performance restraints if not scheduled carefully.
+
+This research focused on feedback that was visually displayed to an operator while they were completing tasks.
+Other researchers have investigated providing feedback to operators using other modalities, such as with audio, haptic, or multimodal feedback.
+Future researchers could investigate what the effect of the modality of concurrent bandwidth feedback has on subject performance and could identify if multimodal feedback has greater advantages over unimodal feedback.
+Multimodal feedback is generally thought to be more effective, but an experiment investigating the interaction between feedback modality and task complexity could show the optimal way to provide feedback.
+Our previous experiment with the SAFER vehicle (4 degree of freedom task) showed workload improvements, while the pitch, roll, and altitude task presented in this dissertation (3 degree of freedom task) did not.
+In addition to have one additional degree of freedom, the SAFER tasks also involved navigation.
+The aircraft flight task only involved stabilizing the vehicle and holding an altitude, however, and making direct comparisons between the two is difficult.
+Investigating tasks of increasing difficulty would also allow researchers to identify what level of task complexity is needed for subjects to report reduced levels of cognitive workload when exposed to feedback.
+
+This work has spawned a large number of new questions worth investigating.
+The questions brought up in this section include:
 \begin{enumerate}
+    \item Can the concurrent bandwidth feedback be turned on in emergency scenarios to assist operators in quickly recovering from off-nominal conditions?
+    \item Does the concurrent bandwidth feedback improve performance in well-trained operators, or does this technique only work for naive or inexperience operators?
+%
     \item What is the minimum number of trials that subjects need to be exposed to concurrent bandwidth feedback?
     \item Is there an optimal way that the bandwidth can be scheduled as subjects improve through trials?
+%
     \item What is the effect of providing the concurrent bandwidth feedback through other modalities (audio, haptic, or a multimodal approach integrating these and/or visual)?
+%
     \item What level of functional complexity is needed to see reductions in workload for subjects exposed to the concurrent bandwidth feedback?
-    \item Does the concurrent bandwidth feedback improve performance in well-trained operators, or does this technique only work for naive or inexperience operators?
-    \item Can the concurrent bandwidth feedback be turned on in emergency scenarios to assist operators in quickly recovering from off-nominal conditions?
 \end{enumerate}
