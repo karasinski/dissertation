@@ -19,7 +19,7 @@ The primary result of the adaptive logic is to increase the resulting crossover 
     \end{center}
 \end{figure}
 
-While this model of the adaptive pilot has been successful in predicting changes in performance for a well trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
+While this model of the adaptive pilot has been successful in predicting changes in performance for a well-trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
 The modified model presented here includes two major changes to Hess' current model:
 \begin{itemize}
     \item The adaptation logic is changed to focus on concurrent bandwidth feedback
@@ -58,7 +58,7 @@ In order of increasing degrees of freedom and functional complexity, these three
     \item[\textbf{PRA}] Pitch, Roll and Altitude (significant complexity)
 \end{itemize}
 
-Each participant completed a total of 36 trials; 12 in each of the three control modes.
+Each participant completed a total of 36 trials: 12 in each of the three control modes.
 Each trial had a duration of 82 seconds, and participants self-initiated the trial by activating a trigger on the joystick.
 The complete results of this experiment can be seen in Chapter~\ref{chapter:aircraftfeedback}.
 
@@ -167,7 +167,7 @@ This task dynamics describe a Boeing 747 in Flight Condition 2, and resultant el
 \section{Results}
 
 \subsection{ARX}
-The original input to the system from the experiment participants $(u)$ can be fed into this resulting transfer function to produce an simulated output $(u_{sim})$.
+The original input to the system from the experiment participants $(u)$ can be fed into this resulting transfer function to produce a simulated output $(u_{sim})$.
 The resulting output from the pilot models can be compared with the experimental data from which they are generated in order to determine the goodness of fit.
 The variance accounted for (VAF) is a commonly used metric to quantify the goodness of the fit between the outputs of the model and the experimental data.
 The VAF is calculated by
@@ -198,11 +198,11 @@ The VAF ranges between 0 (no correlation) and 1 (perfect match).
 
 The VAF of the feedback group's models immediately jumps up after the first trial to an average of $\approx.75$, indicating a good fit.
 The control groups VAF increases more slowly, to a value of approximately $\approx.68$.
-An increased VAF indicates that the pilot is behaving in a more linear fashion, and these results suggest that the concurrent feedback is able to immediately assist participants to this end.
+An increased VAF indicates that the pilot is behaving in a more linear fashion, and these results suggest that the concurrent feedback can immediately assist participants to this end.
 The RMSE between the simulated and actual data is similar between groups and trends slightly up during training.
 Visual inspection of the experimental and simulated data also shows very good agreement, see Figure~\ref{fig:comparison}.
 
-By combining these pilot models with the system dynamics the crossover frequency (Figure~\ref{fig:bode}) and gain and phase margins can be found.
+By combining these pilot models with the system dynamics, the crossover frequency (Figure~\ref{fig:bode}) and gain and phase margins can be found.
 The crossover model has long been used as the standard model for human control tasks, where the crossover frequency represents ``how hard'' the pilot is working~\citep{mcruer_dynamic_1957}.
 The results of these parameters reflect what was found in the pitch RMSE performance analysis.
 Subjects in the feedback group immediately show increased crossover frequency and decreased phase and gain margins.
@@ -220,7 +220,7 @@ Mixed models were used to calculate the significance of factors in our analysis 
 The Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R~\citep{RN53}.
 When significant effects were observed, post hoc comparisons using the Tukey Honest Significance Difference (HSD) test were performed and considered significant at the $p < .05$ level, and the Satterthwaite method was again used to calculate the degrees of freedom.
 Only 7 of the 1080 total trials (30 subjects with 36 trials per subject) were removed.
-These trials were extreme performance outliers, and including these trials does not change the primary results of the study.
+These trials were extreme performance outliers and including these trials does not change the primary results of the study.
 
 A three-factor (Group, Mode, and Trial) mixed model with two repeated measures (Mode and Trial) was run on the pitch crossover frequency.
 There were significant main factors of group $(F(1, 28.00) = 4.9, p = 0.036)$, mode $(F(2, 55.62) = 17.1, p < .001)$, and trial $(F(11, 306.23) = 39.4, p < .001)$.
@@ -249,7 +249,7 @@ Tukey tests showed that the participants' crossover frequency between the groups
 Once the Structural Model was parameterized to the version presented in Figure~\ref{fig:structuralmodelreduced}, the problem then becomes best fitting the remaining parameters to best match the data collected in the experiment.
 This is more complicated than the ARX technique as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
 
-A four step process was developed to tackle the problem of finding the optimal model parameters, the results of which were compared to the results of the ARX technique to validate our approach.
+A four-step process was developed to tackle the problem of finding the optimal model parameters, the results of which were compared to the results of the ARX technique to validate our approach.
 The general outline of the technique was:
 \begin{enumerate}
     \item Conduct a brute force parameter search over the six remaining model parameters.
@@ -305,7 +305,7 @@ Evaluating the results of the linear mixed effects models presented in Table~\re
 From this we can determine that these variables have no significant effect resulting from either training or the difference in performance between the feedback and control groups.
 Of the remaining variables, $a$ and $\zeta_{NM}$ show significant effects in the trial factor, suggesting that the change with time.
 Further investigation on these variables showed that $a$ was only significantly different for the very first trial, a result which was ignored for the remainder of this analysis to simplify the resulting model.
-$\zeta_{NM}$ also varied significantly as a result of training, but further investigating showed that the effects of varying this parameter did not significantly effect the resulting outputs of the model.
+$\zeta_{NM}$ also varied significantly as a result of training, but further investigating showed that the effects of varying this parameter did not significantly affect the resulting outputs of the model.
 As a result of this, $\zeta_{NM}$ was not considered an important variable to include in the feedback model.
 Finally, the $K_e$ variable showed significant effects between both the Group and Trial variables, suggesting that it was the primary parameter responsible for changes in performance between the groups and as a result of repeated training in the simulator.
 As a consequence of this result, modifying this parameter to explain the results of increased performance in the feedback group became the focus of the remainder of this chapter.
@@ -318,7 +318,7 @@ As a consequence of this result, modifying this parameter to explain the results
     \label{fig:ke_group}
 \end{figure}
 
-As a result of the analysis resulting from the linear mixed effects models, we determined that all of the parameters can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
+As a result of the analysis resulting from the linear mixed effects models, we determined that all the parameters can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
 The resulting values for the remainder of the parameters were averaged and identified as the values listed in Table~\ref{table:structuralmodelresultants}, see below.
 \begin{table}[tb]
     \centering
@@ -365,7 +365,7 @@ Here we see that the data from the experiment is directly proportional to the mo
 $\dot{K_f}$, which can also be thought of as the change in the amount benefit that subjects in the feedback group have over the control group in a given trial, sharply decreases over the first few trials to a steady value.
 This confirms what we observed in the experiment--that subjects gain most of the benefit from feedback very quickly, in just a few trials.
 Further analysis of Figure~\ref{fig:feedback_kfd} shows that, for this task, an exposure period of approximately 6 seconds (or $6/82\approx0.07\%$) in a trial leads to no change in performance.
-At this time it is unclear if this amount or percentage of time is task dependent, or if, for example, it simply represents the average boundary of human control for this task.
+At this time, it is unclear if this amount or percentage of time is task dependent, or if, for example, it simply represents the average boundary of human control for this task.
 As a result of this analysis, the proposed modified version of the Structural Model is available in Figure~\ref{fig:structuralmodel_feedback}.
 
 \begin{figure}[tb]
