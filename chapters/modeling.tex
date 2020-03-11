@@ -5,37 +5,49 @@
 
 \subsection{Motivation}
 The second Aim of this dissertation is to develop a model of the human pilot which includes the effects of concurrent bandwidth feedback.
-The model presented here extends Hess' Structural Model of the human pilot.
-The Structural Model has been extremely successful in predicting human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
+The model presented here extends \citeauthor{hess_unified_1997}'s \citeyear{hess_unified_1997} Structural Model of the human pilot.
+The Structural Model has successful predicted human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
 Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed, see Figure~\ref{figure:hesspursuit}~\citep{hess_modeling_2009}.
 This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot''~\citep{hess_modeling_2009}.
+Where the crossover model is defined
+\begin{align}
+    Y_c(s) Y_p(s) \approx \dfrac{w_c e^{-s \tau_e}}{s}
+\end{align}
+, which relates the operator and controlled element transfer characteristics.
+Here $Y_c$ is the controlled element transfer function, $Y_p$ is the human operator transfer function, $w_c$ is the crossover frequency, and $\tau_e$ is the effective time delay of the pilot.
 The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more responsive, which could be interpreted as more focused on the task.
 
 \begin{figure}[tb]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Modeling/Screen_Shot_2018-08-09_at_4_15_24_PM.png}
-        \caption[Hess' model of the adaptive human pilot]{Hess' model of the adaptive human pilot, from~\citet{hess_modeling_2009}.}
+        \caption[Hess's model of the adaptive human pilot]{Hess's model of the adaptive human pilot, from~\citet{hess_modeling_2009}.}
         \label{figure:hesspursuit}
     \end{center}
 \end{figure}
 
 While this model of the adaptive pilot has been successful in predicting changes in performance for a well-trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
-The modified model presented here includes two major changes to Hess' current model:
+The modified model presented here includes two major changes to Hess's current model:
 \begin{itemize}
     \item The adaptation logic is changed to focus on concurrent bandwidth feedback
     \item The timescale of the adaptation is significantly longer
 \end{itemize}
 
-Here, the adaptive logic to triggers when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
-This requires the addition of an additional feedback loop onto the Structural Model which triggers when the bandwidth feedback is activated.
-This loop is based around the $K_e$ gain, which is the primary way of setting the crossover frequency in the Structural Model.
-This change implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback that their current level of aggressiveness is not sufficient to complete the task.
+In this work, we propose that the adaptive logic triggers when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
+This requires the addition of an additional feedback loop onto the Structural Model that triggers when the bandwidth feedback is activated.
+This loop is based around the $K_e$ gain, which is the primary way of setting the crossover frequency in the Structural Model, see Figure~\ref{fig:structuralmodels}.
+This change implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback that their current level of responsiveness is not sufficient to complete the task.
 
-While there must be a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours, the change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly, within a few minutes.
-This is reflected in the delta of performance between subjects in the different groups of our SAFER experiment, even on the first trial, see Figure~\ref{figure:saferdistance}.
-This relates to the second required change, the amount of required adaptation time.
-Hess' model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
+% While there must be a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours,
+The change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly--within a few minutes.
+This is reflected in the performance delta between subjects in the different groups of our SAFER experiment (see Figure~\ref{figure:saferdistance}), EMG experiment (see Figure~\ref{figure:label3}), and aircraft experiment (see Figure~\ref{figure-hfes:pitchrmse}).
+% This relates to the second required change, the amount of required adaptation time.
+Hess's model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
 The results of our experiments in the past three chapters suggest relatively long adaptation times, on the order of a few minutes.
+
+In the remainder of this chapter, we briefly describe the experimental method and results from Chapter~\ref{chapter:aircraftfeedback}.
+We then conduct a novel identification technique for finding the values of the parameters of the Structural Model.
+Using an ARX approach, we validate that the resultant crossover frequency results from the identification technique are accurate.
+Finally, using the difference between the control and feedback groups in identified parameters, we develop a modified Structural Model which includes the effects of concurrent bandwidth feedback.
 
 \section{Method}
 
@@ -44,14 +56,15 @@ The results of our experiments in the past three chapters suggest relatively lon
 \begin{figure}[b]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Aircraft/image1.png}
-    \caption[The interface]{The interface that participants were presented with during the experiment, showing the flight task on the right with deviations from nominal in pitch, roll, and altitude, and the secondary, two-choice, task on the right.}
+    \caption[The interface]{The interface that participants were presented with during the experiment. On the left, the flight display shows deviations in pitch, roll, and altitude. On the right, and the secondary, two-choice.}
     \label{fig:display}
 \end{figure}
 
 Training operators to perform complex manual control tasks is expensive and time consuming, and poorly trained operators can cause catastrophic failures.
 The use of concurrent feedback techniques has been shown to improve performance and reduce training times, but had not previously been evaluated for complex, real-world tasks such as flying aircraft.
-In the experiment (fully described in Chapter~\ref{chapter:aircraftfeedback}), thirty participants were evenly split into two groups and tasked with flying a simulated Boeing 747 aircraft in three control modes of increasing degrees of freedom and functional complexity.
-In order of increasing degrees of freedom and functional complexity, these three control modes were:
+In the experiment (fully described in Chapter~\ref{chapter:aircraftfeedback}), thirty participants were evenly split into two groups.
+Participants were tasked with flying a simulated Boeing 747 aircraft in three control modes of increasing degrees of freedom and functional complexity:
+% In order of increasing degrees of freedom and functional complexity, these three control modes were:
 \begin{itemize}
     \item[\textbf{P}] Pitch only (low complexity)
     \item[\textbf{PR}] Pitch and Roll (moderate complexity)
@@ -64,27 +77,27 @@ The complete results of this experiment can be seen in Chapter~\ref{chapter:airc
 
 % The control group controlled simulated aircraft motion with visual guidance for pitch, roll, and altitude provided by traditional flight instruments.
 % The feedback group received additional visual concurrent feedback for each controlled degree of freedom.
-The two groups of participants are: control and feedback, and the interface that participants saw during the experiment is available in Figure~\ref{fig:display}.
-When the vehicle was well controlled (small errors in the controlled degrees of freedom), the interface was the same for participants in both groups.
-Depending on the control mode the the participant was completing, however, participants in the feedback group experienced concurrent bandwidth feedback on various elements of the attitude indicator and altimeter.
+The two groups of participants are control and feedback, and the interface that participants saw during the experiment is available in Figure~\ref{fig:display}.
+When the vehicle was well-controlled (i.e., small errors in the controlled degrees of freedom), the interface was the same for participants in both groups.
+Depending on the control mode the the participant was completing, participants in the feedback group experienced concurrent bandwidth feedback on various elements of the attitude indicator and altimeter.
 This feedback was indicated by changing the element from the default yellow color to a red color when the error deviated outside of a predetermined bandwidth.
-For the Pitch only control mode, the display changed from yellow to red when the pitch deviated by greater than three degrees.
+For the Pitch only control mode, which we will focus on in this Chapter, the display changed from yellow to red when the pitch deviated by greater than three degrees.
 % Pitch feedback was provided on the central pitch indicator when the pitch was three or more degrees from zero, roll feedback was provided on the attitude indicator's ``wings'' when the roll was three or more degrees from zero, and attitude feedback was provided on the altimeter text box when the altitude was 30 feet or more off the nominal altitude of 1000 feet.
 For both groups, performance measurements were evaluated to determine the effects of the feedback on subject learning rate and maximum skill level.
-After the 9th trial, subjects in the feedback group no longer experienced feedback, and the interfaces for the control and feedback groups were the same.
-To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed, and performance was again evaluated.
+To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed after the 9th, and performance was again evaluated.
+After the 9th trial, subjects in the feedback group no longer experienced feedback, and the interfaces for the control and feedback groups were identical.
 This was done in order to investigate how well the subjects could retain their performance benefit.
 
 \subsubsection{Experiment Results}
-The resulting root-mean-square error for each group of participants by trial is presented in Figure~\ref{fig:prmse}.
-Both groups of participants had a relatively high initial root-mean-square error (RMSE) which was reduced through repeated training on the task.
+The resulting root-mean-square error (RMSE) for each group of participants by trial is presented in Figure~\ref{fig:prmse}.
+Both groups of participants had a relatively high initial RMSE which was reduced through repeated training on the task.
 Participants in the feedback group, however, performed significantly better than those in the control group and learned the task much faster.
-Additionally, subjects in the feedback group were able to maintain their improved performance when the feedback was removed, and actually show a slight increase in performance when this occurs.
+Additionally, subjects in the feedback group were able to maintain their improved performance when the feedback was removed, and actually show a slight increase in performance.
 
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/prms_arx.png}
-    \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate immediate retention.}
+    \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate immediate retention. Error bars are the standard error of the mean.}
     \label{fig:prmse}
 \end{figure}
 
@@ -114,7 +127,7 @@ Using this technique, called \textit{gettf1}, we identified transfer functions r
 The inputs to this technique are the input and output timeseries and three integers describing the resulting model ($n_a, n_b,$ and $n_k$).
 For the results presented in this Chapter, $n_a = n_b = 10$ and $n_k = 0$.
 This technique uses an ARX model which is fit using least-squares, and results in a discrete transfer function model estimation of the input/output system.
-The script also produces a continuous transfer function using a Tustin approximation.
+The script also produces a continuous transfer function using a Tustin approximation~\cite{tustin1947method}.
 The result of this process is a transfer function of the pilot with ten poles and zeros describing the human operator's response to the displayed flight dynamics.
 
 \subsubsection{Structural Model}
@@ -143,7 +156,7 @@ The complete Structural Model in Figure~\ref{fig:structuralmodel} can be reduced
     \nonumber    K_{\dot{e}} = \epsilon = K_{\dot{m}} = K_{\ddot{m}} = 0
 \end{align}
 These switches are set to their standard locations for normal error sensing~\citep{hess_unified_1997}.
-$K_{\dot{e}}$ is irrelevant as it no longer appears in the loop due to the orientation of the switches, abd $\epsilon$ is set to zero for simplicity.
+$K_{\dot{e}}$ is irrelevant as it no longer appears in the loop due to the orientation of the switches, and $\epsilon$ is set to zero for simplicity.
 $K_{\dot{m}}$ and $K_{\ddot{m}}$ are set to zero because the participants did not experience any motion, removing the vestibular feedback loop.
 
 The resulting model can be parameterized by defining $Y_{NM}, Y_{FS},$ and $Y_{PF}$.
@@ -153,7 +166,7 @@ $Y_{NM}$ describes the open-loop dynamics of the neuromuscular system driving th
 \end{align}
 where $\omega_{NM}$ and $\zeta_{NM}$ are the undamped natural frequency and damping ratio of the neuromuscular system.
 $Y_{FS}$ is set to 1 here, as for a simple joystick it takes the form of a gain which is otherwise absorbed by the other elements in the model.
-The proprioceptive feedback block is defined
+The proprioceptive feedback block is defined as
 \begin{align} \label{eq:ypf}
     Y_{PF} = \frac{K}{s+a}
 \end{align}
@@ -182,7 +195,7 @@ The VAF ranges between 0 (no correlation) and 1 (perfect match).
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.9\textwidth]{figures/Modeling/model_output.png}
-        \caption[Comparison between estimated transfer function model and experimental data]{Comparison between estimated transfer function model and experimental data.}
+        \caption[Comparison between estimated transfer function and experimental data]{Comparison between estimated transfer function and experimental data.}
         \label{fig:comparison}
     \end{subfigure}
     \hfill
@@ -207,7 +220,7 @@ The crossover model has long been used as the standard model for human control t
 The results of these parameters reflect what was found in the pitch RMSE performance analysis.
 Subjects in the feedback group immediately show increased crossover frequency and decreased phase and gain margins.
 These results are sustained during retention, and again show an immediate increase/decrease when the feedback is removed.
-The crossover frequency identified by the ARX for the pitch only trials is available in Figure~\ref{fig:arx_crossover}.
+The crossover frequency identified by the ARX technique for the pitch only trials is available in Figure~\ref{fig:arx_crossover}.
 
 \begin{figure}[tb]
     \centering
@@ -240,8 +253,8 @@ See Figure~\ref{figure:arxcomplete} for the plots of the crossover frequency of 
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Modeling/crossover_measures.pdf}
         \caption[The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task]{The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
-                The dashed line indicates where the feedback was removed from participants in the feedback group.
-                Error bars are the standard error of the mean.}
+            The dashed line indicates where the feedback was removed from participants in the feedback group.
+            Error bars are the standard error of the mean.}
         \label{figure:arxcomplete}
     \end{center}
 \end{figure}
@@ -274,7 +287,7 @@ The values from this table were chosen based on a coarse preliminary analysis su
 The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
 Each combination of experimental subject data and simulations was then compared to find a set of simulation parameters that maximized the VAF.
 This solution represented a globally maximum set of a parameters, mitigating the issue resulting from the parameters nonlinear interaction with each other.
-Once this initial global best fit was identified, the parameters were further tuned in MATLAB using ``fmincon'' to find the minimum of the constrained nonlinear multivariable function, which was the maximum VAF.
+Once this initial global best fit was identified, the parameters were further tuned in MATLAB using \textit{fmincon} to find the minimum of the constrained nonlinear multivariable function, which was the maximum VAF.
 The constraints for the solver were the bounds of the global brute force search, though, in general, the optimizer did not result in large parameter changes from the initial values.
 An interaction effect between trying to simultaneously fit $\omega_{NM}$ and $\zeta_{NM}$ initially resulted in convergence issues.
 To resolve this issue, $\zeta_{NM}$ was left out of the initial optimization step and tuned independently at the end of the optimization process.
@@ -367,7 +380,7 @@ Here we see that the data from the experiment is directly proportional to the mo
 $\dot{K_f}$, which can also be thought of as the change in the amount benefit that subjects in the feedback group have over the control group in a given trial, sharply decreases over the first few trials to a steady value.
 This confirms what we observed in the experiment--that subjects gain most of the benefit from feedback very quickly, in just a few trials.
 Further analysis of Figure~\ref{fig:feedback_kfd} shows that, for this task, an exposure period of approximately 6 seconds (or $6/82\approx0.07\%$) in a trial leads to no change in performance.
-At this time, it is unclear if this amount or percentage of time is task dependent, or if, for example, it simply represents the average boundary of human control for this task.
+Currently, it is unclear if this amount or percentage of time is task dependent, or if, for example, it simply represents the average boundary of human control for this task.
 As a result of this analysis, the proposed modified version of the Structural Model is available in Figure~\ref{fig:structuralmodel_feedback}.
 
 \begin{figure}[tbp]
@@ -375,7 +388,7 @@ As a result of this analysis, the proposed modified version of the Structural Mo
     \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=0.8\linewidth]{figures/structural_model_reduced_modified/structural_model.pdf}
-        \caption[The Structural Model with concurrent bandwidth feedback]{The Structural Model with concurrent bandwidth feedback (CBF).}
+        \caption[The Structural Model with concurrent bandwidth feedback]{The Structural Model with concurrent bandwidth feedback.}
         \label{fig:structuralmodel_feedback}
     \end{subfigure}
     \hfill
@@ -385,14 +398,14 @@ As a result of this analysis, the proposed modified version of the Structural Mo
         \caption[The adaptive logic of the addition to the Structural Model]{The adaptive logic of the addition to the Structural Model.}
         \label{fig:structuralmodel_feedbackblock}
     \end{subfigure}
-    \caption[The proposed addition to the Structural Model to account for concurrent bandwidth feedback]{The proposed addition to the Structural Model to account for concurrent bandwidth feedback (CBF).}
+    \caption[The proposed addition to the Structural Model to account for concurrent bandwidth feedback]{The proposed addition to the Structural Model to account for concurrent bandwidth feedback.}
     % \label{fig:}
 \end{figure}
 
 \section{Discussion}
-We were interested in using a pilot modeling approach to explain the differences in performance that we observed from the aircraft flight task study explored in Chapter~\ref{chapter:aircraftfeedback}).
+We were interested in using a pilot modeling approach to explain the differences in performance that we observed from the aircraft flight task study explored in Chapter~\ref{chapter:aircraftfeedback}.
 In this study, subjects repeatedly trained on flight tasks of increasing functional complexity, and one group of subjects received visual concurrent bandwidth feedback.
-We explored two different modeling strategies, an ARX based technique called \textit(gettf1) and the Hess Structural Model.
+We explored two different modeling strategies, an ARX based technique called \textit{gettf1} and the Structural Model.
 
 A time-domain autoregressive exogenous (ARX) identification technique was used to estimate pilot transfer functions.
 The estimated combined pilot/vehicle open-loop transfer functions were evaluated to determine the evolution of the crossover frequency for each control loop throughout training.
@@ -400,7 +413,7 @@ Results indicate that participants in the feedback group had a significantly low
 The ARX identification technique provided a consistently high variance accounted for (VAF), indicating that it can identify transfer functions representing a variety of operators at various levels of training.
 These results are more pronounced for modes with increased functional complexity and persisted in retention testing when the feedback was removed, indicating that participants were not reliant on the feedback.
 
-The Hess Structural Model of the pilot was also investigated, which ``describe[s] the underlying structure which contributes to human pilot dynamics.''
+The Structural Model of the human pilot was also investigated, which ``describe[s] the underlying structure which contributes to human pilot dynamics.''
 The Structural Model is of interest for interpreting the effects of concurrent feedback as it incorporates multiple sensory channels and models of visual acuity and the time-varying human pilot.
 We developed a novel approach for identifying the parameters in the Structural Model from experimental subject data.
 This approach was validated by comparing the crossover frequency identified from the ARX technique, which showed that both techniques identified a similar evolution of the crossover frequency with training and between groups.
@@ -410,3 +423,4 @@ An extension to the Structural Model was proposed which explains the effects obs
 This proposed model includes the addition of a single additional parameter, $K_f$, which accumulates when the operator is exposed to feedback.
 This parameter is added in the primary control loop, next to the $K_e$ term, and results in operators performing the task with a statistically lower root-mean-square error.
 This exposed to the feedback also immediately approach the limit of human control, with identified crossover frequency values of $\approx 1.7-2$ rad/s.
+We showed that the Structural Model can accurately model adaptation during the training phase of a simulated flight task.
