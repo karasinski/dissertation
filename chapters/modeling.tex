@@ -370,11 +370,23 @@ Further analysis of Figure~\ref{fig:feedback_kfd} shows that, for this task, an 
 At this time, it is unclear if this amount or percentage of time is task dependent, or if, for example, it simply represents the average boundary of human control for this task.
 As a result of this analysis, the proposed modified version of the Structural Model is available in Figure~\ref{fig:structuralmodel_feedback}.
 
-\begin{figure}[tb]
+\begin{figure}[tbp]
     \centering
-    \includegraphics[width=0.8\linewidth]{figures/structural_model_reduced_modified/structural_model.pdf}
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.8\linewidth]{figures/structural_model_reduced_modified/structural_model.pdf}
+        \caption[The Structural Model with concurrent bandwidth feedback]{The Structural Model with concurrent bandwidth feedback (CBF).}
+        \label{fig:structuralmodel_feedback}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.9\textwidth]{figures/structural_model_addition/structural_model.pdf}
+        \caption[The adaptive logic of the addition to the Structural Model]{The adaptive logic of the addition to the Structural Model.}
+        \label{fig:structuralmodel_feedbackblock}
+    \end{subfigure}
     \caption[The proposed addition to the Structural Model to account for concurrent bandwidth feedback]{The proposed addition to the Structural Model to account for concurrent bandwidth feedback (CBF).}
-    \label{fig:structuralmodel_feedback}
+    % \label{fig:}
 \end{figure}
 
 \section{Discussion}
