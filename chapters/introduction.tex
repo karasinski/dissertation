@@ -36,7 +36,7 @@ We will attempt to explain why this feedback is effective in enhancing learning 
 \textbf{\color{red} I am currently performing another literature review of this topic.
     Include a page on the guidance hypothesis.}
 
-\subsubsection{Augmented Feedback}
+% \subsubsection{Augmented Feedback}
 The concept of feedback was popularized when closed-loop control systems were first developed and has since been defined many times~\citep{Wierner1948}.
 In the context of this work, a convenient definition of feedback comes from Ramaprasad, ``[f]eedback is information about the gap between the actual level and the reference level of a system parameter which is used to alter the gap in some way~\citep{ramaprasad_definition_1983}.''
 The aforementioned ``gap'' is the error and can be conveyed to the operator of a system in a variety of ways.
@@ -87,7 +87,7 @@ The onset advantage ``suggests that the sudden onset of a stimulus is a more pow
 This effect could explain a repeated finding that off-track feedback is superior to on-track feedback, even if the effect is, in general, small.
 \citeauthor{de_groot_effect_2011} also measured response time to a secondary task as an estimate of workload but found no differences across groups.
 
-\subsubsection{SAFER Experiment}
+% \subsubsection{SAFER Experiment}
 \begin{figure}[b!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/AR/SAFER_DangerChris.jpg}
@@ -131,6 +131,97 @@ The effects that the treatments had on workload was very different than performa
 Subjects in the high precision group reported significantly more workload than the control group, while subjects in the CBF group reported significantly less workload than the control group (see Figure~\ref{figure:saferworkload}).
 The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
 Subjects with the CBF performed better on their first trial than subjects in the control group did on their last, which was after approximately two hours on the task.
+
+\subsection{Concurrent Bandwidth Feedback}
+\begin{figure}[tb]
+    \begin{center}
+        \includegraphics[width=\linewidth]{figures/Introduction/feedbackschematichighlighted.pdf}
+        \caption[A schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback]{A schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback, adapted from~\citep{hodges2020skill}. Blue boxes identify the primary feedback considered in this dissertation.}
+        \label{figure:afvariables}
+    \end{center}
+\end{figure}
+
+Through our experimental work with augmented feedback, we have found concurrent bandwidth feedback to be an effective technique to enhance performance without increasing workload.
+It is important to carefully consider all aspects of the task when deciding what, when, and how to provide augmented feedback.
+While we experimented with different whats, whens, and hows when initially designing the augmented feedback technique presented in this dissertation, we neither completed an exhaustive study, nor did we complete extensive experimental comparisons.
+Instead, when designing this feedback, we considered the role of an expert instructor in training a complex skill, such as learning to fly an airplane.
+In this instructor model, the trainee has a basic understanding of the task, but the expert instructor can inform them on aspects of the task that they may not be aware of or that they do not have sufficient cognitive margin to attend to.
+By pointing at elements on a display or providing verbal feedback, the instructor can identify what aspects of the tasks the trainee needs to pay attention to in real-time.
+The instructor chooses some bandwidth of acceptable performance for each aspect of the task, and their role in providing feedback gradually fades away as the trainee becomes more expert in the task.
+Figure~\ref{figure:afvariables}, adapted from \citeauthor{hodges2020skill}, presents a schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback.
+The choices involved in choosing the what, when, and how to provide this feedback are presented here.
+
+% WHAT
+Deciding \textit{what} information to provide to subjects is not trivial, especially when the task contains a large number of relevant variables.
+Under the paradigm of the instructor model, we have chosen to highlight elements that are provided in the guidance display rather than add on additional augmented feedback elements.
+\citeauthor{sigrist_augmented_2013} states that ``feedback in complex tasks should be prescriptive--that is, feedback should inform the learning on how to correct the error--rather than descriptive (i.e., information about occurrence of an error)'', though we have found that feedback that is purely descriptive can be effective for training complex flight tasks.
+Many of the tasks considered by \citeauthor{sigrist_augmented_2013} were targeting specific, short movements or related to sports tasks, however, which do not normally include guidance displays like those found in aerospace tasks.
+As these guidance displays are prevalent in the aerospace domain and our subjects were trained in how to use them to accomplish their tasks, it may be that prescriptive feedback is not necessary in this case.
+The subjects are already aware of their errors, and the descriptive feedback provided by the concurrent bandwidth feedback simply provides a descriptive of what the most temporally relevant error is.
+It has also been suggested that the motor task is relatively simple for flight and driving tasks, and that most of the difficulty associated with the task comes from the high levels of cognitive demand~\citep{doi:10.1080/00222899709600829}.
+Under this consideration, simply knowing which error to focus on at any given time may be sufficient for improving performance and could be responsible for the reduction in workload we observed in our previous SAFER study.
+In any case, the type of skill and task is certainly ``a critical factor in determining the effectiveness and the appropriateness of the corrective feedback types''~\citep{Tzetzis2008}.
+
+% WHEN
+Choosing \textit{when} to provide feedback can be one of the most import aspects of augmented feedback.
+Providing feedback terminally, when the task is over, may be too late to provide a performance benefit, while providing feedback concurrently, in real-time as the task is being executed, can overwhelm the trainee.
+\citeauthor{sigrist_augmented_2013} note that ``it seems that the more complex the task, the more the trainee can profit from concurrent feedback.''
+When considering the instructor model approach, we chose to focus on concurrent feedback.
+% ``Thus, the frequency of feedback should decrease with increasing skill level--that is, with decreasing functional task complexity--to further facilitate motor learning.
+% Functional task complexity depends of the current individual skill level and changes during the learning process, whereas nominal task complexity remains invariant.''
+It is well established that the frequency of feedback should decrease with increased skill level~\citep{doi:10.3200/JMBR.36.2.212-224, timmermans_technology-assisted_2009, Wulf2002, doi:10.1080/00222899809601335}.
+% ``Reduced feedback frequency--that is, fading feedback--seems beneficial for both terminal feedback and concurrent feedback''
+It has also been shown that fading feedback, which appears less frequently over time, is beneficial for both terminal and concurrent feedback~\citep{CROWELL201178, KOVACS2011311}.
+By reducing the frequency of feedback, subjects learn to develop their internal models of the task and identify their own task errors, reducing their dependency of the feedback.
+The role of the instructor should similarly decrease over time as trainees become more proficient.
+This led us to the concept of presenting concurrent feedback when performance variables deviated outside of an acceptable bandwidth.
+Bandwidth feedback, however, is not without its own difficulties.
+Several authors have noted that ``[b]andwidth feedback has been shown to be effective; however, setting the error threshold is not trivial''~\citep{sigrist_augmented_2013, timmermans_technology-assisted_2009, RIBEIRO2011231}.
+This issue has usually been associated with terminal bandwidth feedback, where it is challenging to decide what types of descriptive summary statistics are appropriate and what bandwidths are sufficient.
+By instead choosing to present the feedback concurrently we can use an operational limit or chosen bandwidth of acceptable performance, which can make the choice of setting the error threshold simpler.
+
+% HOW (and where)
+The \textit{how} of presenting feedback has largely focused on which modality (or modalities) to use.
+Under the paradigm of the instructor model, we considered the verbal and visual modalities.
+Many aerospace tasks, however, involve significant secondary tasks in the form of managing interactions with air traffic control or communicating over other voice loops.
+With this consideration, the concurrent bandwidth we developed was exclusively visual, involving color changes on the guidance display. 
+One advantage of focusing on the visual modality is that this is where a majority of research in augmented feedback has focused, allowing us to more easily compare between other research studies.
+
+In summary, concurrent bandwidth feedback is provided to an operator in real-time when a signal deviates out of a predefined range.
+In this work, the feedback is always displayed visually and changes the color of an already existing element of the display.
+Figure~\ref{fig:cbf} illustrates the process of taking the signal from a task relevant feature and applying this technique.
+For example:
+\begin{enumerate}
+\item A task relevant signal is identified.
+Figure~\ref{fig:signal} shows an example signal, the pitch disturbance from the aircraft flight task presented in Chapter~\ref{chapter:aircraftfeedback}.
+\item An operationally relevant performance bandwidth is identified.
+Figure~\ref{fig:signal_w_bandwidth} shows an example bandwidth of acceptable performance.
+\item Visual feedback is applied to an existing part of the display and presented to the operator concurrently.
+Figure~\ref{fig:signal_w_feedback} shows an example of feedback that would be presented to an operator.
+In this example, an element of the display would change from green (acceptable performance) to red (unacceptable performance) when the operator deviates outside of the acceptable pitch range.
+\end{enumerate}
+
+\begin{figure}[p]
+    \begin{center}
+        \begin{subfigure}{0.80\textwidth}
+            \includegraphics[width=\linewidth]{figures/Introduction/signal.pdf}
+            \caption[The signal of a task critical feature]{The signal of a task critical feature.}
+            \label{fig:signal}
+        \end{subfigure}\hfill
+        \begin{subfigure}{0.80\textwidth}
+            \includegraphics[width=\linewidth]{figures/Introduction/signal_w_bandwidth.pdf}
+            \caption[The signal with an operationally relevant bandwidth]{The signal with an operationally relevant bandwidth.}
+            \label{fig:signal_w_bandwidth}
+        \end{subfigure}\hfill
+        \begin{subfigure}{0.80\textwidth}
+            \includegraphics[width=\linewidth]{figures/Introduction/signal_w_feedback.pdf}
+            \caption[The signal with concurrent bandwidth feedback applied]{The signal with concurrent bandwidth feedback applied.}
+            \label{fig:signal_w_feedback}
+        \end{subfigure}
+        \caption[The implementation of concurrent bandwidth feedback to a task critical feature]{The implementation of concurrent bandwidth feedback to a task critical feature.}
+        \label{fig:cbf}%
+    \end{center}
+\end{figure}
 
 \subsection{Workload}
 \textbf{\color{red} Briefly discuss the Modified Bedford Workload Score and the NASA-TLX.}
@@ -226,97 +317,6 @@ The performance improving effects of this feedback, seen throughout the literatu
 This literature review covered the development of the augmented feedback, focusing on examples of concurrent and bandwidth feedback.
 Extra focus was spent on cases where augmented feedback techniques were applied to aerospace related tasks.
 Additionally, this review covered human performance models applied to piloted aircraft and flight-like tasks.
-
-\section{Concurrent Bandwidth Feedback}
-\begin{figure}[tb]
-    \begin{center}
-        \includegraphics[width=\linewidth]{figures/Introduction/feedbackschematichighlighted.pdf}
-        \caption[A schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback]{A schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback, adapted from~\citep{hodges2020skill}. Blue boxes identify the primary feedback considered in this dissertation.}
-        \label{figure:afvariables}
-    \end{center}
-\end{figure}
-
-Through our experimental work with augmented feedback, we have found concurrent bandwidth feedback to be an effective technique to enhance performance without increasing workload.
-It is important to carefully consider all aspects of the task when deciding what, when, and how to provide augmented feedback.
-While we experimented with different whats, whens, and hows when initially designing the augmented feedback technique presented in this dissertation, we neither completed an exhaustive study, nor did we complete extensive experimental comparisons.
-Instead, when designing this feedback, we considered the role of an expert instructor in training a complex skill, such as learning to fly an airplane.
-In this instructor model, the trainee has a basic understanding of the task, but the expert instructor can inform them on aspects of the task that they may not be aware of or that they do not have sufficient cognitive margin to attend to.
-By pointing at elements on a display or providing verbal feedback, the instructor can identify what aspects of the tasks the trainee needs to pay attention to in real-time.
-The instructor chooses some bandwidth of acceptable performance for each aspect of the task, and their role in providing feedback gradually fades away as the trainee becomes more expert in the task.
-Figure~\ref{figure:afvariables}, adapted from \citeauthor{hodges2020skill}, presents a schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback.
-The choices involved in choosing the what, when, and how to provide this feedback are presented here.
-
-% WHAT
-Deciding \textit{what} information to provide to subjects is not trivial, especially when the task contains a large number of relevant variables.
-Under the paradigm of the instructor model, we have chosen to highlight elements that are provided in the guidance display rather than add on additional augmented feedback elements.
-\citeauthor{sigrist_augmented_2013} states that ``feedback in complex tasks should be prescriptive--that is, feedback should inform the learning on how to correct the error--rather than descriptive (i.e., information about occurrence of an error)'', though we have found that feedback that is purely descriptive can be effective for training complex flight tasks.
-Many of the tasks considered by \citeauthor{sigrist_augmented_2013} were targeting specific, short movements or related to sports tasks, however, which do not normally include guidance displays like those found in aerospace tasks.
-As these guidance displays are prevalent in the aerospace domain and our subjects were trained in how to use them to accomplish their tasks, it may be that prescriptive feedback is not necessary in this case.
-The subjects are already aware of their errors, and the descriptive feedback provided by the concurrent bandwidth feedback simply provides a descriptive of what the most temporally relevant error is.
-It has also been suggested that the motor task is relatively simple for flight and driving tasks, and that most of the difficulty associated with the task comes from the high levels of cognitive demand~\citep{doi:10.1080/00222899709600829}.
-Under this consideration, simply knowing which error to focus on at any given time may be sufficient for improving performance and could be responsible for the reduction in workload we observed in our previous SAFER study.
-In any case, the type of skill and task is certainly ``a critical factor in determining the effectiveness and the appropriateness of the corrective feedback types''~\citep{Tzetzis2008}.
-
-% WHEN
-Choosing \textit{when} to provide feedback can be one of the most import aspects of augmented feedback.
-Providing feedback terminally, when the task is over, may be too late to provide a performance benefit, while providing feedback concurrently, in real-time as the task is being executed, can overwhelm the trainee.
-\citeauthor{sigrist_augmented_2013} note that ``it seems that the more complex the task, the more the trainee can profit from concurrent feedback.''
-When considering the instructor model approach, we chose to focus on concurrent feedback.
-% ``Thus, the frequency of feedback should decrease with increasing skill level--that is, with decreasing functional task complexity--to further facilitate motor learning.
-% Functional task complexity depends of the current individual skill level and changes during the learning process, whereas nominal task complexity remains invariant.''
-It is well established that the frequency of feedback should decrease with increased skill level~\citep{doi:10.3200/JMBR.36.2.212-224, timmermans_technology-assisted_2009, Wulf2002, doi:10.1080/00222899809601335}.
-% ``Reduced feedback frequency--that is, fading feedback--seems beneficial for both terminal feedback and concurrent feedback''
-It has also been shown that fading feedback, which appears less frequently over time, is beneficial for both terminal and concurrent feedback~\citep{CROWELL201178, KOVACS2011311}.
-By reducing the frequency of feedback, subjects learn to develop their internal models of the task and identify their own task errors, reducing their dependency of the feedback.
-The role of the instructor should similarly decrease over time as trainees become more proficient.
-This led us to the concept of presenting concurrent feedback when performance variables deviated outside of an acceptable bandwidth.
-Bandwidth feedback, however, is not without its own difficulties.
-Several authors have noted that ``[b]andwidth feedback has been shown to be effective; however, setting the error threshold is not trivial''~\citep{sigrist_augmented_2013, timmermans_technology-assisted_2009, RIBEIRO2011231}.
-This issue has usually been associated with terminal bandwidth feedback, where it is challenging to decide what types of descriptive summary statistics are appropriate and what bandwidths are sufficient.
-By instead choosing to present the feedback concurrently we can use an operational limit or chosen bandwidth of acceptable performance, which can make the choice of setting the error threshold simpler.
-
-% HOW (and where)
-The \textit{how} of presenting feedback has largely focused on which modality (or modalities) to use.
-Under the paradigm of the instructor model, we considered the verbal and visual modalities.
-Many aerospace tasks, however, involve significant secondary tasks in the form of managing interactions with air traffic control or communicating over other voice loops.
-With this consideration, the concurrent bandwidth we developed was exclusively visual, involving color changes on the guidance display. 
-One advantage of focusing on the visual modality is that this is where a majority of research in augmented feedback has focused, allowing us to more easily compare between other research studies.
-
-In summary, concurrent bandwidth feedback is provided to an operator in real-time when a signal deviates out of a predefined range.
-In this work, the feedback is always displayed visually and changes the color of an already existing element of the display.
-Figure~\ref{fig:cbf} illustrates the process of taking the signal from a task relevant feature and applying this technique.
-For example:
-\begin{enumerate}
-\item A task relevant signal is identified.
-Figure~\ref{fig:signal} shows an example signal, the pitch disturbance from the aircraft flight task presented in Chapter~\ref{chapter:aircraftfeedback}.
-\item An operationally relevant performance bandwidth is identified.
-Figure~\ref{fig:signal_w_bandwidth} shows an example bandwidth of acceptable performance.
-\item Visual feedback is applied to an existing part of the display and presented to the operator concurrently.
-Figure~\ref{fig:signal_w_feedback} shows an example of feedback that would be presented to an operator.
-In this example, an element of the display would change from green (acceptable performance) to red (unacceptable performance) when the operator deviates outside of the acceptable pitch range.
-\end{enumerate}
-
-\begin{figure}[p]
-    \begin{center}
-        \begin{subfigure}{0.80\textwidth}
-            \includegraphics[width=\linewidth]{figures/Introduction/signal.pdf}
-            \caption[The signal of a task critical feature]{The signal of a task critical feature.}
-            \label{fig:signal}
-        \end{subfigure}\hfill
-        \begin{subfigure}{0.80\textwidth}
-            \includegraphics[width=\linewidth]{figures/Introduction/signal_w_bandwidth.pdf}
-            \caption[The signal with an operationally relevant bandwidth]{The signal with an operationally relevant bandwidth.}
-            \label{fig:signal_w_bandwidth}
-        \end{subfigure}\hfill
-        \begin{subfigure}{0.80\textwidth}
-            \includegraphics[width=\linewidth]{figures/Introduction/signal_w_feedback.pdf}
-            \caption[The signal with concurrent bandwidth feedback applied]{The signal with concurrent bandwidth feedback applied.}
-            \label{fig:signal_w_feedback}
-        \end{subfigure}
-        \caption[The implementation of concurrent bandwidth feedback to a task critical feature]{The implementation of concurrent bandwidth feedback to a task critical feature.}
-        \label{fig:cbf}%
-    \end{center}
-\end{figure}
 
 \section{Research Questions}
 \label{sec:intro_questions}
