@@ -1,0 +1,55 @@
+\documentclass[tikz, convert=false, border=10pt]{standalone}
+
+\usepackage[utf8]{inputenx}%  http://ctan.org/pkg/inputenx
+% Euler for math | Palatino for rm | Helvetica for ss | Courier for tt
+% \renewcommand{\rmdefault}{ppl}% rm
+% \linespread{1.05}% Palatino needs more leading
+\usepackage[scaled]{helvet}% ss //  http://ctan.org/pkg/helvet
+% \usepackage{courier}% tt // http://ctan.org/pkg/courier
+% \usepackage{eulervm}  %  http://ctan.org/pkg/eulervm
+% a better implementation of the euler package (not in gwTeX)
+% \normalfont%
+\usepackage[T1]{fontenc}%  http://ctan.org/pkg/fontenc
+% \usepackage{textcomp}%  http://ctan.org/pkg/textcomp
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{amsmath}
+\usepackage{bigints}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\begin{document}
+\pagestyle{empty}
+
+\tikzstyle{block}=[draw, rectangle, thick]
+
+\begin{tikzpicture}[node distance=10em,auto]
+  % Nodes
+  \node [block, minimum height = 7em] (function)
+  {%
+    $\begin{aligned}
+         & \mbox{if abs} (E) > \mbox{Bandwidth:} \\
+         & \hspace{2em}               \dot{K_f}  \\
+         & \mbox{else:}                          \\
+         & \hspace{2em}              0
+      \end{aligned}$};
+  \node [left=8em of function, coordinate] (error_in) {};
+  \node [block, left=1.5em of function, yshift=2em] (bandwidth) {Bandwidth};
+  \node [block, right=1em of function, minimum height = 7em] (bigint) {$\bigint$};
+  \node [coordinate, right=5em of bigint] (end) {};
+  
+  % Arrows
+  \path[thick, -latex, transform canvas={yshift= 2em}] ($(error_in) + (6.5em, 0em)$) edge node {} (function);
+  \path[thick, -latex, transform canvas={yshift=-2em}] (error_in) edge node {$E$} (function);
+  \path[thick, -latex] (function) edge node {} (bigint);
+  \draw[thick, -latex] (bigint) edge node {$K_f$} (end);
+  
+  % Box and label
+  \node[] at (0em, 5em) {\itshape{CBF}};
+  \draw[thick, dashed] (-13em, 4em) -- (-13em, -4em); %left
+  \draw[thick, dashed] (-13em, 4em) -- (13em, 4em); %top
+  \draw[thick, dashed] (13em, 4em) -- (13em, -4em); %right
+  \draw[thick, dashed] (-13em, -4em) -- (13em, -4em); %bot
+\end{tikzpicture}
+
+\end{document}
