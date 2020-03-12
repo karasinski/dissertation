@@ -184,7 +184,7 @@ By instead choosing to present the feedback concurrently we can use an operation
 The \textit{how} of presenting feedback has largely focused on which modality (or modalities) to use.
 Under the paradigm of the instructor model, we considered the verbal and visual modalities.
 Many aerospace tasks, however, involve significant secondary tasks in the form of managing interactions with air traffic control or communicating over other voice loops.
-With this consideration, the concurrent bandwidth we developed was exclusively visual, involving color changes on the guidance display. 
+With this consideration, the concurrent bandwidth we developed was exclusively visual, involving color changes on the guidance display.
 One advantage of focusing on the visual modality is that this is where a majority of research in augmented feedback has focused, allowing us to more easily compare between other research studies.
 
 In summary, concurrent bandwidth feedback is provided to an operator in real-time when a signal deviates out of a predefined range.
@@ -192,13 +192,13 @@ In this work, the feedback is always displayed visually and changes the color of
 Figure~\ref{fig:cbf} illustrates the process of taking the signal from a task relevant feature and applying this technique.
 For example:
 \begin{enumerate}
-\item A task relevant signal is identified.
-Figure~\ref{fig:signal} shows an example signal, the pitch disturbance from the aircraft flight task presented in Chapter~\ref{chapter:aircraftfeedback}.
-\item An operationally relevant performance bandwidth is identified.
-Figure~\ref{fig:signal_w_bandwidth} shows an example bandwidth of acceptable performance.
-\item Visual feedback is applied to an existing part of the display and presented to the operator concurrently.
-Figure~\ref{fig:signal_w_feedback} shows an example of feedback that would be presented to an operator.
-In this example, an element of the display would change from green (acceptable performance) to red (unacceptable performance) when the operator deviates outside of the acceptable pitch range.
+    \item A task relevant signal is identified.
+          Figure~\ref{fig:signal} shows an example signal, the pitch disturbance from the aircraft flight task presented in Chapter~\ref{chapter:aircraftfeedback}.
+    \item An operationally relevant performance bandwidth is identified.
+          Figure~\ref{fig:signal_w_bandwidth} shows an example bandwidth of acceptable performance.
+    \item Visual feedback is applied to an existing part of the display and presented to the operator concurrently.
+          Figure~\ref{fig:signal_w_feedback} shows an example of feedback that would be presented to an operator.
+          In this example, an element of the display would change from green (acceptable performance) to red (unacceptable performance) when the operator deviates outside of the acceptable pitch range.
 \end{enumerate}
 
 \begin{figure}[p]
@@ -224,9 +224,49 @@ In this example, an element of the display would change from green (acceptable p
 \end{figure}
 
 \subsection{Workload}
-\textbf{\color{red} Briefly discuss the Modified Bedford Workload Score and the NASA-TLX.}
+Improving performance, through some kind of feedback or other technique, often comes at the cost of increased workload, which can lead to a loss of the ability to maintain performance.
+While improving performance is the most common motivator for supplying augmented feedback, the workload of subjects must also be considered.
+If performance benefits come at the cost of increased or unsustainable workload levels, for instance, the cost of augmented feedback may be too high.
+For this reason, we are interested in measuring the workload associated with participants to evaluate if including concurrent bandwidth feedback has an effect.
 
-\citep{roscoe_subjective_1990, hart_development_1988, hart_nasa-task_2006}
+One of the difficulties with measuring workload has been the challenge in the human factors community of settling on a single definition of the term.
+As \citeauthor{hart_nasa-task_2006} notes in her \citeyear{hart_nasa-task_2006} report, ``The many definitions [of workload] that exist in the psychological literature are a testament to the complexity of the construct''.
+Workload was defined by \citeauthor{hart_development_1988} as ``the perceived relationship between the amount of mental processing capability or resources and the amount required by the task.''
+\citeauthor{hart_nasa-task_2006} later provided an excellent definition of workload that is broadly acceptable for many types of tasks, ``[w]orkload is a term that represents the cost of accomplishing mission requirements for the human operator.''
+More specific definitions are available when focusing in the aerospace domain.
+After sending a questionnaire to some 350 military and airline pilots, \citeauthor{ellis1982airline} proposed that ``[p]ilot workload is the integrated mental and physical effort required to satisfy the perceived demands of a specified flight task''.
+% This definition notes three distinct sources of workload: mental effort, physical effort, and task demands.
+% These three
+Regardless of the precise definition, is generally agreed that having a low workload indicates that it would be easy to complete additional tasks, while having a high workload suggests that it would be difficult.
+
+While there are a number of objective techniques that attempt to capture workload, most commonly used techniques are subjective in nature~\citep{hart_development_1988}.
+In the domain of aircraft flight tasks, the two most commonly used subjective workload measurements are the Modified Bedford Workload Scale and the NASA Task Load Index (NASA-TLX)~\citep{roscoe_subjective_1990, hart_development_1988, hart_nasa-task_2006}.
+Both of these techniques are used in the studies presented in this dissertation, and generally show good agreement for the types of tasks in which we are interested in.
+
+The Modified Bedford Workload Scale is a 10-point scale that asks operators to rate their spare time to attend to additional tasks.
+While taking the survey, operators ask themselves a series of questions to determine if the workload for the task was satisfactory, tolerable, possible, or impossible.
+The scale ranges from a score of 1 (a ``piece of cake'') to a 10 (adequate performance was impossible), see Figure~\ref{figure:modifiedbedford}.
+The benefits of this scale include that the resulting workload score is a single number which can be easily analyzed statistically, that is is extremely quick to complete, and that it is easy and intuitive for inexperienced subjects to complete.
+Some of the negative features of the scale are that it only considers the amount of spare cognitive ability to attend to additional tasks, and that there can be large inter-rater variability.
+Despite this, the scale is widely used for measuring the workload associated with aircraft flight tasks and has significant heritage in the aerospace domain.
+
+The NASA Task Load Index (NASA-TLX) is one of the most well known and commonly used subjective workload measures.
+The NASA-TLX has been in use for thirty years and has been used and validated over a large variety of tasks~\citep{hart_nasa-task_2006}.
+The NASA-TLX is a multidimensional rating scale which uses the magnitude and ranking of six subscales to produce an overall estimate of subjective workload~\citep{hart_development_1988}.
+The six subscales are: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration, see Figure~\ref{figure:nasa-tlx}.
+Each of these scales is rated on a 0 (Very Low) to 100 (Very High) scale, with the exception of Performance, which is rated from 0 (Perfect) to 100 (Failure).
+After marking a value for each of these subscales, subjects then make fifteen pairwise weightings, allowing them to rate each pair of subscales based on its perceived contribution to their overall workload.
+A final, overall workload score is computed by multiplying each subscale's score by the number of times it was chosen in the pairwise weightings, adding these values, and dividing by fifteen.
+As certain subscales may be more or less important than others, depending on the task being evaluated, some researchers can drop subscales or simply not compute the overall score.
+
+In addition to subjective measures of workload, there are a variety of techniques which aim to estimate objective workload.
+One of the most common objective measurement techniques is the secondary task, which requires subjects to complete the primary task, then use any spare workload to respond to an additional task~\citep{gawron_human_2008}.
+Secondary tasks can provide a measure more sensitive to differences in workload and performance than a single task alone and allow for a common measure between experimental conditions~\citep{slocum1971meaningful}.
+Care must be taken, however, to ensure that the secondary task does not intrude upon primary task performance~\citep{williges_behavioral_1979}.
+In our previous studies, we have used a multiple-choice reaction time task as an objective workload measurement.
+In this secondary task, subjects are presented with several different stimuli, each of which requires a different response~\citep{lysaght_operator_1989}.
+A subject's objective workload can then be inferred by either the percentage of secondary tasks which were correctly responded to within a given time, the number of secondary tasks which were correctly responded to in a trial, or both.
+We have previously found this type of task to be correlated with subjective workload scales in the aforementioned SAFER task~\citep{karasinski_real-time_2017}.
 
 \subsection{Pilot Modeling}
 \label{background:pilotmodeling}
@@ -280,20 +320,20 @@ Even today, the crossover model is used as the standard for describing pilot/veh
 The continued demand for human pilot models for use in informing vehicle design, as well predicting, preventing, and explaining accidents has led to a variety of more complex pilot models since the creation of the crossover model.
 A recent review by Xu et al. in 2017 surveyed the state of the art in human pilot modeling and grouped existing models into three classes of models based on: control theory, human physiology, and intelligence techniques~\citep{xu_review_2017}.
 Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\citep{kleinman_optimal_1970, baron_optimal_1970}.
-Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Hess structural model~\citep{hess_structural_1980, hess_model_1990, hess_unified_1997}, Hosman's descriptive model~\citep{hosman_pilots_nodate, hosman_pilots_1999}, and the biodynamic model~\citep{griffin_validation_2001}.
+Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Structural Model~\citep{hess_structural_1980, hess_model_1990, hess_unified_1997}, Hosman's descriptive model~\citep{hosman_pilots_nodate, hosman_pilots_1999}, and the biodynamic model~\citep{griffin_validation_2001}.
 Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\citep{zaychik_conspectus_2006, gestwa_modelling_2003}.
 Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
 
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Introduction/Screen_Shot_2018-07-31_at_11_21_44_AM.png}
-        \caption[The Hess Structural Model of the Human Pilot]{The Hess Structural Model of the Human Pilot, from~\citet{hess_unified_1997}.}
+        \caption[The Structural Model of the Human Pilot]{The Structural Model of the Human Pilot, from~\citet{hess_unified_1997}.}
         \label{figure:structuralmodel}
     \end{center}
 \end{figure}
 
 While the crossover model was very successful in predicting pilot behavior, it it did not attempt ``to describe the underlying structure which contributes to human pilot dynamics~\citep{hess_structural_1980}.''
-For this reason, the Hess Structural Model is of interest due to the incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\citep{hess_modeling_2009}.
+For this reason, the Structural Model is of interest due to the incorporation of multiple sensory channels and models of visual acuity and the time-varying human pilot~\citep{hess_modeling_2009}.
 The Structural Model includes the effects of the neuromuscular system, the force-feel characteristics of the input device, and the contributions of proprioceptive, vestibular, and visual feedback, see Figure~\ref{figure:structuralmodel}.
 One of the key strengths of the Structural Model is the relatively small number of free parameters that need to be set to predict pilot performance.
 The model has been used in predicting and evaluating handling qualities and pilot-induced oscillation rating levels for helicopters, Boeing 747, Lockheed C-5A, and twin ducted-fan aircraft~\citep{hess_analytical_2013, andreea-irina_prediction_2014, grant_handling_2015}.
@@ -326,12 +366,12 @@ These aims build on each other, starting with a compensatory tracking task, exte
 
 We set out to accomplish two aims with the research included in this dissertation.
 This dissertation contains the results of human-in-the-loop subject testing experiments which were designed to understand the effects of concurrent bandwidth feedback.
-Using the data from these experiments, the structural model has modified to integrate the effects of this feedback into a human performance model.
+Using the data from these experiments, the Structural Model has modified to integrate the effects of this feedback into a human performance model.
 To investigate the two Aims outlined below, we completed four experiments and the development of a model.
 
 \begin{description}[align=left]
     \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload in complex manual control tasks.
-    \item [Aim Two] Extend the Hess Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
+    \item [Aim Two] Extend the Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
 \end{description}
 
 There are several research questions that we were interested in answering by completing these aims, which included:
