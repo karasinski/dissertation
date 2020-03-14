@@ -62,20 +62,20 @@ We found evidence that this term accumulates when subjects are exposed to a crit
 
 \section{Research Questions}
 
-In Chapter~\ref{sec:intro_questions}, we listed seven research questions that we aimed to answer by this research.
+In Chapter~\ref{sec:intro_questions}, we listed six research questions that we aimed to answer by this research.
 Going into this research, our primary questions were
 \begin{enumerate}
-    \item Can concurrent bandwidth feedback (CBF) improve performance of complex manual control tasks?
-          \begin{enumerate}
-              \item Can CBF reduce the required training time to peak performance?
-              \item Can CBF be removed after reaching peak performance without reducing subject performance (i.e., does the guidance hypothesis not hold)?
-              \item Does CBF improve performance in transfer of training tasks?
-              \item Can performance be increased without increasing workload?
-          \end{enumerate}
-    \item Can we develop a model of human performance which includes the effects of concurrent bandwidth feedback?
-          \begin{enumerate}
-              \item Can we use this model to estimate operational limits?
-          \end{enumerate}
+      \item Can concurrent bandwidth feedback (CBF) improve performance of complex manual control tasks?
+            \begin{enumerate}
+                  \item Can CBF reduce the required training time to peak performance?
+                  \item Can CBF be removed after reaching peak performance without reducing subject performance (i.e., does the guidance hypothesis not hold)?
+                        %   \item Does CBF improve performance in transfer of training tasks?
+                  \item Can performance be increased without increasing workload?
+            \end{enumerate}
+      \item Can we develop a model of human performance which includes the effects of concurrent bandwidth feedback?
+            \begin{enumerate}
+                  \item Can we use this model to estimate operational limits?
+            \end{enumerate}
 \end{enumerate}
 Here we summarize our answers to these questions.
 
@@ -91,7 +91,7 @@ In the augmented reality tracking task, subjects that trained with the feedback 
 Yes.
 Subjects exposed to the concurrent bandwidth feedback generally performed better on their second trial than subjects in the control group did by the end of the experiments.
 This is especially clear in the percent of successful trials completed in the surface electromyography study.
-In this experiment, subjects exposed to CBF acheived a nearly perfect score by the second block of trials, a feat that subjects in the control group never acheived (see Figure~\ref{figure:label3}).
+In this experiment, subjects exposed to CBF achieved a nearly perfect score by the second block of trials, a feat that subjects in the control group never achieved (see Figure~\ref{figure:label3}).
 This was also the case in the aircraft study, where subjects saw immediate performance improvements after the first trial (see Figures \ref{figure-hfes:pitchrmse}, \ref{figure-hfes:rollrmse}, and \ref{figure-hfes:altitudermse}).
 
 \subsubsection{Can CBF be removed after reaching peak performance without reducing subject performance (i.e., does the guidance hypothesis not hold)?}
@@ -101,15 +101,15 @@ This term describes when subjects become reliant on the augmented feedback given
 The concurrent bandwidth feedback here does not seem to suffer from the guidance hypothesis.
 This was hinted at early on in the augmented reality tracking task, where subjects that were initially exposed to the feedback continued to perform at the same level during their other conditions.
 While there was a small, nonsignificant reduction in performance during the EMG task when the feedback was removed (see Figure~\ref{figure:label3}), we also saw a small, nonsignificant increase in performance when the feedback was removed in the aircraft task (see Figures \ref{figure-hfes:pitchrmse}).
-These results indicate that visual concurrent bandwidth feedback does not suffere from the guidance hypothesis, and that this form of augmented feedback can be used to help train tasks of this type and difficulty.
+These results indicate that visual concurrent bandwidth feedback does not suffer from the guidance hypothesis, and that this form of augmented feedback can be used to help train tasks of this type and difficulty.
 
 The reason that this feedback works is likely that it naturally fades away as subjects perform the task better (see Figure~\ref{fig:feedback_kfd}, for example. which shows the average feedback exposure time as a function of trial).
 Fading feedback has usually been considered effective but knowing how to set the fading rate has continued to be an unsolved issue.
 While bandwidth feedback of this type only replaces that issue with another (how does one best set the bandwidth for a given task?), it does provide an easy way to directly tie the fading rate to subject performance.
 Additionally, many tasks have known operational limits which can be used to set a bandwidth, which provides a simple way to justify bandwidth selection.
-
-\subsubsection{Does CBF improve performance in transfer of training tasks?}
-Work to answer this is in progress.
+%
+% \subsubsection{Does CBF improve performance in transfer of training tasks?}
+% Work to answer this is in progress.
 
 \subsubsection{Can performance be increased without increasing workload?}
 Yes.
@@ -128,7 +128,11 @@ Evidence from the aircraft study was used to develop this model, which shows tha
 Using the modified Structural Model, differences between groups of subjects with and without feedback can be modeled as their performance changes through the training process.
 
 \subsubsection{Can we use this model to estimate operational limits?}
-Work to answer this is ongoing.
+Yes.
+The primary effect of increasing $K_f$ is to increase the crossover frequency of the combined pilot/vehicle system.
+One can use this model to explore different bandwidths and see the resulting effect it has on the crossover frequency.
+As the upper limit of human performance is around 2 rad/s, any bandwidth which results in a higher value would result in unsustainable levels of workload.
+Further research is required, however, to determine if $\dot{K_f}$ is task dependent, which is what is driving this change.
 
 \section{Future Work}
 
@@ -161,13 +165,13 @@ Investigating tasks of increasing difficulty would also allow researchers to ide
 This work has spawned a large number of new questions worth investigating.
 The questions brought up in this section include:
 \begin{enumerate}
-    \item Can the concurrent bandwidth feedback be turned on in emergency scenarios to assist operators in quickly recovering from off-nominal conditions?
-    \item Does the concurrent bandwidth feedback improve performance in well-trained operators, or does this technique only work for naive or inexperience operators?
-          %
-    \item What is the minimum number of trials that subjects need to be exposed to concurrent bandwidth feedback?
-    \item Is there an optimal way that the bandwidth can be scheduled as subjects improve through trials?
-          %
-    \item What is the effect of providing the concurrent bandwidth feedback through other modalities (audio, haptic, or a multimodal approach integrating these and/or visual)?
-          %
-    \item What level of functional complexity is needed to see reductions in workload for subjects exposed to the concurrent bandwidth feedback?
+      \item Can the concurrent bandwidth feedback be turned on in emergency scenarios to assist operators in quickly recovering from off-nominal conditions?
+      \item Does the concurrent bandwidth feedback improve performance in well-trained operators, or does this technique only work for naive or inexperience operators?
+            %
+      \item What is the minimum number of trials that subjects need to be exposed to concurrent bandwidth feedback?
+      \item Is there an optimal way that the bandwidth can be scheduled as subjects improve through trials?
+            %
+      \item What is the effect of providing the concurrent bandwidth feedback through other modalities (audio, haptic, or a multimodal approach integrating these and/or visual)?
+            %
+      \item What level of functional complexity is needed to see reductions in workload for subjects exposed to the concurrent bandwidth feedback?
 \end{enumerate}
