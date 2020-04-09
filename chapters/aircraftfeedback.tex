@@ -51,7 +51,7 @@ Participants were informed that all three tasks were equally important, and to t
 
 Each participant completed a total of 36 trials; 12 in each of the three control modes.
 Each trial had a duration of 82 seconds, and participants self-initiated the trial by activating a trigger on the joystick.
-The trial order was designed such that each participant flew the simulator in increasing order of task complexity, with the sequence of P, PR, PRA, P, PR, …, PRA.
+The trial order was designed such that each participant flew the simulator in increasing order of task complexity, with the sequence of P, PR, PRA, P, PR, $\ldots$, PRA.
 This design was chosen to provide exposure to each control mode as quickly as possible, such that we could capture the early learning phases of each mode.
 
 \subsubsection{Forcing Functions}
@@ -117,8 +117,8 @@ Subjects in the feedback group were paused after the 27th trial, at which time t
 
 \subsubsection{Independent variables}
 The three independent variables in this experiment were Group, Mode, and Trial.
-Group, a between subjects factor, described if subjects received feedback — Control or Feedback.
-Mode, a within subjects factor, was the three different control modes — P, PR, or PRA.
+Group, a between subjects factor, described if subjects received feedback --- Control or Feedback.
+Mode, a within subjects factor, was the three different control modes --- P, PR, or PRA.
 Trial, also a within subjects factor, was the trial that subjects repeated 12 times in each mode.
 
 \subsubsection{Dependent measures}
@@ -220,7 +220,7 @@ Participants in the feedback not only immediately performed better, they also re
 The largest performance improvement was seen in controlling altitude, where the feedback group had a final performance level which was 44.2\% better than the control group, confirming H1.
 No group-related workload differences were detected in either the Modified Bedford scores or in the secondary task reaction times.
 This suggests that, for tasks of this complexity, concurrent bandwidth feedback may not reduce workload~\citep{karasinski_evaluating_2019}.
-Thus, for our second hypothesis, H2—we find that concurrent bandwidth feedback does not reduce workload in our flight tasks, and that tasks with higher functional complexity may be required to observe these effects.
+Thus, for our second hypothesis, H2---we find that concurrent bandwidth feedback does not reduce workload in our flight tasks, and that tasks with higher functional complexity may be required to observe these effects.
 Our third hypothesis was that subjects would primarily use the concurrent bandwidth feedback as a learning tool but that they would not become dependent on the feedback to the point that they required it to complete the task.
 Retention tests are commonly used in the augmented feedback literature to verify that participants are not dependent on the feedback techniques.
 Our analysis indicates no significant performance changes across any of our performance metrics when the feedback was removed, confirming H3.
@@ -233,3 +233,78 @@ The participants in the feedback group performed significantly better than those
 Subjective and objective workload metrics showed no change in participant workload between the groups.
 Survey questions identified that most participants found the feedback helpful in training them to establish a scan pattern, helping them to learn the task much quicker than those without feedback.
 Feedback was removed for immediate retention trials, and participants showed no changes in performance or workload, suggesting that participants did not suffer from the guidance hypothesis.
+
+\chapter{Feedback Bandwidth Study}
+\label{chapter:bandwidthstudy}
+
+\section{Introduction}
+
+As we mentioned in Section~\ref{section:cbf}, several authors have noted that ``[b]andwidth feedback has been shown to be effective; however, setting the error threshold is not trivial''~\citep{sigrist_augmented_2013, timmermans_technology-assisted_2009, RIBEIRO2011231}.
+While choosing to use an operational limit of acceptable performance can make the choice of setting the error threshold simpler, this option is not always available.
+Additionally, mission designers often want to know what the optimum pilot performance is for mission planning, and instructors are interested in what levels of performance are acceptable during training.
+
+Our previous work has shown that concurrent bandwidth feedback can be effective, but our choice of bandwidth has been ad-hoc in nature and primarily based on preliminary pilot studies.
+These pilot studies have shown that there may be a wide variety of acceptable bandwidths, but it is unclear if there is a single bandwidth that would lead to optimal performance or a minimum learning time.
+It is clear, however, that adverse thresholds which require unrealistic performance will not improve performance and may lead to degraded performance when compared to a no feedback condition.
+Bandwidths that are too loose or not demanding enough will result in feedback that is sparse and may result in performance that resembles a no feedback condition.
+
+\section{Method}
+
+We designed a follow-up experiment to the experiment presented in Chapter~\ref{chapter:aircraftfeedback} which investigates the changes in performance that result from exposure to different bandwidths.
+This experiment uses the same simulator and flying task as the previous experiment with a few changes.
+The display, forcing functions, and secondary task were all identical to the previous experiment.
+In this experiment, however, subjects only completed trials in the pitch and roll mode.
+
+\subsection{Experimental Design}
+
+In this experiment, subjects were randomly assigned to one of four groups.
+These consisted of a control group, which received no feedback, and three feedback groups which received feedback during training.
+Subjects in the feedback groups received concurrent bandwidth feedback along both the pitch and roll axes at 2, 3, or 4 degrees.
+As with the previous experiment, the feedback on each axis was activated independently when the individual axis crossed over the threshold bandwidth.
+Unlike the previous experiment, which only had a training and immediate retention phases, this experiment has four phases spread across two experiment sessions.
+During the first session subjects completed 16 training trials followed by 8 immediate retention trials, during which time subjects in feedback conditions had their feedback removed.
+Subjects were dismissed after completing the immediate retention trials and asked to return approximately 24 hours later for the second experiment session.
+In the second session, subjects completed 8 retention trials without feedback, then completed 8 transfer task trials without feedback.
+The only change between the transfer task and the other trials is the system dynamics of the controlled vehicle and the magnitude of the disturbance force.
+In the transfer task, subjects were responsible for flying a Navion aircraft instead of a Boeing 747.
+The Navion was modeled using data available in NASA CR-96008~\citep{teper1969aircraft}.
+Compared to the Boeing 747, the Navion is a much smaller and lighter aircraft, which requires a significantly different control strategy to effectively control.
+The disturbance force consisted of the same functions as in the rest of the experiment but was scaled down such that maximum pitch deflection under an uncontrolled scenario was approximately the same as with the Boeing 747 trials.
+
+\subsubsection{Independent variables}
+The two independent variables in this experiment were Group and Trial.
+Group, a between subjects factor, described if and when subjects received feedback.
+Trial, a a within subjects factor, was the trial that subjects repeated over the course of the experiment.
+
+\subsubsection{Dependent measures}
+The root-mean-square error (RMSE) of pitch and roll was calculated for every trial and provided an objective measurement of performance.
+As in the previous experiment, the secondary task was activated ten times per trial and participants had five seconds to correctly respond to the secondary task once it changed color.
+We used the average correct response time as objective indication of workload.
+Participants were asked to follow the Modified Bedford scale and record their workload after each trial, allowing us to observe changes in workload during training.
+
+\subsection{Hypotheses}
+We had four hypotheses for this experiment:
+\begin{itemize}
+    \item[\textbf{H1.}] Participants in the feedback groups will immediately outperform those in the control group.
+    \item[\textbf{H2.}] Participants will report the same workload between groups, which will gradually decrease with training.
+    \item[\textbf{H3.}] Participants in the feedback group will not suffer from the guidance hypothesis and will retain their performance and workload levels when the feedback is removed in the immediate retention and 24-hour retention trials.
+    \item[\textbf{H4.}] Participants will continue to perform at relatively similar levels when they complete the transfer task.
+\end{itemize}
+
+\section{Results}
+\subsection{Participants}
+In December 2019, coronavirus disease 2019, commonly referred to as COVID-19, began to spread and quickly resulted in a global pandemic.
+COVID-19 is an infectious disease caused by severe acute respiratory syndrome coronavirus, is highly contagious, and is mainly spread during close contact.
+As a result of this pandemic, the University of California, Davis was closed and the Institutional Review Board recommended that we act to ``limit transmission of the virus by delaying or otherwise modifying non-essential interactions,'' postponing subject testing.
+We had anticipated testing approximately 10 subjects per group, for a total of 40 subjects.
+The remainder of the results discussed here are preliminary and based on the 19 subjects whose data was collected before a shelter-in-place was ordered.
+
+Participants in the experiment were 19 engineering students from the University of California, Davis (17 men, 1 woman, 1 decline to state) with an average age of 21.3 years, SD = 2.2.
+All participants had normal or corrected-to-normal vision and full motor control of their upper bodies.
+Both gender and participants with flight experience were counterbalanced between the two groups.
+This study was exempted by the University of California, Davis Institutional Review Board, and subjects were not compensated for their time.
+
+\subsection{Analysis}
+
+\section{Discussion}
+
