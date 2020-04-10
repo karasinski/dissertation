@@ -287,7 +287,7 @@ We had four hypotheses for this experiment:
 \begin{itemize}
     \item[\textbf{H1.}] Participants in the feedback groups will immediately outperform those in the control group.
     \item[\textbf{H2.}] Participants will report the same workload between groups, which will gradually decrease with training.
-    \item[\textbf{H3.}] Participants in the feedback group will not suffer from the guidance hypothesis and will retain their performance and workload levels when the feedback is removed in the immediate retention and 24-hour retention trials.
+    \item[\textbf{H3.}] Participants in the feedback group will not suffer from the guidance hypothesis and will retain their performance and workload levels when the feedback is removed in the immediate retention and 24 hour retention trials.
     \item[\textbf{H4.}] Participants will continue to perform at relatively similar levels when they complete the transfer task.
 \end{itemize}
 
@@ -329,13 +329,24 @@ Due to their extremely preliminary nature, these results are not included here.
 
 \section{Discussion}
 
-\begin{figure}[tb!]
-    \begin{center}
-        \includegraphics[width=\linewidth]{figures/Aircraft/Bandwidth-PitchFeedbackOn.png}
-        \caption[The mean percentage of active pitch feedback time for each trial]{The percentage of active pitch feedback time for each trial for participants. Data points are the mean, and error bars are the standard error of the mean.}
-        \label{figure-bw:pitchfeedback}
-    \end{center}
-\end{figure}
+Based on the preliminary findings presented in Figure~\ref{figure-bw:pitchrmse}, choosing an appropriate bandwidth can potentially have an effect of the efficacy of concurrent bandwidth feedback.
+While we have yet to observe statistically significant effects, current data suggests that having a looser bandwidth improves performance.
+While it was expected that there may be an optimal choice of bandwidth to maximally reduce training times and improve performance, we hypothesized that this value would be lower than or approximately equal to three degrees, not a higher value, based off our pilot studies.
+
+While we cannot make any definite claims based on this preliminary data and analysis, we can revisit data from the previous experiment to make further predictions.
+Increasing the acceptable bandwidth of feedback results in the concurrent bandwidth feedback being presented less often, and the repetition allowed for in training results in subjects improving their performance and reducing their deviations during compensatory tracking.
+We can use the disturbance force to estimate the percentage of time that subjects are exposed to the feedback as we presented subjects with the same disturbance force during each trial.
+Figure~\ref{figure-bw:pitchfeedback} presents the percentage of time that pitch feedback would be active if subjects did not provide any control input whatsoever.
+This suggests that at the beginning of training subjects with a bandwidth of two, three, and four degrees would experience feedback 76\%, 62\%, and 47\% of the time, respectively, if they provided no input.
+
+Subjects in the feedback group had their bandwidth set at three degrees in our previous experiment and were instructed to try and improve their performance whenever they saw that the feedback was activated.
+By looking at the percentage of pitch errors that were above a given value, we can infer what percentage of time feedback would have been on when subjects had finished their training phase, regardless of chosen bandwidth.
+Figure~\ref{figure-aircraft:pitchfeedback} presents the percentage of time that pitch feedback was active at the end of training, showing 12\% for the three-degree bandwidth subjects experienced.
+It is unclear if subjects continue to improve until they reach a point where feedback appears approximately 12\% of the time, or if this is simply a limit of human motor control for this task.
+In either case, the 4\% of time feedback would have been presented if a four-degree bandwidth was chosen is clearly within human control.
+If the 12\% target is a true motivational limit, 4\% would likely inspire greater confidence in subjects, who may go on to report lower workload values.
+The two-degree bandwidth, however, would only be attainable 29\% of the time by fully trained subjects in the previous experiment, and would likely have a demotivating or otherwise negative effect.
+
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Aircraft/no_input_feedback_on.pdf}
@@ -346,8 +357,38 @@ Due to their extremely preliminary nature, these results are not included here.
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Aircraft/p34_feedback_on.pdf}
-        \caption[The mean percentage of active pitch feedback time at the end of the previous study]{The percentage of active pitch feedback time at the end of the previous study. Data points are the mean, and error bars are the standard error of the mean.}
+        \caption[The mean percentage of active pitch feedback time at the end of the previous study]{The percentage of active pitch feedback time at the end of the previous study. Data points are the mean, and the shaded region is the standard error of the mean.}
         \label{figure-aircraft:pitchfeedback}
     \end{center}
 \end{figure}
+\begin{figure}[tb!]
+    \begin{center}
+        \includegraphics[width=\linewidth]{figures/Aircraft/Bandwidth-PitchFeedbackOn.png}
+        \caption[The mean percentage of active pitch feedback time for each trial]{The percentage of active pitch feedback time for each trial for participants. Data points are the mean, and error bars are the standard error of the mean.}
+        \label{figure-bw:pitchfeedback}
+    \end{center}
+\end{figure}
 
+Finally, we can take a preliminary look at how often subjects in this experiment experienced their feedback between the different bandwidth groups.
+The percent of time that feedback was active at the beginning and end of training should provide some insight into how subjects respond to different bandwidth levels.
+Figure~\ref{figure-bw:pitchfeedback} should the percentage of active feedback time for each trial for subjects in the three feedback groups.
+We can see how effectively subjects used the feedback on the first trial by looking at the difference between the value on this plot and that predicted by the no feedback case.
+On the first trial, subjects in the three feedback groups tended to reduce their anticipated feedback exposure more the larger the bandwidth was.
+Subjects in the four-degree bandwidth group, for instance, nearly halved their anticipated feedback exposure, as could be expected from their pitch RMSE presented in Figure~\ref{figure-bw:pitchrmse}.
+Additionally, subjects in this group asymptote very close to the 4\% value predicted by subjects in the previous study.
+The two- and three-degree bandwidth groups, however, continue to show much larger feedback exposure percentages.
+The results for subjects in the three-degree bandwidth group are especially confusing, as they do not asymptote to the 12\% number shown by subjects in the previous experiment.
+While the differences in experimental procedures could be the cause of this, we believe that the low sample size (5 subjects thus far in this experiment compared to 15 subjects in the previous experiment) are more likely the cause.
+
+\section{Conclusions}
+While the preliminary data collected for this experiment can be used to begin to explain the effects of using different bandwidths in concurrent bandwidth feedback, more subjects are needed to make definitive claims.
+Briefly revisiting our hypotheses, we can begin to predict the results of this study.
+\begin{itemize}
+    \item[\textbf{H1.}] While subjects in the three- and four-degree bandwidth groups will likely immediately outperform those in the control group, the two-degree bandwidth presents too much of a challenge for subjects to effectively use the concurrent bandwidth feedback.
+    This indicates that researchers should be careful to choose attainable bandwidths, or they may incorrectly conclude that concurrent bandwidth feedback, in general, does not work for their task.
+    \item[\textbf{H2.}] Based on our early results, participants will report the same workload between groups, which will gradually decrease with training.
+    \item[\textbf{H3.}] Participants in the feedback group will not suffer from the guidance hypothesis and will retain their performance and workload levels when the feedback is removed in the immediate retention and 24 hour retention trials.
+    \item[\textbf{H4.}] It is still too early to make claims on the effects of concurrent bandwidth feedback on transfer of training.
+\end{itemize}
+Finally, we note that this study will resume testing when the University of California, Davis Institutional Review Board deems that testing can continue.
+% This work will provide valuable insight into the effect of choosing an appropriate bandwidth for training motor control tasks.
