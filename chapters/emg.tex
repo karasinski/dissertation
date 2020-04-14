@@ -9,16 +9,19 @@ Portions of this chapter were originally published in the conference proceedings
 % \affil{University of California, Davis, Davis, CA, 95616, USA}
 
 \section{Introduction}
-Biophysical monitoring during aviation operations has recently gained increased interest as a safety feature and a means to create an adaptive cockpit.
-Safety-related concerns include cognitive workload~\citep{RN1, RN2}, muscle strain~\citep{RN3, RN4, RN5}, and security~\citep{RN6}.
-Pilots may develop inattentional deafness to auditory alarms, but biophysical monitoring has the potential to predict these occurrences~\citep{RN7}, discriminate between cognitive loads~\citep{RN1}, and predict cognitive fatigue which results in missed auditory targets~\citep{RN2}.
-The potential causes of muscle fatigue and strain has also been studied in helicopter pilots~\citep{RN3, RN4, RN5}, as well as electromyography (EMG) measurement accuracy~\citep{RN8}.
-EMG has been used in aviation research to predict and warn pilots of G-Induced Loss of Consciousness~\citep{RN9, RN10}, to discriminate between novice and experienced pilots~\citep{RN11}, to control forces during emergency maneuvers~\citep{RN12}, and to command pitch and bank rates of an aircraft simulation~\citep{RN13}.
-More recently, incorporating biophysical measurements has been suggested for UAV operation~\citep{RN14}.
-EMG control has also been applied to robotics~\citep{RN15, RN16, RN17, RN18} with potential aerospace applications, such as tele-operations~\citep{RN19}.
-In addition to tele-operations control~\citep{RN20, RN21}, EMG inputs have been used to modulate robotic arm stiffness for more precise tasks~\citep{RN22, RN23}.
-While these studies have developed control strategies, they have not addressed the training aspect which is essential for the critical and complex environments found in aerospace operations.
-Development of more sophisticated and integrated human-automation interfaces is clearly a trend in aviation, and more broadly in aerospace as a whole.
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+	Biophysical monitoring during aviation operations has recently gained increased interest as a safety feature and a means to create an adaptive cockpit.
+	Safety-related concerns include cognitive workload~\citep{RN1, RN2}, muscle strain~\citep{RN3, RN4, RN5}, and security~\citep{RN6}.
+	Pilots may develop inattentional deafness to auditory alarms, but biophysical monitoring has the potential to predict these occurrences~\citep{RN7}, discriminate between cognitive loads~\citep{RN1}, and predict cognitive fatigue which results in missed auditory targets~\citep{RN2}.
+	The potential causes of muscle fatigue and strain has also been studied in helicopter pilots~\citep{RN3, RN4, RN5}, as well as electromyography (EMG) measurement accuracy~\citep{RN8}.
+	EMG has been used in aviation research to predict and warn pilots of G-Induced Loss of Consciousness~\citep{RN9, RN10}, to discriminate between novice and experienced pilots~\citep{RN11}, to control forces during emergency maneuvers~\citep{RN12}, and to command pitch and bank rates of an aircraft simulation~\citep{RN13}.
+
+	More recently, incorporating biophysical measurements has been suggested for UAV operation~\citep{RN14}.
+	EMG control has also been applied to robotics~\citep{RN15, RN16, RN17, RN18} with potential aerospace applications, such as tele-operations~\citep{RN19}.
+	In addition to tele-operations control~\citep{RN20, RN21}, EMG inputs have been used to modulate robotic arm stiffness for more precise tasks~\citep{RN22, RN23}.
+	While these studies have developed control strategies, they have not addressed the training aspect which is essential for the critical and complex environments found in aerospace operations.
+	Development of more sophisticated and integrated human-automation interfaces is clearly a trend in aviation, and more broadly in aerospace as a whole.
+\end{mdframed}
 
 \subsection{Selected Training Methodologies}
 Training novice users to effectively use EMG control can be a long and difficult task~\citep{RN24}.
@@ -33,11 +36,13 @@ Concurrent feedback is presented in real-time, as subjects complete a task, whil
 In general, concurrent feedback has been shown to be more useful with increasing functional task complexity, while terminal feedback is often less useful when complexity is high~\citep{sigrist_augmented_2013}.
 Concurrent feedback has recently shown great promise in EMG control, though less progress has been made comparing the effects of terminal feedback strategies or investigating long-term learning effects~\citep{RN29, RN30, RN31, RN32}.
 
-Users learn and adapt to improve performance, and surface EMG (sEMG) control adaptation may follow Bayesian theory~\citep{RN33}.
-\citeauthor{RN33} showed significant increases in adaptation rate with increased mean error and decreased feedback uncertainty.
-Noisier sEMG control methods provide richer feedback, or information about the control signal, which can lead to a larger adaptation rate compared to a more filtered classification method~\citep{RN34}.
-\citeauthor{RN35} demonstrated that subjects exposed to a mapping uncertainty during cursor control had larger adaptation rates when the mapping uncertainty was removed, indicating that noise during training may increase adaptation.
-Inducing adaption may be a viable training methodology and has been previously shown to support generalized task learning~\citep{RN36}.
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+	Users learn and adapt to improve performance, and surface EMG (sEMG) control adaptation may follow Bayesian theory~\citep{RN33}.
+	\citeauthor{RN33} showed significant increases in adaptation rate with increased mean error and decreased feedback uncertainty.
+	Noisier sEMG control methods provide richer feedback, or information about the control signal, which can lead to a larger adaptation rate compared to a more filtered classification method~\citep{RN34}.
+	\citeauthor{RN35} demonstrated that subjects exposed to a mapping uncertainty during cursor control had larger adaptation rates when the mapping uncertainty was removed, indicating that noise during training may increase adaptation.
+	Inducing adaption may be a viable training methodology and has been previously shown to support generalized task learning~\citep{RN36}.
+\end{mdframed}
 
 \subsection{Trust in Automation}
 Trust is an important factor when considering human-automation interaction, and inappropriate trust can lead to the disuse or misuse of automated systems.
@@ -47,87 +52,89 @@ While there have been many proposed models for trust, \citeauthor{RN39}'s three 
 After performing a systematic review of the literature, they developed a three-layer model of trust which is split between dispositional trust, situational trust, and learned trust.
 Though researchers have little control over dispositional trust, they can affect situational trust by varying an experimental interface or environment and learned trust can be evaluated using repeated measures.
 
-\subsection{Recent Work}
-Our recent work at University of California (U.C.), Davis includes three studies which have shown that concurrent feedback techniques can improve performance and have the potential to reduce cognitive workload in especially demanding tasks.
-We investigated the effects of concurrent feedback in a simulated, four degree of freedom manually-controlled spacecraft inspection task~\citep{karasinski_real-time_2017}.
-Subjects in a feedback group performed the task much faster and more accurately than those in a control group and reported a significantly lower workload.
-We also investigated the effects of concurrent feedback on performance in a three-axis manual tracking task~\citep{karasinski_evaluating_2019}.
-We found that subjects could use concurrent visual feedback to better learn the depth cues provided by an augmented reality headset.
-Subjects were able to retain their performance improvement when the feedback was removed.
-Finally, we investigated the effects of using concurrent feedback to train an aircraft flight task with variable modes of difficulty~\citep{RN42}.
-Subjects exposed to the feedback immediately performed significantly better in every aspect of the task, continued this trend through the study, and retained these performance benefits after the feedback was removed in retention trials.
+\subsection{Summary}
+% Our recent work at University of California (U.C.), Davis includes three studies which have shown that concurrent feedback techniques can improve performance and have the potential to reduce cognitive workload in especially demanding tasks.
+% We investigated the effects of concurrent feedback in a simulated, four degree of freedom manually-controlled spacecraft inspection task~\citep{karasinski_real-time_2017}.
+% Subjects in a feedback group performed the task much faster and more accurately than those in a control group and reported a significantly lower workload.
+% We also investigated the effects of concurrent feedback on performance in a three-axis manual tracking task~\citep{karasinski_evaluating_2019}.
+% We found that subjects could use concurrent visual feedback to better learn the depth cues provided by an augmented reality headset.
+% Subjects were able to retain their performance improvement when the feedback was removed.
+% Finally, we investigated the effects of using concurrent feedback to train an aircraft flight task with variable modes of difficulty~\citep{RN42}.
+% Subjects exposed to the feedback immediately performed significantly better in every aspect of the task, continued this trend through the study, and retained these performance benefits after the feedback was removed in retention trials.
 
-To the authors' knowledge, there exists no study investigating differences in performance, workload, and trust between different feedback and adaptive strategies.
-In this study, we address the effects of training methodology on performance, workload, and trust during a computer-based Fitts's Law~\citep{RN43} cursor-to-target task.
-The training methodologies include concurrent and terminal feedback, as well as motor learning adaptation.
-Treatments are removed for the retention phase.
-The goal of the study was to provide subjects with a sufficiently challenging task to observe learning effects.
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+	To the authors' knowledge, there exists no study investigating differences in performance, workload, and trust between different feedback and adaptive strategies.
+	In this study, we address the effects of training methodology on performance, workload, and trust during a computer-based Fitts's Law~\citep{RN43} cursor-to-target task.
+	The training methodologies include concurrent and terminal feedback, as well as motor learning adaptation.
+	Treatments are removed for the retention phase.
+	The goal of the study was to provide subjects with a sufficiently challenging task to observe learning effects.
 
-\section{Materials and Methods}
-\subsection{Subjects and Experimental Setup}
+	\section{Materials and Methods}
+	\subsection{Subjects and Experimental Setup}
 
-The U.C. Davis Institutional Review Board approved the protocol for this study, and subjects were recruited from the university student population.
-Exclusion criteria for subjects included a history of neuromuscular disorders, physical limitations of dominant arm, and prior sEMG control experience.
-Subjects provided written consent prior to participation.
-A total of 55 subjects volunteered.
-Subjects were released from the study due to equipment issues (N = 3), withdrawal request (N = 2), and significant motivation issues (e.g. not attempting the task; N = 2).
-The remaining 48 subjects that completed the protocol had an average age of 20.07 years $\pm$ 1.39 years ($\mu\pm\sigma$), included 2 left-hand dominant subjects, and had equal participation of females (N = 24).
+	The U.C. Davis Institutional Review Board approved the protocol for this study, and subjects were recruited from the university student population.
+	Exclusion criteria for subjects included a history of neuromuscular disorders, physical limitations of dominant arm, and prior sEMG control experience.
+	Subjects provided written consent prior to participation.
+	A total of 55 subjects volunteered.
+	Subjects were released from the study due to equipment issues (N = 3), withdrawal request (N = 2), and significant motivation issues (e.g. not attempting the task; N = 2).
+	The remaining 48 subjects that completed the protocol had an average age of 20.07 years $\pm$ 1.39 years ($\mu\pm\sigma$), included 2 left-hand dominant subjects, and had equal participation of females (N = 24).
 
-The experimental setup followed \citeauthor{RN44}.
-Two electrodes (ConMed 1620 Ag/AgCl center snap) approximately 2.5 cm apart were placed on the dominant hand side near the extensor digitorum proximal attachment.
-A reference electrode was located near the lateral epicondyle of the humerus.
-The electrodes' signal was acquired as described in \citet{RN44}, and the signal processing followed \citet{RN45}.
-The root mean square (rms) value for each window is calculated, normalized by a manually set calibration constant, and incorporated into a moving average window (length 8) to yield an updated $\bar{x}$ at 16 Hz (used in Eq.~\ref{equation:one}).
-The software for the study used the Python AxoPy library~\citep{RN46}.
+	The experimental setup followed \citeauthor{RN44}.
+	Two electrodes (ConMed 1620 Ag/AgCl center snap) approximately 2.5 cm apart were placed on the dominant hand side near the extensor digitorum proximal attachment.
+	A reference electrode was located near the lateral epicondyle of the humerus.
+	The electrodes' signal was acquired as described in \citet{RN44}, and the signal processing followed \citet{RN45}.
+	The root mean square (rms) value for each window is calculated, normalized by a manually set calibration constant, and incorporated into a moving average window (length 8) to yield an updated $\bar{x}$ at 16 Hz (used in Eq.~\ref{equation:one}).
+	The software for the study used the Python AxoPy library~\citep{RN46}.
 
-\subsection{Subject Groups and Experimental Design}
-Subjects proceeded through the same protocol and were assigned to one of four groups (12 subjects per group).
-The four groups were each exposed to one training methodology:
+	\subsection{Subject Groups and Experimental Design}
+	Subjects proceeded through the same protocol and were assigned to one of four groups (12 subjects per group).
+	The four groups were each exposed to one training methodology:
 
-\begin{enumerate}
-	\item The Control group trained solely through task repetition and were able to view the motion of the cursor.
-	\item The Concurrent Feedback group received additional visual feedback during the task that indicated when the processed sEMG signal exceeded a threshold value, $l_1=0.20$, which was important to selecting commands.
-	\item The Terminal Feedback group received visual feedback to reflect the command that they entered.
-	\item The Adaptive Threshold group was the same as the Control group with the exception that the threshold value, $l_1$, varied Trial-to-Trial between 0.10 and 0.30.
-	      In this group, the processed sEMG signal had to exceed a threshold that changed each trial in order to input commands.
-\end{enumerate}
+	\begin{enumerate}
+		\item The Control group trained solely through task repetition and were able to view the motion of the cursor.
+		\item The Concurrent Feedback group received additional visual feedback during the task that indicated when the processed sEMG signal exceeded a threshold value, $l_1=0.20$, which was important to selecting commands.
+		\item The Terminal Feedback group received visual feedback to reflect the command that they entered.
+		\item The Adaptive Threshold group was the same as the Control group with the exception that the threshold value, $l_1$, varied Trial-to-Trial between 0.10 and 0.30.
+		      In this group, the processed sEMG signal had to exceed a threshold that changed each trial in order to input commands.
+	\end{enumerate}
 
-The protocol consisted of the following general steps: consent, entrance survey, equipment setup, experiment overview and instructions, manual calibration, Fitts's Law task and surveys for perceived workload and trust, and an exit survey.
-The Fitts's Law task was divided into 16 Blocks of 10 Trials with the first 120 Trials used for training and the last 40 Trials for retention.
-After each Block there was a 30 s minimum rest time during which subjects completed surveys.
-In addition, a maximum voluntary contraction measurement was collected before and after the experiment to confirm that subjects were not significantly fatigued during the experiment, which has been shown to affect sEMG signals~\citep{RN47}.
-We developed a ``Command Accuracy Test'' to assess each subject's ability to produce commands.
-The Command Accuracy Test was conducted prior to training, at the end of training, and at the end of retention to provide an assessment similar to offline classification accuracy (see \citet{RN48} for an EMG example).
+	The protocol consisted of the following general steps: consent, entrance survey, equipment setup, experiment overview and instructions, manual calibration, Fitts's Law task and surveys for perceived workload and trust, and an exit survey.
+	The Fitts's Law task was divided into 16 Blocks of 10 Trials with the first 120 Trials used for training and the last 40 Trials for retention.
+	After each Block there was a 30 s minimum rest time during which subjects completed surveys.
+	In addition, a maximum voluntary contraction measurement was collected before and after the experiment to confirm that subjects were not significantly fatigued during the experiment, which has been shown to affect sEMG signals~\citep{RN47}.
+	We developed a ``Command Accuracy Test'' to assess each subject's ability to produce commands.
+	The Command Accuracy Test was conducted prior to training, at the end of training, and at the end of retention to provide an assessment similar to offline classification accuracy (see \citet{RN48} for an EMG example).
 
-\subsection{Fitts's Law Task}
-In our study, the purpose of the Fitts's Law task was to evaluate the effects of the training methodology.
-The sEMG control methodology was first presented in~\citep{RN45} and was used to command the cursor motion.
-The premise of the methodology was to use serial patterns of muscle activation (``inputs'') to convey commands, similar to Morse code.
-The first two inputs selected a command and the third input allowed for continuous control (See Figure~\ref{figure:label1}a).
-The command was determined based on the prior inputs with a timeout to reset in the case of errors.
-In this study, subjects learned the 2-input code for four commands: up, down, left, right.
-The codes were defined by the duration that the sEMG input exceeded the threshold; each input was identified as ``short'' ($\leq$ 0.50 s) or ``long'' ($>$ 0.50 s).
-For example, the combination of two ``short'' inputs selected the ``up'' command.
+	\subsection{Fitts's Law Task}
+	In our study, the purpose of the Fitts's Law task was to evaluate the effects of the training methodology.
+	The sEMG control methodology was first presented in~\citep{RN45} and was used to command the cursor motion.
+	The premise of the methodology was to use serial patterns of muscle activation (``inputs'') to convey commands, similar to Morse code.
+	The first two inputs selected a command and the third input allowed for continuous control (See Figure~\ref{figure:label1}a).
+	The command was determined based on the prior inputs with a timeout to reset in the case of errors.
+	In this study, subjects learned the 2-input code for four commands: up, down, left, right.
+	The codes were defined by the duration that the sEMG input exceeded the threshold; each input was identified as ``short'' ($\leq$ 0.50 s) or ``long'' ($>$ 0.50 s).
+	For example, the combination of two ``short'' inputs selected the ``up'' command.
 
-The cursor velocity was calculated by Eq.~\ref{equation:one}, where $v_c$ was the minimum velocity (0.05 units/second), $v_m$ was the maximum velocity (0.50 units/second), $l_2$ was 0.30, and $\bar{x}$ was the filtered, averaged sEMG input.
-The $l_1$ value was nominally 0.20, except for the Adaptive Threshold group in which the value was randomly selected for each Trial ($l_1 = 0.10, 0.15, 0.20, 0.25, 0.30$).
+	The cursor velocity was calculated by Eq.~\ref{equation:one}, where $v_c$ was the minimum velocity (0.05 units/second), $v_m$ was the maximum velocity (0.50 units/second), $l_2$ was 0.30, and $\bar{x}$ was the filtered, averaged sEMG input.
+	The $l_1$ value was nominally 0.20, except for the Adaptive Threshold group in which the value was randomly selected for each Trial ($l_1 = 0.10, 0.15, 0.20, 0.25, 0.30$).
 
-\begin{equation}
-	\label{equation:one}
-	v= v_c+\left(v_m-v_c\right)\left[\frac{\left(\bar{x}-l_2\right)}{\left(1-l_2\right)}\right]
-\end{equation}
+	\begin{equation}
+		\label{equation:one}
+		v= v_c+\left(v_m-v_c\right)\left[\frac{\left(\bar{x}-l_2\right)}{\left(1-l_2\right)}\right]
+	\end{equation}
 
-The Fitts's Law task used a center-out paradigm and similar interface as in~\citep{RN45}.
-The square cursor interface had normalized horizontal and vertical bounds of [-1,1] and a length of 2 units.
-Each Trial began with the cursor at the center of the interface and a target in a randomized position.
-There were 40 unique target positions that covered a range of Index of Difficulties (IDs) from 1.00 to 4.09 bits (calculated by the Shannon formulation~\citep{RN50}).
-The subject used sEMG to convey commands and moved the cursor to the target.
-The cursor had to dwell on the target for 1 s to successfully complete the trial.
-The maximum Trial time was 60 s, which was determined by reviewing data from \citet{RN45} and preliminary testing.
-As shown in Figure~\ref{figure:label2}, the Control, Concurrent Feedback and Adaptive Threshold groups viewed similar interfaces.
-The additional visual feedback in the Concurrent Feedback group was provided by changing the color of the cursor (Figure~\ref{figure:label2}b).
-The Terminal Feedback group had additional visual elements at the edges of the cursor interface that changed color to reflect the command (Figure~\ref{figure:label2}c).
-The visual feedback was displayed according to the timing shown in Figure~\ref{figure:label1}b.
+	The Fitts's Law task used a center-out paradigm and similar interface as in~\citep{RN45}.
+	The square cursor interface had normalized horizontal and vertical bounds of [-1,1] and a length of 2 units.
+	Each Trial began with the cursor at the center of the interface and a target in a randomized position.
+	There were 40 unique target positions that covered a range of Index of Difficulties (IDs) from 1.00 to 4.09 bits (calculated by the Shannon formulation~\citep{RN50}).
+	The subject used sEMG to convey commands and moved the cursor to the target.
+	The cursor had to dwell on the target for 1 s to successfully complete the trial.
+	The maximum Trial time was 60 s, which was determined by reviewing data from \citet{RN45} and preliminary testing.
+	As shown in Figure~\ref{figure:label2}, the Control, Concurrent Feedback and Adaptive Threshold groups viewed similar interfaces.
+	The additional visual feedback in the Concurrent Feedback group was provided by changing the color of the cursor (Figure~\ref{figure:label2}b).
+	The Terminal Feedback group had additional visual elements at the edges of the cursor interface that changed color to reflect the command (Figure~\ref{figure:label2}c).
+	The visual feedback was displayed according to the timing shown in Figure~\ref{figure:label1}b.
+\end{mdframed}
 
 \begin{figure}[hbt!]
 	\centering
@@ -150,28 +157,30 @@ The visual feedback was displayed according to the timing shown in Figure~\ref{f
 	\label{figure:label2}
 \end{figure}
 
-\section{Analysis and Hypotheses}
-The analysis focused on performance, workload and trust metrics to observe the effects of the training methodology.
-A brief description of the analysis is provided in the following subsections.
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+	\section{Analysis and Hypotheses}
+	The analysis focused on performance, workload and trust metrics to observe the effects of the training methodology.
+	A brief description of the analysis is provided in the following subsections.
 
-\subsection{Performance Metrics}
-The percent of successful Trials within each Block was used as the primary performance metric.
-Other metrics included throughput and average trial time.
-Throughput, $TP$, is a common metric from Fitts's Law defined as $TP = \frac{ID}{MT}$, where $ID$ is the Index of Difficulty and $MT$ is the Movement Time.
-Average trial time was defined as the time from the start of the Trial to the Trial completion but does not include the 1 s dwell time.
+	\subsection{Performance Metrics}
+	The percent of successful Trials within each Block was used as the primary performance metric.
+	Other metrics included throughput and average trial time.
+	Throughput, $TP$, is a common metric from Fitts's Law defined as $TP = \frac{ID}{MT}$, where $ID$ is the Index of Difficulty and $MT$ is the Movement Time.
+	Average trial time was defined as the time from the start of the Trial to the Trial completion but does not include the 1 s dwell time.
 
-\subsection{Trust and Perceived Workload}
-Trust was evaluated using Jian et al.'s twelve statement questionnaire which measures trust between people and automated systems~\citep{jian_foundations_2000}.
-Each of the twelve statements was evaluated on a seven-point Likert-type scale.
-Perceived workload was measured using Modified Bedford scale~\citep{roscoe_subjective_1990}.
-Subjects completed these surveys after each Block.
+	\subsection{Trust and Perceived Workload}
+	Trust was evaluated using Jian et al.'s twelve statement questionnaire which measures trust between people and automated systems~\citep{jian_foundations_2000}.
+	Each of the twelve statements was evaluated on a seven-point Likert-type scale.
+	Perceived workload was measured using Modified Bedford scale~\citep{roscoe_subjective_1990}.
+	Subjects completed these surveys after each Block.
 
-\subsection{Command Accuracy Test}
-This metric quantified how accurately subjects could convey requested commands.
-During the Command Accuracy Test, subjects performed each command 5 times when prompted for a total of 20 commands in a randomized order.
-Each command input matching the requested command was scored as successful.
-The metric was the percent of successful commands.
-Subjects completed the Command Accuracy Test prior to training, after training, and after retention.
+	\subsection{Command Accuracy Test}
+	This metric quantified how accurately subjects could convey requested commands.
+	During the Command Accuracy Test, subjects performed each command 5 times when prompted for a total of 20 commands in a randomized order.
+	Each command input matching the requested command was scored as successful.
+	The metric was the percent of successful commands.
+	Subjects completed the Command Accuracy Test prior to training, after training, and after retention.
+\end{mdframed}
 
 \subsection{Hypotheses}
 Based on our prior experience with augmented feedback and sEMG cursor control, we formed the following hypotheses.
@@ -188,10 +197,13 @@ Based on our prior experience with augmented feedback and sEMG cursor control, w
 \end{enumerate}
 
 \section{Results}
-Subjects were evenly divided into four groups: Control, Concurrent Feedback (visual feedback when $\bar{x}> l_1$), Terminal Feedback (visual feedback when command selected), and Adaptive Threshold ($l_1$ varied on a Trial-by-Trial basis).
-Subjects completed a total of 16 Blocks comprised of 10 cursor-to-target Trials, for a total of 160 Trials over the course of the study.
-When applicable for analysis, sets of 4 Blocks were grouped into a Session.
-Each Session was identical, such that the Blocks and Trials within them were identical, and the Trials randomized within the Blocks for varied target positions.
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
+	Subjects were evenly divided into four groups: Control, Concurrent Feedback (visual feedback when $\bar{x}> l_1$), Terminal Feedback (visual feedback when command selected), and Adaptive Threshold ($l_1$ varied on a Trial-by-Trial basis).
+	Subjects completed a total of 16 Blocks comprised of 10 cursor-to-target Trials, for a total of 160 Trials over the course of the study.
+	When applicable for analysis, sets of 4 Blocks were grouped into a Session.
+	Each Session was identical, such that the Blocks and Trials within them were identical, and the Trials randomized within the Blocks for varied target positions.
+\end{mdframed}
 Muscle fatigue did not appear to alter the results, since the maximum voluntary contraction was not significantly different between the beginning and end of the study ($F(1, 46) = 2.55, p = 0.11$)\footnote{One subject was removed from this analysis as they changed their arm position/contraction method during testing, which affects the signal.}.
 
 We ran two-factor mixed models to investigate changes in performance, workload, and trust with one between-subjects factor, Group, and one within-subjects repeated measure, Block.
