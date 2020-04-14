@@ -10,6 +10,7 @@ Being able to decrease this training time could lead to significant savings in c
 A variety of skills can be classified as motor control tasks, such as playing tuba, pole vaulting, or flying an aircraft.
 An individual's performance in any of these skills can change dramatically as they transition from a novice to an expert through training.
 We are interested in measuring and modeling this performance as it changes over the course of the training process.
+We are also interested in methods to improve this performance without increasing human workload.
 
 Humans rely on several kinds of feedback during training to improve their performance in motor control tasks.
 Feedback can be largely grouped into two types: internal, or intrinsic feedback, and external, or extrinsic feedback.
@@ -33,10 +34,10 @@ We will attempt to explain why this feedback is effective in enhancing learning 
 \subsection{Augmented Feedback}
 
 % \subsubsection{Augmented Feedback}
-The concept of feedback was popularized when closed-loop control systems were first developed and has since been defined many times~\citep{Wierner1948}.
-In the context of this work, a convenient definition of feedback comes from Ramaprasad, ``[f]eedback is information about the gap between the actual level and the reference level of a system parameter which is used to alter the gap in some way''~\citep{ramaprasad_definition_1983}.
-The aforementioned ``gap'' is the error and can be conveyed to the operator of a system in a variety of ways.
-Feedback can be broadly classified into two types: intrinsic, feedback which is generated from within the context of the action itself, and extrinsic, feedback which is given from an external source~\citep{laurillard_rethinking_2002}.
+The concept of feedback for complex engineering systems was popularized when closed-loop control systems were first developed and has since been redefined many times~\citep{Wierner1948}.
+In the context of the current research, a convenient definition of feedback comes from Ramaprasad, ``[f]eedback is information about the gap between the actual level and the reference level of a system parameter which is used to alter the gap in some way''~\citep{ramaprasad_definition_1983}.
+The aforementioned ``gap'' is the error between the current and desired values and can be conveyed to the operator of a system in a variety of ways.
+Feedback can be broadly classified into two types: intrinsic feedback, which is generated from within the context of the action itself, and extrinsic feedback, which is given from an external source~\citep{laurillard_rethinking_2002}.
 
 \begin{figure}[!b]
     \begin{center}
@@ -46,9 +47,9 @@ Feedback can be broadly classified into two types: intrinsic, feedback which is 
     \end{center}
 \end{figure}
 
-Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field motor learning~\citep{sigrist_augmented_2013}.
+Extrinsic feedback, which is also known as augmented feedback, has been extensively studied in the field of motor learning~\citep{sigrist_augmented_2013}.
 In their \citeyear{sigrist_augmented_2013} review, \citeauthor{sigrist_augmented_2013} write ``[i]t is generally accepted that augmented feedback, provided by a human expert or a technical display, effectively enhances motor learning.''
-There are a variety of different forms of augmented feedback, that can be further classified by how, when, and by what form the feedback is provided.
+There are a variety of different forms of augmented feedback, that can be further classified by how, when, and what form the feedback is provided.
 Each of these choices can significantly impact the effectiveness of augmented feedback, and the summary of \citeauthor{sigrist_augmented_2013}'s review is available in Figure~\ref{figure:sigrist_review}.
 Concurrent, or real-time, feedback is displayed to the operator while the task is being executed, in contrast to terminal feedback, which is displayed after the task is complete.
 Bandwidth feedback is displayed to the operator when some parameter is inside (on-track feedback) or outside (off-track feedback) of an acceptable, predefined tolerance limit.
@@ -56,9 +57,9 @@ Bandwidth feedback is displayed to the operator when some parameter is inside (o
 Experimentation with bandwidth feedback traces its origins to \citeauthor{thorndike_law_1927}'s \citeyear{thorndike_law_1927} line-drawing experiment.
 In his experiment, subjects were seated and blindfolded at a table, then asked to draw lines of 3, 4, 5, or 6 inches.
 The experiment was divided into two groups of subjects, one group of subjects received no verbal feedback, while the other group was told ``right'' if they were within an 1/8th of an inch of the desired length for the 3 inch line, or 1/4 of an inch for the other three line lengths, and ``wrong'' if they were outside this bandwidth.
-Subjects that received the verbal bandwidth feedback improved from an initial median ``right'' percentage of 13\% to 54\% after several training sessions.
+Subjects that received the verbal bandwidth feedback improved from an initial median ``right'' percentage of 13\% to a final ``right'' percentage of 54\% after several training sessions.
 The feedback was then removed after these training trials, during which time subjects dropped to a median percentage of 26\%.
-Subjects became dependent on the verbal feedback (extrinsic feedback) rather than their visual or proprioceptive sense (intrinsic feedback) to such an extent that they could no longer perform with the verbal feedback removed.
+Subjects in \citeauthor{thorndike_law_1927}'s experiments are thought to have become dependent on the verbal feedback (extrinsic feedback) rather than on their visual or proprioceptive sense (intrinsic feedback) to such an extent that they could no longer perform at the previously-demonstrated high levels with the verbal feedback removed.
 Similar effects were observed by \citeauthor{kinkade1963differential} in his one-dimensional compensatory tracking task.
 In this study, artificially injected noise into the reference indicator for half of the subjects and half of the subjects were provided audio augmented feedback~\citep{kinkade1963differential}.
 He found that augmented feedback always improved performance, but that subjects with the artificial noise could not retain this benefit when the feedback was removed.
@@ -78,6 +79,7 @@ They concluded by stating that ``the increment is a positive function of the spe
 \citeauthor{gordon_effect_1967} performed a rotary pursuit study investigating the effects on on-track and off-track concurrent bandwidth feedback in \citeyear{gordon_effect_1967}.
 Subjects in their study were placed into one of three groups: a control, on-track feedback, and off-track feedback.
 The subjects in the bandwidth feedback groups had to track a 0.75 inch by 0.75 inch target with 0.187 inch rigid stylus tip.
+Subjects used the stylus to track the target on a screen, and the position of the stylus and target were recorded.
 For subjects in the on-track feedback group, a light bulb was illuminated when they were on target, and the light bulb was illuminated for subjects in the off-track group when they were not on the target.
 While both the on-track and off-track groups performed better than the control group, the off-target group performance was slightly superior.
 This finding was consistent with the results \citeauthor{williams_-target_1962} found in a similar task.
@@ -126,7 +128,7 @@ Their results showed that subjects in the self-controlled augmented feedback gro
 While they theorized that subjects in the self-control group would gradually reduce the number of PAPI requests through training, this was not observed, and subjects tended to request the same number of requests throughout the entire experiment.
 Despite this, the performance benefits seen in both the augmented feedback groups persisted in retention trials, suggesting that the guidance hypothesis did not hold in this case.
 
-Recent work in the field has taken advantage of modern computing and visualization technology to produce higher fidelity simulations.
+Recent work in the field has taken advantage of modern computing and sensory-signaling technology to produce higher fidelity simulations.
 In \citeyear{de_groot_effect_2011}, \citeauthor{de_groot_effect_2011} investigated the effects of concurrent bandwidth feedback on learning a lane-keeping task in a driving simulator.
 Similar to \citeauthor{gordon_effect_1967}, they investigated the effects of on-track and off-track feedback compared to a control group.
 Instead of using a visual indicator, however, \citeauthor{de_groot_effect_2011} used haptic feedback in the form of a vibrating chair for their feedback groups.
@@ -137,33 +139,82 @@ The onset advantage ``suggests that the sudden onset of a stimulus is a more pow
 This effect could explain a repeated finding that off-track feedback is superior to on-track feedback, even if the effect is, in general, small.
 \citeauthor{de_groot_effect_2011} also measured response time to a secondary task as an estimate of workload but found no differences across groups.
 
-% \subsubsection{SAFER Experiment}
-\begin{figure}[b!]
+\subsection{SAFER Experiment} \label{safersection}
+In order to determine the effects of feedback in more complex tasks, we designed a series of investigations into concurrent bandwidth feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\citep{karasinski_real-time_2016,karasinski_development_2016,karasinski_real-time_2017}.
+SAFER is a small propulsive jet pack worn during U.S. spacewalks for self-rescue~\citep{Vassigh1998}.
+Subjects were tasked with flying a SAFER simulation to perform a virtual inspection of the International Space Station's (ISS) solar arrays.
+Subjects were responsible for controlling the three-dimensional position and the roll of their jet pack while pitch and yaw were automatically controlled by an autopilot.
+
+Subjects were initially placed 40 feet away from the solar array and were asked to close to 30 feet and hold this distance for the remainder of the task.
+They could gauge their distance from the solar array using the indicator on the guidance display and the out-the-window display.
+Subjects were then asked to inspect four waypoints on the solar array and were given a guidance display for navigation to the waypoints.
+
+\begin{figure}[tb!]
     \begin{center}
-        \includegraphics[width=0.8\linewidth]{figures/AR/SAFER_DangerChris.jpg}
+        \includegraphics[width=\linewidth]{figures/AR/SAFER_DangerChris.jpg}
         \caption[Simplified Aid for EVA Rescue (SAFER) experiment subject seated in the fixed-base simulator]{A subject from the Simplified Aid for EVA Rescue (SAFER) experiment seated in the fixed-base simulator~\citep{karasinski_real-time_2016}.}
         \label{figure:safersim}
     \end{center}
 \end{figure}
 
-Our recent work includes investigations into concurrent bandwidth feedback in a four degree of freedom Simplified Aid for EVA Rescue (SAFER) task~\citep{karasinski_real-time_2016, karasinski_real-time_2017, karasinski_development_2016}.
-SAFER is a small propulsive jet pack worn during spacewalks for self-rescue~\citep{Vassigh1998}.
-Subjects were tasked with flying a SAFER simulation to perform an inspection of the International Space Station's (ISS) solar arrays.
-Subjects were initially placed 40 feet away from the solar array and were asked to close to 30 feet and hold this distance for the remainder of the task.
-They could gauge their distance from the solar array using the indicator on the guidance display and the out-the-window display.
-Subjects were then asked to inspect four waypoints on the solar array and were given a guidance display for navigation to the waypoints.
 Two vertically arranged displays in the simulator were available to complete the task (see Figure~\ref{figure:safersim}).
-The primary display contained an out-the-window view of the solar array and, depending on which group the subject was in, one of the guidance displays.
-The secondary display located directly below the primary display portrayed information about the subject's current mode, remaining fuel, and a ``comm light.''
+The primary display contained an out-the-window view of the solar array and, depending on which group the subject was in, one of the guidance displays (see Figure~\ref{figure:safergroups}).
+The secondary display located directly below the primary display portrayed information about the subject's current mode, remaining fuel, and a ``comm'' light (see Figure~\ref{figure:saferpanel}).
+This communication or ``comm'' light on the flight display was used as the secondary task to measure the subject's workload during each trial.
+This light, a colored concentric circle on the secondary display, changed from a teal color to a blue or a green color every 5 to 7 seconds (at a pseudorandom interval), and the subjects responded by pressing the corresponding button on the joystick.
+This secondary task was displayed on a separate screen from the flight tasks, and the change in color could not be easily distinguished from the subjects' peripheral vision, requiring the subjects to establish a visual scan pattern that included sequential attention to both primary and secondary displays.
 
 \begin{figure}[tb!]
     \begin{center}
-        \begin{subfigure}{0.49\textwidth}
+        \includegraphics[width=\linewidth]{figures/Introduction/SAFERGroups.png}
+        \caption[Simplified Aid for EVA Rescue (SAFER) guidance and feedback display]{Simplified Aid for EVA Rescue (SAFER) guidance and feedback display. The left side of the figure shows the interface presented to the Control, the middle shows the change to the interface for the Precise group, and the right shows the Feedback group's interface when it is activated.}
+        \label{figure:safergroups}
+    \end{center}
+\end{figure}
+
+\begin{figure}[tb!]
+    \begin{center}
+        \includegraphics[width=0.8\linewidth]{figures/Introduction/SAFER_Panel.png}
+        \caption[Simplified Aid for EVA Rescue (SAFER) secondary display]{Simplified Aid for EVA Rescue (SAFER) secondary display. The current flight mode, remaining fuel and power, and ``comm'' light are all presented.}
+        \label{figure:saferpanel}
+    \end{center}
+\end{figure}
+
+\begin{table}[tb!]
+    \centering
+    \begin{tabular}{rrrr}
+        \toprule
+        Name     & Display Max & Sig. Figs & Feedback \\
+        \midrule
+        Control  & 10 (ft)     & 1         & No       \\
+        Precise  & 5 (ft)      & 2         & No       \\
+        Feedback & 10 (ft)     & 1         & Yes      \\
+        \bottomrule
+    \end{tabular}
+    \caption[Experimental differences between subject groups]{Experimental differences between subject groups.}
+    \label{tab:group_diffs}
+\end{table}
+
+In our experiment, subjects were placed into one of three groups: a control, a precise guidance group, and a concurrent bandwidth feedback (CBF) group.
+Subjects in the precise guidance group were given an extra significant figure in their guidance display and an analog display which was scaled twice as large (but had half the maximum value) of their flight parameters.
+Subjects in the CBF group had two display elements which would change from a green to a red color when the subject's performance was outside a predefined range.
+The two elements represented the distance from the solar array and the roll of the jet pack, and subjects were informed that monitoring these variables was their primary task.
+The summary differences between the three groups are presented in Table~\ref{tab:group_diffs}, and Figure~\ref{figure:safergroups} highlights the interface differences.
+
+Performance was measured as mean absolute distance error (MAE) and results across trials are shown in Figure~\ref{figure:saferdistance}.
+Both treatment groups performed better than the control group, with the CBF group performing the best and having the least error.
+The effects that the treatments had on workload was very different than performance, however, and subjects in the precision group reported significantly more workload than the control group, while subjects in the CBF group reported significantly less workload than the control group (see Figure~\ref{figure:saferworkload}).
+The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
+Subjects with the CBF performed better on their first trial than subjects in the control group did on their last, which was after approximately two hours spent practicing the task.
+
+\begin{figure}[p]
+    \begin{center}
+        \begin{subfigure}{0.85\linewidth}
             \includegraphics[width=\linewidth]{figures/AR/Group_absDistErr_clean_fit_30.png}
             \caption[Mean absolute distance error]{Mean absolute distance error.}
             \label{figure:saferdistance}
         \end{subfigure}\hfill
-        \begin{subfigure}{0.49\textwidth}
+        \begin{subfigure}{0.85\linewidth}
             \includegraphics[width=\linewidth]{figures/AR/Group_Workload_fit_30.png}
             \caption[Mean subjective workload rating]{Mean subjective workload rating.}
             \label{figure:saferworkload}
@@ -172,15 +223,11 @@ The secondary display located directly below the primary display portrayed infor
     \end{center}
 \end{figure}
 
-In our experiment, subjects were placed into one of three groups: a control, a high precision augmented feedback group, and a concurrent bandwidth feedback (CBF) group.
-Subjects in the high precision group were given an extra significant figure in their guidance display and an analog display which was scaled twice as large (but had half the maximum value) of their flight parameters.
-Subjects in the CBF group had two display elements which would change from a green to a red color when the subject's performance was outside a predefined range.
-Performance was measured as mean absolute distance error (MAE) and results across trials are shown in Figure~\ref{figure:saferdistance}.
-Both treatment groups performed better than the control group, with the CBF group performing the best and having the least error.
-The effects that the treatments had on workload was very different than performance, however.
-Subjects in the high precision group reported significantly more workload than the control group, while subjects in the CBF group reported significantly less workload than the control group (see Figure~\ref{figure:saferworkload}).
-The concurrent bandwidth feedback also had the added benefit of significantly reducing the amount of time required to train the subjects to their maximum skill level.
-Subjects with the CBF performed better on their first trial than subjects in the control group did on their last, which was after approximately two hours on the task.
+In general, subjects in the precise and feedback groups had better performance in both the distance and roll tasks than subjects in the control group, and subjects in the feedback group had an initial performance which was superior to the final performance observed by subjects in the control group.
+The magnitude of this effect surprising, and it appears to confirm that concurrent bandwidth feedback can greatly accelerate the learning of the task.
+While subjective workload was not significantly different among the groups, the subjects with feedback also reported the lowest workload.
+While presenting more precise guidance information on can also improve subject performance, we showed that it does so at the cost of higher workload and longer task completion times compared to the control group.
+Concurrent bandwidth feedback was effective at improving subject performance and resulted in subjects reporting lower levels of subjective workload.
 
 \subsection{Concurrent Bandwidth Feedback} \label{section:cbf}
 
@@ -254,17 +301,17 @@ For example:
 
 \begin{figure}[p]
     \begin{center}
-        \begin{subfigure}{0.80\textwidth}
+        \begin{subfigure}{0.80\linewidth}
             \includegraphics[width=\linewidth]{figures/Introduction/signal.pdf}
             \caption[The signal of a task critical feature]{The signal of a task critical feature.}
             \label{fig:signal}
         \end{subfigure}\hfill
-        \begin{subfigure}{0.80\textwidth}
+        \begin{subfigure}{0.80\linewidth}
             \includegraphics[width=\linewidth]{figures/Introduction/signal_w_bandwidth.pdf}
             \caption[The signal with an operationally relevant bandwidth]{The signal with an operationally relevant bandwidth.}
             \label{fig:signal_w_bandwidth}
         \end{subfigure}\hfill
-        \begin{subfigure}{0.80\textwidth}
+        \begin{subfigure}{0.80\linewidth}
             \includegraphics[width=\linewidth]{figures/Introduction/signal_w_feedback.pdf}
             \caption[The signal with concurrent bandwidth feedback applied]{The signal with concurrent bandwidth feedback applied.}
             \label{fig:signal_w_feedback}
@@ -275,19 +322,18 @@ For example:
 \end{figure}
 
 \subsection{Workload}
-Improving performance, through some kind of feedback or other technique, often comes at the cost of increased workload, which can lead to a loss of the ability to maintain performance.
+Improved performance, through some kind of feedback or other technique, often comes at the cost of increased workload, which can lead to a loss of the ability to maintain high performance over a sustained timeframe.
 While improving performance is the most common motivator for supplying augmented feedback, the workload of subjects must also be considered.
 If performance benefits come at the cost of increased or unsustainable workload levels, for instance, the cost of augmented feedback may be too high.
 For this reason, we are interested in measuring the workload associated with participants to evaluate if including concurrent bandwidth feedback has an effect.
 
 One of the difficulties with measuring workload has been the challenge in the human factors community of settling on a single definition of the term.
 As \citeauthor{hart_nasa-task_2006} notes in her \citeyear{hart_nasa-task_2006} report, ``The many definitions [of workload] that exist in the psychological literature are a testament to the complexity of the construct''.
-Workload was defined by \citeauthor{hart_development_1988} as ``the perceived relationship between the amount of mental processing capability or resources and the amount required by the task.''
+Workload has been defined by \citeauthor{hart_development_1988} as ``the perceived relationship between the amount of mental processing capability or resources and the amount required by the task.''
 \citeauthor{hart_nasa-task_2006} later provided an excellent definition of workload that is broadly acceptable for many types of tasks, ``[w]orkload is a term that represents the cost of accomplishing mission requirements for the human operator.''
 More specific definitions are available when focusing in the aerospace domain.
-After sending a questionnaire to some 350 military and airline pilots, \citeauthor{ellis1982airline} proposed that ``[p]ilot workload is the integrated mental and physical effort required to satisfy the perceived demands of a specified flight task''.
+After sending a questionnaire to some 350 military and airline pilots, \citeauthor{ellis1982airline} analyzed the results and proposed that ``[p]ilot workload is the integrated mental and physical effort required to satisfy the perceived demands of a specified flight task''.
 % This definition notes three distinct sources of workload: mental effort, physical effort, and task demands.
-% These three
 Regardless of the precise definition, is generally agreed that having a low workload indicates that it would be easy to complete additional tasks, while having a high workload suggests that it would be difficult.
 
 While there are several objective techniques that attempt to capture workload, most commonly used techniques are subjective in nature~\citep{hart_development_1988}.
@@ -301,7 +347,7 @@ The benefits of this scale include that the resulting workload score is a single
 Some of the negative features of the scale are that it only considers the amount of spare cognitive ability to attend to additional tasks, and that there can be large inter-rater variability.
 Despite this, the scale is widely used for measuring the workload associated with aircraft flight tasks and has significant heritage in the aerospace domain.
 
-The NASA Task Load Index (NASA-TLX) is one of the most well known and commonly used subjective workload measures.
+The NASA Task Load Index (NASA-TLX) is one of the best-known and commonly used subjective workload measures.
 The NASA-TLX has been in use for thirty years and has been used and validated over a large variety of tasks~\citep{hart_nasa-task_2006}.
 The NASA-TLX is a multidimensional rating scale which uses the magnitude and ranking of six subscales to produce an overall estimate of subjective workload~\citep{hart_development_1988}.
 The six subscales are: Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration, see Figure~\ref{figure:nasa-tlx}.
@@ -311,13 +357,15 @@ A final, overall workload score is computed by multiplying each subscale's score
 As certain subscales may be more or less important than others, depending on the task being evaluated, some researchers can drop subscales or simply not compute the overall score.
 
 In addition to subjective measures of workload, there are a variety of techniques which aim to estimate objective workload.
-One of the most common objective measurement techniques is the secondary task, which requires subjects to complete the primary task, then use any spare workload to respond to an additional task~\citep{gawron_human_2008}.
+One of the most common objective measurement techniques is the secondary task, which requires subjects to complete the primary task, then use any spare cognitive margin to respond to an additional task~\citep{gawron_human_2008}.
 Secondary tasks can provide a measure more sensitive to differences in workload and performance than a single task alone and allow for a common measure between experimental conditions~\citep{slocum1971meaningful}.
 Care must be taken, however, to ensure that the secondary task does not intrude upon primary task performance~\citep{williges_behavioral_1979}.
+It is important that the secondary task requires a relatively small percentage of the overall cognitive margin compared to the main task, otherwise the distinction between primary and secondary task begins to blur.
 In our previous studies, we have used a multiple-choice reaction time task as an objective workload measurement.
 In this secondary task, subjects are presented with several different stimuli, each of which requires a different response~\citep{lysaght_operator_1989}.
 A subject's objective workload can then be inferred by either the percentage of secondary tasks which were correctly responded to within a given time, the number of secondary tasks which were correctly responded to in a trial, or both.
 We have previously found this type of task to be correlated with subjective workload scales in the aforementioned SAFER task~\citep{karasinski_real-time_2017}.
+This secondary task approach does not work well for simple tasks as completing it begins to compete for attention with the primary task, but works well for more complex tasks.
 
 \subsection{Pilot Modeling}
 \label{background:pilotmodeling}
@@ -343,8 +391,8 @@ This work evaluated measurements for single-input/single-output (SISO) manual co
 Indeed, \citeauthor*{mcruer_dynamic_1957} write, ``[i]t is possible, without doing violence to the data, to obtain describing functions which are generally applicable to the results of the many diverse experiments.''
 The report concludes by describing a hypothetical transfer function of the human operator which includes a time delay, a neuromuscular lag, and a gain.
 McRuer's early model of the complete pilot/vehicle system is presented in Figure~\ref{figure:mcruer1974}.
-McRuer revisited these results in \citeyear{mcruer_mathematical_1974}, after three decades of supporting engineering and experimental psychology experiments and was able to further generalize these results to a wide variety of system dynamics.
-In his study, McRuer completed a detailed analysis which included the human response to proportional, rate/velocity, and acceleration type controlled element dynamics, see Table~\ref{table:mcruer1974a}.
+McRuer revisited these results in \citeyear{mcruer_mathematical_1974}, after two decades of supporting engineering and experimental psychology experiments and was able to further generalize these results to a wide variety of system dynamics.
+In his study, McRuer completed a detailed analysis which included the human response to proportional, rate/velocity, and acceleration type controlled element dynamics (see Table~\ref{table:mcruer1974a}).
 The result of this report was the now famous ``crossover model,'' which relates the operator and controlled element transfer characteristics by the equation
 \begin{align}
     Y_c(jw) Y_p(jw) = \dfrac{w_c e^{-jw \tau_e}}{jw}
@@ -374,7 +422,7 @@ A recent review by Xu et al. in 2017 surveyed the state of the art in human pilo
 Classical models based on control theory include the McRuer crossover model and optimal control models by Kleinman et al. developed in the early 1970s~\citep{kleinman_optimal_1970, baron_optimal_1970}.
 Models based on human physiology were developed to understand human pilot perception and control behavior, and include the Structural Model~\citep{hess_structural_1980, hess_model_1990, hess_unified_1997}, Hosman's descriptive model~\citep{hosman_pilots_nodate, hosman_pilots_1999}, and the biodynamic model~\citep{griffin_validation_2001}.
 Recent intelligence models take advantage of techniques including fuzzy control and neural networks~\citep{zaychik_conspectus_2006, gestwa_modelling_2003}.
-Of these three overarching sets of models, the models based on human physiology are of the greatest interest here.
+Of these three overarching sets of models, the models based on human physiology are of the greatest interest here due to their potential to include the effects of feedback.
 
 \begin{figure}[tb!]
     \begin{center}
@@ -398,13 +446,13 @@ Concurrent bandwidth feedback has been used in a large variety of motor control 
 Until recently, however, only simple tasks such as physical movements or low-dimensional pursuit tasks have been investigated.
 More recent works, including the lane-keeping task by \citeauthor{de_groot_effect_2011}, and our previous work with the SAFER task, have indicated that concurrent bandwidth feedback can also be quite effective for complex tasks~\citep{karasinski_real-time_2017}.
 Unlike simple tasks, in which the guidance hypothesis dominates when feedback is removed, there is some evidence that concurrent bandwidth feedback can be removed after training without a loss of performance.
-The decrease in required learning time, improved performance, and decreased workload seen in the SAFER task show that concurrent bandwidth feedback may prove to be most useful very early in training when subjects are first exposed to complex, highly dynamic tasks.
-As concurrent bandwidth feedback can improve performance without an increase in workload, it may prove a useful technique for training other complex manual control tasks.
+The decrease in required learning time, improved maximum performance, and decreased workload seen in the SAFER task show that concurrent bandwidth feedback may prove to be most useful very early in training when subjects are first exposed to complex, highly dynamic tasks.
+As concurrent bandwidth feedback can improve performance for complex tasks without an increase in workload, it may prove a useful technique for training other complex manual control tasks.
 
 There has been considerable improvement in the field of pilot modeling since McRuer's crossover model, especially with models that incorporate human physiology.
 The Structural Model, in particular, has been very effective in predicting pilot performance, handling qualities, pilot-induced oscillation rating levels, and workload for a variety of system dynamics.
 None of these pilot models, however, are able to include the effects of concurrent bandwidth feedback.
-The performance improving effects of this feedback, seen throughout the literature, make this a compelling feature to be incorporated into a pilot model.
+The performance improving potential of this feedback make this a compelling feature to be incorporated into a pilot model.
 
 This literature review covered the development of the augmented feedback, focusing on examples of concurrent and bandwidth feedback.
 Extra focus was spent on cases where augmented feedback techniques were applied to aerospace related tasks.
@@ -431,7 +479,7 @@ There are several research questions that we were interested in answering by com
           \begin{enumerate}
               \item Can CBF reduce the required training time to peak performance?
               \item Can CBF be removed after reaching peak performance without reducing subject performance (i.e., does the guidance hypothesis not hold)?
-            %   \item Does CBF improve performance in transfer of training tasks?
+                    %   \item Does CBF improve performance in transfer of training tasks?
               \item Can performance be increased without increasing workload?
           \end{enumerate}
     \item Can we develop a model of human performance which includes the effects of concurrent bandwidth feedback?
@@ -441,6 +489,6 @@ There are several research questions that we were interested in answering by com
 \end{enumerate}
 
 \section{Summary}
-We have introduced our goals and motivation for the design and use of the concurrent bandwidth feedback, a technique for enhancing motor control training without inducing higher levels of workload.
+We have introduced our goals and motivation for the design and use of the concurrent bandwidth feedback.
 The background for the experimental work has been described and the open research questions that we explore in this work have been summarized.
-In the following chapters, we first present a systematic assessment of current and upcoming human automation/robotic integration technologies and research topics (Chapter~\ref{chapter:tradestudy}), then report on four experiments involving augmented feedback (Chapters~\ref{chap:3dtracking}-\ref{chapter:aircraftfeedback}), propose a theoretical model which explains the observed effects of the feedback (Chapter~\ref{chapter:modeling}), and summarize our findings and proposed future work (Chapter~\ref{chap:conclusion}).
+In the following chapters, we first present a systematic assessment of current and upcoming human automation/robotic integration technologies and research topics (Chapter~\ref{chapter:tradestudy}), then report on four experiments involving augmented feedback (Chapters~\ref{chap:3dtracking}-\ref{chapter:bandwidthstudy}), propose a theoretical model which explains the observed effects of the feedback (Chapter~\ref{chapter:modeling}), and summarize our findings and proposed future work (Chapter~\ref{chap:conclusion}).

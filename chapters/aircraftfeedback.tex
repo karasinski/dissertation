@@ -3,6 +3,9 @@
 % John A. Karasinski, Stephen K. Robinson
 % Department of Mechanical and Aerospace Engineering, University of California, Davis
 
+The literature has shown that a variety tasks can benefit from concurrent feedback, and that more functionally complex tasks tend to see a larger performance improvement.
+This result stems from results of many different experiments and researchers, however, and it is uncommon for experiments to explore the interaction effect between feedback and functional task complexity directly.
+We designed this experiment to directly address this gap in the literature by evaluating the effects of feedback on an aircraft flight task with one, two, or three degrees of freedom.
 Portions of this chapter were originally published in the conference proceedings for the Human Factors and Ergonomics Society 2019~\citep{RN42}.
 
 \section{Introduction}
@@ -12,6 +15,7 @@ One of the key aspects to successfully implementing feedback is knowing when to 
 Feedback can be provided concurrently, in real-time as the task is executed; or terminally, after the task is completed.
 Visual concurrent feedback, for example, has been shown to greatly enhance motor learning as task complexity increases, while terminal feedback is better suited for tasks with low functional complexity~\citep{sigrist_augmented_2013}.
 As \citeauthor{sigrist_augmented_2013} note in their review of augmented visual, auditory, haptic, and multimodal feedback, however, "[u]p to now, mostly low-dimensional, simple, and rather artificial labor tasks have been investigated even though, in real life, most motor tasks are multidimensional and complex."
+
 Aircraft and spacecraft flight-control tasks are complex, multidimensional challenges for human manual control, and present both demanding learning requirements and high cognitive demands.
 In the pursuit of improving pilot performance during training, several researchers have investigated the effects of adding visual and/or audio feedback to flight displays.
 \citeauthor{doi:10.1518/001872096778940859} explored the use of auditory displays in a 3D flight task.
@@ -64,7 +68,7 @@ The same disturbing function was used for every trial, though participants were 
 \subsubsection{Secondary Task}
 To estimate participant workload more objectively than with a questionnaire, we added a secondary task that assesses the subject's cognitive margin available for attending to non-primary task execution.
 The secondary task was displayed to the right of the flight-guidance display (see Figure~\ref{figure-hfes:userinterface}) and consisted of a teal colored indicator which changed color to blue or green at pseudorandom times.
-Ten 8-second windows were established in each 82-second long trial.
+Ten 8-second secondary-task windows were displayed during each 82-second long trial.
 The indicator would randomly change during this interval, providing participants up to 5 seconds to respond.
 The pseudorandom times and colors for the secondary task were identical for each participant.
 This secondary task has been validated in previous studies, which have shown it to correlate well with participants' subjective workload estimates~\citep{hainley_pilot_2013}.
@@ -89,7 +93,7 @@ This secondary task has been validated in previous studies, which have shown it 
 Participants were seated at a fixed-base simulator for the duration of the experiment, see Figure~\ref{figure-hfes:participant}.
 The simulator consisted of a 30-inch monitor and a single joystick.
 The user interface was centered in the display and presented to the user at 1000x500 pixels.
-The user interface consists of a traditional attitude indicator on the left, an altimeter in the middle, and the secondary task on the right.
+The user interface consists of a traditional aircraft attitude indicator on the left, an altimeter in the middle, and the secondary task on the right.
 The Boeing 747 was modeled using data available in NASA CR-2144~\citep{heffley1972aircraft}.
 Flight Condition 2 was chosen for this experiment, and represents slow, sea-level flight, with the landing gear retracted and with flaps extended to 20 degrees.
 Longitudinal and lateral body axis derivatives were converted to the stability axis and implemented in a state-space model~\citep{stevens2015aircraft}.
@@ -105,12 +109,13 @@ Participants in the control group never received concurrent bandwidth feedback, 
 For participants experiencing feedback, feedback was presented based on the flight control mode of their current trial.
 This feedback was implemented by changing the color of an indicator's elements from yellow to red when it deviated from outside of its allowed bandwidth and returning the indicator to yellow when it returned within the bandwidth.
 Acceptable bandwidths of 3 degrees for pitch and roll, and 30 feet for altitude were chosen based on preliminary testing.
+The choice of these bandwidths was based on preliminary pilot studies, and is further explored in Chapter~\ref{chapter:bandwidthstudy}.
 Pitch feedback occurred on the center dot.
 Roll feedback was shown on the wings and the roll indicator at the top of the attitude indicator.
 Altitude feedback was enabled on the background color of the altimeter.
 In Figure~\ref{figure-hfes:userinterface}, all three parameters are shown inside the acceptable bandwidth, and are therefore displayed in yellow.
 
-Participants began the experiment by signing a consent form, filled out a survey with demographic questions, then had a brief, pre-recorded training session.
+Participants began the experiment by signing a consent form, then filled out a survey with demographic questions, then had a brief, pre-recorded training session.
 After this training, participants immediately began the experiment and progressed through the 36 trials at their own pace.
 Participants noted their workload on a piece of paper after each trial.
 Subjects in the feedback group were paused after the 27th trial, at which time the proctor explained that the feedback would no longer appear, but that they ``should continue to perform the task to the best of [their] ability.'' Subjects in the feedback group also filled out a questionnaire after the end of the experiment trials which asked them about their experience with the feedback.
@@ -148,7 +153,7 @@ Participants in the experiment were 30 engineering students from the University 
 All participants had normal or corrected-to-normal vision and full motor control of their upper bodies.
 Eighty percent of participants had previously used a joystick, 43\% had spent time in flight simulators, and 30\% had prior flight experience.
 Both gender and participants with flight experience were counterbalanced between the two groups.
-Written informed consent was obtained prior to testing in accordance with the University of California, Davis Institutional Review Board.
+Written informed consent was obtained prior to testing in accordance with the University of California, Davis Institutional Review Board (1399789-1).
 
 \subsection{Analysis}
 Mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers which were removed from the analysis.
@@ -239,7 +244,7 @@ Feedback was removed for immediate retention trials, and participants showed no 
 
 \section{Introduction}
 
-As we mentioned in Section~\ref{section:cbf}, several authors have noted that ``[b]andwidth feedback has been shown to be effective; however, setting the error threshold is not trivial''~\citep{sigrist_augmented_2013, timmermans_technology-assisted_2009, RIBEIRO2011231}.
+As we mentioned in Section~\ref{section:cbf}, several authors have noted that ``[b]andwidth feedback has been shown to be effective; however, setting the error threshold is not trivial''~\citep{timmermans_technology-assisted_2009, RIBEIRO2011231, sigrist_augmented_2013}.
 While choosing to use an operational limit of acceptable performance can make the choice of setting the error threshold simpler, this option is not always available.
 Additionally, mission designers often want to know what the optimum pilot performance is for mission planning, and instructors are interested in what levels of performance are acceptable during training.
 
@@ -302,6 +307,7 @@ The remainder of the results discussed here are preliminary and based on the 19 
 Participants in the experiment were 19 engineering students from the University of California, Davis (17 men, 1 woman, 1 decline to state) with an average age of 21.3 years (SD = 2.2).
 All participants had normal or corrected-to-normal vision and full motor control of their upper bodies.
 Both gender and participants with flight experience were counterbalanced between the two groups.
+Of the 19 subjects, 18 returned the next day after an average of 24.93 hours (SD = 0.6).
 This study was exempted by the University of California, Davis Institutional Review Board, and subjects were not compensated for their time.
 
 \subsection{Analysis}
@@ -357,7 +363,7 @@ The two-degree bandwidth, however, would only be attainable 29\% of the time by 
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Aircraft/p34_feedback_on.pdf}
-        \caption[The mean percentage of active pitch feedback time at the end of the previous study]{The percentage of active pitch feedback time at the end of the previous study. Data points are the mean, and the shaded region is the standard error of the mean.}
+        \caption[The mean percentage of active pitch feedback time at the end of the previous study]{The percentage of active pitch feedback time at the end of the previous study, when the bandwidth was set to three degrees. Data points are the mean, and the shaded region is the standard error of the mean.}
         \label{figure-aircraft:pitchfeedback}
     \end{center}
 \end{figure}
