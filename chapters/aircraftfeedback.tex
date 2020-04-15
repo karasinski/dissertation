@@ -153,7 +153,7 @@ Participants in the experiment were 30 engineering students from the University 
 All participants had normal or corrected-to-normal vision and full motor control of their upper bodies.
 Eighty percent of participants had previously used a joystick, 43\% had spent time in flight simulators, and 30\% had prior flight experience.
 Both gender and participants with flight experience were counterbalanced between the two groups.
-Written informed consent was obtained prior to testing in accordance with the University of California, Davis Institutional Review Board (1399789-1).
+Written informed consent was obtained prior to testing in accordance with the University of California, Davis Institutional Review Board (Project \#1399789-1).
 
 \subsection{Analysis}
 Mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers which were removed from the analysis.
@@ -239,14 +239,21 @@ Subjective and objective workload metrics showed no change in participant worklo
 Survey questions identified that most participants found the feedback helpful in training them to establish a scan pattern, helping them to learn the task much quicker than those without feedback.
 Feedback was removed for immediate retention trials, and participants showed no changes in performance or workload, suggesting that participants did not suffer from the guidance hypothesis.
 
+This experiment provided additional insight into many of the research questions posed in Section~\ref{sec:intro_questions}.
+Additionally, it confirms the result found generally in the literature and summarized in Figure~\ref{figure:sigrist_review}, that concurrent visual feedback is more effective at improving performance as functional workload increases.
+By evaluating the effects of feedback on an aircraft flight task with multiple degrees of freedom, we were able to see 17.8\% to 44.2\% increases in performance, which increased as the degrees of freedom increased.
+The lack of performance degradation when the feedback is removed, and therefore the rejection of guidance hypothesis, further illustrates that the concurrent bandwidth feedback is truly acting as feedback, not additional guidance.
+This promotes the concept of the ``instructor model'' discussed in Section~\ref{section:cbf}, where the feedback becomes increasingly rare as pilot performance increases with training.
+
 \chapter{Feedback Bandwidth Study}
 \label{chapter:bandwidthstudy}
-
-\section{Introduction}
 
 As we mentioned in Section~\ref{section:cbf}, several authors have noted that ``[b]andwidth feedback has been shown to be effective; however, setting the error threshold is not trivial''~\citep{timmermans_technology-assisted_2009, RIBEIRO2011231, sigrist_augmented_2013}.
 While choosing to use an operational limit of acceptable performance can make the choice of setting the error threshold simpler, this option is not always available.
 Additionally, mission designers often want to know what the optimum pilot performance is for mission planning, and instructors are interested in what levels of performance are acceptable during training.
+In this Chapter, we treat the bandwidth as a variable in order to evaluate its effect on resultant subject performance and workload.
+
+\section{Introduction}
 
 Our previous work has shown that concurrent bandwidth feedback can be effective, but our choice of bandwidth has been ad-hoc in nature and primarily based on preliminary pilot studies.
 These pilot studies have shown that there may be a wide variety of acceptable bandwidths, but it is unclear if there is a single bandwidth that would lead to optimal performance or a minimum learning time.
@@ -308,7 +315,7 @@ Participants in the experiment were 19 engineering students from the University 
 All participants had normal or corrected-to-normal vision and full motor control of their upper bodies.
 Both gender and participants with flight experience were counterbalanced between the two groups.
 Of the 19 subjects, 18 returned the next day after an average of 24.93 hours (SD = 0.6).
-This study was exempted by the University of California, Davis Institutional Review Board, and subjects were not compensated for their time.
+This study was exempted by the University of California, Davis Institutional Review Board (Project \#1537932-1), and subjects were not compensated for their time.
 
 \subsection{Analysis}
 
@@ -335,7 +342,7 @@ Due to their extremely preliminary nature, these results are not included here.
 
 \section{Discussion}
 
-Based on the preliminary findings presented in Figure~\ref{figure-bw:pitchrmse}, choosing an appropriate bandwidth can potentially have an effect of the efficacy of concurrent bandwidth feedback.
+Based on the preliminary findings presented in Figure~\ref{figure-bw:pitchrmse}, choosing an appropriate bandwidth can potentially have an effect on the efficacy of concurrent bandwidth feedback.
 While we have yet to observe statistically significant effects, current data suggests that having a looser bandwidth improves performance.
 While it was expected that there may be an optimal choice of bandwidth to maximally reduce training times and improve performance, we hypothesized that this value would be lower than or approximately equal to three degrees, not a higher value, based off our pilot studies.
 
@@ -391,7 +398,7 @@ While the preliminary data collected for this experiment can be used to begin to
 Briefly revisiting our hypotheses, we can begin to predict the results of this study.
 \begin{itemize}
     \item[\textbf{H1.}] While subjects in the three- and four-degree bandwidth groups will likely immediately outperform those in the control group, the two-degree bandwidth presents too much of a challenge for subjects to effectively use the concurrent bandwidth feedback.
-    This indicates that researchers should be careful to choose attainable bandwidths, or they may incorrectly conclude that concurrent bandwidth feedback, in general, does not work for their task.
+          This indicates that researchers should be careful to choose attainable bandwidths, or they may incorrectly conclude that concurrent bandwidth feedback, in general, does not work for their task.
     \item[\textbf{H2.}] Based on our early results, participants will report the same workload between groups, which will gradually decrease with training.
     \item[\textbf{H3.}] Participants in the feedback group will not suffer from the guidance hypothesis and will retain their performance and workload levels when the feedback is removed in the immediate retention and 24 hour retention trials.
     \item[\textbf{H4.}] It is still too early to make claims on the effects of concurrent bandwidth feedback on transfer of training.

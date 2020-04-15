@@ -1,6 +1,21 @@
 \chapter{Conclusion}
 \label{chap:conclusion}
 
+We laid out two aims for this research in Section~\ref{sec:intro_questions}:
+\begin{description}[align=left]
+    \item [Aim One] Investigate the effects of concurrent bandwidth feedback on human performance and workload in complex manual control tasks.
+    \item [Aim Two] Extend the Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
+\end{description}
+
+To address the first aim we designed, recruited subjects, and analyzed data from four human-in-the-loop experiments.
+Starting with a relatively simple compensatory tracking task, we then investigated an EMG controlled Fitts's task, and then explored the effects of functional task complexity and the choice of the concurrent bandwidth feedback's bandwidth in an aircraft flight task.
+Subjects exposed to the concurrent bandwidth feedback outperformed those in a control group in each of these experiments without reporting an increased in workload.
+Subjects did not suffer from the guidance hypothesis when feedback was removed in retention trials, suggesting that they were able to use concurrent bandwidth feedback as a training tool and that they did not rely on it as a form of guidance.
+To address the second aim we used the data from the experiment presented in Chapter~\ref{chapter:aircraftfeedback}: \nameref{chapter:aircraftfeedback} to validate an extension of the Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
+By including one additional parameter, the extended Structural Model can predict pilot performance for a variety of bandwidths.
+
+In the remainder of this Chapter we briefly summarize the results of each of the preceding Chapters, then respond to the research questions we presented in Section~\ref{sec:intro_questions}.
+
 \section{Summary}
 
 % \subsubsection{Trade Study}
@@ -26,22 +41,15 @@ Both concurrent bandwidth feedback and a rotated display resulted in superior pe
 Providing a 3D display did not, in general, improve performance.
 Subjects in the 3D display group and that had early exposure to the concurrent bandwidth feedback, however, were able to use the feedback to achieve superior performance.
 
-\begin{mdframed}[hidealllines=true,backgroundcolor=blue!20]
-      % \subsubsection{Augmented Feedback in an Electromyography Task}
-      To further close the gap between human and automation, research has explored various forms of biophysical measurements for use as feedback control, such as electromyography (EMG).
-      It is critical to evaluate the effects of training methodologies on performance and the evolution of workload and trust in order to achieve a seamless human-automation system.
-      In Chapter~\ref{chap:emg}: \nameref{chap:emg} we developed a surface EMG control task to observe the effects of training methodology on the development of performance, workload, and trust.
-      In this study, 48 subjects learned to use a surface EMG command system to perform a Fitts's Law computer-based cursor-to-target task.
-      The training phase consisted of 120 Trials and the subsequent retention phase contained 40 Trials.
-      Subjects were divided into four groups: Control, Concurrent Feedback, Terminal Feedback, and Adaptive Threshold.
-      The Control group trained and learned through repetition using the visual feedback of the cursor position.
-      The Concurrent Feedback group received additional concurrent visual feedback during command input, whereas the Terminal Feedback group had supplementary visual feedback after command input.
-      The Adaptive Threshold group did not have any additional visual feedback, but experienced changes in the cursor control dynamics to induce motor learning adaptation.
-      There were significant differences in percent of successfully completed trials, workload, and trust during the training phase, particularly in the earlier portion.
-      The treatments were removed during the retention phase and there were no significant differences across groups.
-      The results indicated that 1) there was no significant effect from the guidance hypothesis (i.e. the subjects did not rely on the feedback to perform the task), 2) the relationship between the subject and system evolved differently depending on the group, and 3) all training methodologies achieved similar results by the end of the study.
-      We concluded that including concurrent feedback during manual task learning may provide both real-time performance improvement and an early learning plateau.
-\end{mdframed}
+% \subsubsection{Augmented Feedback in an Electromyography Task}
+It is critical to evaluate the effects of training methodologies on performance and the evolution of workload and trust in order to achieve a seamless human-automation system.
+In Chapter~\ref{chap:emg}: \nameref{chap:emg} we developed a surface EMG control task to observe the effects of training methodology on the development of performance, workload, and trust.
+We were specifically interested in comparing the efficacy of concurrent and terminal feedback and a motor adaptation group.
+After evaluating 48 subjects in a Fitts's Law cursor-to-target task, we found that the concurrent feedback group significantly performed the control group.
+The feedback group immediately outperformed the control group, reaching nearly perfect performance in only two trials, and the control group could not match this performance until over an hour later.
+We found significant interaction effects when evaluating workload and trust, where the concurrent feedback group reported lower workload and higher trust when compared to the motor adaptation group.
+Subjects did not suffer from the guidance hypothesis when the feedback was removed, suggesting that they were not reliant on the feedback but instead used it merely as a learning tool.
+By evaluating concurrent bandwidth feedback in the discrete task of using myoelectric control to control a cursor, we showed that this feedback can be extremely effective for a variety of tasks.
 
 % \subsubsection{Augmented Feedback Benefits Scale with Functional Task Complexity}
 In Chapter~\ref{chapter:aircraftfeedback}: \nameref{chapter:aircraftfeedback} the effects of concurrent bandwidth feedback on operator performance and workload was analyzed in training an aircraft flight control task.
@@ -53,6 +61,12 @@ For both groups, performance and workload measurements were evaluated to determi
 To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed, and performance was again evaluated.
 Statistical analyses showed that participants in the feedback group immediately performed better than those in the control group, that the performance difference between the two groups was more pronounced for more complex tasks, and that final performance levels for the feedback group significantly exceeded that of the control group.
 We found that concurrent bandwidth feedback does not reduce workload in our flight tasks, and that for the short periods tested, participants continued to perform at the same performance and workload levels when the feedback was removed.
+
+In Chapter~\ref{chapter:bandwidthstudy}: \nameref{chapter:bandwidthstudy} we presented the preliminary results of a study designed to evaluate the effect of choosing the bandwidth for our concurrent bandwidth feedback on pilot flight performance and workload.
+We theorized that there is an optimal bandwidth which leads to peak performance and minimum subject workload, and that their are bandwidths which do not improve or actually degrade performance and workload compared to a no feedback condition.
+Based on the preliminary findings presented, it appears that choosing an appropriate bandwidth has an effect on the efficacy of concurrent bandwidth feedback.
+The current data suggests that having a looser bandwidth further improves performance which is somewhat surprising as wider thresholds result in subjects experiencing less feedback, and eventually lead to them effectively not experiencing any feedback.
+This findings are still preliminary, however, and we look forward to publishing full results when subject testing is completed.
 
 % \subsubsection{Modeling the Effects of Concurrent Bandwidth Feedback}
 Finally, in Chapter~\ref{chapter:modeling}: \nameref{chapter:modeling} the Structural Model of the human pilot was investigated to model the results of the aircraft feedback study to better understand how the subjects' performance was changed by exposure to the feedback.
@@ -67,21 +81,20 @@ We found evidence that this term accumulates when subjects are exposed to a crit
 In Chapter~\ref{sec:intro_questions}, we listed six research questions that we aimed to answer by this research.
 Going into this research, our primary questions were
 \begin{enumerate}
-      \item Can concurrent bandwidth feedback (CBF) improve performance of complex manual control tasks?
-            \begin{enumerate}
-                  \item Can CBF reduce the required training time to peak performance?
-                  \item Can CBF be removed after reaching peak performance without reducing subject performance (i.e., does the guidance hypothesis not hold)?
-                        %   \item Does CBF improve performance in transfer of training tasks?
-                  \item Can performance be increased without increasing workload?
-            \end{enumerate}
-      \item Can we develop a model of human performance which includes the effects of concurrent bandwidth feedback?
-            \begin{enumerate}
-                  \item Can we use this model to estimate operational limits?
-            \end{enumerate}
+    \item Can concurrent bandwidth feedback (CBF) improve human performance in complex manual control tasks?
+          \begin{enumerate}
+              \item Can CBF reduce the required training time to peak performance?
+              \item Can CBF be removed after reaching peak performance without reducing subject performance (i.e., does the guidance hypothesis not hold)?
+              \item Can performance be increased without increasing workload?
+          \end{enumerate}
+    \item Can we develop a model of human performance which includes the effects of concurrent bandwidth feedback?
+          \begin{enumerate}
+              \item Can we use this model to estimate operational limits?
+          \end{enumerate}
 \end{enumerate}
 Here we summarize our answers to these questions.
 
-\subsubsection{Can concurrent bandwidth feedback improve performance of complex manual control tasks?}
+\subsubsection{Can concurrent bandwidth feedback improve human performance in complex manual control tasks?}
 Yes.
 The results presented in the three research studies in this dissertation, the augmented reality tracking task, surface electromyography task, and aircraft flight tested over one hundred subjects.
 In each of these tasks, subjects exposed to concurrent bandwidth feedback had improved performance in their control tasks compared to the control groups.
@@ -109,9 +122,6 @@ The reason that this feedback works is likely that it naturally fades away as su
 Fading feedback has usually been considered effective but knowing how to set the fading rate has continued to be an unsolved issue.
 While bandwidth feedback of this type only replaces that issue with another (how does one best set the bandwidth for a given task?), it does provide an easy way to directly tie the fading rate to subject performance.
 Additionally, many tasks have known operational limits which can be used to set a bandwidth, which provides a simple way to justify bandwidth selection.
-%
-% \subsubsection{Does CBF improve performance in transfer of training tasks?}
-% Work to answer this is in progress.
 
 \subsubsection{Can performance be increased without increasing workload?}
 Yes.
@@ -167,13 +177,13 @@ Investigating tasks of increasing difficulty would also allow researchers to ide
 This work has spawned a large number of new questions worth investigating.
 The questions brought up in this section include:
 \begin{enumerate}
-      \item Can the concurrent bandwidth feedback be turned on in emergency scenarios to assist operators in quickly recovering from off-nominal conditions?
-      \item Does the concurrent bandwidth feedback improve performance in well-trained operators, or does this technique only work for naive or inexperience operators?
-            %
-      \item What is the minimum number of trials that subjects need to be exposed to concurrent bandwidth feedback?
-      \item Is there an optimal way that the bandwidth can be scheduled as subjects improve through trials?
-            %
-      \item What is the effect of providing the concurrent bandwidth feedback through other modalities (audio, haptic, or a multimodal approach integrating these and/or visual)?
-            %
-      \item What level of functional complexity is needed to see reductions in workload for subjects exposed to the concurrent bandwidth feedback?
+    \item Can the concurrent bandwidth feedback be turned on in emergency scenarios to assist operators in quickly recovering from off-nominal conditions?
+    \item Does the concurrent bandwidth feedback improve performance in well-trained operators, or does this technique only work for naive or inexperience operators?
+          %
+    \item What is the minimum number of trials that subjects need to be exposed to concurrent bandwidth feedback?
+    \item Is there an optimal way that the bandwidth can be scheduled as subjects improve through trials?
+          %
+    \item What is the effect of providing the concurrent bandwidth feedback through other modalities (audio, haptic, or a multimodal approach integrating these and/or visual)?
+          %
+    \item What level of functional complexity is needed to see reductions in workload for subjects exposed to the concurrent bandwidth feedback?
 \end{enumerate}

@@ -1,12 +1,15 @@
 \chapter{Modeling the Effects of Feedback}
 \label{chapter:modeling}
 
-\section{Introduction}
-
-\subsection{Motivation}
 The second Aim of this dissertation is to develop a model of the human pilot which includes the effects of concurrent bandwidth feedback.
+After evaluating many of the human pilot models in the literature, the Structural Model was chosen because it has been very effective in predicting pilot performance for a variety of system dynamics and requires a relatively small number of parameters.
+The previous two Chapters detailed human-in-the-loop experiments where subjects trained on simplified aircraft simulators, providing a rich data set to use as modeling verification.
+This Chapter outlines the extension of \citeauthor{hess_unified_1997}'s Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
+
+\section{Introduction}
+\subsection{Motivation}
 The model presented here extends \citeauthor{hess_unified_1997}'s \citeyear{hess_unified_1997} Structural Model of the human pilot.
-The Structural Model has successful predicted human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
+The Structural Model has successfully predicted human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
 Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed, see Figure~\ref{figure:hesspursuit}~\citep{hess_modeling_2009}.
 This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot''~\citep{hess_modeling_2009}.
 Where the crossover model is defined
@@ -225,15 +228,16 @@ The crossover frequency identified by the ARX technique for the pitch only trial
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_arx.png}
-    \caption[Crossover frequency (ARX)]{Crossover frequency predicted by the ARX technique for the pitch only trials.}
+    \caption[Crossover frequency (ARX)]{Crossover frequency (rad/s) predicted by the ARX technique for the pitch only trials.
+    The dashed line indicates where the feedback was removed from participants in the feedback group.
+    Error bars are the standard error of the mean.}
     \label{fig:arx_crossover}
 \end{figure}
 
-Mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers which were removed from the analysis.
-The Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R~\citep{RN53}.
+Mixed models were used to calculate the significance of factors in our analysis due to the presence of outliers which were removed from the analysis, and the Satterthwaite method was used to calculate the adjusted degrees of freedom.
 When significant effects were observed, post hoc comparisons using the Tukey Honest Significance Difference (HSD) test were performed and considered significant at the $p < .05$ level, and the Satterthwaite method was again used to calculate the degrees of freedom.
-Only 7 of the 1080 total trials (30 subjects with 36 trials per subject) were removed.
-These trials were extreme performance outliers and including these trials does not change the primary results of the study.
+% Only 7 of the 1080 total trials (30 subjects with 36 trials per subject) were removed.
+% These trials were extreme performance outliers and including these trials does not change the primary results of the study.
 
 A three-factor (Group, Mode, and Trial) mixed model with two repeated measures (Mode and Trial) was run on the pitch crossover frequency.
 There were significant main factors of group $(F(1, 28.00) = 4.9, p = 0.036)$, mode $(F(2, 55.62) = 17.1, p < .001)$, and trial $(F(11, 306.23) = 39.4, p < .001)$.
@@ -252,7 +256,7 @@ See Figure~\ref{figure:arxcomplete} for the plots of the crossover frequency of 
 \begin{figure}[tb]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Modeling/crossover_measures.pdf}
-        \caption[The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task]{The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
+        \caption[The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task]{The crossover frequency (rad/s) of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
             The dashed line indicates where the feedback was removed from participants in the feedback group.
             Error bars are the standard error of the mean.}
         \label{figure:arxcomplete}
@@ -282,7 +286,7 @@ Each of these steps is further described below.
 \end{table}
 
 The first step of the value identification technique was a brute force parameter search used to identify the value of the remaining parameters.
-Each combination of the parameters $K_e, \tau_0, K, a$, $\omega_{NM}$ and $\zeta_{NM}$ were enumerated over and simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment, see Table~\ref{table:structuralmodelparameters}.
+Each combination of the parameters $K_e, \tau_0, K, a$, $\omega_{NM}$ and $\zeta_{NM}$ were simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment, see Table~\ref{table:structuralmodelparameters}.
 The values from this table were chosen based on a coarse preliminary analysis such that they covered the expected range of values with sufficient granularity.
 The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
 Each combination of experimental subject data and simulations was then compared to find a set of simulation parameters that maximized the VAF.
@@ -298,7 +302,8 @@ Both techniques show an initially small crossover frequency which approaches the
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_group.png}
-    \caption[Crossover frequency (Structural Model)]{Crossover frequency predicted by the Structural Model parameter identification for the pitch only trials.}
+    \caption[Crossover frequency (Structural Model)]{Crossover frequency (rad/s) predicted by the Structural Model parameter identification for the pitch only trials.
+    The dashed line indicates where the feedback was removed from participants in the feedback group.}
     \label{fig:sm_crossover}
 \end{figure}
 
@@ -329,7 +334,9 @@ As a consequence of this result, modifying this parameter to explain the results
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/ke_group.png}
-    \caption[$K_e$ is greater for subjects exposed to feedback]{$K_e$ is greater for subjects exposed to feedback.}
+    \caption[$K_e$ is greater for subjects exposed to feedback]{$K_e$ is greater for subjects exposed to feedback.
+    The dashed line indicates where the feedback was removed from participants in the feedback group.
+    Error bars are the standard error of the mean.}
     \label{fig:ke_group}
 \end{figure}
 
@@ -370,7 +377,9 @@ Here we have defined $K_f$ as a variable proportional to the total accumulated t
 \begin{figure}[tb]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
-    \caption[The feedback exposure time directly correlates with $\dot{K_{f}}$]{The feedback exposure time directly correlates with $\dot{K_{f}}$ which confirms that the accumulation of exposure to feedback drives $K_f$.}
+    \caption[The feedback exposure time directly correlates with $\dot{K_{f}}$]{The feedback exposure time directly correlates with $\dot{K_{f}}$ which confirms that the accumulation of exposure to feedback drives $K_f$.
+    The dashed line indicates where the feedback was removed from participants in the feedback group.
+    Error bars are the standard error of the mean.}
     \label{fig:feedback_kfd}
 \end{figure}
 
