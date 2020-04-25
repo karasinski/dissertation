@@ -12,11 +12,11 @@ The model presented here extends \citeauthor{hess_unified_1997}'s \citeyear{hess
 The Structural Model has successfully predicted human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
 Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed, see Figure~\ref{figure:hesspursuit}~\citep{hess_modeling_2009}.
 This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot''~\citep{hess_modeling_2009}.
-Where the crossover model is defined
+The crossover model is defined
 \begin{align}
     Y_c(s) Y_p(s) \approx \dfrac{w_c e^{-s \tau_e}}{s}
 \end{align}
-, which relates the operator and controlled element transfer characteristics.
+which relates the operator and controlled element transfer characteristics.
 Here $Y_c$ is the controlled element transfer function, $Y_p$ is the human operator transfer function, $w_c$ is the crossover frequency, and $\tau_e$ is the effective time delay of the pilot.
 The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more responsive, which could be interpreted as more focused on the task.
 
