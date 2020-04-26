@@ -1,66 +1,24 @@
-% Root File for a UC Dissertation / Thesis
-% UCD thesis class: c/o Shwaine <shwaine@shwaine.com>
-%
-% modified by Dylan Beaudette, 2006,2010
-% modified  and source uploaded to github by Alex Mandel, 2014
-% Source code available at http://github.com/wildintellect/ucdthesis
-\documentclass[12pt,oneside,draft]{ucdthesis}
-%\documentclass[10pt,twoside,final]{ucdthesis}
-% \documentclass[10pt,oneside,final]{ucdthesis}
+\documentclass[12pt,oneside,draftcls]{style/ucdavisthesis}
 
 \usepackage[final]{graphicx}
-% TODO: this makes strange things happen in the header...
-% this is the version that grad studies wants
-% \documentclass[11pt,oneside,final]{ucdthesis}
 
-% when we are giving people drafts, use more of the page:
-\usepackage[letterpaper,
-    inner=1.0in,
-    outer=2.25in,
-    top=1.25in,
-    bottom=2.0in,
-    marginparsep=0.25in,
-    marginparwidth=1.0in]{geometry}
+\usepackage[letterpaper, top = 1in, left = 1in, right = 2in, bottom = 2.5in]{geometry}
 
 \setlength{\footskip}{1.25in}
 \setlength{\headsep}{1.25in}
 \setlength{\headheight}{15pt}
-% need this for the \foreach command
+
 \usepackage{tikz}
 \usetikzlibrary{calc,shapes,arrows,positioning}
 
-% Turn on single spacing with \ssp.
-% Turn on double spacing with \dsp.
-% By default, your dissertation is double spaced, as is required by UCD.
-\usepackage{setspace}
-\makeatletter
-\let\@currsize\normalsize
-\makeatother
-\setstretch{1.86}
-
-% spacing in figures and tables and their captions can be
-% changed here (\ssp for single-space, empty for same as surrounding
-% text); for this to work, the command \figsp has to be included
-% in every figure and table right after the \begin{figure}
-% \def\figsp{\ssp}
-%\def\figsp{}
-
-
 % useful for drafts
 % line numbers:
-% http://www.ctan.org/tex-archive/help/Catalogue/entries/lineno.html
-%
-%\usepackage{lineno}
-
-%
-% SVN integration
-%
-% \usepackage{svnkw}
+\usepackage{lineno}
+\linenumbers
 
 \usepackage{calc}
 
 % customized headers
-%
 % http://www.ctan.org/tex-archive/help/Catalogue/entries/fancyhdr.html
 \usepackage{fancyhdr}
 
@@ -91,14 +49,6 @@
 \fancyfootoffset[R]{\myoddoffset}
 }
 
-% a better verbatim environment: c/o Pete Dirac
-% use like this:
-%   \begin{Verbatim}[fontsize=8]
-%       foobar
-%    \end{Verbatim}
-% \usepackage{fancyvrb}
-
-
 % more flexible math support
 \usepackage{amsmath}
 
@@ -119,22 +69,8 @@
 \floatstyle{plain} % optionally change the style of the new float
 \newfloat{Code}{H}{myc}
 
-%test alternative to listings package minted which requires the python pygments package
-%minted was installed to latex by hand
-%\usepackage{minted}
-
-% TODO: use the new subfig package instead
-% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
-%
 %use this to put figures side by side
 \usepackage{subcaption}
-
- % PDF links --- > breaks with some bibliography entries
-% \usepackage{hyperref}
-
-% nice looking, parenthetical references
-%\usepackage[sorting=nyt,natbib=true,citestyle=authoryear,bibstyle=authoryear,maxnames=3,refsection=chapter]{biblatex}
-%\usepackage[sorting=nyt,natbib=true,citestyle=authoryear,bibstyle=authoryear,maxnames=3,refsection=chapter]{biblatex}
 
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -144,49 +80,21 @@
 \def\newblock{\hskip .11em plus.33em minus.07em}
 \bibliographystyle{abbrvnat}
 \setcitestyle{authoryear, open={(},close={)}}
-%%\usepackage{chapterbib} % incompatible with biblatex
-%\bibliography{dissertation}
-%\defbibheading{bibliography}{%
-%	\section{References}
-%	}
-%	
-%% bibliography can be single-spaced for UC thesis format
-%\appto{\bibsetup}{\ssp}
-%	
 
 \usepackage{textcomp}% for '\textdegree' macro
-
-%make the index
-% \usepackage{makeidx}
-% \makeindex
 
 % custom colors
 \usepackage{color}
 % make a color for comments
 \definecolor{MyDarkBlue}{rgb}{0,0.08,0.45}
 
-% customized captions with bold label and small, italic text
-% table captions are located above tables
-% http://www.kronto.org/thesis/tips/custom-captions.html
-% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
-% does this have any effect?
-%\usepackage{caption}
-% \renewcommand{\captionfont}{\small\itshape}
-%
 \usepackage[hypcap,font=singlespacing]{caption}
-%\usepackage{subcaption}
-% modern method for setting up captions\
 \captionsetup{margin=10pt,font=small,labelfont=bf}
 %
 % fix so that table captions have correct spacing
 \captionsetup[table]{position=top}
 
-
-
-% %
-% %  fit more material on the page:
-% %
-%
+%  fit more material on the page:
 % reset some float-controlling parameters
 \renewcommand{\floatpagefraction}{0.8}	% require fuller float pages
 
@@ -194,10 +102,9 @@
 \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
 \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
 
-
 % PDF formatting options, indexing, hyperlinking, with control over link style
 %Set PDF Metadata
-\title{The Effects of Concurrent Bandwidth Feedback on Complex Manual Control Tasks}
+\title{Concurrent Bandwidth Feedback for Complex Manual Control Tasks}
 \author{John A. Karasinski}
 \makeatletter
 \usepackage[pdftex,
@@ -210,13 +117,13 @@
             ]{hyperref}
 \makeatother
 \hypersetup{
-    % driver=pdftex,
-    final=true,
-	colorlinks=true,
-	urlcolor=blue,
-	linkcolor=blue,          % color of internal links
-    citecolor=blue,        % color of links to bibliography
-    filecolor=magenta
+  % driver=pdftex,
+  final=true,
+  colorlinks=true,
+  urlcolor=blue,
+  linkcolor=blue,          % color of internal links
+  citecolor=blue,        % color of links to bibliography
+  filecolor=magenta
 }
 
 %Use an additional package to make bookmarks point to the top to tables, figures and listings
@@ -228,7 +135,6 @@
 \usepackage{varwidth}
 \usepackage{color}
 \usepackage{rotating}
-%\AtEveryBibitem{\clearfield{month}} %Cleaner references without month being printed
 
 \graphicspath{{./figures/}{./plots/}}
 
@@ -302,17 +208,12 @@
 \usepackage[framemethod=tikz]{mdframed}
 
 %%% Document Portion:
+\input{title_and_frontmatter}
 \begin{document}
 
-
-%
-%% Title, Front Matter, and Abstract:
+% Title, Front Matter, and Abstract:
 % Skip for draft
-% \input{title_and_frontmatter}
-
-%
-% the chapters
-%
+% \makeintropages %Processes/produces the preliminary pages
 
 % set page style:
 % make the chapter and section smaller, chapter and section numbers are removed
@@ -322,11 +223,6 @@
 %\renewcommand{\sectionmark}[1]{\markright{\small{#1}}{}}
 
 \pagestyle{fancy}
-
-% TODO: this is only for draft copies !!
-% start line number printing
-%
-
 
 \tableofcontents
 
@@ -338,33 +234,16 @@
 \input{chapters/modeling}
 \input{chapters/conclusion}
 
-
-% note that the 'plainnat' style does not allow URL's in the bibtex entry
-%
-% some ideas here:
-% http://bib2web.djvuzone.org/bibtex.html
-%
-
-% reset the page style
-%\pagestyle{plain}
-
-
 % To enable this it will need to be added to toc so it's not in a chapter
 \pagestyle{plain}
 
-\ssp
+\singlespacing
 \bibliography{dissertation}
 
 % the appendix:
-% there are several sections, that don't really fit into the main chapters
-%
 \part*{\addcontentsline{toc}{part}{Appendices}Appendices}
 \appendix
 
-% reset page style to fancy
-%\pagestyle{fancyplain}
-
 \input{chapters/appendix}
-
 
 \end{document}
