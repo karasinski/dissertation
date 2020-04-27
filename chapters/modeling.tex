@@ -127,7 +127,7 @@ where $y(t)$ is the output variable at time $t$, $n_a$ is the number of poles, $
 
 An autoregressive technique to identify a transfer function from an input/output time sequence pair was previously developed in~\citet{hess_modeling_2002}.
 Using this technique, called \textit{gettf1}, we identified transfer functions representing pilot models for the data trials from our experiment.
-The inputs to this technique are the input and output timeseries and three integers describing the resulting model ($n_a, n_b,$ and $n_k$).
+The inputs to this technique are the input and output time series and three integers describing the resulting model ($n_a, n_b,$ and $n_k$).
 For the results presented in this Chapter, $n_a = n_b = 10$ and $n_k = 0$.
 This technique uses an ARX model which is fit using least-squares, and results in a discrete transfer function model estimation of the input/output system.
 The script also produces a continuous transfer function using a Tustin approximation~\cite{tustin1947method}.
