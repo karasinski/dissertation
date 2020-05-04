@@ -3,7 +3,7 @@
 % John A. Karasinski, Stephen K. Robinson
 % Department of Mechanical and Aerospace Engineering, University of California, Davis
 
-The literature has shown that a variety tasks can benefit from concurrent feedback, and that more functionally complex tasks tend to see a larger performance improvement.
+The literature has shown that a variety of tasks can benefit from concurrent feedback, and that more functionally complex tasks tend to see a larger performance improvement.
 This result stems from results of many different experiments and researchers, however, and it is uncommon for experiments to explore the interaction effect between feedback and functional task complexity directly.
 We designed this experiment to directly address this gap in the literature by evaluating the effects of feedback on an aircraft flight task with one, two, or three degrees of freedom.
 Portions of this chapter were originally published in the conference proceedings for the Human Factors and Ergonomics Society 2019~\citep{RN42}.
@@ -39,7 +39,7 @@ In the research reported here, we build upon our previous work and that in the l
 In our current experiment, subjects controlled a simulated aircraft with realistic flight dynamics through a series of tasks of increasing functional complexity.
 By allowing for multiple levels of functional complexity, we can investigate what level of complexity is required to observe changes in human performance and cognitive workload.
 This experiment also investigated the effects of removing concurrent feedback after training to evaluate changes in performance and workload during participants' immediate retention.
-The retention portion of the experiment was performed to investigate whether the guidance hypothesis, which states that consistent feedback during the acquisition phase of learning leads to a dependency on the feedback~\citep{salmoni_knowledge_1984}.
+The retention portion of the experiment was performed to investigate the guidance hypothesis, which states that consistent feedback during the acquisition phase of learning leads to a dependency on the feedback~\citep{salmoni_knowledge_1984}.
 
 \section{Method}
 \subsection{Task}
@@ -249,7 +249,7 @@ This promotes the concept of the ``instructor model'' discussed in Section~\ref{
 \label{chapter:bandwidthstudy}
 
 As we mentioned in Section~\ref{section:cbf}, several authors have noted that ``[b]andwidth feedback has been shown to be effective; however, setting the error threshold is not trivial''~\citep{timmermans_technology-assisted_2009, RIBEIRO2011231, sigrist_augmented_2013}.
-While choosing to use an operational limit of acceptable performance can make the choice of setting the error threshold simpler, this option is not always available.
+While using an operational limit of acceptable performance can make the choice of setting the error threshold simpler, this option is not always available.
 Additionally, mission designers often want to know what the optimum pilot performance is for mission planning, and instructors are interested in what levels of performance are acceptable during training.
 In this Chapter, we treat the bandwidth as a variable in order to evaluate its effect on resultant subject performance and workload.
 
@@ -313,19 +313,20 @@ The remainder of the results discussed here are preliminary and based on the 19 
 
 Participants in the experiment were 19 engineering students from the University of California, Davis (17 men, 1 woman, 1 decline to state) with an average age of 21.3 years (SD = 2.2).
 All participants had normal or corrected-to-normal vision and full motor control of their upper bodies.
-Both gender and participants with flight experience were counterbalanced between the two groups.
+Participants with flight experience were counterbalanced between the two groups.
 Of the 19 subjects, 18 returned the next day after an average of 24.93 hours (SD = 0.6).
 This study was exempted by the University of California, Davis Institutional Review Board (Project \#1537932-1), and subjects were not compensated for their time.
 
 \subsection{Analysis}
 
-As in the previous study, mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers which were removed from the analysis and the Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R.
-When significant effects were observed, post hoc comparisons using the Tukey Honest Significance Difference (HSD) test were performed and considered significant at the p $<$ .05 level, and the Satterthwaite method was again used to calculate the degrees of freedom.
-A two-factor (Group and Trial) mixed model with one repeated measures (Trial) was run on the pitch root-mean-square error.
-There was a significant main factor of trial ($F(31, 434) = 3.6, p < 0.001$) and group was not significant ($F(3, 14) = 2.6, p = .09$).
-Additionally, the interaction effect between group and trial was not significant ($F(93, 434) = 0.9, p = 0.78$).
-This result indicates that subjects learned to perform the task over time but that the effect of group was not significant given the effect size and current number of subjects.
-Even with one half to one third of the anticipated number of subjects, however, the main effect of group is already heading towards significance, as we would expect based on the results of the previous study.
+As in the previous study, mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers.
+These outliers were removed from the analysis and the Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R.
+When significant effects were observed, post hoc comparisons were performed using the Tukey Honest Significance Difference (HSD) test and considered significant at the p $<$ .05 level, and the Satterthwaite method was again used to calculate the degrees of freedom.
+A two-factor (Group and Trial) mixed model with one repeated measure (Trial) was run on the pitch root-mean-square error.
+There was a significant main factor of Trial ($F(31, 434) = 3.6, p < 0.001$) and Group was not significant ($F(3, 14) = 2.6, p = .09$).
+Additionally, the interaction effect between Group and Trial was not significant ($F(93, 434) = 0.9, p = 0.78$).
+This result indicates that subjects learned to perform the task over time but that the effect of Group was not significant given the effect size and current number of subjects.
+Even with one half to one third of the anticipated number of subjects, however, the main effect of Group is already heading towards significance, as we would expect based on the results of the previous study.
 Differences in groups are beginning to emerge when examining the plot, see Figure~\ref{figure-bw:pitchrmse}, though the error bars are too large to draw definite conclusions.
 
 This analysis can also be performed on the other dependent measures, with similar results.
@@ -347,10 +348,10 @@ While we have yet to observe statistically significant effects, current data sug
 While it was expected that there may be an optimal choice of bandwidth to maximally reduce training times and improve performance, we hypothesized that this value would be lower than or approximately equal to three degrees, not a higher value, based off our pilot studies.
 
 While we cannot make any definite claims based on this preliminary data and analysis, we can revisit data from the previous experiment to make further predictions.
-Increasing the acceptable bandwidth of feedback results in the concurrent bandwidth feedback being presented less often, and the repetition allowed for in training results in subjects improving their performance and reducing their deviations during compensatory tracking.
+Increasing the acceptable bandwidth of feedback results in the concurrent bandwidth feedback being presented less often, and the repetition in training results in subjects improving their performance and reducing their deviations during compensatory tracking.
 We can use the disturbance force to estimate the percentage of time that subjects are exposed to the feedback as we presented subjects with the same disturbance force during each trial.
 Figure~\ref{figure-bw:pitchfeedback} presents the percentage of time that pitch feedback would be active if subjects did not provide any control input whatsoever.
-This suggests that at the beginning of training subjects with a bandwidth of two, three, and four degrees would experience feedback 76\%, 62\%, and 47\% of the time, respectively, if they provided no input.
+This suggests that at the beginning of training, subjects with a bandwidth of two, three, and four degrees would experience feedback 76\%, 62\%, and 47\% of the time, respectively, if they provided no input.
 
 Subjects in the feedback group had their bandwidth set at three degrees in our previous experiment and were instructed to try and improve their performance whenever they saw that the feedback was activated.
 By looking at the percentage of pitch errors that were above a given value, we can infer what percentage of time feedback would have been on when subjects had finished their training phase, regardless of chosen bandwidth.
@@ -384,7 +385,7 @@ The two-degree bandwidth, however, would only be attainable 29\% of the time by 
 
 Finally, we can take a preliminary look at how often subjects in this experiment experienced their feedback between the different bandwidth groups.
 The percent of time that feedback was active at the beginning and end of training should provide some insight into how subjects respond to different bandwidth levels.
-Figure~\ref{figure-bw:pitchfeedback} should the percentage of active feedback time for each trial for subjects in the three feedback groups.
+Figure~\ref{figure-bw:pitchfeedback} shows the percentage of active feedback time for each trial for subjects in the three feedback groups.
 We can see how effectively subjects used the feedback on the first trial by looking at the difference between the value on this plot and that predicted by the no feedback case.
 On the first trial, subjects in the three feedback groups tended to reduce their anticipated feedback exposure more the larger the bandwidth was.
 Subjects in the four-degree bandwidth group, for instance, nearly halved their anticipated feedback exposure, as could be expected from their pitch RMSE presented in Figure~\ref{figure-bw:pitchrmse}.
@@ -395,7 +396,7 @@ While the differences in experimental procedures could be the cause of this, we 
 
 \section{Conclusions}
 While the preliminary data collected for this experiment can be used to begin to explain the effects of using different bandwidths in concurrent bandwidth feedback, more subjects are needed to make definitive claims.
-Briefly revisiting our hypotheses, we can begin to predict the results of this study.
+Briefly revisiting our hypotheses, we can start to predict the results of this study.
 \begin{itemize}
     \item[\textbf{H1.}] While subjects in the three- and four-degree bandwidth groups will likely immediately outperform those in the control group, the two-degree bandwidth presents too much of a challenge for subjects to effectively use the concurrent bandwidth feedback.
           This indicates that researchers should be careful to choose attainable bandwidths, or they may incorrectly conclude that concurrent bandwidth feedback, in general, does not work for their task.

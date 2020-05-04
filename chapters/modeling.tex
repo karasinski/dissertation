@@ -16,7 +16,7 @@ The crossover model is defined
 \begin{align}
     Y_c(s) Y_p(s) \approx \dfrac{w_c e^{-s \tau_e}}{s}
 \end{align}
-which relates the operator and controlled element transfer characteristics.
+relating the operator and controlled element transfer characteristics.
 Here $Y_c$ is the controlled element transfer function, $Y_p$ is the human operator transfer function, $w_c$ is the crossover frequency, and $\tau_e$ is the effective time delay of the pilot.
 The primary result of the adaptive logic is to increase the resulting crossover frequency of the pilot, effectively making them more responsive, which could be interpreted as more focused on the task.
 
@@ -36,9 +36,9 @@ The modified model presented here includes two major changes to Hess's current m
 \end{itemize}
 
 In this work, we propose that the adaptive logic triggers when the pilot is receiving concurrent bandwidth feedback, rather than when a change in system dynamics occurs.
-This requires the addition of an additional feedback loop onto the Structural Model that triggers when the bandwidth feedback is activated.
+This requires an additional feedback loop in the the Structural Model that triggers when the bandwidth feedback is activated.
 This loop is based around the $K_e$ gain, which is the primary way of setting the crossover frequency in the Structural Model, see Figure~\ref{fig:structuralmodels}.
-This change implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback that their current level of responsiveness is not sufficient to complete the task.
+This change implies that the subjects in our experiments do their primary learning when they are receiving qualitative feedback, and that their current level of responsiveness is not sufficient to complete the task.
 
 % While there must be a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours,
 The change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly--within a few minutes.
@@ -82,20 +82,20 @@ The complete results of this experiment can be seen in Chapter~\ref{chapter:airc
 % The feedback group received additional visual concurrent feedback for each controlled degree of freedom.
 The two groups of participants are control and feedback, and the interface that participants saw during the experiment is available in Figure~\ref{fig:display}.
 When the vehicle was well-controlled (i.e., small errors in the controlled degrees of freedom), the interface was the same for participants in both groups.
-Depending on the control mode the the participant was completing, participants in the feedback group experienced concurrent bandwidth feedback on various elements of the attitude indicator and altimeter.
+Depending on the control mode that the participant was completing, participants in the feedback group experienced concurrent bandwidth feedback on various elements of the attitude indicator and altimeter.
 This feedback was indicated by changing the element from the default yellow color to a red color when the error deviated outside of a predetermined bandwidth.
 For the Pitch only control mode, which we will focus on in this Chapter, the display changed from yellow to red when the pitch deviated by greater than three degrees.
 % Pitch feedback was provided on the central pitch indicator when the pitch was three or more degrees from zero, roll feedback was provided on the attitude indicator's ``wings'' when the roll was three or more degrees from zero, and attitude feedback was provided on the altimeter text box when the altitude was 30 feet or more off the nominal altitude of 1000 feet.
 For both groups, performance measurements were evaluated to determine the effects of the feedback on subject learning rate and maximum skill level.
-To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed after the 9th, and performance was again evaluated.
-After the 9th trial, subjects in the feedback group no longer experienced feedback, and the interfaces for the control and feedback groups were identical.
+To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed after the 9th trial, and performance was again evaluated.
+Following the 9th trial, subjects in the feedback group no longer experienced feedback, and the interfaces for the control and feedback groups were identical.
 This was done in order to investigate how well the subjects could retain their performance benefit.
 
 \subsubsection{Experiment Results}
 The resulting root-mean-square error (RMSE) for each group of participants by trial is presented in Figure~\ref{fig:prmse}.
 Both groups of participants had a relatively high initial RMSE which was reduced through repeated training on the task.
 Participants in the feedback group, however, performed significantly better than those in the control group and learned the task much faster.
-Additionally, subjects in the feedback group were able to maintain their improved performance when the feedback was removed, and actually show a slight increase in performance.
+Subjects in the feedback group were able to maintain and further improve their performance after the feedback was removed.
 
 \begin{figure}[tb]
     \centering
@@ -106,7 +106,7 @@ Additionally, subjects in the feedback group were able to maintain their improve
 
 \subsection{Modeling Techniques}
 We investigated two techniques for creating models of human pilot in order to better understand the results of the aircraft training study.
-Both techniques produce an estimated transfer function of human operator, $Y_p$, which can be combined with the controlled system dynamics, $Y_c$, in order to explore the crossover model characteristics discussed in~\ref{background:pilotmodeling}.
+Both techniques produce an estimated transfer function of human operator, $Y_p$, which can be combined with the controlled system dynamics, $Y_c$, in order to explore the crossover model characteristics discussed in Section~\ref{background:pilotmodeling}.
 The crossover frequency can be identified using
 \begin{align}
     Y_c Y_p = \dfrac{w_c e^{-s \tau_e}}{s}
@@ -129,7 +129,7 @@ An autoregressive technique to identify a transfer function from an input/output
 Using this technique, called \textit{gettf1}, we identified transfer functions representing pilot models for the data trials from our experiment.
 The inputs to this technique are the input and output time series and three integers describing the resulting model ($n_a, n_b,$ and $n_k$).
 For the results presented in this Chapter, $n_a = n_b = 10$ and $n_k = 0$.
-This technique uses an ARX model which is fit using least-squares, and results in a discrete transfer function model estimation of the input/output system.
+This technique uses an ARX model which is fit using least-squares and results in a discrete transfer function model estimation of the input/output system.
 The script also produces a continuous transfer function using a Tustin approximation~\cite{tustin1947method}.
 The result of this process is a transfer function of the pilot with ten poles and zeros describing the human operator's response to the displayed flight dynamics.
 
@@ -185,8 +185,8 @@ This results from plugging the values from NASA CR-2144 for this flight mode int
 
 \subsection{ARX}
 The original input to the system from the experiment participants $(u)$ can be fed into this resulting transfer function to produce a simulated output $(u_{sim})$.
-The resulting output from the pilot models can be compared with the experimental data from which they are generated in order to determine the goodness of fit.
-The variance accounted for (VAF) is a commonly used metric to quantify the goodness of the fit between the outputs of the model and the experimental data.
+The resulting output from the pilot models can be compared with the experimental data from which they are generated in order to determine the quality of fit.
+The variance accounted for (VAF) is a commonly used metric to quantify the quality of the fit between the outputs of the model and the experimental data.
 The VAF is calculated by
 \begin{equation}
     \mbox{VAF} = \left( 1 - \dfrac{\sum{|u - u_{sim}|^2}} {\sum{u^2}} \right) \times \mbox{100\%}
@@ -324,10 +324,10 @@ The results of this analysis are presented in Table~\ref{table:structuralmodelmi
 Evaluating the results of the linear mixed effects models presented in Table~\ref{table:structuralmodelmixed}, we immediately see that $\tau_0, K,$ and $\omega_{NM}$ have no significant effects dividing either Group or Trial.
 From this we can determine that these variables have no significant effect resulting from either training or the difference in performance between the feedback and control groups.
 Of the remaining variables, $a$ and $\zeta_{NM}$ show significant effects in the trial factor, suggesting that the change with time.
-Further investigation on these variables showed that $a$ was only significantly different for the very first trial, a result which was ignored for the remainder of this analysis to simplify the resulting model.
-$\zeta_{NM}$ also varied significantly as a result of training, but further investigating showed that the effects of varying this parameter did not significantly affect the resulting outputs of the model.
+Further investigation of these variables showed that $a$ was only significantly different for the very first trial, a result which was ignored for the remainder of this analysis to simplify the resulting model.
+$\zeta_{NM}$ also varied significantly as a result of training, but closer inspection showed that the effects of varying this parameter did not significantly affect the resulting outputs of the model.
 As a result of this, $\zeta_{NM}$ was not considered an important variable to include in the feedback model.
-Finally, the $K_e$ variable showed significant effects between both the Group and Trial variables, suggesting that it was the primary parameter responsible for changes in performance between the groups and as a result of repeated training in the simulator.
+Finally, the $K_e$ variable showed significant effects between both the Group and Trial variables, suggesting that it was the primary parameter responsible for changes in performance between the groups and repeated training in the simulator.
 As a consequence of this result, modifying this parameter to explain the results of increased performance in the feedback group became the focus of the remainder of this chapter.
 
 \section{Extending the Structural Model}
@@ -383,10 +383,10 @@ Here we have defined $K_f$ as a variable proportional to the total accumulated t
     \label{fig:feedback_kfd}
 \end{figure}
 
-We can test this proposal by plotting average time subjects in the feedback group were exposed to the feedback in each trial and comparing this to the value of $\dot{K_f}$ calculated from the derivative of the exponential fits.
+We can test this proposal by plotting the average time that subjects in the feedback group were exposed to the feedback in each trial and comparing this to the value of $\dot{K_f}$ calculated from the derivative of the exponential fits.
 This comparison is available in Figure~\ref{fig:feedback_kfd}.
 Here we see that the data from the experiment is directly proportional to the modeled value $\dot{K_f}$, suggesting that our proposal is a viable explanation of the observed effects.
-$\dot{K_f}$, which can also be thought of as the change in the amount benefit that subjects in the feedback group have over the control group in a given trial, sharply decreases over the first few trials to a steady value.
+$\dot{K_f}$, which can also be interpreted as the change in the amount of benefit that subjects in the feedback group have over the control group in a given trial, sharply decreases over the first few trials to a steady value.
 This confirms what we observed in the experiment--that subjects gain most of the benefit from feedback very quickly, in just a few trials.
 Further analysis of Figure~\ref{fig:feedback_kfd} shows that, for this task, an exposure period of approximately 6 seconds (or $6/82\approx0.07\%$) in a trial leads to no change in performance.
 Currently, it is unclear if this amount or percentage of time is task dependent, or if, for example, it simply represents the average boundary of human control for this task.
