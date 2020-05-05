@@ -319,11 +319,11 @@ This study was exempted by the University of California, Davis Institutional Rev
 
 \subsection{Analysis}
 
-As in the previous study, mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers.
+As in the previous study, linear mixed models were used to calculate the significance of factors in our analysis due to the presence of performance outliers.
 These outliers were removed from the analysis and the Satterthwaite method was used to calculate the adjusted degrees of freedom using the lmerTest package in R.
 When significant effects were observed, post hoc comparisons were performed using the Tukey Honest Significance Difference (HSD) test and considered significant at the p $<$ .05 level, and the Satterthwaite method was again used to calculate the degrees of freedom.
 A two-factor (Group and Trial) mixed model with one repeated measure (Trial) was run on the pitch root-mean-square error.
-There was a significant main factor of Trial ($F(31, 434) = 3.6, p < 0.001$) and Group was not significant ($F(3, 14) = 2.6, p = .09$).
+There was a significant main factor of Trial ($F(31, 434) = 3.6, p < 0.001$) and Group was not significant ($F(3, 14) = 2.6, p = 0.09$).
 Additionally, the interaction effect between Group and Trial was not significant ($F(93, 434) = 0.9, p = 0.78$).
 This result indicates that subjects learned to perform the task over time but that the effect of Group was not significant given the effect size and current number of subjects.
 Even with one half to one third of the anticipated number of subjects, however, the main effect of Group is already heading towards significance, as we would expect based on the results of the previous study.
@@ -344,13 +344,13 @@ Due to their extremely preliminary nature, these results are not included here.
 \section{Discussion}
 
 Based on the preliminary findings presented in Figure~\ref{figure-bw:pitchrmse}, choosing an appropriate bandwidth can potentially have an effect on the efficacy of concurrent bandwidth feedback.
-While we have yet to observe statistically significant effects, current data suggests that having a looser bandwidth improves performance.
+While we have yet to observe statistically significant effects between groups, current data suggests that having a looser bandwidth improves performance.
 While it was expected that there may be an optimal choice of bandwidth to maximally reduce training times and improve performance, we hypothesized that this value would be lower than or approximately equal to three degrees, not a higher value, based off our pilot studies.
 
 While we cannot make any definite claims based on this preliminary data and analysis, we can revisit data from the previous experiment to make further predictions.
 Increasing the acceptable bandwidth of feedback results in the concurrent bandwidth feedback being presented less often, and the repetition in training results in subjects improving their performance and reducing their deviations during compensatory tracking.
 We can use the disturbance force to estimate the percentage of time that subjects are exposed to the feedback as we presented subjects with the same disturbance force during each trial.
-Figure~\ref{figure-bw:pitchfeedback} presents the percentage of time that pitch feedback would be active if subjects did not provide any control input whatsoever.
+Figure~\ref{figure-aircraft:noinput_pitchfeedback} presents the percentage of time that pitch feedback would be active if subjects did not provide any control input whatsoever.
 This suggests that at the beginning of training, subjects with a bandwidth of two, three, and four degrees would experience feedback 76\%, 62\%, and 47\% of the time, respectively, if they provided no input.
 
 Subjects in the feedback group had their bandwidth set at three degrees in our previous experiment and were instructed to try and improve their performance whenever they saw that the feedback was activated.
@@ -364,21 +364,21 @@ The two-degree bandwidth, however, would only be attainable 29\% of the time by 
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Aircraft/no_input_feedback_on.pdf}
-        \caption[The mean percentage of active pitch feedback with no input present]{The percentage of active pitch feedback with no input present. This represents the resulting aircraft motion due to the disturbance force.}
+        \caption[The percentage of active pitch feedback with no input present]{The percentage of active pitch feedback with no input present. This represents the resulting aircraft motion due to the disturbance force.}
         \label{figure-aircraft:noinput_pitchfeedback}
     \end{center}
 \end{figure}
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Aircraft/p34_feedback_on.pdf}
-        \caption[The mean percentage of active pitch feedback time at the end of the previous study]{The percentage of active pitch feedback time at the end of the previous study, when the bandwidth was set to three degrees. Data points are the mean, and the shaded region is the standard error of the mean.}
+        \caption[The percentage of active pitch feedback time at the end of the previous study]{The percentage of active pitch feedback time at the end of the previous study, when the bandwidth was set to three degrees. The black line is the mean, and the shaded region is the standard error of the mean.}
         \label{figure-aircraft:pitchfeedback}
     \end{center}
 \end{figure}
 \begin{figure}[tb!]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Aircraft/Bandwidth-PitchFeedbackOn.png}
-        \caption[The mean percentage of active pitch feedback time for each trial]{The percentage of active pitch feedback time for each trial for participants. Data points are the mean, and error bars are the standard error of the mean.}
+        \caption[The percentage of active pitch feedback time for each trial]{The percentage of active pitch feedback time for each trial for participants. Note that the Control group never received feedback. Data points are the mean, and error bars are the standard error of the mean.}
         \label{figure-bw:pitchfeedback}
     \end{center}
 \end{figure}
@@ -399,7 +399,7 @@ While the preliminary data collected for this experiment can be used to begin to
 Briefly revisiting our hypotheses, we can start to predict the results of this study.
 \begin{itemize}
     \item[\textbf{H1.}] While subjects in the three- and four-degree bandwidth groups will likely immediately outperform those in the control group, the two-degree bandwidth presents too much of a challenge for subjects to effectively use the concurrent bandwidth feedback.
-          This indicates that researchers should be careful to choose attainable bandwidths, or they may incorrectly conclude that concurrent bandwidth feedback, in general, does not work for their task.
+          This indicates researchers should be careful to choose attainable bandwidths, or they may incorrectly conclude that concurrent bandwidth feedback, in general, does not work for their task.
     \item[\textbf{H2.}] Based on our early results, participants will report the same workload between groups, which will gradually decrease with training.
     \item[\textbf{H3.}] Participants in the feedback group will not suffer from the guidance hypothesis and will retain their performance and workload levels when the feedback is removed in the immediate retention and 24 hour retention trials.
     \item[\textbf{H4.}] It is still too early to make claims on the effects of concurrent bandwidth feedback on transfer of training.

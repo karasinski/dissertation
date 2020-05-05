@@ -10,7 +10,7 @@ This Chapter outlines the extension of \citeauthor{hess_unified_1997}'s Structur
 \subsection{Motivation}
 The model presented here extends \citeauthor{hess_unified_1997}'s \citeyear{hess_unified_1997} Structural Model of the human pilot.
 The Structural Model has successfully predicted human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
-Hess has developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed, see Figure~\ref{figure:hesspursuit}~\citep{hess_modeling_2009}.
+\citeauthor{hess_modeling_2009} developed adaptive logic for the human pilot in a pursuit task which triggers when the pilot notices that vehicle dynamics have changed, see Figure~\ref{figure:hesspursuit}~\citep{hess_modeling_2009}.
 This logic is based off several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot''~\citep{hess_modeling_2009}.
 The crossover model is defined
 \begin{align}
@@ -28,7 +28,7 @@ The primary result of the adaptive logic is to increase the resulting crossover 
     \end{center}
 \end{figure}
 
-While this model of the adaptive pilot has been successful in predicting changes in performance for a well-trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
+While the Structural Model of the adaptive pilot has been successful in predicting changes in performance for a well-trained subject, it does not consider how a pilot would behave when they are still in the early stages of training.
 The modified model presented here includes two major changes to Hess's current model:
 \begin{itemize}
     \item The adaptation logic is changed to focus on concurrent bandwidth feedback
@@ -44,12 +44,12 @@ This change implies that the subjects in our experiments do their primary learni
 The change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly--within a few minutes.
 This is reflected in the performance delta between subjects in the different groups of our SAFER experiment (see Figure~\ref{figure:saferdistance}), EMG experiment (see Figure~\ref{figure:label3}), and aircraft experiment (see Figure~\ref{figure-hfes:pitchrmse}).
 % This relates to the second required change, the amount of required adaptation time.
-Hess's model requires that pilots adapt within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
+Hess's model results in pilots adapting within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
 The results of our experiments in the past three chapters suggest relatively long adaptation times, on the order of a few minutes.
 
 In the remainder of this chapter, we briefly describe the experimental method and results from Chapter~\ref{chapter:aircraftfeedback}.
 We then conduct a novel identification technique for finding the values of the parameters of the Structural Model.
-Using an ARX approach, we validate that the resultant crossover frequency results from the identification technique are accurate.
+Using an Autoregressive Model with Exogenous Variables (ARX) approach, we validate that the resultant crossover frequency results from the identification technique are accurate.
 Finally, using the difference between the control and feedback groups in identified parameters, we develop a modified Structural Model which includes the effects of concurrent bandwidth feedback.
 
 \section{Method}
@@ -215,7 +215,7 @@ The VAF ranges between 0 (no correlation) and 1 (perfect match).
 
 The VAF of the feedback group's models immediately jumps up after the first trial to an average of $\approx.75$, indicating a good fit.
 The control groups VAF increases more slowly, to a value of approximately $\approx.68$.
-An increased VAF indicates that the pilot is behaving in a more linear fashion, and these results suggest that the concurrent feedback can immediately assist participants to this end.
+An increased VAF indicates that the pilot is behaving in a more linear fashion, and these results suggest that the concurrent feedback can immediately assist participants.
 The RMSE between the simulated and actual data is similar between groups and trends slightly up during training.
 Visual inspection of the experimental and simulated data also shows very good agreement, see Figure~\ref{fig:comparison}.
 
@@ -234,22 +234,22 @@ The crossover frequency identified by the ARX technique for the pitch only trial
     \label{fig:arx_crossover}
 \end{figure}
 
-Mixed models were used to calculate the significance of factors in our analysis due to the presence of outliers which were removed from the analysis, and the Satterthwaite method was used to calculate the adjusted degrees of freedom.
+Linear mixed models were used to calculate the significance of factors in our analysis due to the presence of outliers which were removed from the analysis, and the Satterthwaite method was used to calculate the adjusted degrees of freedom.
 When significant effects were observed, post hoc comparisons using the Tukey Honest Significance Difference (HSD) test were performed and considered significant at the $p < .05$ level, and the Satterthwaite method was again used to calculate the degrees of freedom.
 % Only 7 of the 1080 total trials (30 subjects with 36 trials per subject) were removed.
 % These trials were extreme performance outliers and including these trials does not change the primary results of the study.
 
 A three-factor (Group, Mode, and Trial) mixed model with two repeated measures (Mode and Trial) was run on the pitch crossover frequency.
-There were significant main factors of group $(F(1, 28.00) = 4.9, p = 0.036)$, mode $(F(2, 55.62) = 17.1, p < .001)$, and trial $(F(11, 306.23) = 39.4, p < .001)$.
-There were also significant interaction effects between group and trial $(F(11, 306.23) = 2.0, p = 0.025)$ and between mode and trial $(F(22, 610.08) = 2.8, p < .001)$.
+There were significant main factors of group $(F(1, 28.00) = 4.9, p = 0.036)$, mode $(F(2, 55.62) = 17.1, p < 0.001)$, and trial $(F(11, 306.23) = 39.4, p < 0.001)$.
+There were also significant interaction effects between group and trial $(F(11, 306.23) = 2.0, p = 0.025)$ and between mode and trial $(F(22, 610.08) = 2.8, p < 0.001)$.
 Despite the presence of interaction effects that result from participants learning the task (as indicated by the trial factor), the main effects can still be interpreted.
 A Tukey test showed that the participants in the groups differed significantly, with the participants in the feedback group outperforming those in the control group $(M = 1.25, 1.56,$ respectively, $SE = 0.10)$.
 An additional Tukey test showed that the participants' crossover frequency between the modes differed significantly, with the largest crossover frequency in the P mode, followed by the PR mode, and finally the lowest in the PRA mode $(M = 1.53, 1.38, 1.31$ respectively, $SE = 0.07)$.
 This same analysis was completed on the roll crossover frequency, with similar results.
-There were significant main factors of group $(F(1, 27.82) = 8.2, p < 0.01)$, mode $(F(1, 25.49) = 23.2, p < 0.001)$, and trial $(F(11, 292.40) = 16.3, p < .001)$.
+There were significant main factors of group $(F(1, 27.82) = 8.2, p < 0.01)$, mode $(F(1, 25.49) = 23.2, p < 0.001)$, and trial $(F(11, 292.40) = 16.3, p < 0.001)$.
 Tukey tests showed that the participants' crossover frequency between the groups and the modes each differed significantly, with the participants in the feedback group again outperforming those in the control group $(M = 0.55, 0.89,$ respectively, $SE = 0.08)$, and crossover frequency was best in the PR mode followed by the PRA mode $(M = 0.77, 0.67,$ respectively, $SE = 0.06)$.
 A two-factor (Group and Trial) mixed model with one repeated measure (Trial) was run on the altitude crossover frequency.
-There were significant main factors of group $(F(1, 27.92) = 4.4, p = 0.046)$ and trial $(F(11, 301.95) = 18.3, p < .001)$.
+There were significant main factors of group $(F(1, 27.92) = 4.4, p = 0.046)$ and trial $(F(11, 301.95) = 18.3, p < 0.001)$.
 Tukey tests showed that the participants' crossover frequency between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group $(M = 0.98, 1.29,$ respectively, $SE = 0.11)$, and the trial effect showing learning throughout the experiment for both groups.
 See Figure~\ref{figure:arxcomplete} for the plots of the crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
 
@@ -308,7 +308,7 @@ Both techniques show an initially small crossover frequency which approaches the
 \end{figure}
 
 Only the first control mode, Pitch only, was analyzed for the results presented below.
-The technique developed here could be extended to all three control loops however, and the results should be similar (and more pronounced for modes of higher complexity).
+The technique developed here could be extended to all three control loops however, and the results should be similar and more pronounced for modes of higher complexity.
 By investigating the control mode with the smallest effect of the feedback, we show that this technique is sensitive enough to detect small changes between the two groups.
 A two-factor (Group and Trial) mixed model with repeated measures (Trial) was run on each of the six parameters to identify which parameters significantly changed between groups and over the course of training.
 As with the ARX technique, the Satterthwaite method was used to calculate the adjusted degrees of freedom.
@@ -335,7 +335,7 @@ As a consequence of this result, modifying this parameter to explain the results
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/ke_group.png}
     \caption[$K_e$ is greater for subjects exposed to feedback]{$K_e$ is greater for subjects exposed to feedback.
-    The dashed line indicates where the feedback was removed from participants in the feedback group.
+    The vertical dashed line indicates where the feedback was removed from participants in the feedback group, and the colored dashed lines indicate exponential fits to the data.
     Error bars are the standard error of the mean.}
     \label{fig:ke_group}
 \end{figure}
