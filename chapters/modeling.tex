@@ -2,7 +2,7 @@
 \label{chapter:modeling}
 
 The second Aim of this dissertation is to develop a model of the human pilot which includes the effects of concurrent bandwidth feedback.
-After evaluating many of the human pilot models in the literature, the Structural Model was chosen because it has been very effective in predicting pilot performance for a variety of system dynamics and requires a relatively small number of parameters.
+After evaluating many of the human pilot models presented in the literature, the Structural Model was chosen because it has been very effective in predicting pilot performance for a variety of system dynamics and requires a relatively small number of parameters.
 The previous two Chapters detailed human-in-the-loop experiments where subjects trained on simplified aircraft simulators, providing a rich data set to use as modeling verification.
 This Chapter outlines the extension of \citeauthor{hess_unified_1997}'s Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
 
@@ -47,7 +47,7 @@ This is reflected in the performance delta between subjects in the different gro
 Hess's model results in pilots adapting within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
 The results of our experiments in the past three chapters suggest relatively long adaptation times, on the order of a few minutes.
 
-In the remainder of this chapter, we briefly describe the experimental method and results from Chapter~\ref{chapter:aircraftfeedback}.
+In the remainder of this chapter, we briefly describe the experimental method and results from Chapter~\ref{chapter:aircraftfeedback} to refresh the reader.
 We then conduct a novel identification technique for finding the values of the parameters of the Structural Model.
 Using an Autoregressive Model with Exogenous Variables (ARX) approach, we validate that the resultant crossover frequency results from the identification technique are accurate.
 Finally, using the difference between the control and feedback groups in identified parameters, we develop a modified Structural Model which includes the effects of concurrent bandwidth feedback.
@@ -84,7 +84,7 @@ The two groups of participants are control and feedback, and the interface that 
 When the vehicle was well-controlled (i.e., small errors in the controlled degrees of freedom), the interface was the same for participants in both groups.
 Depending on the control mode that the participant was completing, participants in the feedback group experienced concurrent bandwidth feedback on various elements of the attitude indicator and altimeter.
 This feedback was indicated by changing the element from the default yellow color to a red color when the error deviated outside of a predetermined bandwidth.
-For the Pitch only control mode, which we will focus on in this Chapter, the display changed from yellow to red when the pitch deviated by greater than three degrees.
+For the Pitch-only control mode focused on in this Chapter, the display changed from yellow to red when the pitch deviated by greater than three degrees.
 % Pitch feedback was provided on the central pitch indicator when the pitch was three or more degrees from zero, roll feedback was provided on the attitude indicator's ``wings'' when the roll was three or more degrees from zero, and attitude feedback was provided on the altimeter text box when the altitude was 30 feet or more off the nominal altitude of 1000 feet.
 For both groups, performance measurements were evaluated to determine the effects of the feedback on subject learning rate and maximum skill level.
 To assess short-term retention of learned skill for the feedback group, the concurrent feedback was removed after the 9th trial, and performance was again evaluated.
@@ -105,7 +105,7 @@ Subjects in the feedback group were able to maintain and further improve their p
 \end{figure}
 
 \subsection{Modeling Techniques}
-We investigated two techniques for creating models of human pilot in order to better understand the results of the aircraft training study.
+We investigated two techniques for creating models of a human pilot in order to better understand the results of the aircraft training study.
 Both techniques produce an estimated transfer function of human operator, $Y_p$, which can be combined with the controlled system dynamics, $Y_c$, in order to explore the crossover model characteristics discussed in Section~\ref{background:pilotmodeling}.
 The crossover frequency can be identified using
 \begin{align}
@@ -175,7 +175,7 @@ The proprioceptive feedback block is defined as
 \end{align}
 which is is chosen to satisfy $Y_{PF} \propto s Y_c (s)$, and represents the operator's internal model of the system dynamics~\citep{hess_unified_1997}.
 Finally, $Y_c$ describes the flight dynamics for the task.
-This task dynamics describe a Boeing 747 in Flight Condition 2, and resultant elevator to pitch dynamics take the form~\citep{heffley1972aircraft}:
+The dynamics for this task describe a Boeing 747 in Flight Condition 2 (slow, sea-level flight), and resultant elevator to pitch dynamics take the form~\citep{heffley1972aircraft}:
 \begin{align}
     Y_c = \frac{0.5716 (s+0.5535) (s+0.03952)}{(s^2 + 0.006158s + 0.01512) (s^2 + 1.12s + 0.8006)}
 \end{align}
@@ -184,8 +184,8 @@ This results from plugging the values from NASA CR-2144 for this flight mode int
 \section{Results}
 
 \subsection{ARX}
-The original input to the system from the experiment participants $(u)$ can be fed into this resulting transfer function to produce a simulated output $(u_{sim})$.
-The resulting output from the pilot models can be compared with the experimental data from which they are generated in order to determine the quality of fit.
+The original input to the system from the experiment participants $(u)$ is fed into this resulting transfer function to produce a simulated output $(u_{sim})$.
+The resulting output from the pilot models are compared with the experimental data from which they are generated in order to determine the quality of fit.
 The variance accounted for (VAF) is a commonly used metric to quantify the quality of the fit between the outputs of the model and the experimental data.
 The VAF is calculated by
 \begin{equation}
@@ -265,7 +265,7 @@ See Figure~\ref{figure:arxcomplete} for the plots of the crossover frequency of 
 
 \subsection{Structural Model}
 \subsubsection{Value Identification Technique}
-Once the Structural Model was parameterized to the version presented in Figure~\ref{fig:structuralmodelreduced}, the problem then becomes best fitting the remaining parameters to best match the data collected in the experiment.
+Once the Structural Model is parameterized to the version presented in Figure~\ref{fig:structuralmodelreduced}, the problem then becomes best fitting the remaining parameters to best match the data collected in the experiment.
 This is more complicated than the ARX technique as there are many parameters to identify which interact nonlinearly, and the fit function has many local maximums.
 
 A four-step process was developed to tackle the problem of finding the optimal model parameters, the results of which were compared to the results of the ARX technique to validate our approach.
@@ -288,7 +288,7 @@ Each of these steps is further described below.
 The first step of the value identification technique was a brute force parameter search used to identify the value of the remaining parameters.
 Each combination of the parameters $K_e, \tau_0, K, a$, $\omega_{NM}$ and $\zeta_{NM}$ were simulated in Simulink using the same flight model and disturbance profiles as the participants experienced in the experiment, see Table~\ref{table:structuralmodelparameters}.
 The values from this table were chosen based on a coarse preliminary analysis such that they covered the expected range of values with sufficient granularity.
-The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the smallest VAF.
+The resulting 102,600 simulations were compared to each trial to identify the set of parameter values resulting in the largest VAF.
 Each combination of experimental subject data and simulations was then compared to find a set of simulation parameters that maximized the VAF.
 This solution represented a globally maximum set of a parameters, mitigating the issue resulting from the parameters nonlinear interaction with each other.
 Once this initial global best fit was identified, the parameters were further tuned in MATLAB using \textit{fmincon} to find the minimum of the constrained nonlinear multivariable function, which was the maximum VAF.
@@ -307,7 +307,7 @@ Both techniques show an initially small crossover frequency which approaches the
     \label{fig:sm_crossover}
 \end{figure}
 
-Only the first control mode, Pitch only, was analyzed for the results presented below.
+The first control mode, Pitch only, was analyzed for the results presented below.
 The technique developed here could be extended to all three control loops however, and the results should be similar and more pronounced for modes of higher complexity.
 By investigating the control mode with the smallest effect of the feedback, we show that this technique is sensitive enough to detect small changes between the two groups.
 A two-factor (Group and Trial) mixed model with repeated measures (Trial) was run on each of the six parameters to identify which parameters significantly changed between groups and over the course of training.
@@ -323,7 +323,7 @@ The results of this analysis are presented in Table~\ref{table:structuralmodelmi
 
 Evaluating the results of the linear mixed effects models presented in Table~\ref{table:structuralmodelmixed}, we immediately see that $\tau_0, K,$ and $\omega_{NM}$ have no significant effects dividing either Group or Trial.
 From this we can determine that these variables have no significant effect resulting from either training or the difference in performance between the feedback and control groups.
-Of the remaining variables, $a$ and $\zeta_{NM}$ show significant effects in the trial factor, suggesting that the change with time.
+Of the remaining variables, $a$ and $\zeta_{NM}$ show significant effects in the trial factor, suggesting that they change with time.
 Further investigation of these variables showed that $a$ was only significantly different for the very first trial, a result which was ignored for the remainder of this analysis to simplify the resulting model.
 $\zeta_{NM}$ also varied significantly as a result of training, but closer inspection showed that the effects of varying this parameter did not significantly affect the resulting outputs of the model.
 As a result of this, $\zeta_{NM}$ was not considered an important variable to include in the feedback model.
@@ -340,7 +340,7 @@ As a consequence of this result, modifying this parameter to explain the results
     \label{fig:ke_group}
 \end{figure}
 
-As a result of the analysis resulting from the linear mixed effects models, we determined that all the parameters can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
+From the analysis of the linear mixed effects models, we determined that all the parameters can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
 The resulting values for the remainder of the parameters were averaged and identified as the values listed in Table~\ref{table:structuralmodelresultants}, see below.
 \begin{table}[tb]
     \centering
@@ -362,7 +362,7 @@ The results of least squares best fits to the data are presented in Table~\ref{t
     \caption[Identified $K_e$ parameters for the two groups]{Identified $K_e$ parameters from Equation~\ref{eq:kefit} for the two groups.}
     \label{table:kevalues}
 \end{table}
-The resulting fit well represents the values identified by the value identification technique, and reflects what we have observed throughout this analysis--that the feedback group learns much more quickly and results in better performance (and a large $K_e$) than the control group.
+The resulting fit accurately represents the values identified by the value identification technique, and reflects what we have observed throughout this analysis---the feedback group learns much more quickly and performs better than the control group.
 
 We propose that the $K_f$, the change between the identified $K_e$ of the control and feedback groups, determines the change in performance of subjects exposed to the feedback.
 We further propose that this $K_f$ is a result of the accumulation of exposure to feedback, such that
@@ -431,5 +431,5 @@ The result of a linear mixed effects model showed that, of the six parameters wh
 An extension to the Structural Model was proposed which explains the effects observed when operators are exposed to concurrent bandwidth feedback.
 This proposed model includes the addition of a single additional parameter, $K_f$, which accumulates when the operator is exposed to feedback.
 This parameter is added in the primary control loop, next to the $K_e$ term, and results in operators performing the task with a statistically lower root-mean-square error.
-Those exposed to the feedback also immediately approach the limit of human control, with identified crossover frequency values of $\approx 1.7-2$ rad/s.
+Operators exposed to the feedback also immediately approach the limit of human control, with identified crossover frequency values of $\approx 1.7-2$ rad/s.
 We showed that the Structural Model can accurately model adaptation during the training phase of a simulated flight task.

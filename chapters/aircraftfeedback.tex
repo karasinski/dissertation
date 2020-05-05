@@ -274,7 +274,7 @@ These consisted of a control group, which received no feedback, and three feedba
 Subjects in the feedback groups received concurrent bandwidth feedback along both the pitch and roll axes at 2, 3, or 4 degrees.
 As with the previous experiment, the feedback on each axis was activated independently when the individual axis crossed over the threshold bandwidth.
 Unlike the previous experiment, which only had a training and immediate retention phases, this experiment has four phases spread across two experiment sessions.
-During the first session subjects completed 16 training trials followed by 8 immediate retention trials, during which time subjects in feedback conditions had their feedback removed.
+During the first session, subjects completed 16 training trials followed by 8 immediate retention trials during which time subjects in feedback conditions had their feedback removed.
 Subjects were dismissed after completing the immediate retention trials and asked to return approximately 24 hours later for the second experiment session.
 In the second session, subjects completed 8 retention trials without feedback, then completed 8 transfer task trials without feedback.
 The only change between the transfer task and the other trials is the system dynamics of the controlled vehicle and the magnitude of the disturbance force.
@@ -285,8 +285,8 @@ The disturbance force consisted of the same functions as in the rest of the expe
 
 \subsubsection{Independent variables}
 The two independent variables in this experiment were Group and Trial.
-Group, a between subjects factor, described if and when subjects received feedback.
-Trial, a a within subjects factor, was the trial that subjects repeated over the course of the experiment.
+Group, a between-subjects factor, described if and when subjects received feedback.
+Trial, a a within-subjects factor, was the trial that subjects repeated over the course of the experiment.
 
 \subsubsection{Dependent measures}
 The root-mean-square error (RMSE) of pitch and roll was calculated for every trial and provided an objective measurement of performance.
@@ -295,7 +295,7 @@ We used the average correct response time as objective indication of workload.
 Participants were asked to follow the Modified Bedford scale and record their workload after each trial, allowing us to observe changes in workload during training.
 
 \subsection{Hypotheses}
-We had four hypotheses for this experiment:
+We developed four hypotheses for this experiment:
 \begin{itemize}
     \item[\textbf{H1.}] Participants in the feedback groups will immediately outperform those in the control group.
     \item[\textbf{H2.}] Participants will report the same workload between groups, which will gradually decrease with training.
@@ -305,8 +305,8 @@ We had four hypotheses for this experiment:
 
 \section{Results}
 \subsection{Participants}
-In December 2019, coronavirus disease 2019, commonly referred to as COVID-19, began to spread and quickly resulted in a global pandemic.
-COVID-19 is an infectious disease caused by severe acute respiratory syndrome coronavirus, is highly contagious, and is mainly spread during close contact.
+In December 2019, the novel coronavirus SARS-CoV-2 which results in a disease called COVID-19 began to spread and quickly resulted in a global pandemic.
+This infectious disease caused by severe acute respiratory syndrome coronavirus is highly contagious and is mainly spread during close contact.
 As a result of this pandemic, the University of California, Davis was closed and the Institutional Review Board recommended that we act to ``limit transmission of the virus by delaying or otherwise modifying non-essential interactions,'' postponing subject testing.
 We had anticipated testing approximately 10-15 subjects per group, for a total of 40-60 subjects.
 The remainder of the results discussed here are preliminary and based on the 19 subjects whose data was collected before a shelter-in-place was ordered.
@@ -345,13 +345,14 @@ Due to their extremely preliminary nature, these results are not included here.
 
 Based on the preliminary findings presented in Figure~\ref{figure-bw:pitchrmse}, choosing an appropriate bandwidth can potentially have an effect on the efficacy of concurrent bandwidth feedback.
 While we have yet to observe statistically significant effects between groups, current data suggests that having a looser bandwidth improves performance.
-While it was expected that there may be an optimal choice of bandwidth to maximally reduce training times and improve performance, we hypothesized that this value would be lower than or approximately equal to three degrees, not a higher value, based off our pilot studies.
+While it was expected that there may be an optimal choice of bandwidth to maximally reduce training times and improve performance, we hypothesized that this value would be lower than or approximately equal to three degrees based off our pilot studies.
 
 While we cannot make any definite claims based on this preliminary data and analysis, we can revisit data from the previous experiment to make further predictions.
-Increasing the acceptable bandwidth of feedback results in the concurrent bandwidth feedback being presented less often, and the repetition in training results in subjects improving their performance and reducing their deviations during compensatory tracking.
-We can use the disturbance force to estimate the percentage of time that subjects are exposed to the feedback as we presented subjects with the same disturbance force during each trial.
+Increasing the acceptable bandwidth of feedback results in the feedback being presented less often.
+The repetition in training results in subjects improving their performance and reducing their deviations during compensatory tracking.
+We can use the disturbance force to estimate the percentage of time that subjects are exposed to the feedback because we presented subjects with the same disturbance force during each trial.
 Figure~\ref{figure-aircraft:noinput_pitchfeedback} presents the percentage of time that pitch feedback would be active if subjects did not provide any control input whatsoever.
-This suggests that at the beginning of training, subjects with a bandwidth of two, three, and four degrees would experience feedback 76\%, 62\%, and 47\% of the time, respectively, if they provided no input.
+This suggests that, at the beginning of training, subjects with a bandwidth of two, three, and four degrees would experience feedback 76\%, 62\%, and 47\% of the time, respectively, if they provided no input.
 
 Subjects in the feedback group had their bandwidth set at three degrees in our previous experiment and were instructed to try and improve their performance whenever they saw that the feedback was activated.
 By looking at the percentage of pitch errors that were above a given value, we can infer what percentage of time feedback would have been on when subjects had finished their training phase, regardless of chosen bandwidth.
@@ -387,7 +388,7 @@ Finally, we can take a preliminary look at how often subjects in this experiment
 The percent of time that feedback was active at the beginning and end of training should provide some insight into how subjects respond to different bandwidth levels.
 Figure~\ref{figure-bw:pitchfeedback} shows the percentage of active feedback time for each trial for subjects in the three feedback groups.
 We can see how effectively subjects used the feedback on the first trial by looking at the difference between the value on this plot and that predicted by the no feedback case.
-On the first trial, subjects in the three feedback groups tended to reduce their anticipated feedback exposure more the larger the bandwidth was.
+On the first trial, subjects in the three feedback groups tended to reduce their anticipated feedback exposure when bandwidth was larger.
 Subjects in the four-degree bandwidth group, for instance, nearly halved their anticipated feedback exposure, as could be expected from their pitch RMSE presented in Figure~\ref{figure-bw:pitchrmse}.
 Additionally, subjects in this group asymptote very close to the 4\% value predicted by subjects in the previous study.
 The two- and three-degree bandwidth groups, however, continue to show much larger feedback exposure percentages.
