@@ -249,38 +249,37 @@ This promotes the concept of the ``instructor model'' discussed in Section~\ref{
 \label{chapter:bandwidthstudy}
 
 As we mentioned in Section~\ref{section:cbf}, several authors have noted that ``[b]andwidth feedback has been shown to be effective; however, setting the error threshold is not trivial''~\citep{timmermans_technology-assisted_2009, RIBEIRO2011231, sigrist_augmented_2013}.
-While using an operational limit of acceptable performance can make the choice of setting the error threshold simpler, this option is not always available.
+While using an operational limit as the level of performance considered ``acceptable'' can make the choice of setting the error threshold simpler, this option is not always available.
 Additionally, mission designers often want to know what the optimum pilot performance is for mission planning, and instructors are interested in what levels of performance are acceptable during training.
-In this Chapter, we treat the bandwidth as a variable in order to evaluate its effect on resultant subject performance and workload.
+In order to provide insight into the effects of variable bandwidth and answer these questions, in this Chapter we treat the bandwidth as a variable in order to evaluate its effect on resultant subject performance and workload.
 
 \section{Introduction}
 
-Our previous work has shown that concurrent bandwidth feedback can be effective, but our choice of bandwidth has been ad-hoc in nature and primarily based on preliminary pilot studies.
-These pilot studies have shown that there may be a wide variety of acceptable bandwidths, but it is unclear if there is a single bandwidth that would lead to optimal performance or a minimum learning time.
-It is clear, however, that adverse thresholds which require unrealistic performance will not improve performance and may lead to degraded performance when compared to a no feedback condition.
-Bandwidths that are too loose or not demanding enough will result in feedback that is sparse and may result in performance that resembles a no feedback condition.
+Our previous work has shown that concurrent bandwidth feedback can be effective at improving performance, but our choice of bandwidth has thus far been ad-hoc in nature and primarily based on preliminary pilot studies.
+These pilot studies have shown that there may be a wide variety of acceptable bandwidths, but it is unclear if there is a single bandwidth that would lead to optimal performance or minimum learning time.
+It is clear, however, that extreme thresholds which require unrealistic performance will not improve performance and may instead lead to degraded performance when compared to a no feedback condition.
+Conversely, bandwidths that are too loose or not demanding enough will result in feedback that is sparse and may result in performance that resembles a no feedback condition.
 
 \section{Method}
 
-We designed a follow-up experiment to the experiment presented in Chapter~\ref{chapter:aircraftfeedback} which investigates the changes in performance that result from exposure to different bandwidths.
-This experiment uses the same simulator and flying task as the previous experiment with a few changes.
-The display, forcing functions, and secondary task were all identical to the previous experiment.
-In this experiment, however, subjects only completed trials in the pitch and roll mode.
+We designed a follow-up experiment to the experiment presented in Chapter~\ref{chapter:aircraftfeedback} which investigates the changes in performance that result from exposure to different bandwidth sizes.
+This experiment used the same simulator and flying task as the previous experiment with a few modifications.
+In this experiment the display, forcing functions, and secondary task were all identical to the previous experiment, however, subjects only completed trials in the pitch and roll mode.
 
 \subsection{Experimental Design}
 
 In this experiment, subjects were randomly assigned to one of four groups.
-These consisted of a control group, which received no feedback, and three feedback groups which received feedback during training.
-Subjects in the feedback groups received concurrent bandwidth feedback along both the pitch and roll axes at 2, 3, or 4 degrees.
-As with the previous experiment, the feedback on each axis was activated independently when the individual axis crossed over the threshold bandwidth.
+A control group, which received no feedback and three feedback groups which received feedback during training.
+Subjects in the feedback groups received concurrent bandwidth feedback along both the pitch and roll axes when these states exceeded a bandwidth of 2, 3, or 4 degrees.
+As with the previous experiment, the feedback on each axis was activated independently when the individual state crossed over the threshold bandwidth.
 Unlike the previous experiment, which only had a training and immediate retention phases, this experiment has four phases spread across two experiment sessions.
 During the first session, subjects completed 16 training trials followed by 8 immediate retention trials during which time subjects in feedback conditions had their feedback removed.
 Subjects were dismissed after completing the immediate retention trials and asked to return approximately 24 hours later for the second experiment session.
 In the second session, subjects completed 8 retention trials without feedback, then completed 8 transfer task trials without feedback.
-The only change between the transfer task and the other trials is the system dynamics of the controlled vehicle and the magnitude of the disturbance force.
+The only change between the transfer task and the other trials were the system dynamics of the controlled vehicle and the magnitude of the disturbance force.
 In the transfer task, subjects were responsible for flying a Navion aircraft instead of a Boeing 747.
 The Navion was modeled using data available in NASA CR-96008~\citep{teper1969aircraft}.
-Compared to the Boeing 747, the Navion is a much smaller and lighter aircraft, which requires a significantly different control strategy to effectively control.
+Compared to the Boeing 747, the Navion is a much smaller and lighter aircraft and requires a significantly different control strategy to effectively pilot.
 The disturbance force consisted of the same functions as in the rest of the experiment but was scaled down such that maximum pitch deflection under an uncontrolled scenario was approximately the same as with the Boeing 747 trials.
 
 \subsubsection{Independent variables}
@@ -289,9 +288,9 @@ Group, a between-subjects factor, described if and when subjects received feedba
 Trial, a a within-subjects factor, was the trial that subjects repeated over the course of the experiment.
 
 \subsubsection{Dependent measures}
-The root-mean-square error (RMSE) of pitch and roll was calculated for every trial and provided an objective measurement of performance.
+The root-mean-square error (RMSE) of pitch and roll was calculated for every trial to provide an objective measurement of performance.
 As in the previous experiment, the secondary task was activated ten times per trial and participants had five seconds to correctly respond to the secondary task once it changed color.
-We used the average correct response time as objective indication of workload.
+We used the average correct response time as the objective indicator of workload.
 Participants were asked to follow the Modified Bedford scale and record their workload after each trial, allowing us to observe changes in workload during training.
 
 \subsection{Hypotheses}
@@ -307,7 +306,7 @@ We developed four hypotheses for this experiment:
 \subsection{Participants}
 In December 2019, the novel coronavirus SARS-CoV-2 which results in a disease called COVID-19 began to spread and quickly resulted in a global pandemic.
 This infectious disease caused by severe acute respiratory syndrome coronavirus is highly contagious and is mainly spread during close contact.
-As a result of this pandemic, the University of California, Davis was closed and the Institutional Review Board recommended that we act to ``limit transmission of the virus by delaying or otherwise modifying non-essential interactions,'' postponing subject testing.
+As a result of this pandemic, the University of California, Davis was closed and the Institutional Review Board recommended that we act to ``limit transmission of the virus by delaying or otherwise modifying non-essential interactions,'' postponing subject testing~\citep{mohapatra_2020}.
 We had anticipated testing approximately 10-15 subjects per group, for a total of 40-60 subjects.
 The remainder of the results discussed here are preliminary and based on the 19 subjects whose data was collected before a shelter-in-place was ordered.
 
@@ -324,13 +323,12 @@ These outliers were removed from the analysis and the Satterthwaite method was u
 When significant effects were observed, post hoc comparisons were performed using the Tukey Honest Significance Difference (HSD) test and considered significant at the p $<$ .05 level, and the Satterthwaite method was again used to calculate the degrees of freedom.
 A two-factor (Group and Trial) mixed model with one repeated measure (Trial) was run on the pitch root-mean-square error.
 There was a significant main factor of Trial ($F(31, 434) = 3.6, p < 0.001$) and Group was not significant ($F(3, 14) = 2.6, p = 0.09$).
-Additionally, the interaction effect between Group and Trial was not significant ($F(93, 434) = 0.9, p = 0.78$).
-This result indicates that subjects learned to perform the task over time but that the effect of Group was not significant given the effect size and current number of subjects.
-Even with one half to one third of the anticipated number of subjects, however, the main effect of Group is already heading towards significance, as we would expect based on the results of the previous study.
+Additionally, the interaction effect between Group and Trial was not significant ($F(93, 434) = 0.9, p = 0.78$), which indicates that subjects learned to perform the task over time but that the effect of Group was not significant given the effect size and current number of subjects.
+Even with one half to one third of the anticipated number of subjects, however, the main effect of Group is already trending towards significance, as we would expect based on the results of the previous study.
 Differences in groups are beginning to emerge when examining the plot, see Figure~\ref{figure-bw:pitchrmse}, though the error bars are too large to draw definite conclusions.
 
 This analysis can also be performed on the other dependent measures, with similar results.
-Most metrics closely track those seen in the previous study, though the low sample size makes it difficult to draw conclusions.
+Most metrics closely track those seen in the previous study, though the low sample size makes it difficult to draw conclusions at this stage.
 Due to their extremely preliminary nature, these results are not included here.
 
 \begin{figure}[tb!]
@@ -354,13 +352,13 @@ We can use the disturbance force to estimate the percentage of time that subject
 Figure~\ref{figure-aircraft:noinput_pitchfeedback} presents the percentage of time that pitch feedback would be active if subjects did not provide any control input whatsoever.
 This suggests that, at the beginning of training, subjects with a bandwidth of two, three, and four degrees would experience feedback 76\%, 62\%, and 47\% of the time, respectively, if they provided no input.
 
-Subjects in the feedback group had their bandwidth set at three degrees in our previous experiment and were instructed to try and improve their performance whenever they saw that the feedback was activated.
+In our previous experiment subjects in the feedback group had their bandwidth set at three degrees and were instructed to try and improve their performance whenever they saw that the feedback was activated.
 By looking at the percentage of pitch errors that were above a given value, we can infer what percentage of time feedback would have been on when subjects had finished their training phase, regardless of chosen bandwidth.
-Figure~\ref{figure-aircraft:pitchfeedback} presents the percentage of time that pitch feedback was active at the end of training, showing 12\% for the three-degree bandwidth subjects experienced.
+Figure~\ref{figure-aircraft:pitchfeedback} presents the percentage of time that pitch feedback was active at the end of training, showing 12\% for the three-degree bandwidth that subjects experienced.
 It is unclear if subjects continue to improve until they reach a point where feedback appears approximately 12\% of the time, or if this is simply a limit of human motor control for this task.
 In either case, the 4\% of time feedback would have been presented if a four-degree bandwidth was chosen is clearly within human control.
 If the 12\% target is a true motivational limit, 4\% would likely inspire greater confidence in subjects, who may go on to report lower workload values.
-The two-degree bandwidth, however, would only be attainable 29\% of the time by fully trained subjects in the previous experiment, and would likely have a demotivating or otherwise negative effect.
+The two-degree bandwidth, however, would only be attainable 29\% of the time by fully trained subjects in the previous experiment and would likely have a demotivating or otherwise negative effect.
 
 \begin{figure}[tb!]
     \begin{center}
@@ -388,15 +386,15 @@ Finally, we can take a preliminary look at how often subjects in this experiment
 The percent of time that feedback was active at the beginning and end of training should provide some insight into how subjects respond to different bandwidth levels.
 Figure~\ref{figure-bw:pitchfeedback} shows the percentage of active feedback time for each trial for subjects in the three feedback groups.
 We can see how effectively subjects used the feedback on the first trial by looking at the difference between the value on this plot and that predicted by the no feedback case.
-On the first trial, subjects in the three feedback groups tended to reduce their anticipated feedback exposure when bandwidth was larger.
+On the first trial, subjects in the three feedback groups tended to reduce their anticipated feedback exposure when the bandwidth was larger.
 Subjects in the four-degree bandwidth group, for instance, nearly halved their anticipated feedback exposure, as could be expected from their pitch RMSE presented in Figure~\ref{figure-bw:pitchrmse}.
-Additionally, subjects in this group asymptote very close to the 4\% value predicted by subjects in the previous study.
+Additionally, subjects in this group asymptote very closely to the 4\% value predicted by subjects in the previous study.
 The two- and three-degree bandwidth groups, however, continue to show much larger feedback exposure percentages.
-The results for subjects in the three-degree bandwidth group are especially confusing, as they do not asymptote to the 12\% number shown by subjects in the previous experiment.
-While the differences in experimental procedures could be the cause of this, we believe that the low sample size (5 subjects thus far in this experiment compared to 15 subjects in the previous experiment) are more likely the cause.
+The results for subjects in the three-degree bandwidth group are especially unexpected, as they do not asymptote to the 12\% number shown by subjects in the previous experiment.
+While differences in experimental procedures could be the cause of this, we believe that the low sample size (5 subjects thus far in this experiment compared to 15 subjects in the previous experiment) is more likely the cause.
 
 \section{Conclusions}
-While the preliminary data collected for this experiment can be used to begin to explain the effects of using different bandwidths in concurrent bandwidth feedback, more subjects are needed to make definitive claims.
+While the preliminary data collected for this experiment can be used to begin to explain the effects of employing different bandwidths in concurrent bandwidth feedback, more subjects are needed to make any definitive claims.
 Briefly revisiting our hypotheses, we can start to predict the results of this study.
 \begin{itemize}
     \item[\textbf{H1.}] While subjects in the three- and four-degree bandwidth groups will likely immediately outperform those in the control group, the two-degree bandwidth presents too much of a challenge for subjects to effectively use the concurrent bandwidth feedback.
