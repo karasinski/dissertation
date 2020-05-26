@@ -3,6 +3,7 @@
 
 The second Aim of this dissertation is to develop a model of the human pilot that includes the effects of concurrent bandwidth feedback.
 After evaluating many of the human pilot models presented in the literature, the Structural Model was selecting for adaptation because it has been very effective in predicting pilot performance for a variety of system dynamics and requires a relatively small number of parameters.
+The Structural Model employs classical feedback control theory and includes both the vehicle dynamics and the human operator's control input response to task demands and disturbance forces.
 The previous two Chapters detailed human-in-the-loop experiments where subjects trained on simplified aircraft simulators, providing a rich data set to use as modeling verification.
 This Chapter outlines the extension of \citeauthor{hess_unified_1997}'s Structural Model of the human pilot to include the effects of concurrent bandwidth feedback.
 
@@ -12,7 +13,7 @@ The model presented here extends \citeauthor{hess_unified_1997}'s \citeyear{hess
 The Structural Model has successfully predicted human performance through a variety of system dynamics and can predict how performance changes during a pilot's adaptation to changing dynamics.
 \citeauthor{hess_modeling_2009} developed adaptive logic for the human pilot in a pursuit task, which triggers when the pilot notices that vehicle dynamics have changed, see Figure~\ref{figure:hesspursuit}~\citep{hess_modeling_2009}.
 This logic is based on several criteria, which ``must be predicated upon information available to the human [and] the postadapated pilot models must follow the dictates of the crossover model of the human pilot''~\citep{hess_modeling_2009}.
-The crossover model is defined
+The crossover model is defined as
 \begin{align}
     Y_c(s) Y_p(s) \approx \dfrac{w_c e^{-s \tau_e}}{s}
 \end{align}
@@ -35,13 +36,14 @@ The modified model presented here includes two major changes to Hess's current m
     \item The timescale of the adaptation is significantly longer
 \end{itemize}
 
+The logic and reasoning behind these modifications are developed in the following sections.
 In this work, we propose that the adaptive logic should trigger when the pilot is receiving concurrent bandwidth feedback, instead of when a change in system dynamics occurs as in the original model.
 This requires an additional feedback loop in the the Structural Model that triggers when the bandwidth feedback is activated.
 This loop is based around the $K_e$ gain, which is the primary way of setting the crossover frequency in the Structural Model, see Figure~\ref{fig:structuralmodels}.
-This change implies that the subjects in our experiments do their primary learning while they are receiving qualitative feedback, and that their current level of responsiveness is not sufficient to complete the task.
+This change implies that the subjects in our experiments do their primary learning while they are receiving the qualitative feedback that their current level of responsiveness is not sufficient to complete the task.
 
 % While there must be a separate loop that adjusts the crossover frequency as learning progresses over the course of several hours,
-The change in performance we see when subjects use the concurrent bandwidth feedback happens relatively rapidly--within a few minutes.
+Based on the experimental results described in previous Chapters, the change in performance we see when subjects use concurrent bandwidth feedback happens relatively rapidly--within a few minutes.
 This is reflected in the performance delta between subjects in the different groups of our SAFER experiment (see Figure~\ref{figure:saferdistance}), EMG experiment (see Figure~\ref{figure:label3}), and aircraft experiment (see Figure~\ref{figure-hfes:pitchrmse}).
 % This relates to the second required change, the amount of required adaptation time.
 Hess's model results in pilots adapting within a very short time period, on the order of 5 seconds~\citep{weir_model_1966}.
@@ -109,17 +111,18 @@ Subjects in the feedback group were able to maintain and further improve their p
 
 \subsection{Modeling Techniques}
 We investigated two techniques for creating models of a human pilot in order to better understand the results of the aircraft training study.
-Both techniques produce an estimated transfer function of human operator, $Y_p$, which can be combined with the controlled system dynamics, $Y_c$, in order to explore the crossover model characteristics discussed in Section~\ref{background:pilotmodeling}.
+Both techniques produce an estimated transfer function for the human operator, $Y_p$, which can be combined with the controlled system dynamics, $Y_c$, in order to explore the crossover model characteristics discussed in Section~\ref{background:pilotmodeling}.
 The crossover frequency can be identified using
 \begin{align}
     Y_c Y_p = \dfrac{w_c e^{-s \tau_e}}{s}
 \end{align}
 which provides an indication of how hard the operator is working.
+
 These two techniques are an Autoregressive Model with Exogenous Variables (ARX) technique and the Structural Model.
 
 \subsubsection{Autoregressive Model with Exogenous Variables (ARX)}
-Autogregressive (AR) models are commonly used to represent time-varying processes in which an output variable linearly depends on its previous value and a stochastic error term.
-When a process also depends on an input variable (often referred to as an exogenous variable), the resulting model is known as an autoregressive model with exogenous variables (ARX).
+Autogregressive (AR) models are commonly used to represent time-varying processes in which an output variable linearly depends on its previous value and a stochastic error term~\citep{yule1927method}.
+When a process also depends on an external input variable (often referred to as an exogenous variable), the resulting model is known as an autoregressive model with exogenous variables (ARX).
 The structure of an ARX model is given by
 % https://www.mathworks.com/help/ident/ref/arx.html
 \begin{equation}
@@ -224,6 +227,7 @@ Visual inspection of the experimental and simulated data also shows very good ag
 
 By combining the above pilot models with the aircraft system dynamics, the crossover frequency (Figure~\ref{fig:bode}) and gain and phase margins can be found.
 The crossover model has long been used as the standard model for human control tasks, where the crossover frequency represents ``how hard'' the pilot is working~\citep{mcruer_dynamic_1957}.
+A larger crossover frequency indicates that the pilot is working harder.
 The results of these parameters reflect what was found in the pitch RMSE performance analysis: subjects in the feedback group immediately show increased crossover frequency and decreased phase and gain margins.
 These results are sustained during retention and again show an immediate improvement when the feedback is removed.
 The crossover frequency identified by the ARX technique for the pitch only trials is available in Figure~\ref{fig:arx_crossover}.
@@ -346,7 +350,7 @@ As the most dominating factor, understanding the effect of $K_e$ is of primary i
     \label{fig:ke_group}
 \end{figure}
 
-From the analysis of the linear mixed effects models, we determined that all the parameters can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
+From the analysis of the linear mixed effects models, we determined that all the parameters of the Structural Model can be treated as constants with the exception of $K_e$, which changes with both Trial and Group.
 Values for these secondary parameters were obtained by averaging and are identified in Table~\ref{table:structuralmodelresultants}, see below.
 \begin{table}[tb]
     \centering
@@ -395,7 +399,7 @@ Here we see that the data from the experiment is directly proportional to the mo
 $\dot{K_f}$, which can also be interpreted as the change in the amount of advantage that subjects in the feedback group have over the control group in a given trial, sharply decreases over the first few trials to a steady value.
 This confirms our experimental observation that subjects receive the majority of the benefit from feedback very rapidly, in just a few trials.
 Further analysis of Figure~\ref{fig:feedback_kfd} shows that, for this task, an exposure period of approximately 6 seconds (or $6/82\approx0.07\%$) in a trial leads to no change in performance.
-Currently, it is unclear if this percentage of time is task dependent or if, for example, it simply represents the average boundary of human control for this task.
+It is currently unclear if this percentage of time is task dependent or if, for example, it simply represents the average boundary of human control for this task.
 As a result of this analysis, the modified version of the Structural Model which incorporates the improvements derived in this analysis is available in Figure~\ref{fig:structuralmodel_feedback}.
 
 \begin{figure}[tbp]
