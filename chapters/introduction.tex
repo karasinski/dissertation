@@ -151,7 +151,7 @@ Subjects were initially placed 40 feet away from the solar array and were asked 
 They could gauge their distance from the solar array using the indicator on the guidance display and the out-the-helmet display.
 Subjects were then asked to inspect four waypoints on the solar array and were given a guidance display for navigation to the waypoints.
 
-\begin{figure}[tb!]
+\begin{figure}[tbp]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/AR/SAFER_DangerChris.jpg}
         \caption[Simplified Aid for EVA Rescue (SAFER) experiment subject seated in the fixed-base simulator]{A subject from the Simplified Aid for EVA Rescue (SAFER) experiment seated in the fixed-base simulator~\citep{karasinski_real-time_2016}.}
@@ -166,7 +166,7 @@ This communication or ``comm'' light on the flight display was used as the secon
 This light was a colored concentric circle on the secondary display and changed from a teal color to a blue or a green color every 5 to 7 seconds (at a pseudorandom interval), and the subjects responded by pressing the corresponding button on the joystick.
 This secondary task was displayed on a separate screen from the flight tasks, and the change in color could not be easily distinguished from the subjects' peripheral vision, requiring the subjects to establish a visual scan pattern that included sequential attention to both primary and secondary displays.
 
-\begin{figure}[tb!]
+\begin{figure}[tbp]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Introduction/SAFERGroups.png}
         \caption[Simplified Aid for EVA Rescue (SAFER) guidance and feedback display]{Simplified Aid for EVA Rescue (SAFER) guidance and feedback display. The left side of the figure shows the interface presented to the Control, the middle shows the change to the interface for the Precise group, and the right shows the Feedback group's interface when it is activated, while all three groups are in the same state.}
@@ -244,6 +244,14 @@ The instructor chooses some bandwidth of acceptable performance for each aspect 
 Figure~\ref{figure:afvariables}, adapted from \citeauthor{hodges2020skill}, presents a schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback.
 The choices involved in choosing the what, when, and how to provide feedback are presented here.
 
+\begin{figure}[tb]
+    \begin{center}
+        \includegraphics[width=\linewidth]{figures/Introduction/feedbackschematichighlighted.pdf}
+        \caption[A schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback]{A schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback, adapted from~\citep{hodges2020skill}. Blue boxes identify the primary feedback considered in this dissertation.}
+        \label{figure:afvariables}
+    \end{center}
+\end{figure}
+
 % WHAT
 Deciding \textit{what} information to provide to subjects is not trivial, especially when the task contains a large number of relevant variables.
 Under the paradigm of the instructor model, we have chosen to highlight elements that are provided in the guidance display rather than add on additional augmented feedback elements.
@@ -279,14 +287,6 @@ Under the paradigm of the instructor model, we considered the verbal and visual 
 Many aerospace tasks, however, involve significant secondary tasks in the form of managing interactions with air traffic control or communicating over other voice loops.
 To avoid interference and competition with these tasks, the concurrent bandwidth we developed was exclusively visual, involving color changes on the guidance display.
 One advantage of focusing on the visual modality is that this is where a majority of research in augmented feedback has focused, allowing us to compare between other research studies more easily.
-
-\begin{figure}[tb]
-    \begin{center}
-        \includegraphics[width=\linewidth]{figures/Introduction/feedbackschematichighlighted.pdf}
-        \caption[A schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback]{A schematic of the primary what, when, and how variables that need to be considered when providing augmented feedback, adapted from~\citep{hodges2020skill}. Blue boxes identify the primary feedback considered in this dissertation.}
-        \label{figure:afvariables}
-    \end{center}
-\end{figure}
 
 In summary, concurrent bandwidth feedback is provided to an operator in real-time when a signal deviates out of a predefined range.
 In this work, the feedback is always displayed visually and changes the color of an already existing element of the display.

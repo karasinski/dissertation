@@ -97,17 +97,17 @@ Following the 9th trial, subjects in the feedback group no longer experienced fe
 This was done in order to investigate how well the feedback subjects could retain their performance benefit.
 
 \subsubsection{Experiment Results}
+\begin{figure}[b]
+    \centering
+    \includegraphics[width=0.75\linewidth]{figures/Modeling/prms_arx.png}
+    \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate immediate retention. Error bars are the standard error of the mean.}
+    \label{fig:prmse}
+\end{figure}
+
 The resulting root-mean-square error (RMSE) for each group of participants by trial is presented in Figure~\ref{fig:prmse}.
 Both groups of participants had a relatively high initial RMSE which was reduced through repeated training on the task.
 Participants in the feedback group, however, performed significantly better than those in the control group and learned the task much faster.
 Subjects in the feedback group were able to maintain and further improve their performance after the feedback was removed.
-
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/Modeling/prms_arx.png}
-    \caption[Pitch root-mean-square error]{Pitch root-mean-square error. Feedback was removed from subjects in the feedback group after the 9th trial in order to investigate immediate retention. Error bars are the standard error of the mean.}
-    \label{fig:prmse}
-\end{figure}
 
 \subsection{Modeling Techniques}
 We investigated two techniques for creating models of a human pilot in order to better understand the results of the aircraft training study.
@@ -140,19 +140,19 @@ The script also produces a continuous transfer function using a Tustin approxima
 The result of this process is a transfer function of the pilot with ten poles and zeros describing the human operator's response to the displayed flight dynamics.
 
 \subsubsection{Structural Model}
-\begin{figure}[tb]
+\begin{figure}[tbp]
     \centering
     \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/structural_model/structural_model.pdf}
-        \caption[The Structural Model]{The Structural Model, adapted from~\citet{hess_unified_1997}.}
+        \includegraphics[width=\textwidth]{figures/structural_model/structural_model.pdf}
+        \caption[The Structural Model]{The Structural Model, adapted from~\citet{hess_unified_1997}. This model includes proprioceptive, vestibular, and visual feedback within the pilot's model, and allows researchers to model the effects of pilot induced oscillations.}
         \label{fig:structuralmodel}
     \end{subfigure}
     \hfill
     \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.8\textwidth]{figures/structural_model_reduced/structural_model.pdf}
-        \caption[The reduced structural model used in this analysis]{The reduced structural model used in this analysis.}
+        \includegraphics[width=\textwidth]{figures/structural_model_reduced/structural_model.pdf}
+        \caption[The reduced structural model used in this analysis]{The reduced structural model used in this analysis, which only includes the proprioceptive feedback loop.}
         \label{fig:structuralmodelreduced}
     \end{subfigure}
     \caption[The Structural Model of the Human Pilot]{The Structural Model of the Human Pilot.}
@@ -236,9 +236,19 @@ The crossover frequency identified by the ARX technique for the pitch only trial
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_arx.png}
     \caption[Crossover frequency (ARX)]{Crossover frequency (rad/s) predicted by the ARX technique for the pitch only trials.
-    The dashed line indicates where the feedback was removed from participants in the feedback group.
-    Error bars are the standard error of the mean.}
+        The dashed line indicates where the feedback was removed.
+        Error bars are the standard error of the mean.}
     \label{fig:arx_crossover}
+\end{figure}
+
+\begin{figure}[tb]
+    \begin{center}
+        \includegraphics[width=\linewidth]{figures/Modeling/crossover_measures.pdf}
+        \caption[The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task]{The crossover frequency (rad/s) of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
+            The dashed line indicates where the feedback was removed.
+            Error bars are the standard error of the mean.}
+        \label{figure:arxcomplete}
+    \end{center}
 \end{figure}
 
 Linear mixed models were used to calculate the significance of factors in our analysis due to the presence of outliers which were removed from the analysis, and the Satterthwaite method was used to calculate the adjusted degrees of freedom.
@@ -261,16 +271,6 @@ There were significant main factors of group $(F(1, 27.92) = 4.4, p = 0.046)$ an
 Tukey tests showed that the participants' crossover frequencies between the groups differed significantly, with the participants in the feedback group again outperforming those in the control group $(M = 0.98, 1.29,$ respectively, $SE = 0.11)$, and the trial effect showing learning throughout the experiment for both groups.
 See Figure~\ref{figure:arxcomplete} for the plots of the crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
 
-\begin{figure}[tb]
-    \begin{center}
-        \includegraphics[width=\linewidth]{figures/Modeling/crossover_measures.pdf}
-        \caption[The crossover frequency of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task]{The crossover frequency (rad/s) of the estimated pilot/vehicle open-loop transfer functions for each group, trial, and control task.
-            The dashed line indicates where the feedback was removed from participants in the feedback group.
-            Error bars are the standard error of the mean.}
-        \label{figure:arxcomplete}
-    \end{center}
-\end{figure}
-
 \subsection{Structural Model}
 \subsubsection{Value Identification Technique}
 Once the Structural Model is parameterized to the version presented in Figure~\ref{fig:structuralmodelreduced}, the remaining effort in achieving Aim 2 then becomes fitting the remaining parameters to best match the data collected in the experiment.
@@ -287,7 +287,7 @@ The general outline of the technique was:
 \end{enumerate}
 Each of these steps is described in detail below.
 
-\begin{table}[tb]
+\begin{table}[b]
     \centering
     \includetable{modeling-structural-model-parameters.tex}
     \caption[Structural Model parameters used for the initial global optimal fit]{Structural Model parameters used for the initial global optimal fit.}
@@ -313,7 +313,7 @@ Both techniques show an initially small crossover frequency which approaches the
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/wc_group.png}
     \caption[Crossover frequency (Structural Model)]{Crossover frequency (rad/s) predicted by the Structural Model parameter identification for the pitch only trials.
-    The dashed line indicates where the feedback was removed from participants in the feedback group.}
+        The dashed line indicates where the feedback was removed.}
     \label{fig:sm_crossover}
 \end{figure}
 
@@ -324,7 +324,7 @@ A two-factor (Group and Trial) mixed model with repeated measures (Trial) was ru
 As with the ARX technique, the Satterthwaite method was used to calculate the adjusted degrees of freedom.
 The results of this analysis are presented in Table~\ref{table:structuralmodelmixed}.
 
-\begin{table}[tb]
+\begin{table}[b]
     \centering
     \includetable{modeling-structural-model-mixed.tex}
     \caption[Results of the linear mixed models of the identified Structural Model parameters]{Results of the linear mixed models of the identified Structural Model parameters.}
@@ -345,8 +345,8 @@ As the most dominating factor, understanding the effect of $K_e$ is of primary i
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/ke_group.png}
     \caption[$K_e$ is greater for subjects exposed to feedback]{$K_e$ is greater for subjects exposed to feedback.
-    The vertical dashed line indicates where the feedback was removed from participants in the feedback group, and the colored dashed lines indicate exponential fits to the data.
-    Error bars are the standard error of the mean.}
+        The vertical dashed line indicates where the feedback was removed from participants in the feedback group, and the colored dashed lines indicate exponential fits to the data.
+        Error bars are the standard error of the mean.}
     \label{fig:ke_group}
 \end{figure}
 
@@ -384,12 +384,12 @@ We further propose that this $K_f$ is a result of the accumulation of exposure t
 where $K_{eC}$ and $K_{eF}$ are the $K_e$ variables identified from exponential fits to the $K_e$ variable for the control and feedback groups, respectively.
 Here we have defined $K_f$ to be proportional to the total accumulated time that operators were exposed to the feedback, and $\dot{K_f}$ is defined as the time rate of change in $K_f$ trial-to-trial which results from the time exposed to the feedback in a given trial.
 
-\begin{figure}[tb]
+\begin{figure}[b]
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Modeling/f_v_kfd.png}
     \caption[The feedback exposure time directly correlates with $\dot{K_{f}}$]{The feedback exposure time directly correlates with $\dot{K_{f}}$, which confirms that the accumulation of exposure to feedback drives $K_f$.
-    The dashed line indicates where the feedback was removed from participants in the feedback group.
-    Error bars are the standard error of the mean.}
+        The dashed line indicates where the feedback was removed.
+        Error bars are the standard error of the mean.}
     \label{fig:feedback_kfd}
 \end{figure}
 

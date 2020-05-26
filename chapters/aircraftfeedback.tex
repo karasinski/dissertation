@@ -33,7 +33,7 @@ Our recent work also includes an investigation into the effectiveness of concurr
 This experiment investigated whether concurrent bandwidth feedback could teach participants to interpret 3D depth cues.
 Our results suggested that participants who were exposed to visual concurrent bandwidth feedback early on sustained improved performance through the duration of the experiment compared to participants that began in a baseline condition without feedback.
 Through these previous experiments, we have shown that concurrent bandwidth feedback can be effective at improving human performance for complex manual tasks.
-The very complex spacecraft piloting experiment also showed large reductions in cognitive workload, though this effect was not observed in the 3D tracking experiment, which had much lower functional task complexity.
+% The very complex spacecraft piloting experiment also showed large reductions in cognitive workload, though this effect was not observed in the 3D tracking experiment, which had much lower functional task complexity.
 In the research reported here, we build upon our previous work and that in the literature by investigating an operationally relevant, joystick-commanded flight-control task with the objective of determining the effect of task complexity on the influence of concurrent bandwidth feedback.
 
 In our current experiment, subjects controlled a simulated aircraft with realistic flight dynamics through a series of tasks of increasing functional complexity.
@@ -180,21 +180,23 @@ A three-factor (Group, Mode, and Trial) mixed model with two repeated measures (
 There were significant main factors of mode ($F(2, 56) = 134.8, p < .001$), and trial ($F(11, 308) = 8.7, p < .001$), and a significant interaction effect between mode and trial ($F(22, 616) = 2.0, p < 0.01$).
 Tukey tests showed that the participants' workload between the modes differed significantly, with workload lowest in P, then PR, and finally PRA ($M = 3.80, 4.99, 6.16$, respectively, $SE = 0.28$), and the trial effect representing slightly reduced workload throughout the experiment.
 
-\begin{figure}[b!]
+\begin{figure}[tbp]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Aircraft/image3.png}
         \caption[The mean Pitch RMSE for each trial]{The mean Pitch RMSE for each trial for participants in the P control mode. Data points are the mean, and error bars are the standard error of the mean.}
         \label{figure-hfes:pitchrmse}
-    \end{center}
-\end{figure}
-\begin{figure}[b!]
-    \begin{center}
+    % \end{center}
+% \end{figure}
+% 
+% \begin{figure}[tbp]
+    % \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Aircraft/image4.png}
         \caption[The mean Roll RMSE for each trial]{The mean Roll RMSE for each trial for participants in the PR control mode. Data points are the mean, and error bars are the standard error of the mean.}
         \label{figure-hfes:rollrmse}
     \end{center}
 \end{figure}
-\begin{figure}[b!]
+
+\begin{figure}[tbp]
     \begin{center}
         \includegraphics[width=0.8\linewidth]{figures/Aircraft/image5.png}
         \caption[The mean Altitude RMSE for each trial]{The mean Altitude RMSE for each trial for participants in the PRA control mode. Data points are the mean, and error bars are the standard error of the mean.}
@@ -202,7 +204,7 @@ Tukey tests showed that the participants' workload between the modes differed si
     \end{center}
 \end{figure}
 
-\begin{figure}[b!]
+\begin{figure}[tb]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Aircraft/performance_measures.pdf}
         \caption[The root-mean-square error for each flight task in each mode]{The root-mean-square error for each flight task in each mode. Data points are the mean, and error bars are the standard error of the mean.}
@@ -212,7 +214,7 @@ Tukey tests showed that the participants' workload between the modes differed si
 
 \section{Discussion}
 
-\begin{table}[tb]
+\begin{table}[b]
     \centering
     \includetable{aircraft-perf-improvement.tex}
     \caption[Performance improvement of the feedback group over the control group]{Performance improvement of the feedback group over the control group at the end of the experiment for each flight RMSE metric.}
@@ -352,7 +354,22 @@ We can use the disturbance force to estimate the percentage of time that subject
 Figure~\ref{figure-aircraft:noinput_pitchfeedback} presents the percentage of time that pitch feedback would be active if subjects did not provide any control input whatsoever.
 This suggests that, at the beginning of training, subjects with a bandwidth of two, three, and four degrees would experience feedback 76\%, 62\%, and 47\% of the time, respectively, if they provided no input.
 
-In our previous experiment subjects in the feedback group had their bandwidth set at three degrees and were instructed to try and improve their performance whenever they saw that the feedback was activated.
+\begin{figure}[tbp]
+    \begin{center}
+        \includegraphics[width=\linewidth]{figures/Aircraft/no_input_feedback_on.pdf}
+        \caption[The percentage of active pitch feedback with no input present]{The percentage of active pitch feedback with no input present. This represents the resulting aircraft motion due to the disturbance force.}
+        \label{figure-aircraft:noinput_pitchfeedback}
+    % \end{center}
+% \end{figure}
+% \begin{figure}[tb!]
+    % \begin{center}
+        \includegraphics[width=\linewidth]{figures/Aircraft/p34_feedback_on.pdf}
+        \caption[The percentage of active pitch feedback time at the end of the previous study]{The percentage of active pitch feedback time at the end of the previous study, when the bandwidth was set to three degrees. The black line is the mean, and the shaded region is the standard error of the mean.}
+        \label{figure-aircraft:pitchfeedback}
+    \end{center}
+\end{figure}
+
+The previous experiment's feedback group subjects had their bandwidth set at three degrees and were instructed to try and improve their performance whenever they saw that the feedback was activated.
 By looking at the percentage of pitch errors that were above a given value, we can infer what percentage of time feedback would have been on when subjects had finished their training phase, regardless of chosen bandwidth.
 Figure~\ref{figure-aircraft:pitchfeedback} presents the percentage of time that pitch feedback was active at the end of training, showing 12\% for the three-degree bandwidth that subjects experienced.
 It is unclear if subjects continue to improve until they reach a point where feedback appears approximately 12\% of the time, or if this is simply a limit of human motor control for this task.
@@ -360,21 +377,7 @@ In either case, the 4\% of time feedback would have been presented if a four-deg
 If the 12\% target is a true motivational limit, 4\% would likely inspire greater confidence in subjects, who may go on to report lower workload values.
 The two-degree bandwidth, however, would only be attainable 29\% of the time by fully trained subjects in the previous experiment and would likely have a demotivating or otherwise negative effect.
 
-\begin{figure}[tb!]
-    \begin{center}
-        \includegraphics[width=\linewidth]{figures/Aircraft/no_input_feedback_on.pdf}
-        \caption[The percentage of active pitch feedback with no input present]{The percentage of active pitch feedback with no input present. This represents the resulting aircraft motion due to the disturbance force.}
-        \label{figure-aircraft:noinput_pitchfeedback}
-    \end{center}
-\end{figure}
-\begin{figure}[tb!]
-    \begin{center}
-        \includegraphics[width=\linewidth]{figures/Aircraft/p34_feedback_on.pdf}
-        \caption[The percentage of active pitch feedback time at the end of the previous study]{The percentage of active pitch feedback time at the end of the previous study, when the bandwidth was set to three degrees. The black line is the mean, and the shaded region is the standard error of the mean.}
-        \label{figure-aircraft:pitchfeedback}
-    \end{center}
-\end{figure}
-\begin{figure}[tb!]
+\begin{figure}[tb]
     \begin{center}
         \includegraphics[width=\linewidth]{figures/Aircraft/Bandwidth-PitchFeedbackOn.png}
         \caption[The percentage of active pitch feedback time for each trial]{The percentage of active pitch feedback time for each trial for participants. Note that the Control group never received feedback. Data points are the mean, and error bars are the standard error of the mean.}
