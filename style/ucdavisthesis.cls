@@ -838,6 +838,8 @@
 \newcommand\abstract[1]{\@abstracttrue\def\@abstract{#1}}
 \newcommand{\@makeabstractpage}[1]{%
    \if@abstract
+      \cleardoublepage
+      \phantomsection
       \@mkboth{\abstractname}{\abstractname}
       \addcontentsline{toc}{section}{\abstractname}%
       \ColumnSave
@@ -883,6 +885,8 @@
 }
 \newcommand\@makeacknowledgments{%
    \if@acks
+      \cleardoublepage
+      \phantomsection
       \@mkboth{\acknowledgename}{\acknowledgename}
       \addcontentsline{toc}{section}{\acknowledgename}%
       \ColumnSaveHeading{\@makeackheading}
