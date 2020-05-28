@@ -6,7 +6,7 @@ CHAPTERS = introduction.tex tradestudy.tex 3dar.tex aircraftfeedback.tex conclus
 CHAPTERS := $(addprefix chapters/, $(CHAPTERS))
 TABLES = $(shell find tables -type f)
 FIGURES = $(shell find figures -type f)
-EXTRA = title_and_frontmatter.tex abstract.tex
+EXTRA = title_and_frontmatter.tex
 BUILD_DIR = build
 SOURCE_BIB = $(wildcard fullbiblio.bib)
 
